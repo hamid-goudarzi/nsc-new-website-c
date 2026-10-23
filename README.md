@@ -2,7 +2,7 @@
 
 ## Files
 - `index.html` is the page (styles, scripts, logo and 3D project drawings built in)
-- `media/` holds NSC project photos and video (UEL Kingston sewer separation, Guildford Park Secondary)
+- `media/` holds NSC project photos and the hero film (film-1080.mp4 desktop, film-720.mp4 phones), cut from UEL Kingston, Guildford Park and NSC paving work
 - `nsc-logo.jpg` is used for the browser tab icon
 
 Keep `media/` next to `index.html`.
