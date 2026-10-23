@@ -184,3 +184,12 @@ footer a{color:#c2c9d6;text-decoration:none}
 .pc-b dd{margin:4px 0 0;font-size:13.5px;color:#d7dde7;line-height:1.35}
 .pc-ar{position:absolute;right:20px;top:18px;color:var(--dim);transition:color .3s,transform .4s var(--ease)}
 .pcard:hover .pc-ar{color:var(--glow-2);transform:translate(3px,-3px)}
+
+/* drawings */
+.phero.dwg .bg{background:#0a1730}
+.phero.dwg .bg img{filter:invert(1) hue-rotate(185deg) saturate(1.6) brightness(.95) contrast(1.05);mix-blend-mode:screen;opacity:.85}
+.pc-img .ill-tag{z-index:2}
+.gal button .g-tag{position:absolute;right:10px;bottom:10px;padding:5px 9px;border-radius:999px;background:rgba(6,8,12,.7);border:1px solid var(--line-2);color:#c9d0dc;font-size:10px}
+.gal button img[src*="dwg"]{background:#fff}
+.pc-img.dwg{background:#0a1730}
+.pc-img.dwg>img{filter:invert(1) hue-rotate(185deg) saturate(1.6) brightness(.95);mix-blend-mode:screen;opacity:.9}
