@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06080c">
+<title>McRoberts Secondary School | Neil Smith Construction Ltd.</title>
+<meta name="description" content="Storm and sanitary sewer upgrade, fire and domestic water upgrade and new paving at McRoberts Secondary.">
+<meta property="og:title" content="McRoberts Secondary School">
+<meta property="og:description" content="Storm and sanitary sewer upgrade, fire and domestic water upgrade and new paving at McRoberts Secondary.">
+<meta property="og:image" content="../media/tank-1280.webp">
+<link rel="icon" href="../nsc-logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/project.css">
+</head>
+<body>
+<nav class="pnav" aria-label="Main">
+  <a class="logo" href="../index.html"><img src="../nsc-logo.jpg" alt=""><b>Neil Smith Construction Ltd.</b></a>
+  <span class="sp"></span>
+  <a class="lk" href="../index.html#services">Services</a><a class="lk" href="../index.html#projects">Projects</a><a class="lk" href="../index.html#safety">Safety</a>
+  <a class="btn btn-blue" href="../index.html#contact">Get a quote</a>
+</nav>
+<header class="phero plain">
+  <div class="bg" data-mark="MS"></div>
+  <div class="wrap ph-in">
+    <a class="back" href="../index.html#projects">← All projects</a>
+    <div class="top"><span class="chip"><span class="d "></span>Completed</span><span class="chip">Sewer and water upgrade</span><span class="chip">Richmond</span></div>
+    <h1>McRoberts Secondary School</h1>
+    <p class="ph-sub">Sewer and water upgrade · Richmond · 2023</p>
+  </div>
+  <span class="nsc-badge"><img src="../nsc-logo.jpg" alt="">NSC built</span>
+</header>
+<main>
+<div class="wrap"><dl class="fields"><div><dt>Client</dt><dd>School District #38</dd></div><div><dt>Completed</dt><dd>2023</dd></div><div><dt>Status</dt><dd>Completed</dd></div></dl></div>
+<section class="sec">
+  <div class="wrap">
+    <div class="story">
+      <div class="body">
+        <p class="mono kick">About the project</p>
+        <p class="lede">Storm and sanitary sewer upgrade, fire and domestic water upgrade and new paving at McRoberts Secondary.</p>
+        
+      </div>
+      <aside class="scope rv"><h2>Scope of work</h2><ol><li>Storm and sanitary sewer system upgrade</li><li>Fire and domestic water upgrade</li><li>New paving</li></ol></aside>
+    </div>
+    
+    
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <a class="next" href="tomsett-elementary.html"><span class="mono">Next project</span><h2>Tomsett Elementary School <span class="ar">→</span></h2></a>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap cta">
+    <div><p class="mono kick">Contact</p><h2 style="margin-top:18px">Planning a similar project?</h2><p>Talk to our team about site services, civil works and earthworks.</p></div>
+    <div class="row"><a class="btn btn-blue" href="../index.html#contact">Request a bid →</a><a class="btn btn-glass" href="tel:6045375797">604-537-5797</a><a class="btn btn-glass" href="mailto:info@nscltd.ca">info@nscltd.ca</a></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Neil Smith Construction Ltd. · #206-6011 Westminster Hwy, Richmond, BC</span><span><a href="../index.html">Home</a> · COR certified</span></div></footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><button type="button" class="x">Close ✕</button><button type="button" class="pv" aria-label="Previous">←</button><button type="button" class="nx" aria-label="Next">→</button></div>
+<script>
+(()=>{
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const lb=document.getElementById('lb'),li=lb.querySelector('img'),bs=[...document.querySelectorAll('#gal button')];let k=0;
+const show=i=>{k=(i+bs.length)%bs.length;li.src=bs[k].dataset.full;li.alt=bs[k].querySelector('img').alt;lb.classList.add('on');lb.querySelector('.x').focus()};
+bs.forEach((b,i)=>b.addEventListener('click',()=>show(i)));
+lb.querySelector('.x').onclick=()=>{lb.classList.remove('on');bs[k]&&bs[k].focus()};
+lb.querySelector('.nx').onclick=()=>show(k+1);lb.querySelector('.pv').onclick=()=>show(k-1);
+lb.addEventListener('click',ev=>{if(ev.target===lb)lb.querySelector('.x').click()});
+addEventListener('keydown',ev=>{if(!lb.classList.contains('on'))return;if(ev.key==='Escape')lb.querySelector('.x').click();if(ev.key==='ArrowRight')show(k+1);if(ev.key==='ArrowLeft')show(k-1)});
+})();
+</script>
+</body>
+</html>

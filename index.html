@@ -8,7 +8,7 @@
 <link rel="preload" as="image" href="media/film-poster.webp">
 <meta property="og:title" content="Neil Smith Construction Ltd.">
 <meta property="og:description" content="Heavy civil contractor: underground utilities, earthworks, roadworks and site servicing across Metro Vancouver and the Fraser Valley. COR certified.">
-<meta property="og:image" content="media/film-poster.webp">
+<meta property="og:image" content="media/tank-1280.webp">
 <meta property="og:type" content="website">
 <title>Neil Smith Construction Ltd. | Heavy Civil Construction, BC</title>
 <meta name="description" content="Neil Smith Construction Ltd. — heavy civil contractor in Metro Vancouver and the Fraser Valley. Underground utilities, earthworks, roadworks, site servicing and concrete. COR certified.">
@@ -316,6 +316,54 @@ footer a:hover{color:#fff}
   *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
   .rv{opacity:1;transform:none;filter:none}.split .wd>span{transform:none}
 }
+
+/* NSC glow badge */
+.nsc-badge{position:absolute;z-index:3;right:16px;bottom:16px;display:inline-flex;align-items:center;gap:9px;padding:5px 12px 5px 5px;border-radius:999px;background:rgba(0,30,90,.55);border:1px solid rgba(122,166,255,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 0 30px -4px rgba(47,107,255,.75);overflow:hidden;font:600 11.5px var(--mono);letter-spacing:.08em;color:#fff;text-transform:uppercase;pointer-events:none}
+.nsc-badge img{position:static!important;width:24px!important;height:24px!important;border-radius:6px;object-fit:cover}
+.nsc-badge::after{content:"";position:absolute;top:-40%;bottom:-40%;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-20deg);animation:sheen 4.5s var(--ease) infinite}
+@keyframes sheen{0%,60%{left:-60%}100%{left:130%}}
+.zoom-media .nsc-badge{right:24px;bottom:24px}
+/* zoom hotspots */
+.zimg{position:absolute;left:50%;top:50%;width:max(100%,133.334vh);height:max(100%,75vw);transform:translate(-50%,-50%) scale(1.25);will-change:transform}
+.zimg>img{width:100%;height:100%;object-fit:cover;display:block;transform:none!important}
+.zoom-media .nsc-badge img{transform:none!important}
+@media (max-width:700px){.spot:nth-child(1),.spot:nth-child(4){display:none}}
+.zoom-media .zimg::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 80% at 50% 50%,transparent,rgba(6,8,12,.55))}
+.zoom-media::after{display:none}
+.zoom-txt{transition:opacity .5s,transform .5s var(--ease)}
+.zoom-txt.out{opacity:0;transform:translateY(-30px);pointer-events:none}
+.spots{position:absolute;inset:0;z-index:2}
+.spot{position:absolute;transform:translate(-11px,-11px);display:flex;align-items:flex-start;gap:10px;opacity:0;transition:opacity .6s,transform .6s var(--ease)}
+.spots.on .spot{opacity:1}
+.spots.on .spot:nth-child(2){transition-delay:.12s}.spots.on .spot:nth-child(3){transition-delay:.24s}.spots.on .spot:nth-child(4){transition-delay:.36s}
+.spot i{flex:none;width:22px;height:22px;border-radius:50%;background:var(--glow);border:3px solid #fff;box-shadow:0 0 0 6px rgba(47,107,255,.25),0 0 24px var(--glow);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(47,107,255,.06),0 0 24px var(--glow)}}
+.spot b{font:600 14px var(--body);color:#fff;background:rgba(8,12,20,.72);border:1px solid var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:8px 12px;border-radius:12px;white-space:nowrap}
+.spot b small{display:block;font:400 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--glow-2);margin-top:3px}
+.spot.r{flex-direction:row-reverse;transform:translate(calc(-100% + 11px),-11px)}
+@media (max-width:700px){.spot b{font-size:12px;padding:6px 9px}.spot b small{display:none}}
+/* project links */
+.sc-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;font-size:15px;color:#fff;text-decoration:none;padding:11px 18px;border-radius:999px;background:var(--glass);border:1px solid var(--line-2);transition:background .3s,border-color .3s}
+.sc-link span{transition:transform .4s var(--ease)}
+.sc-link:hover{background:var(--blue);border-color:rgba(122,166,255,.5)}
+.sc-link:hover span{transform:translateX(4px)}
+.sc-vis .nsc-badge{left:16px;right:auto;bottom:16px}
+.all a{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:#b7bfcc;text-decoration:none;transition:border-color .3s,color .3s,background .3s}
+.all a b{font-weight:400;color:var(--dim);transition:color .3s}
+.all a:hover{border-color:var(--glow-2);color:#fff;background:rgba(47,107,255,.1)}
+.all a:hover b{color:var(--glow-2)}
+.all a i{font-style:normal;color:var(--orange)}
+/* story */
+.st-g{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,6vw,90px);align-items:center}
+@media (max-width:900px){.st-g{grid-template-columns:1fr}}
+.st-ph{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line-2);aspect-ratio:3/2}
+.st-ph>img{width:100%;height:100%;object-fit:cover;display:block}
+.st-p{color:#b9c1ce;margin-top:20px;max-width:56ch}
+.st-tl{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.st-tl li{background:var(--bg-2);padding:16px 18px}
+.st-tl b{display:block;font-family:var(--display);font-size:1.4rem;letter-spacing:-.03em;color:var(--glow-2)}
+.st-tl span{display:block;color:#cfd6e1;font-size:14px;margin-top:4px}
+.hero-card b.plus::after{content:"+"}
 </style>
 </head>
 <body>
@@ -345,11 +393,11 @@ footer a:hover{color:#fff}
 </svg></div>
 <nav class="nav" id="nav" aria-label="Main">
   <a class="logo" href="#top"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCABgAGADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6G/Z9/Z8+Clz+y74O8a+NPB3h4E6Kl9qer6hHjgAlpZHz7cmpv7L/AGKP+evw1/8AAuL/AOKpdL/5ReN/2Is//op6/LAsW61+oZXl1XNZV6k8TOPLNrRs+RxuMhglTjGkndH6nf2X+xR/z1+Gv/gXF/8AFUf2X+xR/wA9fhr/AOBcX/xVflhRXu/6sy/6C6n3nlf20v8AnzE/U/8Asv8AYo/56/DX/wAC4v8A4qj+y/2KP+evw1/8C4v/AIqvywoo/wBWZf8AQXU+8P7aX/PmJ+p/9l/sUf8APX4a/wDgXF/8VR/Zf7FH/PX4a/8AgXF/8VX5YUUf6sy/6C6n3h/bS/58xP1P/sv9ij/nr8Nf/AuL/wCKo/sv9ij/AJ6/DX/wLi/+Kr8sKKP9WZf9BdT7w/tpf8+Yn6n/ANl/sUf89fhr/wCBcX/xVV/2g/2fvgnZfsv+LvGngvwd4eJ/sV7zTdX0+PcMEArJG4P0INflxX6oax/yi+h/7ESD/wBFLXhZjl9XKq+HcMROXNJJ3b7nqYTFQx1KopU0rINK/wCUXjf9iLP/AOinr8rx0r9UNK/5ReN/2Is//op6/K8dK9zhb4cT/wBfGeXnfxUv8IUUUV9yfNBRRRQAUUUUAFFFFABX6oax/wAovof+xEg/9FLX5X1+qGsf8ovof+xEg/8ARS18JxN/Gwn+NfmfUZN8Fb0DSv8AlF43/Yiz/wDop6/K8dK/VDSv+UXjf9iLP/6KevyvHaq4W+HE/wDXxkZ38VL/AAmx4a8G6/4zupLXw9oepa9dRrveDS7SS5kVfUrGCcU/xP4H8SeCJLePxH4e1bw9JcqzQJq1hLamUKQGKiRVyASM46ZFdV8B/EepeDPGereItGn+y61o/h7Ub6ynAzslSIMufY/dYd1YjvX6K/tD+EdM/bU/ZO0zxl4WtjLrtrb/ANsaXADulWZQVurInGSx2vHgYBdIz0Fd2PzmrgMbTpVIr2UtObW6f5f0znw+XwxGHlUjJ861t3R+X134M8QWKaY1xoWpQDVSq6f5lq4+2lsBRDkfvMlgBtzya9S+JPwr8Nfs8appvh3xjZ6l4r8ay2cd9qNnYakmn2GmCT/VwCQRSSXEuFYsw2IAVA3ckRfDfW9N8N/EP9njWNTkih0uzeGe4nm+VIk/tu8PmMewTO8n/Zr9Mv2iP2NvA37Rt3Fquqve6L4kggFvHq2mOod4xuKpKjgq6gsSOAwzgMBXBmWdfVMVSp4m6ptO7j1d7Lzsutn+Gh1YPL3WpTnSs5Jrc+Bvgv8AAP4VftFaTrE+h694j8H+ItFtZL+88OX0tvfrcwKGw9tP5cbbd2xW3qSpYAghlY/LsE4aCOVujKGP4ivtXxj+wd8Vf2dNXh8c/DzWbXxkdIV5fLitDDfbGjZJV+zEssylGZSqvuYN8qk4xJ/wTC+C+i+MvFmv+N9XtUv18M/Z4NJimUPGlzIGZp8H+ONFQKecF2YchSNKeb0sLhq2Mp1fa01blXVN9HdXt5vX7iJ4CVapCjKHJLq+lu58tRfB/wAez21vPF4H8RtHcJ5sC/2VPvmTGd8abdzrjuoIrlrvTbzTpjFeWdzZy7Q/l3MLRPtPIO1gDgjoe9ejftE+NdV8R/tHeOtfkv7lNStNfuorG7jlKTWqW07RweUw5QoI1IK45yetZXxm+KF38ZPHA8Waijpq93p1lBqLkKFmuYoVjklQLwqvtDbe2SO1fSYariqnJKpFcso3uuj001vf10221PJq06MFJQbunbXqcNX6oax/yi+h/wCxEg/9FLX5X1+qGsf8ovof+xEg/wDRS18vxN/Gwn+Nfme3k/wVvQNK/wCUXjf9iLP/AOinr8rx2r9UNK/5ReN/2Is//op6/K8dqfC3w4n/AK+MjOvipeh2PwwdVu/FmWUH/hFNW6n/AKYCvqv/AIJnfHgeFfG9/wDDLVrjbpniFmvNLMjcR3yr88Y46Sxpkc/eh9Xr470DxVrPhV7p9H1O401rqE285gYDzYj1RuOVPcdDWfp97daTf2l/YXc1le2sqT29zbyFJYZFIZXRhyGBAII6V7mZZasxoVKM9L2s+zR5+Gxrw04Sitt/O59aftg/AyzX9qjwn8P/AA5NDpsOu2RktftCfubea6vr6Yx4UcR+YzAAD5QwHQVy3wn/AG4fi5+z+n/CKX4h1zT9JdrFtH8Qo32iyMbFWhWdSHXaQVAfeFAAGBivL/B3xg1ZPjR4K8beMNa1jxGdD1K0nkmvLhrq5+zxTeYY0Lt7vgZAyx9a9W+O3xq+D/7SWpx+I9R0HxL8N/GjKsdzf6db2+qWd4ijC+enmwuXUAKHUA7eDuCqB4jwlSEaeDx1H2tNRV5JXtK7/wC3tt7a/ed0K0W5VcPPkk3s+q/I+7v2Yf20fDf7S9ze6IulXPhvxTaWxu3064kE8U0IYKzwzADdtLICGVWG8YBGSPIP2MfiF4c8JftLfHb4eLcQ2J1PxFcXmjw8IkjxSyrcQp7qCpVR1VXP8Jr5A+HPxZ0L9nifWNa8CX2p+IvG1/YPptpqmpadFZWOmRyMjPKkBlleeb5AF3FEXkkPyK8ba5me5+0PPLJcmTzjO0hMhkzu3ls53Z5znOa86jwzGo8RCm3CnK3Lfe6d72etumur1+fVUzZw9m5+9JXvY9E/aP8AC954U/aJ+IGjXVvIt6+vXVxBAq7nljuJmmhKgctuWVcAdTx1rO+L/wAK7z4OeJNM8Pao0g1qTRrPUNQt5FA+yzzKzGAEddg2gn+9u7Yp7/Hb4izG1km8a6zcXVopS2vp7nzLuBT1EdwwMqdT0cVyet6/qniW/N9rGp32r3xRUN1qFy9xKVX7oLuSxAzxzxX2uFp4um6cajXLGNnbW7012VkeBVqUGpOCd2/uKFfqhrH/ACi+h/7ESD/0UtflfX6oax/yi+h/7ESD/wBFLXzPE/8AGwn+Nfme1k/wVvQNK/5ReN/2Is//AKKevyvHSv1Q0r/lF43/AGIs/wD6KevyvHSnwt8OJ/6+Mzzv4qX+EKKKK+5PmgooooAKKKKACiiimAV+qGsf8ovof+xEg/8ARS1+V9fqhrH/ACi+h/7ESD/0UtfCcT/xsJ/jX5n1OT/BW9A0r/lF43/Yiz/+inr8rx0r9SP2ff2gvgrZ/sv+DvBXjTxh4eY/2GllqekahIGGDkNHIpHocYNT/wBr/sUf88/ht/4Bx/8AxNeHleZVcplXpzw05c027pHoYzBQxypyjVSsj8sKK/U7+1/2Kf8Ann8Nv/AOP/4ml/tf9ij/AJ5/Db/wDj/+Jr3v9Z5f9AlT7jzP7FX/AD+iflhRX6nf2v8AsU/88/ht/wCAcf8A8TS/2v8AsUf88/ht/wCAcf8A8TR/rPL/AKBKn3B/Yq/5/RPywor9Tv7X/Yp/55/Db/wDj/8AiaX+1/2KP+efw2/8A4//AImj/WeX/QJU+4P7FX/P6J+WFFfqd/a/7FP/ADz+G3/gHH/8TS/2v+xR/wA8/ht/4Bx//E0f6zy/6BKn3B/Yq/5/RPywr9UNY/5RfQ/9iJB/6KWk/tf9in/nn8Nv/AOP/wCJqD9oX9oL4KXf7L/jDwV4K8Y+HhjRXs9N0nTpAuAAAkcaAfkP/r14eY5hVzWvh1DDzjyyTd0+56eFwsMDTqOVRO6P/9k=" alt="NSC logo"><b>Neil Smith Construction Ltd.</b></a>
-  <a class="lk" href="#services">Services</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#safety">Safety</a><a class="lk" href="#team">Team</a><a class="lk" href="#careers">Careers</a>
+  <a class="lk" href="#services">Services</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#story">Story</a><a class="lk" href="#safety">Safety</a><a class="lk" href="#team">Team</a><a class="lk" href="#careers">Careers</a>
   <a class="btn btn-blue" href="#contact">Get a quote <span class="ar">→</span></a>
   <button class="burger" id="burger" type="button" aria-expanded="false">Menu</button>
 </nav>
-<div class="menu" id="menu"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#safety">Safety</a><a href="#team">Team</a><a href="#careers">Careers</a><a href="#contact">Contact</a></div>
+<div class="menu" id="menu"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#story">Story</a><a href="#safety">Safety</a><a href="#team">Team</a><a href="#careers">Careers</a><a href="#contact">Contact</a></div>
 
 <header class="hero" id="top">
   <img class="poster" src="media/film-poster.webp" alt="">
@@ -362,7 +410,7 @@ footer a:hover{color:#fff}
         <p class="rv">Heavy civil contractor for Metro Vancouver and the Fraser Valley. We self-perform underground utilities, earthworks, roadworks and site servicing for cities, school districts and builders.</p>
         <div class="hero-ctas rv"><a class="btn btn-blue" href="#contact">Request a bid <span class="ar">→</span></a><a class="btn btn-glass" href="#projects">See projects</a></div>
       </div>
-      <div class="hero-card rv"><div><b data-to="50">0</b><span>years in the ground</span></div><div><b data-to="18" id="cP">0</b><span>featured projects</span></div><div><b>COR</b><span>certified safety</span></div></div>
+      <div class="hero-card rv"><div><b data-to="50" class="plus">0</b><span>years combined experience</span></div><div><b data-to="23" id="cP">0</b><span>projects on record</span></div><div><b>COR</b><span>certified safety</span></div></div>
     </div>
   </div>
   <div class="scroll">SCROLL</div>
@@ -373,7 +421,7 @@ footer a:hover{color:#fff}
 <section class="statement">
   <div class="wrap">
     <p class="mono kick">Who we are</p>
-    <p class="stmt" id="stmt" style="margin-top:24px">We’re a heavy civil crew with *fifty years* of field experience behind us. We keep the critical scope in-house, so owners get *one accountable team* from first sawcut to final as-built.</p>
+    <p class="stmt" id="stmt" style="margin-top:24px">We’re a heavy civil crew with *over fifty years* of combined field experience. We keep the critical scope in-house, so owners get *one accountable team* from first sawcut to final as-built.</p>
   </div>
   <div class="vtype" aria-label="Groundwork">
     <video id="typeVid" muted playsinline loop autoplay aria-hidden="true"></video>
@@ -387,20 +435,20 @@ footer a:hover{color:#fff}
     <p class="mono kick">Services</p>
     <h2 class="h2 split" data-split>Every layer, one crew.</h2>
     <div class="bento">
-      <article class="tile t1 photo rv"><img src="media/svc-earth.webp" alt="NSC excavator and loader on the UEL sewer separation project" loading="lazy"><span class="no">01 / Earthwork</span><span class="arr">↗</span><h3>Earthwork &amp; excavation</h3><p>Bulk and detail excavation, hauling, material supply, contaminated soil and shoring.</p><div class="tags"><span>Bulk excavation</span><span>Hauling</span><span>Shoring &amp; shotcrete</span><span>Soil &amp; gravel</span></div></article>
-      <article class="tile t2 photo rv"><img src="media/svc-util.webp" alt="Precast manholes connected to sewer and storm pipe on Kingston Road" loading="lazy"><span class="no">02 / Utilities</span><span class="arr">↗</span><h3>Underground utilities</h3><div class="tags"><span>Sanitary</span><span>Storm</span><span>Water</span><span>Conduits</span></div></article>
+      <article class="tile t1 photo rv"><img src="media/gexc-1280.webp" srcset="media/gexc-1280.webp 1280w, media/gexc-2560.webp 2560w" sizes="(max-width:900px) 100vw, 60vw" alt="NSC CAT 330 excavator at Guildford Park Secondary" loading="lazy" decoding="async"><span class="no">01 / Earthwork</span><span class="arr">↗</span><h3>Earthwork &amp; excavation</h3><p>Bulk and detail excavation, hauling, material supply, contaminated soil and shoring.</p><div class="tags"><span>Bulk excavation</span><span>Hauling</span><span>Shoring &amp; shotcrete</span><span>Soil &amp; gravel</span></div></article>
+      <article class="tile t2 photo rv"><img src="media/mhpipe-1280.webp" srcset="media/mhpipe-1280.webp 1280w, media/mhpipe-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="New sanitary and storm manholes with PVC and concrete pipe on Kingston Road" loading="lazy" decoding="async"><span class="no">02 / Utilities</span><span class="arr">↗</span><h3>Underground utilities</h3><div class="tags"><span>Sanitary</span><span>Storm</span><span>Water</span><span>Conduits</span></div></article>
       <article class="tile t3 stat rv"><span class="mono" style="color:var(--muted)">Projects in progress</span><div><b data-to="6" id="cA">0</b><p>Schools, sewer separation, supportive housing, a fire hall and residential work underway now.</p></div></article>
-      <article class="tile t4 photo rv"><img src="media/svc-site.webp" alt="Graded site at Guildford Park Secondary" loading="lazy"><span class="no">03 / Site prep</span><span class="arr">↗</span><h3>Site preparation</h3><div class="tags"><span>Demolition</span><span>ESC</span><span>Grading</span></div></article>
-      <article class="tile t5 photo rv"><img src="media/svc-road.webp" alt="Roller compacting new asphalt" loading="lazy"><span class="no">04 / Roads</span><span class="arr">↗</span><h3>Road work</h3><div class="tags"><span>Subbase</span><span>Binder</span><span>Surface course</span></div></article>
-      <article class="tile t6 photo rv"><img src="media/svc-conc.webp" alt="New sidewalk and curb" loading="lazy"><span class="no">05 / Concrete</span><span class="arr">↗</span><h3>Concrete work</h3><p>Sidewalks, curb and gutter, wheelchair and driveway letdowns, reinforced slabs and exposed aggregate.</p></article>
+      <article class="tile t4 photo rv"><img src="media/gwide-1280.webp" srcset="media/gwide-1280.webp 1280w, media/gwide-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="Graded building pad beside the field at Guildford Park Secondary" loading="lazy" decoding="async"><span class="no">03 / Site prep</span><span class="arr">↗</span><h3>Site preparation</h3><div class="tags"><span>Demolition</span><span>ESC</span><span>Grading</span></div></article>
+      <article class="tile t5 photo rv"><img src="media/curb-1280.webp" srcset="media/curb-1280.webp 1280w, media/curb-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="New concrete curb and gutter along the school field at Guildford Park" loading="lazy" decoding="async"><span class="no">04 / Roads</span><span class="arr">↗</span><h3>Roads, curb &amp; gutter</h3><div class="tags"><span>Subgrade</span><span>Curb &amp; gutter</span><span>Road restoration</span></div></article>
+      <article class="tile t6 photo rv"><img src="media/walk-1280.webp" srcset="media/walk-1280.webp 1280w, media/walk-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="New sidewalk, curb and restored road after sewer separation" loading="lazy" decoding="async"><span class="no">05 / Concrete</span><span class="arr">↗</span><h3>Concrete work</h3><p>Sidewalks, curb and gutter, wheelchair and driveway letdowns, reinforced slabs and exposed aggregate.</p></article>
     </div>
   </div>
 </section>
 
 <section class="zoom" id="zoom">
   <div class="zoom-in">
-    <div class="zoom-media" id="zoomMedia"><img src="media/zoom.webp" alt="Stormwater detention chamber at Guildford Park Secondary" loading="lazy" id="zoomImg"></div>
-    <div class="zoom-txt"><p class="mono kick" style="justify-content:center">Guildford Park Secondary · Surrey</p><h2 style="margin-top:18px">Infrastructure<br><span class="grad">built to last.</span></h2><p>Stormwater detention, utilities and full site servicing for one of the region’s largest school additions.</p></div>
+    <div class="zoom-media" id="zoomMedia"><div class="zimg" id="zoomImg"><img src="media/tank-1280.webp" srcset="media/tank-1280.webp 1280w, media/tank-2560.webp 2560w" sizes="100vw" alt="Stormwater detention tank under construction at Guildford Park Secondary, with NSC excavators and crew" loading="lazy" decoding="async"><div class="spots" id="spots" aria-hidden="true"><span class="spot" style="left:24%;top:17%"><i></i><b>Bulk excavation<small>CAT excavators on the pad</small></b></span><span class="spot r" style="left:57%;top:37%"><i></i><b>NSC crew<small>Laying out tank modules</small></b></span><span class="spot" style="left:40%;top:66%"><i></i><b>Detention tank<small>Modular chambers, stormwater storage</small></b></span><span class="spot r" style="left:94%;top:40%"><i></i><b>Liner<small>Wraps the whole tank</small></b></span></div></div><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span></div>
+    <div class="zoom-txt" id="zoomTxt"><p class="mono kick" style="justify-content:center">Guildford Park Secondary · Surrey</p><h2 style="margin-top:18px">Infrastructure<br><span class="grad">built to last.</span></h2><p>The stormwater detention tank, deep utilities and full site servicing for one of the region’s largest school additions.</p></div>
   </div>
 </section>
 
@@ -409,15 +457,27 @@ footer a:hover{color:#fff}
     <p class="mono kick">Selected projects</p>
     <h2 class="h2 split" data-split>Schools, streets, seismic, sewers.</h2>
     <div class="stack" id="stack"></div>
-    <p class="mono kick" style="margin-top:20px">All projects</p>
+    <p class="mono kick" style="margin-top:20px">All projects · tap any to open</p>
     <div class="all" id="all" style="margin-top:16px"></div>
   </div>
 </section>
 
 
 <section class="field" aria-label="Photos from our job sites">
-  <div class="wrap field-head"><div><p class="mono kick">From the field</p><h2 class="h2 split" data-split>Real crews. Real sites.</h2></div><p class="rv">A few moments from our UEL sewer separation and Guildford Park Secondary projects.</p></div>
-  <div class="field-row" id="fr1"><figure><img src="media/g01.webp" alt="NSC job site: Manhole installation · UEL" loading="lazy"><figcaption>Manhole installation · UEL</figcaption></figure><figure><img src="media/g02.webp" alt="NSC job site: Pipe lay crew · UEL" loading="lazy"><figcaption>Pipe lay crew · UEL</figcaption></figure><figure><img src="media/g03.webp" alt="NSC job site: Paving · UEL" loading="lazy"><figcaption>Paving · UEL</figcaption></figure><figure><img src="media/g04.webp" alt="NSC job site: Paving train" loading="lazy"><figcaption>Paving train</figcaption></figure><figure><img src="media/g05.webp" alt="NSC job site: Finished street · UEL" loading="lazy"><figcaption>Finished street · UEL</figcaption></figure><figure><img src="media/g06.webp" alt="NSC job site: Guildford Park Secondary" loading="lazy"><figcaption>Guildford Park Secondary</figcaption></figure></div>
+  <div class="wrap field-head"><div><p class="mono kick">From the field</p><h2 class="h2 split" data-split>Real crews. Real sites.</h2></div><p class="rv">From our Kingston Road sewer separation and the Guildford Park Secondary addition. Every crew member in full PPE, every day.</p></div>
+  <div class="field-row" id="fr1"><figure><img src="media/mhcrew-1280.webp" srcset="media/mhcrew-1280.webp 1280w, media/mhcrew-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Setting a manhole · UEL" loading="lazy" decoding="async"><figcaption>Setting a manhole · UEL</figcaption></figure><figure><img src="media/mains-1280.webp" srcset="media/mains-1280.webp 1280w, media/mains-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Water mains · Guildford" loading="lazy" decoding="async"><figcaption>Water mains · Guildford</figcaption></figure><figure><img src="media/pipes-1280.webp" srcset="media/pipes-1280.webp 1280w, media/pipes-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Sewer pipe · UEL" loading="lazy" decoding="async"><figcaption>Sewer pipe · UEL</figcaption></figure><figure><img src="media/tank3-1280.webp" srcset="media/tank3-1280.webp 1280w, media/tank3-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Detention tank · Guildford" loading="lazy" decoding="async"><figcaption>Detention tank · Guildford</figcaption></figure><figure><img src="media/cpipe-1280.webp" srcset="media/cpipe-1280.webp 1280w, media/cpipe-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Storm pipe · UEL" loading="lazy" decoding="async"><figcaption>Storm pipe · UEL</figcaption></figure><figure><img src="media/deep-1280.webp" srcset="media/deep-1280.webp 1280w, media/deep-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Deep excavation · Guildford" loading="lazy" decoding="async"><figcaption>Deep excavation · Guildford</figcaption></figure><figure><img src="media/mhpit-1280.webp" srcset="media/mhpit-1280.webp 1280w, media/mhpit-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Manhole crew · UEL" loading="lazy" decoding="async"><figcaption>Manhole crew · UEL</figcaption></figure><figure><img src="media/gwide2-1280.webp" srcset="media/gwide2-1280.webp 1280w, media/gwide2-2560.webp 2560w" sizes="(max-width:700px) 60vw, 420px" alt="NSC job site: Excavation · Guildford" loading="lazy" decoding="async"><figcaption>Excavation · Guildford</figcaption></figure></div>
+</section>
+<section class="sec story" id="story">
+  <div class="wrap st-g">
+    <div class="st-ph rv"><img src="media/b001-1280.webp" srcset="media/b001-1280.webp 1280w, media/b001-2560.webp 2560w" sizes="(max-width:900px) 100vw, 55vw" alt="NSC excavators lined up on a Surrey job site" loading="lazy" decoding="async"><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span></div>
+    <div>
+      <p class="mono kick">Our story</p>
+      <h2 class="h2 split" data-split>Founded on fifty years in the field.</h2>
+      <p class="rv st-p">Neil Smith and Dennis Frederickson started the company in 2018. Neil brought over fifty years in excavation and heavy civil work, from small backfill jobs to highway projects with crews of fifty. Dennis brought more than thirty years in residential and commercial construction and project management.</p>
+      <p class="rv st-p">Since Neil’s passing in 2022, Dennis has led the company through steady growth. The standard has not changed: quality work, on time, on budget, and everyone home safe.</p>
+      <ol class="st-tl rv"><li><b>2018</b><span>Founded in Richmond, BC</span></li><li><b>2020</b><span>First prime contract with the City of Surrey</span></li><li><b>2022</b><span>Dennis Frederickson takes the lead</span></li><li><b>2026</b><span>23 projects on record, six underway</span></li></ol>
+    </div>
+  </div>
 </section>
 <section class="safety" id="safety">
   <div class="wrap sf">
@@ -503,24 +563,29 @@ footer a:hover{color:#fff}
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const projects = [
-  {n:"Guildford Park Secondary Addition",s:"Civil work",c:"School District #36",p:"Unitech",l:"Surrey",st:"Ongoing",k:"edu"},
-  {n:"Western Crescent & Kingston Rd Sewer Separation",s:"Civil work",c:"University Endowment Lands",p:"Neil Smith Construction",l:"Vancouver",st:"Ongoing",k:"mun"},
-  {n:"George Greenaway Elementary",s:"Civil work",c:"School District #36",p:"Unitech",l:"Surrey",st:"Ongoing",k:"edu"},
-  {n:"Agnes Supportive Housing",s:"Earthworks & site services",c:"Keller Construction",p:"Keller Construction",l:"New Westminster",st:"Ongoing",k:"dev"},
-  {n:"Fire Hall No. 12, Kitsilano",s:"Seismic upgrades",c:"City of Vancouver",p:"Scott Special Projects",l:"Vancouver",st:"Ongoing",k:"mun"},
-  {n:"Florin Development",s:"Residential development",c:"Allaire Circadian LLP",p:"Neil Smith Construction",l:"Coquitlam",st:"Ongoing",k:"dev"},
-  {n:"Queen Elizabeth Elementary Addition",s:"Civil work",c:"Pro-Can",p:"McElhanney",l:"New Westminster",st:"2025",k:"edu"},
-  {n:"Ladner Elementary School",s:"Civil, demolition & roadworks",c:"Unitech Construction Mgmt",p:"School District #37",l:"Delta",st:"2025",k:"edu"},
-  {n:"UBC Applied Science Digital Design Studio",s:"Earthworks & site services",c:"Kinetic Construction",p:"Kinetic Construction",l:"Vancouver",st:"Completed",k:"edu"},
-  {n:"William Cook Elementary",s:"Earthworks & civil works",c:"School District",p:"Unitech Construction Mgmt",l:"Richmond",st:"2024",k:"edu"},
-  {n:"Howard DeBeck Secondary",s:"Seismic & temporary portables",c:"School District #38",p:"Unitech Construction Mgmt",l:"Richmond",st:"2024",k:"edu"},
-  {n:"Brighouse Modular Addition",s:"Earthworks & civil works",c:"Richmond School District",p:"Unitech Construction Mgmt",l:"Richmond",st:"2024",k:"edu"},
-  {n:"Portland Loos",s:"Prefabricated public washroom",c:"City of Vancouver",p:"Scott Special Projects",l:"Vancouver",st:"2023",k:"mun"},
-  {n:"Richmond School District Portables",s:"Civil work",c:"School District #38",p:"Unitech Construction Mgmt",l:"Richmond",st:"2023",k:"edu"},
-  {n:"Manitoba Yard Fuel Station",s:"Seismic upgrades",c:"City of Vancouver",p:"Scott Construction",l:"Vancouver",st:"2022",k:"mun"},
-  {n:"Parkcrest Elementary School",s:"Seismic upgrades",c:"School District #41",p:"Unitech Construction Mgmt",l:"Burnaby",st:"2022",k:"edu"},
-  {n:"Chilliwack Mall Redevelopment",s:"Civil work",c:"SmartCentres",p:"Wright Construction",l:"Chilliwack",st:"2021",k:"dev"},
-  {n:"North Surrey Utility Improvements",s:"Civil work",c:"City of Surrey",p:"Neil Smith Construction",l:"Surrey",st:"2020",k:"mun"}
+  {u:"guildford-park-secondary",n:"Guildford Park Secondary Addition",s:"Civil work",c:"School District #36",p:"Unitech",l:"Surrey",st:"Ongoing",k:"edu"},
+  {u:"kingston-road-sewer-separation",n:"Western Crescent & Kingston Rd Sewer Separation",s:"Sewer separation",c:"University Endowment Lands",p:"Neil Smith Construction",l:"Vancouver",st:"Ongoing",k:"mun"},
+  {u:"george-greenaway-elementary",n:"George Greenaway Elementary",s:"Civil work",c:"School District #36",p:"Unitech",l:"Surrey",st:"2025",k:"edu"},
+  {u:"agnes-supportive-housing",n:"Agnes Supportive Housing",s:"Earthworks & site services",c:"Keller Construction",p:"Keller Construction",l:"New Westminster",st:"Ongoing",k:"dev"},
+  {u:"fire-hall-12-kitsilano",n:"Fire Hall No. 12, Kitsilano",s:"Seismic upgrades",c:"City of Vancouver",p:"Scott Special Projects",l:"Vancouver",st:"Ongoing",k:"mun"},
+  {u:"florin-development",n:"Florin Development",s:"Residential development",c:"Allaire Circadian LLP",p:"Neil Smith Construction",l:"Coquitlam",st:"Ongoing",k:"dev"},
+  {u:"queen-elizabeth-elementary",n:"Queen Elizabeth Elementary Addition",s:"Civil work",c:"School District #40",p:"Pro-Can Construction Group",l:"New Westminster",st:"Ongoing",k:"edu"},
+  {u:"ladner-elementary-modular",n:"Ladner Elementary Modular Addition",s:"Civil, demolition & paving",c:"School District #37",p:"Unitech Construction Mgmt",l:"Delta",st:"2025",k:"edu"},
+  {u:"ubc-digital-design-studio",n:"UBC Applied Science Digital Design Studio",s:"Earthworks & site services",c:"Kinetic Construction",p:"Kinetic Construction",l:"Vancouver",st:"Completed",k:"edu"},
+  {u:"william-cook-elementary",n:"William Cook Elementary",s:"Earthworks & civil works",c:"School District #38",p:"Unitech Construction Mgmt",l:"Richmond",st:"2024",k:"edu"},
+  {u:"howard-debeck-secondary",n:"Howard DeBeck Secondary",s:"Seismic & temporary portables",c:"School District #38",p:"Unitech Construction Mgmt",l:"Richmond",st:"2024",k:"edu"},
+  {u:"brighouse-modular-addition",n:"Brighouse Modular Addition",s:"Earthworks & civil works",c:"Richmond School District",p:"Unitech Construction Mgmt",l:"Richmond",st:"2024",k:"edu"},
+  {u:"portland-loos",n:"Portland Loos",s:"Prefabricated public washroom",c:"City of Vancouver",p:"Scott Special Projects",l:"Vancouver",st:"2023",k:"mun"},
+  {u:"richmond-school-portables",n:"Richmond School District Portables",s:"Civil work",c:"School District #38",p:"Unitech Construction Mgmt",l:"Richmond",st:"2023",k:"edu"},
+  {u:"manitoba-yard-fuel-station",n:"Manitoba Yard Fuel Station",s:"Seismic upgrades",c:"City of Vancouver",p:"Scott Construction",l:"Vancouver",st:"2022",k:"mun"},
+  {u:"parkcrest-elementary",n:"Parkcrest Elementary School",s:"Civil works package C-028",c:"School District #41",p:"Unitech Construction Mgmt",l:"Burnaby",st:"2023",k:"edu"},
+  {u:"chilliwack-mall-redevelopment",n:"Chilliwack Mall Redevelopment",s:"Civil work",c:"SmartCentres",p:"Wright Construction",l:"Chilliwack",st:"2021",k:"dev"},
+  {u:"north-surrey-utility-improvements",n:"North Surrey Utility Improvements",s:"Civil work",c:"City of Surrey",p:"Neil Smith Construction",l:"Surrey",st:"2020",k:"mun"},
+  {u:"brighouse-elementary",n:"Brighouse Elementary School",s:"Storm and sanitary upgrade",c:"School District #38",p:"",l:"Richmond",st:"2023",k:"edu"},
+  {u:"james-whiteside-elementary",n:"James Whiteside Elementary School",s:"Water and electrical upgrade",c:"School District #38",p:"",l:"Richmond",st:"2023",k:"edu"},
+  {u:"mckinney-elementary",n:"McKinney Elementary School",s:"Concrete and paving",c:"School District #38",p:"",l:"Richmond",st:"2023",k:"edu"},
+  {u:"mcroberts-secondary",n:"McRoberts Secondary School",s:"Sewer and water upgrade",c:"School District #38",p:"",l:"Richmond",st:"2023",k:"edu"},
+  {u:"tomsett-elementary",n:"Tomsett Elementary School",s:"Electrical and concrete",c:"School District #38",p:"",l:"Richmond",st:"2023",k:"edu"}
 ];
 const team = [
   {n:"Dennis Frederickson",ph:"dennis",r:"Co-Founder & Director",d:"Leader and self-made entrepreneur with deep project management, commercial and residential experience.",m:"dennis@nscltd.ca",lead:1},
@@ -799,7 +864,7 @@ const scenes=[
 ];
 
 
-const built=projects.map((_,i)=>scenes[i]());
+const built=scenes.map(f=>f());
 
 /* video from embedded data */
 const hv0=document.getElementById('heroVid');hv0.src=(innerWidth<=900||(navigator.connection&&navigator.connection.saveData))?'media/film-720.mp4':'media/film-1080.mp4';const tv0=document.getElementById('typeVid');tv0.src='media/dig.mp4';if(!reduced){hv0.play().catch(()=>{});tv0.play().catch(()=>{})}
@@ -843,11 +908,11 @@ const lg=$('#logos');lg.innerHTML+=lg.innerHTML;['#fr1'].forEach(s=>{const r=$(s
 const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){render(e.target,built[+e.target.dataset.scene],0);sio.unobserve(e.target)}}),{rootMargin:'400px'});
 
 /* stacking project cards */
-const feat=[[1,'Separating combined sewers into dedicated sanitary and storm systems along Western Crescent and Kingston Road for the University Endowment Lands.','media/proj-kingston.webp','Kingston Rd paving'],[0,'Civil works, stormwater detention and site servicing for a major secondary school addition, delivered with Unitech for School District 36.','media/proj-guildford.webp','Guildford Park site'],[6,'Sanitary sewer installation over spring break and full civil works for the Queen Elizabeth Elementary addition in New Westminster.'],[4,'Seismic upgrades at Kitsilano’s Fire Hall No. 12, working with Scott Special Projects for the City of Vancouver.'],[17,'Our first prime contract with the City of Surrey: utility improvements through a live neighbourhood.']];
-$('#stack').innerHTML=feat.map(([i,d,img,cap],k)=>{const p=projects[i],on=p.st==='Ongoing';const vis=img?`<img src="${img}" alt="${p.n}" loading="lazy"><span class="ph-tag">${cap}</span>`:`<canvas width="1200" height="750" data-scene="${i}" aria-label="3D illustration of ${p.n}" role="img"></canvas>`;return `<article class="scard" style="--i:${k}"><div class="sc-info"><div class="top"><span class="chip"><span class="d ${on?'o':''}"></span>${on?'In progress':(p.st==='Completed'?'Completed':'Completed '+p.st)}</span><span class="chip">${p.s}</span></div><h3>${p.n}</h3><p>${d}</p><dl class="sc-meta"><div><dt>Client</dt><dd>${p.c}</dd></div><div><dt>Prime</dt><dd>${p.p}</dd></div><div><dt>Where</dt><dd>${p.l}</dd></div></dl></div><div class="sc-vis">${vis}<span class="big">0${k+1}</span></div></article>`}).join('');
+const feat=[[1,'Separating the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems. Twelve new manholes, fifteen properties reconnected, prime contract.','mh2','Twin manholes · UEL'],[0,'Bulk excavation, a stormwater detention tank, deep utilities and frontage works for a major secondary school addition, delivered with Unitech for School District 36.','tank2','Detention tank · Surrey'],[6,'Rerouting a city sanitary forcemain, sewer work over spring break, and new road and frontage works for the Queen Elizabeth Elementary addition.','b014','New addition · New Westminster'],[4,'Civil scope for the seismic upgrade of Kitsilano’s Fire Hall No. 12, working with Scott Special Projects for the City of Vancouver.'],[17,'Our first prime contract with the City of Surrey: utility improvements through a live neighbourhood.']];
+$('#stack').innerHTML=feat.map(([i,d,img,cap],k)=>{const p=projects[i],on=p.st==='Ongoing';const vis=img?`<img src="media/${img}-1280.webp" srcset="media/${img}-1280.webp 1280w, media/${img}-2560.webp 2560w" sizes="(max-width:860px) 100vw, 60vw" alt="${p.n}" loading="lazy" decoding="async"><span class="ph-tag">${cap}</span><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span>`:`<canvas width="1200" height="750" data-scene="${i}" aria-label="3D illustration of ${p.n}" role="img"></canvas>`;return `<article class="scard" style="--i:${k}"><div class="sc-info"><div class="top"><span class="chip"><span class="d ${on?'o':''}"></span>${on?'In progress':(p.st==='Completed'?'Completed':'Completed '+p.st)}</span><span class="chip">${p.s}</span></div><h3>${p.n}</h3><p>${d}</p><dl class="sc-meta"><div><dt>Client</dt><dd>${p.c}</dd></div><div><dt>Prime</dt><dd>${p.p}</dd></div><div><dt>Where</dt><dd>${p.l}</dd></div></dl><a class="sc-link" href="projects/${p.u}.html">View project <span>→</span></a></div><div class="sc-vis">${vis}<span class="big">0${k+1}</span></div></article>`}).join('');
 $$('canvas[data-scene]').forEach(c=>sio.observe(c));
 const cards=$$('.scard');
-$('#all').innerHTML=projects.map(p=>`<span>${p.st==='Ongoing'?'<i>●</i>':''}${p.n}</span>`).join('');
+$('#all').innerHTML=projects.map(p=>`<a href="projects/${p.u}.html">${p.st==='Ongoing'?'<i>●</i>':''}${p.n}<b>↗</b></a>`).join('');
 
 /* team placeholders */
 $('#tg').innerHTML=team.map(t=>`<article class="mate rv"><div class="ph" aria-label="Photo placeholder for ${t.n}"><b>${t.n.split(' ').map(w=>w[0]).join('')}</b><small>Photo coming soon</small></div><h3>${t.n}</h3><p class="r">${t.r}</p><p>${t.d}</p></article>`).join('');
@@ -870,7 +935,7 @@ function frame(){
   // zoom
   const zr=zoom.getBoundingClientRect(),zk=Math.min(1,Math.max(0,-zr.top/(zoom.offsetHeight-vh)));const e=1-Math.pow(1-Math.min(1,zk*1.6),3);
   const ix=(1-e)*Math.min(innerWidth*.28,360),iy=(1-e)*vh*.22,rad=(1-e)*40;
-  zm.style.clipPath=`inset(${iy}px ${ix}px round ${rad}px)`;zi.style.transform=`scale(${1.25-e*.25})`;
+  zm.style.clipPath=`inset(${iy}px ${ix}px round ${rad}px)`;zi.style.transform=`translate(-50%,-50%) scale(${1.25-e*.25})`;const zt2=document.getElementById('zoomTxt'),sp=document.getElementById('spots');if(zt2){zt2.classList.toggle('out',zk>.66)}if(sp){sp.classList.toggle('on',zk>.7)}
   // stack
   cards.forEach((c,i)=>{const nx=cards[i+1];if(!nx){c.style.transform='';c.style.filter='';return}const a=c.getBoundingClientRect(),b=nx.getBoundingClientRect();const over=Math.min(1,Math.max(0,1-(b.top-a.top)/a.height));c.style.transform=`scale(${1-over*.06})`;c.style.filter=`brightness(${1-over*.45})`});
   // active link
