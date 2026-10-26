@@ -428,7 +428,7 @@ a.st-ph{display:block}
         <p class="rv">Heavy civil contractor for Metro Vancouver and the Fraser Valley. We self-perform underground utilities, earthworks, roadworks and site servicing for cities, school districts and builders.</p>
         <div class="hero-ctas rv"><a class="btn btn-blue" href="#contact">Request a bid <span class="ar">→</span></a><a class="btn btn-glass" href="#projects">See projects</a></div>
       </div>
-      <div class="hero-card rv"><div><b data-to="50" class="plus">0</b><span>years combined experience</span></div><div><b data-to="23" id="cP">0</b><span>projects on record</span></div><div><b>COR</b><span>certified safety</span></div></div>
+      <div class="hero-card rv"><div><b data-to="50" class="plus">0</b><span>years combined experience</span></div><div><b>In-house</b><span>crews and equipment</span></div><div><b>COR</b><span>certified safety</span></div></div>
     </div>
   </div>
   <div class="scroll">SCROLL</div>
@@ -493,7 +493,7 @@ a.st-ph{display:block}
       <h2 class="h2 split" data-split>Founded on fifty years in the field.</h2>
       <p class="rv st-p">Neil Smith and Dennis Frederickson started the company in 2018. Neil brought over fifty years in excavation and heavy civil work, from small backfill jobs to highway projects with crews of fifty. Dennis brought more than thirty years in residential and commercial construction and project management.</p>
       <p class="rv st-p">Since Neil’s passing in 2022, Dennis has led the company through steady growth. The standard has not changed: quality work, on time, on budget, and everyone home safe.</p>
-      <ol class="st-tl rv"><li><b>2018</b><span>Founded in Richmond, BC</span></li><li><b>2020</b><span>First prime contract with the City of Surrey</span></li><li><b>2022</b><span>Dennis Frederickson takes the lead</span></li><li><b>2026</b><span>23 projects on record, six underway</span></li></ol>
+      <ol class="st-tl rv"><li><b>2018</b><span>Founded in Richmond, BC</span></li><li><b>2020</b><span>First prime contract with the City of Surrey</span></li><li><b>2022</b><span>Dennis Frederickson takes the lead</span></li><li><b>Today</b><span>Growing across Metro Vancouver and the Fraser Valley</span></li></ol>
     </div>
   </div>
 </section>
@@ -910,7 +910,7 @@ $$('.bento .tile').forEach((t,i)=>t.style.transitionDelay=(i%3*.08)+'s');
 if(reduced)$$('.rv,[data-split]').forEach(e=>e.classList.add('in'));
 
 /* counters */
-$('#cP').dataset.to=projects.length;$('#cA').dataset.to=projects.filter(p=>p.st==='Ongoing').length;
+$('#cA').dataset.to=projects.filter(p=>p.st==='Ongoing').length;
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.to,t1=performance.now();const st=n=>{const k=reduced?1:Math.min(1,(n-t1)/1800),v=Math.round(to*(1-Math.pow(1-k,4)));el.firstChild.textContent=v;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}),{threshold:.5});
 $$('[data-to]').forEach(el=>cio.observe(el));
 

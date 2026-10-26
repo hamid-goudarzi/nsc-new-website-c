@@ -147,9 +147,9 @@ footer a{color:#c2c9d6;text-decoration:none}
 .pihero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,8,12,.7),rgba(6,8,12,.55) 50%,var(--bg)),linear-gradient(90deg,rgba(6,8,12,.85),rgba(6,8,12,.2))}
 .pihero h1{font-size:clamp(2.6rem,1.4rem + 5vw,6.6rem);margin-top:20px;max-width:12ch}
 .pi-sub{margin-top:20px;max-width:52ch;color:#c9d0dc;font-size:clamp(1rem,.9rem + .4vw,1.2rem)}
-.pi-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:44px;max-width:760px;background:var(--line);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;backdrop-filter:blur(12px)}
+.pi-stats{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,.85fr) minmax(0,1fr) minmax(0,1.35fr);gap:1px;margin-top:44px;max-width:980px;background:var(--line);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;backdrop-filter:blur(12px)}
 .pi-stats div{background:rgba(10,14,22,.72);padding:18px 20px}
-.pi-stats b{display:block;font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,1.2rem + 1.4vw,2.4rem);letter-spacing:-.04em;line-height:1}
+.pi-stats b{display:block;white-space:nowrap;font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,1rem + 1.1vw,2rem);letter-spacing:-.04em;line-height:1}
 .pi-stats span{display:block;margin-top:8px;color:var(--muted);font-size:13.5px}
 @media(max-width:600px){.pi-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .pchips{position:sticky;top:0;z-index:40;padding:74px 0 12px;margin-top:-62px;background:linear-gradient(180deg,var(--bg) 70%,rgba(6,8,12,0));pointer-events:none}
