@@ -19,9 +19,11 @@
 <nav class="pnav" aria-label="Main">
   <a class="logo" href="../index.html"><img src="../nsc-logo.jpg" alt=""><b>Neil Smith Construction Ltd.</b></a>
   <span class="sp"></span>
-  <a class="lk" href="../index.html#services">Services</a><a class="lk" href="index.html">Projects</a><a class="lk" href="../index.html#safety">Safety</a>
-  <a class="btn btn-blue" href="../index.html#contact">Get a quote</a>
+  <a class="lk" href="../markets.html">Markets</a><a class="lk" href="../index.html#services">Services</a><a class="lk on" href="../projects/index.html" aria-current="page">Projects</a><a class="lk" href="../safety.html">Safety</a><a class="lk" href="../about.html">About</a><a class="lk" href="../careers.html">Careers</a>
+  <a class="btn btn-blue" href="../contact.html">Request a bid</a>
+  <button class="pburger" type="button" aria-expanded="false" aria-controls="pmenu">Menu</button>
 </nav>
+<div class="pmenu" id="pmenu"><a href="../markets.html">Markets</a><a href="../index.html#services">Services</a><a href="../projects/index.html">Projects</a><a href="../safety.html">Safety</a><a href="../about.html">About</a><a href="../careers.html">Careers</a><a href="../contact.html">Contact</a></div>
 <header class="phero">
   <div class="bg"><img class="" src="../media/qe-exc-1280.webp" srcset="../media/qe-exc-1280.webp 1280w, ../media/qe-exc-2560.webp 2560w" sizes="100vw" alt="NSC excavator and crew excavating along the new curb line on the road" decoding="async"></div>
   <div class="wrap ph-in">
@@ -61,7 +63,20 @@
   </div>
 </section>
 </main>
-<footer><div class="wrap"><span>© 2026 Neil Smith Construction Ltd. · #206-6011 Westminster Hwy, Richmond, BC</span><span><a href="../index.html">Home</a> · COR certified</span></div></footer>
+<footer class="pfoot">
+  <div class="wrap">
+    <div class="pf-g">
+      <div class="pf-brand"><a class="logo" href="../index.html"><img src="../nsc-logo.jpg" alt=""><b>Neil Smith Construction Ltd.</b></a>
+        <p>Heavy civil contractor for municipalities, school districts and builders across Metro Vancouver and the Fraser Valley.</p>
+        <span class="pf-cor"><b>COR</b> Certified · BC Construction Safety Alliance</span></div>
+      <div><h4>Company</h4><a href="../about.html">About</a><a href="../about.html#leadership">Leadership</a><a href="../safety.html">Safety &amp; Environment</a><a href="../careers.html">Careers</a></div>
+      <div><h4>Work</h4><a href="../markets.html">Markets</a><a href="../index.html#services">Services</a><a href="../projects/index.html">Projects</a><a href="../about.html#region">Where we work</a></div>
+      <div><h4>Contact</h4><a href="../contact.html">Request a bid</a><a href="../contact.html#partners">Subcontractors &amp; suppliers</a><a href="tel:6045375797">604-537-5797</a><a href="mailto:info@nscltd.ca">info@nscltd.ca</a></div>
+      <div><h4>Offices</h4><p>Head office<br>#206-6011 Westminster Hwy<br>Richmond, BC V7C 4R9</p><p>Yard<br>22617 Fraser Hwy<br>Langley, BC V2Z 2T5</p></div>
+    </div>
+    <div class="pf-bar"><span>© 2026 Neil Smith Construction Ltd. All rights reserved.</span><span><a href="https://www.linkedin.com/company/neil-smith-construction-ltd" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="https://www.instagram.com/neilsmithconstruction" target="_blank" rel="noopener">Instagram ↗</a></span></div>
+  </div>
+</footer>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><button type="button" class="x">Close ✕</button><button type="button" class="pv" aria-label="Previous">←</button><button type="button" class="nx" aria-label="Next">→</button></div>
 <script>
 (()=>{
@@ -76,5 +91,10 @@ lb.addEventListener('click',ev=>{if(ev.target===lb)lb.querySelector('.x').click(
 addEventListener('keydown',ev=>{if(!lb.classList.contains('on'))return;if(ev.key==='Escape')lb.querySelector('.x').click();if(ev.key==='ArrowRight')show(k+1);if(ev.key==='ArrowLeft')show(k-1)});
 })();
 </script>
+<script>(()=>{const b=document.querySelector('.pburger'),m=document.getElementById('pmenu');if(!b||!m)return;
+b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Close':'Menu'});
+m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='Menu'}));
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));})();</script>
 </body>
 </html>

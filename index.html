@@ -421,6 +421,41 @@ a.st-ph{display:block}
 .dl li .mono{color:var(--glow-2)}
 .dl li h3{font-size:clamp(1.3rem,1rem + .8vw,1.75rem);letter-spacing:-.03em;margin-top:26px}
 .dl li p{color:#aab3c1;font-size:15px;margin-top:12px;max-width:40ch}
+
+/* ---- v3 corporate ---- */
+.hero-card b{white-space:nowrap}
+@media (max-width:520px){.hero-card b{font-size:1.3rem!important}.hero-card span{font-size:11px}}
+
+.lg-label{text-align:center;color:var(--dim);margin:0 0 14px}
+.mk-list{list-style:none;padding:0;margin:14px 0 0}
+.mk-list li{font-family:var(--display);font-weight:500;font-size:clamp(1.05rem,.9rem + .5vw,1.35rem);letter-spacing:-.02em;padding:9px 0;border-top:1px solid var(--line-2);color:#fff}
+.mk-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.mk-h .h2{max-width:16ch}
+.mk-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:44px}
+@media (max-width:1100px){.mk-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.mk-g{grid-template-columns:1fr}}
+.mk{position:relative;display:block;aspect-ratio:3/4;border-radius:26px;overflow:hidden;border:1px solid var(--line-2);text-decoration:none;color:#fff;isolation:isolate}
+@media (max-width:620px){.mk{aspect-ratio:4/3}}
+.mk>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.mk::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,8,12,.1) 30%,rgba(6,8,12,.92))}
+.mk:hover>img{transform:scale(1.06)}
+.mk div{position:absolute;left:0;right:0;bottom:0;padding:24px 76px 26px 24px}
+.mk .mono{color:var(--glow-2)}
+.mk h3{font-size:clamp(1.35rem,1rem + 1vw,1.8rem);letter-spacing:-.03em;margin-top:10px}
+.mk p{color:#c9d0dc;font-size:14.5px;margin-top:8px}
+.mk b{position:absolute;right:22px;bottom:24px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--blue);font-weight:400;transition:transform .4s var(--ease)}
+.mk:hover b{transform:translateX(4px)}
+.quote-band{padding-block:clamp(80px,10vw,150px);text-align:center;background:radial-gradient(60% 100% at 50% 100%,rgba(47,107,255,.25),transparent 70%)}
+.quote-band blockquote{margin:0 auto;font-family:var(--display);font-weight:500;font-size:clamp(2rem,1rem + 4vw,4.8rem);letter-spacing:-.04em;line-height:1.05;max-width:18ch}
+.quote-band .mono{margin-top:26px;color:var(--glow-2)}
+.lead-sub{color:var(--muted);max-width:60ch;margin-top:18px}
+.lead-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:980px){.lead-g{grid-template-columns:1fr}}
+.person{position:relative;overflow:hidden;padding:28px 26px 26px;border-radius:24px;border:1px solid var(--line-2);background:radial-gradient(120% 100% at 0% 0%,rgba(47,107,255,.2),transparent 60%),#0d1320;min-height:300px}
+.person .ini{position:absolute;right:-8px;top:-22px;font-family:var(--display);font-weight:800;font-size:7.5rem;letter-spacing:-.08em;color:transparent;-webkit-text-stroke:1px rgba(122,166,255,.18);line-height:1}
+.person h3{font-size:1.7rem;letter-spacing:-.025em;position:relative;margin-top:60px}
+.person .r{color:var(--glow-2);font-size:14px;margin-top:6px;position:relative;font-weight:600}
+.person p:last-child{color:#aab3c1;font-size:14.5px;margin-top:14px;position:relative}
 </style>
 </head>
 <body>
@@ -450,17 +485,17 @@ a.st-ph{display:block}
 </svg></div>
 <nav class="nav" id="nav" aria-label="Main">
   <a class="logo" href="#top"><img src="data:image/jpeg;base64,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" alt="NSC logo"><b>Neil Smith Construction Ltd.</b></a>
-  <a class="lk" href="#services">Services</a><a class="lk" href="#projects">Projects</a><a class="lk" href="#story">Story</a><a class="lk" href="#safety">Safety</a><a class="lk" href="#team">Team</a><a class="lk" href="#careers">Careers</a>
-  <a class="btn btn-blue" href="#contact">Get a quote <span class="ar">→</span></a>
+  <a class="lk" href="markets.html">Markets</a><a class="lk" href="#services">Services</a><a class="lk" href="projects/index.html">Projects</a><a class="lk" href="safety.html">Safety</a><a class="lk" href="about.html">About</a><a class="lk" href="careers.html">Careers</a>
+  <a class="btn btn-blue" href="contact.html">Request a bid <span class="ar">→</span></a>
   <button class="burger" id="burger" type="button" aria-expanded="false">Menu</button>
 </nav>
-<div class="menu" id="menu"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#story">Story</a><a href="#safety">Safety</a><a href="#team">Team</a><a href="#careers">Careers</a><a href="#contact">Contact</a></div>
+<div class="menu" id="menu"><a href="markets.html">Markets</a><a href="#services">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div>
 
 <header class="hero" id="top">
   <img class="poster" src="media/film-poster.webp" alt="">
   <video id="heroVid" muted playsinline loop autoplay preload="auto" aria-hidden="true"></video>
   <div class="wrap hero-in">
-    <span class="chip"><span class="d o"></span>6 jobs live across the Lower Mainland</span>
+    <span class="chip"><span class="d"></span>Heavy civil · Metro Vancouver &amp; Fraser Valley</span>
     <h1 class="split" data-split>Built below.<br><span class="grad">Trusted above.</span></h1>
     <div class="hero-row">
       <div>
@@ -473,7 +508,7 @@ a.st-ph{display:block}
   <div class="scroll">SCROLL</div>
 </header>
 
-<div class="logos" aria-label="Clients"><div class="logos-t" id="logos"><span>City of Vancouver</span><span>City of Surrey</span><span>University Endowment Lands</span><span>SD36 Surrey</span><span>SD38 Richmond</span><span>SD41 Burnaby</span><span>Unitech</span><span>Scott Special Projects</span><span>Kinetic</span><span>Keller</span><span>SmartCentres</span><span>Wright Construction</span></div></div>
+<div class="logos" aria-label="Clients"><p class="lg-label mono">Trusted by public owners and builders</p><div class="logos-t" id="logos"><span>City of Vancouver</span><span>City of Surrey</span><span>University Endowment Lands</span><span>SD36 Surrey</span><span>SD38 Richmond</span><span>SD41 Burnaby</span><span>SD37 Delta</span><span>SD40 New Westminster</span><span>Pro-Can Construction</span><span>Unitech</span><span>Scott Special Projects</span><span>Kinetic</span><span>Keller</span><span>SmartCentres</span><span>Wright Construction</span></div></div>
 
 <section class="statement">
   <div class="wrap">
@@ -490,11 +525,11 @@ a.st-ph{display:block}
 <section class="sec" id="services">
   <div class="wrap">
     <p class="mono kick">Services</p>
-    <h2 class="h2 split" data-split>Every layer, one crew.</h2>
+    <h2 class="h2 split" data-split>Full civil scope. One accountable contractor.</h2>
     <div class="bento">
       <a class="tile t1 photo rv" href="projects/guildford-park-secondary.html" aria-label="Earthwork at Guildford Park Secondary"><img src="media/gexc-1280.webp" srcset="media/gexc-1280.webp 1280w, media/gexc-2560.webp 2560w" sizes="(max-width:900px) 100vw, 60vw" alt="NSC CAT 330 excavator at Guildford Park Secondary" loading="lazy" decoding="async"><span class="no">01 / Earthwork</span><span class="arr">↗</span><h3>Earthwork &amp; excavation</h3><p>Bulk and detail excavation, hauling, material supply, contaminated soil and shoring.</p><div class="tags"><span>Bulk excavation</span><span>Hauling</span><span>Shoring &amp; shotcrete</span><span>Soil &amp; gravel</span></div><span class="tl-go">View project →</span></a>
       <a class="tile t2 photo rv" href="projects/kingston-road-sewer-separation.html" aria-label="Utilities at Kingston Road"><img src="media/mhpipe-1280.webp" srcset="media/mhpipe-1280.webp 1280w, media/mhpipe-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="New sanitary and storm manholes with PVC and concrete pipe on Kingston Road" loading="lazy" decoding="async"><span class="no">02 / Utilities</span><span class="arr">↗</span><h3>Underground utilities</h3><div class="tags"><span>Sanitary</span><span>Storm</span><span>Water</span><span>Conduits</span></div><span class="tl-go">View project →</span></a>
-      <a class="tile t3 stat rv" href="projects/index.html#underway" aria-label="Projects underway now"><span class="mono" style="color:var(--muted)">Projects in progress</span><div><b data-to="6" id="cA">0</b><p>Schools, sewer separation, supportive housing, a fire hall and residential work underway now.</p></div><span class="tl-go">View project →</span></a>
+      <a class="tile t3 stat rv" href="markets.html" aria-label="Markets we serve"><span class="mono" style="color:var(--muted)">Markets we serve</span><ul class="mk-list"><li>Municipal and public works</li><li>Education</li><li>Public facilities</li><li>Private development</li></ul><span class="tl-go">View markets →</span></a>
       <a class="tile t4 photo rv" href="projects/guildford-park-secondary.html" aria-label="Site preparation at Guildford Park Secondary"><img src="media/gwide-1280.webp" srcset="media/gwide-1280.webp 1280w, media/gwide-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="Graded building pad beside the field at Guildford Park Secondary" loading="lazy" decoding="async"><span class="no">03 / Site prep</span><span class="arr">↗</span><h3>Site preparation</h3><div class="tags"><span>Demolition</span><span>ESC</span><span>Grading</span></div><span class="tl-go">View project →</span></a>
       <a class="tile t5 photo rv" href="projects/guildford-park-secondary.html" aria-label="Curb and gutter at Guildford Park Secondary"><img src="media/curb-1280.webp" srcset="media/curb-1280.webp 1280w, media/curb-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="New concrete curb and gutter along the school field at Guildford Park" loading="lazy" decoding="async"><span class="no">04 / Roads</span><span class="arr">↗</span><h3>Roads, curb &amp; gutter</h3><div class="tags"><span>Subgrade</span><span>Curb &amp; gutter</span><span>Road restoration</span></div><span class="tl-go">View project →</span></a>
       <a class="tile t6 photo rv" href="projects/kingston-road-sewer-separation.html" aria-label="Concrete work at Kingston Road"><img src="media/walk-1280.webp" srcset="media/walk-1280.webp 1280w, media/walk-2560.webp 2560w" sizes="(max-width:900px) 100vw, 40vw" alt="New sidewalk, curb and restored road after sewer separation" loading="lazy" decoding="async"><span class="no">05 / Concrete</span><span class="arr">↗</span><h3>Concrete work</h3><p>Sidewalks, curb and gutter, wheelchair and driveway letdowns, reinforced slabs and exposed aggregate.</p><span class="tl-go">View project →</span></a>
@@ -509,6 +544,12 @@ a.st-ph{display:block}
   </div>
 </section>
 
+<section class="sec mkts" id="markets">
+  <div class="wrap">
+    <div class="mk-h"><div><p class="mono kick">Markets</p><h2 class="h2 split" data-split>Built for the public, and the builders who serve it.</h2></div><a class="btn btn-glass rv" href="markets.html">All markets <span class="ar">→</span></a></div>
+    <div class="mk-g"><a class="mk rv" href="markets.html#municipal"><img src="media/cpipe-1280.webp" srcset="media/cpipe-1280.webp 1280w, media/cpipe-2560.webp 2560w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 25vw" alt="Concrete storm pipe staged along Kingston Road" loading="lazy" decoding="async"><div><span class="mono">01</span><h3>Municipal and public works</h3><p>Sewer separation, utilities and road restoration on live streets.</p><b>→</b></div></a><a class="mk rv" href="markets.html#education"><img src="media/parkcrest-earthworks-1280.webp" srcset="media/parkcrest-earthworks-1280.webp 1280w, media/parkcrest-earthworks-2560.webp 2560w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 25vw" alt="Earthworks beside Parkcrest Elementary" loading="lazy" decoding="async"><div><span class="mono">02</span><h3>Education</h3><p>Site services for additions, modulars and school district programs.</p><b>→</b></div></a><a class="mk rv" href="markets.html#facilities"><img src="media/manitoba-tanks-1280.webp" srcset="media/manitoba-tanks-1280.webp 1280w, media/manitoba-tanks-2560.webp 2560w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 25vw" alt="Fuel tanks in the lined excavation at Manitoba Yard" loading="lazy" decoding="async"><div><span class="mono">03</span><h3>Public facilities</h3><p>Fire halls, works yards, campuses and public amenities.</p><b>→</b></div></a><a class="mk rv" href="markets.html#development"><img src="media/agnes-excavator-loading-1280.webp" srcset="media/agnes-excavator-loading-1280.webp 1280w, media/agnes-excavator-loading-2560.webp 2560w" sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 25vw" alt="NSC Kobelco excavator at Agnes Supportive Housing" loading="lazy" decoding="async"><div><span class="mono">04</span><h3>Private development</h3><p>Earthworks and site services for housing and commercial work.</p><b>→</b></div></a></div>
+  </div>
+</section>
 <section class="sec" id="projects">
   <div class="wrap">
     <p class="mono kick">Selected projects</p>
@@ -534,13 +575,14 @@ a.st-ph{display:block}
 </section>
 <section class="sec story" id="story">
   <div class="wrap st-g">
-    <a class="st-ph rv" href="projects/index.html" aria-label="See all projects"><img src="media/b001-1280.webp" srcset="media/b001-1280.webp 1280w, media/b001-2560.webp 2560w" sizes="(max-width:900px) 100vw, 55vw" alt="NSC excavators lined up on a Surrey job site" loading="lazy" decoding="async"><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="tl-go">All projects →</span></a>
+    <a class="st-ph rv" href="projects/index.html" aria-label="See all projects"><img src="media/ggreenaway-footing-excavation-1280.webp" srcset="media/ggreenaway-footing-excavation-1280.webp 1280w, media/ggreenaway-footing-excavation-2560.webp 2560w" sizes="(max-width:900px) 100vw, 55vw" alt="NSC CAT excavator and crew excavating footings at George Greenaway Elementary" loading="lazy" decoding="async"><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="tl-go">All projects →</span></a>
     <div>
       <p class="mono kick">Our story</p>
       <h2 class="h2 split" data-split>Founded on fifty years in the field.</h2>
-      <p class="rv st-p">Neil Smith and Dennis Frederickson started the company in 2018. Neil brought over fifty years in excavation and heavy civil work, from small backfill jobs to highway projects with crews of fifty. Dennis brought more than thirty years in residential and commercial construction and project management.</p>
+      <p class="rv st-p">Neil Smith and Dennis Frederickson started the company in 2018. Neil brought over fifty years in excavation and heavy civil work, from small backfill jobs to highway projects with crews of fifty. Dennis brought over forty years in construction and project management across residential, commercial, utility and earthmoving work.</p>
       <p class="rv st-p">Since Neil’s passing in 2022, Dennis has led the company through steady growth. The standard has not changed: quality work, on time, on budget, and everyone home safe.</p>
       <ol class="st-tl rv"><li><b>2018</b><span>Founded in Richmond, BC</span></li><li><b>2020</b><span>First prime contract with the City of Surrey</span></li><li><b>2022</b><span>Dennis Frederickson takes the lead</span></li><li><b>Today</b><span>Growing across Metro Vancouver and the Fraser Valley</span></li></ol>
+      <a class="btn btn-glass rv" href="about.html" style="margin-top:26px">About NSC <span class="ar">→</span></a>
     </div>
   </div>
 </section>
@@ -565,6 +607,7 @@ a.st-ph{display:block}
       <h2 class="split" data-split>Everyone home. Every shift.</h2>
       <p class="l rv">Our Certificate of Recognition from the BC Construction Safety Alliance confirms an audited health and safety program. A dedicated Construction Safety Officer works with every crew on hazard identification and compliance.</p>
       <div class="sf-pills rv"><span>BCCSA COR program</span><span>On-site safety officer</span><span>Trench &amp; shoring protocols</span><span>Erosion &amp; sediment control</span></div>
+      <a class="btn btn-glass rv" href="safety.html" style="margin-top:26px">Safety &amp; Environment <span class="ar">→</span></a>
     </div>
     <div class="cor rv" aria-hidden="true">
       <svg viewBox="0 0 200 200"><defs><path id="cc" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs><text font-family="JetBrains Mono,monospace" font-size="9.6" letter-spacing="4" fill="rgba(255,255,255,.75)"><textPath href="#cc">CERTIFIED · BCCSA · SAFETY FIRST · EVERY CREW · EVERY DAY ·</textPath></text></svg>
@@ -573,11 +616,12 @@ a.st-ph{display:block}
   </div>
 </section>
 
-<section class="sec" id="team">
+<section class="quote-band"><div class="wrap"><blockquote class="rv">“You’re only as strong as your weakest link.”</blockquote><p class="mono">Dennis Frederickson · Owner and Director</p></div></section>
+<section class="sec" id="leadership">
   <div class="wrap">
-    <p class="mono kick">The team</p>
-    <h2 class="h2 split" data-split>Office to field, one crew.</h2>
-    <div class="team-grid" id="tg"></div>
+    <div class="mk-h"><div><p class="mono kick">Leadership</p><h2 class="h2 split" data-split>Experienced people, accountable for every project.</h2></div><a class="btn btn-glass rv" href="about.html#leadership">Meet the team <span class="ar">→</span></a></div>
+    <p class="rv lead-sub">A Senior Project Manager on every project, a dedicated estimating division, and site superintendents with decades in civil construction.</p>
+    <div class="lead-g"><article class="person lead rv"><span class="ini" aria-hidden="true">DF</span><h3>Dennis Frederickson</h3><p class="r">Owner, Co-Founder and Director</p><p>Over 40 years in construction and project management across residential, commercial, utility and earthmoving projects.</p></article><article class="person lead rv"><span class="ini" aria-hidden="true">LY</span><h3>Leah Yauck</h3><p class="r">Partner</p><p>Trades background with training in small water systems and commercial construction.</p></article><article class="person lead rv"><span class="ini" aria-hidden="true">NG</span><h3>Navid Ghasemi</h3><p class="r">General Manager, Senior Project Manager</p><p>16 years in the industry, with master’s degrees in project management and construction engineering. Has managed projects from $1M to $10M.</p></article></div>
   </div>
 </section>
 
@@ -585,7 +629,7 @@ a.st-ph{display:block}
   <div class="wrap">
     <p class="mono kick">Careers</p>
     <h2 class="h2 split" data-split>Build what’s next with us.</h2>
-    <p class="rv" style="margin-top:20px;color:var(--muted);max-width:52ch">We’re hiring across Greater Vancouver. Join a team that invests in learning, so safe and efficient work becomes second nature.</p>
+    <p class="rv" style="margin-top:20px;color:var(--muted);max-width:52ch">We’re hiring across Greater Vancouver. Join a team that invests in learning, so safe and efficient work becomes second nature. <a href="careers.html" style="color:#fff">Careers at NSC →</a></p>
     <div class="jobs">
       <a class="job rv" href="#contact" data-job="Civil Project Manager"><div><h3>Civil Project Manager</h3><span class="mono">Greater Vancouver · Full-time</span></div><span class="arr">↗</span></a>
       <a class="job rv" href="#contact" data-job="Civil Estimator"><div><h3>Civil Estimator</h3><span class="mono">Greater Vancouver · Full-time</span></div><span class="arr">↗</span></a>
@@ -627,7 +671,7 @@ a.st-ph{display:block}
   <div class="wrap">
     <div class="ft">
       <div><a class="logo" href="#top" style="display:flex;align-items:center;gap:12px;padding:0"><img src="data:image/jpeg;base64,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" alt="NSC logo" style="height:40px;border-radius:8px"><b style="font-family:var(--display);font-weight:600;color:#fff;font-size:15px">Neil Smith Construction Ltd.</b></a><p class="p" style="margin-top:16px;max-width:36ch">Heavy civil contractor for Metro Vancouver and the Fraser Valley. COR certified.</p></div>
-      <div><h4>Explore</h4><a href="#services">Services</a><a href="projects/index.html">Projects</a><a href="#safety">Safety</a><a href="#team">Team</a><a href="#careers">Careers</a></div>
+      <div><h4>Explore</h4><a href="markets.html">Markets</a><a href="#services">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety &amp; Environment</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html#partners">Subcontractors &amp; suppliers</a></div>
       <div><h4>Visit</h4><span class="p">#206-6011 Westminster Hwy, Richmond</span><span class="p">22617 Fraser Hwy, Langley</span></div>
       <div><h4>Connect</h4><a href="tel:6045375797">604-537-5797</a><a href="mailto:info@nscltd.ca">info@nscltd.ca</a><a href="https://www.linkedin.com/company/neil-smith-construction-ltd" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/neilsmithconstruction" target="_blank" rel="noopener">Instagram ↗</a></div>
     </div>
@@ -971,7 +1015,7 @@ $$('.bento .tile').forEach((t,i)=>t.style.transitionDelay=(i%3*.08)+'s');
 if(reduced)$$('.rv,[data-split]').forEach(e=>e.classList.add('in'));
 
 /* counters */
-$('#cA').dataset.to=projects.filter(p=>p.st==='Ongoing').length;
+
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.to,t1=performance.now();const st=n=>{const k=reduced?1:Math.min(1,(n-t1)/1800),v=Math.round(to*(1-Math.pow(1-k,4)));el.firstChild.textContent=v;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}),{threshold:.5});
 $$('[data-to]').forEach(el=>cio.observe(el));
 
@@ -994,7 +1038,6 @@ const cards=$$('.scard');
 $('#all').innerHTML=projects.map(p=>`<a href="projects/${p.u}.html">${p.st==='Ongoing'?'<i>●</i>':''}${p.n}<b>↗</b></a>`).join('');
 
 /* team placeholders */
-$('#tg').innerHTML=team.map(t=>`<article class="mate rv"><div class="ph" aria-label="Photo placeholder for ${t.n}"><b>${t.n.split(' ').map(w=>w[0]).join('')}</b><small>Photo coming soon</small></div><h3>${t.n}</h3><p class="r">${t.r}</p><p>${t.d}</p></article>`).join('');
 $$('.mate').forEach((m,i)=>{m.style.transitionDelay=(i%4*.07)+'s';io.observe(m)});
 
 /* jobs -> form */
@@ -1003,7 +1046,7 @@ $('#form').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=$
 
 /* scroll-driven effects */
 const nav=$('#nav'),hero=$('#top'),hv=$('#heroVid'),zoom=$('#zoom'),zm=$('#zoomMedia'),zi=$('#zoomImg');
-const links=$$('.nav .lk'),secs=links.map(a=>$(a.getAttribute('href')));
+const links=$$('.nav .lk'),secs=links.map(a=>{const h=a.getAttribute('href');return h.startsWith('#')?$(h):null});
 let lastY=0;
 function frame(){
   const y=scrollY,vh=innerHeight;
