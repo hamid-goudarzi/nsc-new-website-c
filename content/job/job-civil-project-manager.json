@@ -1,0 +1,9 @@
+{
+  "_id": "job-civil-project-manager",
+  "_type": "job",
+  "title": "Civil Project Manager",
+  "location": "Greater Vancouver",
+  "employment": "Full-time",
+  "open": true,
+  "order": 10
+}

@@ -1,0 +1,97 @@
+{
+  "_id": "project-parkcrest-elementary",
+  "_type": "project",
+  "name": "Parkcrest Elementary School",
+  "shortName": "Parkcrest Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "parkcrest-elementary"
+  },
+  "type": "Civil works package C-028",
+  "city": "Burnaby",
+  "sector": "Schools",
+  "group": "schools",
+  "status": "Completed",
+  "live": false,
+  "year": "2021 to 2023",
+  "order": 60,
+  "heroImage": {
+    "_type": "image",
+    "local": "parkcrest-earthworks",
+    "alt": "Excavators on site earthworks beside Parkcrest Elementary"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #41",
+      "_key": "1b12769b0d77"
+    },
+    {
+      "label": "Construction manager",
+      "value": "Unitech Construction Management",
+      "_key": "16fd880f4f7d"
+    },
+    {
+      "label": "Duration",
+      "value": "Jan 2021 to Nov 2023",
+      "_key": "fdd855ec85d2"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "36e3e7c2a05e"
+    }
+  ],
+  "lede": "Civil works package C-028 for the new Parkcrest Elementary in Burnaby, including roads, a new parking area and full sewer and water upgrades.",
+  "body": "Over almost three years we carried the civil package for the new school: excavation, storm and sanitary, fire and domestic water, and the road and frontage works around the site.\n\nThe job closed out with a new parking area, curb and gutter, sidewalks and paving.",
+  "scope": [
+    "Bulk and detailed excavation for new construction",
+    "Storm and sanitary sewer system upgrade",
+    "Fire and domestic water upgrade",
+    "Onsite and offsite concrete curb and gutter, sidewalk and driveway",
+    "Road construction, asphalt overlay and new paving",
+    "New parking area with concrete curb and gutter"
+  ],
+  "facts": [
+    {
+      "value": "3 years",
+      "label": "Jan 2021 to Nov 2023",
+      "_key": "5c5e7c2f3844"
+    },
+    {
+      "value": "SD #41",
+      "label": "Burnaby Schools",
+      "_key": "8ffa5c5f4cc6"
+    }
+  ],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "parkcrest-crew",
+      "alt": "NSC crew setting a storm riser beside the school",
+      "_key": "2f7f84250a91"
+    },
+    {
+      "_type": "image",
+      "local": "parkcrest-excavator",
+      "alt": "Excavator on prepared gravel subgrade",
+      "_key": "2ac3a4fd05df"
+    },
+    {
+      "_type": "image",
+      "local": "parkcrest-manhole",
+      "alt": "Worker setting a manhole section in the excavation",
+      "_key": "d2dbc0c5f263"
+    },
+    {
+      "_type": "image",
+      "local": "parkcrest-finished",
+      "alt": "Completed paved site at Parkcrest Elementary",
+      "_key": "8925cfe72408"
+    }
+  ],
+  "homeService": "Civil works package C-028",
+  "homeClient": "School District #41",
+  "homePrime": "Unitech Construction Mgmt"
+}

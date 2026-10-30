@@ -1,0 +1,72 @@
+{
+  "_id": "projectsPage",
+  "_type": "projectsPage",
+  "description": "Projects by Neil Smith Construction Ltd.: school districts, sewer separation, utilities, earthworks and site servicing across Metro Vancouver and the Fraser Valley.",
+  "hero": {
+    "kicker": "Projects",
+    "title": "Every job,",
+    "highlight": "built below.",
+    "subtitle": "Underground utilities, earthworks and site servicing for school districts, cities and builders across Metro Vancouver and the Fraser Valley.",
+    "image": {
+      "_type": "image",
+      "local": "tank",
+      "alt": "Stormwater detention tank under construction at Guildford Park Secondary"
+    }
+  },
+  "stats": [
+    {
+      "value": "50+",
+      "label": "years combined experience",
+      "_key": "d0515414abd4"
+    },
+    {
+      "value": "COR",
+      "label": "certified safety program",
+      "_key": "87223506a5d1"
+    },
+    {
+      "value": "Large-scale",
+      "label": "civil and infrastructure works",
+      "_key": "7c767837b654"
+    },
+    {
+      "value": "Lower Mainland",
+      "label": "Metro Vancouver and the Fraser Valley",
+      "_key": "43fa1448fc4b"
+    }
+  ],
+  "groups": [
+    {
+      "group": "underway",
+      "title": "Underway now",
+      "intro": "Jobs our crews are on today, from sewer separation in the UEL to school additions in Surrey and New Westminster.",
+      "_key": "7cd4428a58ba"
+    },
+    {
+      "group": "richmond",
+      "title": "Richmond School District #38",
+      "intro": "A steady program of school work for Richmond, most of it delivered with Unitech Construction Management: sewer, water and electrical upgrades, detention tanks, portables, seismic support, curb and paving.",
+      "_key": "1024e1e5f72a"
+    },
+    {
+      "group": "schools",
+      "title": "School districts across the region",
+      "intro": "Completed school projects in Surrey, Delta, Burnaby and on the UBC campus.",
+      "_key": "c8a274d176b3"
+    },
+    {
+      "group": "city",
+      "title": "Cities and public works",
+      "intro": "Work for the City of Vancouver and the City of Surrey, including our first prime contract with Surrey.",
+      "_key": "088656e73681"
+    },
+    {
+      "group": "development",
+      "title": "Commercial development",
+      "intro": "Civil works for private development.",
+      "_key": "5da751b4e2a6"
+    }
+  ],
+  "ctaTitle": "Planning a similar project?",
+  "ctaText": "Talk to our team about site services, civil works and earthworks."
+}

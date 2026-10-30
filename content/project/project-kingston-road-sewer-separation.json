@@ -1,0 +1,156 @@
+{
+  "_id": "project-kingston-road-sewer-separation",
+  "_type": "project",
+  "name": "Western Crescent & Kingston Road Sewer Separation",
+  "shortName": "Kingston Rd Sewer Separation",
+  "slug": {
+    "_type": "slug",
+    "current": "kingston-road-sewer-separation"
+  },
+  "type": "Municipal sewer separation",
+  "city": "Vancouver (UEL)",
+  "sector": "Municipal",
+  "group": "underway",
+  "status": "In progress",
+  "live": true,
+  "year": "2026",
+  "order": 10,
+  "heroImage": {
+    "_type": "image",
+    "local": "mh2",
+    "alt": "CAT excavator over two new precast manholes on Kingston Road"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "University Endowment Lands",
+      "_key": "0773682c6e26"
+    },
+    {
+      "label": "Contractor",
+      "value": "Neil Smith Construction (prime)",
+      "_key": "a54be98a3f4c"
+    },
+    {
+      "label": "Started",
+      "value": "May 2026",
+      "_key": "233b400fe8eb"
+    },
+    {
+      "label": "Status",
+      "value": "Final restoration, fall 2026",
+      "_key": "2ddc51e29b0f"
+    }
+  ],
+  "lede": "Separating the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems for the University Endowment Lands.",
+  "body": "The existing combined sewer carried sanitary flow and stormwater in one pipe. We replaced it with two new systems laid side by side: a sanitary main and a storm main, each with its own manholes, service connections and catch basins.\n\nThe work ran through a quiet residential street with homes on both sides. Every property stayed connected through the job. New services were installed ahead of time and transferred over once the new mains were tested.\n\nWe hold the prime contract and deliver the excavation, pipe, manholes, water services and concrete, with paving placed by our asphalt subcontractor.",
+  "scope": [
+    "Layout, sawcutting, pre-locates and soil sampling",
+    "New sanitary sewer, 250 to 375 mm",
+    "New storm sewer, 250 to 450 mm",
+    "Six sanitary and six storm manholes, set in pairs",
+    "Catch basins and storm leads",
+    "Sanitary and storm service connections to every property",
+    "Water service renewals, fire hydrant and two watermain tie-ins",
+    "CCTV inspection and pressure testing",
+    "Abandonment of existing manholes",
+    "Concrete curb, driveways and sidewalk",
+    "Road restoration, paving and landscape restoration"
+  ],
+  "facts": [
+    {
+      "value": "12",
+      "label": "new precast manholes",
+      "_key": "cb7f1e7ba97f"
+    },
+    {
+      "value": "15",
+      "label": "properties reconnected",
+      "_key": "a805ac9f5171"
+    },
+    {
+      "value": "7",
+      "label": "new catch basins",
+      "_key": "4d055d77e208"
+    },
+    {
+      "value": "250 to 450 mm",
+      "label": "sanitary and storm mains",
+      "_key": "4a2f176d40db"
+    }
+  ],
+  "timeline": [
+    {
+      "when": "May 2026",
+      "what": "Notice to proceed, mobilization, locates and sampling",
+      "_key": "17d86e8dc224"
+    },
+    {
+      "when": "May to Aug",
+      "what": "Sanitary and storm mains, manholes and services",
+      "_key": "e2689502ef4d"
+    },
+    {
+      "when": "Jul to Aug",
+      "what": "Water services, hydrant, testing and tie-ins",
+      "_key": "8b36350b5520"
+    },
+    {
+      "when": "Aug to Sep",
+      "what": "Service transfers, CCTV and pressure tests",
+      "_key": "9173def732a3"
+    },
+    {
+      "when": "Fall 2026",
+      "what": "Concrete, paving and landscape restoration",
+      "_key": "f86f06dffe66"
+    }
+  ],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "mhcrew",
+      "alt": "NSC crew setting a precast manhole on new sanitary and storm pipe",
+      "_key": "545791abf654"
+    },
+    {
+      "_type": "image",
+      "local": "mhpipe",
+      "alt": "New sanitary and storm manholes with PVC and concrete pipe",
+      "_key": "e5466cde9336"
+    },
+    {
+      "_type": "image",
+      "local": "mhpit",
+      "alt": "NSC crew working in a manhole excavation",
+      "_key": "a79240082c82"
+    },
+    {
+      "_type": "image",
+      "local": "cpipe",
+      "alt": "Concrete storm pipe staged along Kingston Road",
+      "_key": "313489fb55a4"
+    },
+    {
+      "_type": "image",
+      "local": "pipes",
+      "alt": "New PVC sewer pipe in the trench",
+      "_key": "e2d9f7a153ff"
+    },
+    {
+      "_type": "image",
+      "local": "walk",
+      "alt": "New sidewalk, curb and restored road",
+      "_key": "df203e7bbf32"
+    },
+    {
+      "_type": "image",
+      "local": "street",
+      "alt": "Finished street after sewer separation",
+      "_key": "1196b344fa8d"
+    }
+  ],
+  "homeService": "Sewer separation",
+  "homeClient": "University Endowment Lands",
+  "homePrime": "Neil Smith Construction"
+}

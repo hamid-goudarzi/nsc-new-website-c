@@ -1,0 +1,59 @@
+{
+  "_id": "page-contact",
+  "_type": "page",
+  "title": "Contact",
+  "slug": {
+    "_type": "slug",
+    "current": "contact"
+  },
+  "navKey": "",
+  "description": "Request a bid, send a prequalification request, or reach Neil Smith Construction Ltd. in Richmond and Langley, BC.",
+  "order": 50,
+  "hero": {
+    "kicker": "Contact",
+    "title": "Let’s break",
+    "highlight": "ground.",
+    "subtitle": "Send drawings, a tender package or a prequalification request. Call 604-644-5884 or email info@nscltd.ca.",
+    "image": {
+      "_type": "image",
+      "local": "gwide",
+      "alt": "Graded building pad beside the field at Guildford Park Secondary"
+    }
+  },
+  "blocks": [
+    {
+      "items": [
+        {
+          "anchor": "owners",
+          "title": "Owners and construction managers",
+          "text": "Tender packages, drawings, budget pricing and prequalification requests. Our estimating team responds within one business day.",
+          "link": "mailto:info@nscltd.ca?subject=Bid%20request",
+          "label": "Send a bid request",
+          "_key": "794586e82331"
+        },
+        {
+          "anchor": "partners",
+          "title": "Subcontractors and suppliers",
+          "text": "Introduce your company, trade or product, service area, safety program and insurance. We keep a list of qualified partners for upcoming work.",
+          "link": "mailto:info@nscltd.ca?subject=Subcontractor%20%2F%20supplier",
+          "label": "Register your interest",
+          "_key": "60038946b785"
+        },
+        {
+          "anchor": "jobs",
+          "title": "Careers",
+          "text": "Field, project delivery and engineering roles across Metro Vancouver.",
+          "link": "careers.html",
+          "label": "See open positions",
+          "_key": "1c4fef7bb9bc"
+        }
+      ],
+      "_type": "audiences",
+      "_key": "1656d4c5417b"
+    },
+    {
+      "_type": "offices",
+      "_key": "8941fe0a9472"
+    }
+  ]
+}

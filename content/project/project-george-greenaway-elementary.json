@@ -1,0 +1,88 @@
+{
+  "_id": "project-george-greenaway-elementary",
+  "_type": "project",
+  "name": "George Greenaway Elementary Addition",
+  "shortName": "George Greenaway Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "george-greenaway-elementary"
+  },
+  "type": "Elementary school addition",
+  "city": "Surrey",
+  "sector": "Schools",
+  "group": "schools",
+  "status": "Completed",
+  "live": false,
+  "year": "2025",
+  "order": 40,
+  "heroImage": {
+    "_type": "image",
+    "local": "ggreenaway-footing-excavation",
+    "alt": "NSC excavator and crew excavating and backfilling footing trenches"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #36",
+      "_key": "2cc10188ee6e"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Unitech Construction Management",
+      "_key": "ffaf13db7c0e"
+    },
+    {
+      "label": "Duration",
+      "value": "Aug to Dec 2025",
+      "_key": "bb847b94c0ea"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "297e43aedebb"
+    }
+  ],
+  "lede": "Site development for an elementary school addition in Surrey: excavation, utility trenching and grading, delivered in one fall season.",
+  "body": "We prepared the site for the new addition, with bulk and detailed excavation for the foundations and trenching for the new underground utilities.\n\nThe work ran from August to December 2025, alongside the building trades.",
+  "scope": [
+    "Bulk and detailed excavation for site development",
+    "Trenching for underground utilities",
+    "Site grading and preparation"
+  ],
+  "facts": [
+    {
+      "value": "5 months",
+      "label": "Aug to Dec 2025",
+      "_key": "979dacac9f45"
+    },
+    {
+      "value": "SD #36",
+      "label": "Surrey Schools",
+      "_key": "e97288e0ba08"
+    }
+  ],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "ggreenaway-excavator",
+      "alt": "NSC excavator stripping and stockpiling on the school site",
+      "_key": "eaf9bd2be586"
+    },
+    {
+      "_type": "image",
+      "local": "ggreenaway-subgrade",
+      "alt": "Excavated building pad with drain rock placement",
+      "_key": "3ea1c6ec53a6"
+    },
+    {
+      "_type": "image",
+      "local": "ggreenaway-compaction",
+      "alt": "Plate compactor on granular base between excavated footings",
+      "_key": "5b21b81d3356"
+    }
+  ],
+  "homeService": "Civil work",
+  "homeClient": "School District #36",
+  "homePrime": "Unitech"
+}

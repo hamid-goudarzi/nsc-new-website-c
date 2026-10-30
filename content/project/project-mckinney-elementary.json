@@ -1,0 +1,83 @@
+{
+  "_id": "project-mckinney-elementary",
+  "_type": "project",
+  "name": "McKinney Elementary School",
+  "shortName": "McKinney Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "mckinney-elementary"
+  },
+  "type": "Concrete and paving",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 210,
+  "heroImage": {
+    "_type": "image",
+    "local": "mckinney-trench",
+    "alt": "Water service trench with new PVC pipe and excavator at McKinney Elementary"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "cc0898e3fb60"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "b7a87945b2b4"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "a75469f65525"
+    }
+  ],
+  "lede": "Concrete curb and gutter, asphalt overlay and new paving at McKinney Elementary.",
+  "body": "",
+  "scope": [
+    "Concrete curb and gutter",
+    "Asphalt overlay and new paving"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "mckinney-tee",
+      "alt": "Ductile iron tee and valve tie-in on the water service at McKinney Elementary",
+      "_key": "db445563a498"
+    },
+    {
+      "_type": "image",
+      "local": "mckinney-chamber",
+      "alt": "Precast valve chamber set in the service trench at McKinney Elementary",
+      "_key": "20e7e4ebb950"
+    },
+    {
+      "_type": "image",
+      "local": "mckinney-watermain",
+      "alt": "New PVC water service bedded in clear crush at McKinney Elementary",
+      "_key": "d7b5b90b48ef"
+    },
+    {
+      "_type": "image",
+      "local": "mckinney-valve",
+      "alt": "Gate valve installed on the water service at McKinney Elementary",
+      "_key": "0924f329ba66"
+    },
+    {
+      "_type": "image",
+      "local": "mckinney-services",
+      "alt": "Parallel water service lines in an open trench at McKinney Elementary",
+      "_key": "2b534012b334"
+    }
+  ],
+  "homeService": "Concrete and paving",
+  "homeClient": "School District #38",
+  "homePrime": ""
+}

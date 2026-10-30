@@ -1,0 +1,27 @@
+---
+// "Where we work" map and project list, built from the projects' city field.
+const { projects, pre = '' } = Astro.props;
+// Map positions for Lower Mainland cities (x, y, label x, label y, label anchor).
+const PINS = {
+  'Vancouver (UEL)': [70.3, 140.7, 60.3, 122.7, 'start'], 'Vancouver': [132.4, 149.9, 146.4, 154.9, 'start'],
+  'Richmond': [136.6, 296.7, 124.6, 326.7, 'start'], 'Delta': [190.3, 416, 176.3, 421, 'end'],
+  'Burnaby': [264.8, 174.4, 278.8, 179.4, 'start'], 'New Westminster': [322.8, 235.5, 336.8, 240.5, 'start'],
+  'Surrey': [413.8, 263.1, 427.8, 268.1, 'start'], 'Coquitlam': [422.1, 116.2, 436.1, 121.2, 'start'],
+  'Chilliwack': [1117.2, 308.9, 1103.2, 313.9, 'end'],
+  'North Vancouver': [183, 74, 197, 79, 'start'], 'West Vancouver': [110, 61, 96, 56, 'end'],
+  'Port Moody': [386, 125, 372, 112, 'end'], 'Port Coquitlam': [470, 150, 484, 155, 'start'],
+  'Pitt Meadows': [509, 217, 523, 212, 'start'], 'Maple Ridge': [584, 219, 598, 224, 'start'],
+  'Langley': [545, 400, 531, 405, 'end'], 'White Rock': [432, 500, 446, 505, 'start'],
+  'Abbotsford': [842, 466, 856, 471, 'start'], 'Mission': [831, 345, 845, 350, 'start'], 'Tsawwassen': [180, 500, 166, 505, 'end'],
+};
+const HEAD = '<defs><linearGradient id="rv" x1="0" x2="1"><stop offset="0" stop-color="#2f6bff" stop-opacity=".9"/><stop offset="1" stop-color="#7aa6ff" stop-opacity=".35"/></linearGradient></defs><g class="grid"><line x1="0" y1="0" x2="0" y2="520"/><line x1="60" y1="0" x2="60" y2="520"/><line x1="120" y1="0" x2="120" y2="520"/><line x1="180" y1="0" x2="180" y2="520"/><line x1="240" y1="0" x2="240" y2="520"/><line x1="300" y1="0" x2="300" y2="520"/><line x1="360" y1="0" x2="360" y2="520"/><line x1="420" y1="0" x2="420" y2="520"/><line x1="480" y1="0" x2="480" y2="520"/><line x1="540" y1="0" x2="540" y2="520"/><line x1="600" y1="0" x2="600" y2="520"/><line x1="660" y1="0" x2="660" y2="520"/><line x1="720" y1="0" x2="720" y2="520"/><line x1="780" y1="0" x2="780" y2="520"/><line x1="840" y1="0" x2="840" y2="520"/><line x1="900" y1="0" x2="900" y2="520"/><line x1="960" y1="0" x2="960" y2="520"/><line x1="1020" y1="0" x2="1020" y2="520"/><line x1="1080" y1="0" x2="1080" y2="520"/><line x1="1140" y1="0" x2="1140" y2="520"/><line x1="1200" y1="0" x2="1200" y2="520"/><line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="60" x2="1200" y2="60"/><line x1="0" y1="120" x2="1200" y2="120"/><line x1="0" y1="180" x2="1200" y2="180"/><line x1="0" y1="240" x2="1200" y2="240"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="360" x2="1200" y2="360"/><line x1="0" y1="420" x2="1200" y2="420"/><line x1="0" y1="480" x2="1200" y2="480"/></g><path class="coast" d="M24.8 0.0 L33.1 45.9 L41.4 91.8 L33.1 130.0 L41.4 152.9 L49.7 198.8 L74.5 244.7 L82.8 305.9 L74.5 367.1 L99.3 428.2 L165.5 489.4 L182.1 520.0"/><path class="coast" d="M124.1 76.5 L165.5 99.4 L223.4 107.1 L289.7 99.4 L355.9 91.8"/><path class="river" d="M82.8 374.7 L165.5 351.8 L231.7 298.2 L322.8 244.7 L389.0 221.8 L480.0 244.7 L595.9 290.6 L728.3 328.8 L827.6 351.8 L976.6 321.2 L1117.2 260.0 L1191.7 214.1"/><text class="rlabel" x="662.1" y="359.4">FRASER RIVER</text>';
+const TAIL = '<g class="hq"><rect x="154.4" y="289.7" width="14" height="14" rx="3" transform="rotate(45 161.4 296.7)"/></g><g class="hq"><rect x="572.3" y="416.6" width="14" height="14" rx="3" transform="rotate(45 579.3 423.6)"/><text x="595.3" y="428.6">Langley yard</text></g>';
+const order = Object.keys(PINS);
+const cities = [...new Set(projects.map(p => p.city).filter(Boolean))]
+  .sort((a, b) => (order.indexOf(a) + 1 || 999) - (order.indexOf(b) + 1 || 999) || a.localeCompare(b));
+const by = c => projects.filter(p => p.city === c);
+const pins = cities.filter(c => PINS[c]).map(c => ({ c, live: by(c).some(p => p.live), xy: PINS[c] }));
+const label = 'Map of the Lower Mainland showing where NSC has built: ' + cities.join(', ');
+---
+<div class="rmap-w rv"><svg class="rmap" viewBox="0 0 1200 520" role="img" aria-label={label}><Fragment set:html={HEAD} />{pins.map(p => <g class={`pin${p.live ? ' live' : ''}`}><circle class="halo" cx={p.xy[0]} cy={p.xy[1]} r="18"/><circle class="dot" cx={p.xy[0]} cy={p.xy[1]} r="6"/><text x={p.xy[2]} y={p.xy[3]} text-anchor={p.xy[4]}>{p.c}</text></g>)}<Fragment set:html={TAIL} /></svg><div class="rkey mono"><span><i class="k1"></i>Project</span><span><i class="k2"></i>Underway now</span><span><i class="k3"></i>Head office and yard</span></div></div>
+<div class="rcols">{cities.map(c => <div class="rc"><h3>{c}</h3>{by(c).map(p => <a href={`${pre}projects/${p.slug.current}.html`}>{p.live && <i></i>}{p.shortName || p.name}</a>)}</div>)}</div>

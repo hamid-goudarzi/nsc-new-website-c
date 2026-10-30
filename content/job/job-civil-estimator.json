@@ -1,0 +1,9 @@
+{
+  "_id": "job-civil-estimator",
+  "_type": "job",
+  "title": "Civil Estimator",
+  "location": "Greater Vancouver",
+  "employment": "Full-time",
+  "open": true,
+  "order": 20
+}

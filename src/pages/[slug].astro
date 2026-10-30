@@ -1,0 +1,43 @@
+---
+// Every page built from blocks: Markets, Safety, About, Careers, Contact and any new page added in the admin.
+import Sub from '../layouts/Sub.astro';
+import Img from '../components/Img.astro';
+import Blocks from '../components/Blocks.astro';
+import { content } from '../lib/content.mjs';
+import { linkify, imgUrl } from '../lib/util.mjs';
+import { breadcrumbs, jobLd, organization } from '../lib/seo.mjs';
+
+export async function getStaticPaths() {
+  const { pages } = await content();
+  return pages.map(p => ({ params: { slug: p.slug.current }, props: { page: p } }));
+}
+const { page: p } = Astro.props;
+const h = p.hero || {};
+const c = await content();
+const blocks = p.blocks || [];
+const ld = [breadcrumbs(c.settings, [['Home', ''], [p.title, `${p.slug.current}.html`]])];
+if (blocks.some(b => b._type === 'jobs')) ld.push(...c.jobs.filter(j => j.description).map(j => jobLd(c.settings, j)));   // only jobs whose full description is shown on the page
+if (p.slug.current === 'about' || p.slug.current === 'contact') ld.push(organization(c));
+---
+<Sub title={p.title} fullTitle={p.seoTitle} description={p.description} jsonld={ld} ogImage={imgUrl(h.image)} active={p.navKey || p.slug.current} bodyClass="cp">
+{h.image ? (
+<header class="pihero cphero">
+  <div class="bg"><Img image={h.image} eager /></div>
+  <div class="wrap">
+    {h.kicker && <p class="mono kick">{h.kicker}</p>}
+    <h1>{h.title || p.title} {h.highlight && <span class="grad">{h.highlight}</span>}</h1>
+    {h.subtitle && <p class="pi-sub" set:html={linkify(h.subtitle)} />}
+  </div>
+</header>) : (
+<header class="pihero cphero plain">
+  <div class="wrap">
+    {h.kicker && <p class="mono kick">{h.kicker}</p>}
+    <h1>{h.title || p.title} {h.highlight && <span class="grad">{h.highlight}</span>}</h1>
+    {h.subtitle && <p class="pi-sub" set:html={linkify(h.subtitle)} />}
+  </div>
+</header>)}
+<main>
+<Blocks blocks={p.blocks || []} />
+</main>
+<div slot="after">{(p.blocks || []).some(b => b._type === 'gallery') && <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><button type="button" class="x">Close ✕</button><button type="button" class="pv" aria-label="Previous">←</button><button type="button" class="nx" aria-label="Next">→</button></div>}</div>
+</Sub>

@@ -1,0 +1,154 @@
+{
+  "_id": "page-about",
+  "_type": "page",
+  "title": "About",
+  "slug": {
+    "_type": "slug",
+    "current": "about"
+  },
+  "navKey": "about",
+  "description": "Neil Smith Construction Ltd. is a heavy civil contractor based in Richmond, BC, founded in 2018 on over fifty years of excavation and heavy civil experience.",
+  "order": 30,
+  "hero": {
+    "kicker": "About NSC",
+    "title": "Heavy civil.",
+    "highlight": "Built on experience.",
+    "subtitle": "A heavy civil contractor based in Richmond, BC, serving municipalities, school districts and builders across Metro Vancouver and the Fraser Valley.",
+    "image": {
+      "_type": "image",
+      "local": "tank2",
+      "alt": "NSC crew placing detention tank modules with CAT excavators behind, Guildford Park"
+    }
+  },
+  "blocks": [
+    {
+      "kicker": "Our story",
+      "title": "Founded on fifty years in the field.",
+      "text": "Neil Smith and Dennis Frederickson started Neil Smith Construction in 2018. Neil brought over fifty years in excavation, heavy civil and agricultural work, from small backfill jobs to major highway projects with crews of fifty or more. Dennis brought decades of experience in residential and commercial construction and project management.\n\nAfter Neil’s passing in 2022, Dennis took over leadership of the company and has guided it through steady growth: from utility upgrades and bulk excavation to school district programs, municipal sewer separation and specialized public facilities.\n\nToday the company carries the standards it was founded on: quality work, delivered safely, on time and on budget.",
+      "timeline": [
+        {
+          "when": "2018",
+          "what": "Founded in Richmond, BC",
+          "_key": "6c472ac475c5"
+        },
+        {
+          "when": "2020",
+          "what": "First prime contract with the City of Surrey",
+          "_key": "6e9136b47769"
+        },
+        {
+          "when": "2022",
+          "what": "Dennis Frederickson takes the lead",
+          "_key": "639f58704a0e"
+        },
+        {
+          "when": "2026",
+          "what": "School district programs, municipal sewer separation and public facilities across the region",
+          "_key": "548c8b628394"
+        }
+      ],
+      "_type": "story",
+      "_key": "93322bc0d737"
+    },
+    {
+      "text": "You’re only as strong as your weakest link.",
+      "attribution": "Dennis Frederickson · Owner and Director",
+      "_type": "quote",
+      "_key": "189b534666c2"
+    },
+    {
+      "kicker": "What we stand for",
+      "title": "Our values.",
+      "intro": "The standards the company was founded on, and the ones every new team member is held to.",
+      "columns": "4",
+      "items": [
+        {
+          "title": "Quality",
+          "text": "We build to a high standard, the first time, and stand behind it.",
+          "_key": "34b9fef8a481"
+        },
+        {
+          "title": "Safety",
+          "text": "Everyone goes home safe. Safe work is efficient work.",
+          "_key": "199c0806c911"
+        },
+        {
+          "title": "Schedule and cost",
+          "text": "We plan carefully and deliver on time and on budget.",
+          "_key": "70cb8d090e0f"
+        },
+        {
+          "title": "Teamwork and learning",
+          "text": "We keep learning and we work as one team, office to field.",
+          "_key": "ff6747efa76d"
+        }
+      ],
+      "_type": "numberedList",
+      "_key": "7fad669a356b"
+    },
+    {
+      "anchor": "leadership",
+      "kicker": "Leadership",
+      "title": "The people accountable for your project.",
+      "intro": "A Senior Project Manager on every project, a dedicated estimating division and superintendents with decades in the field.",
+      "teamTitle": "Project team",
+      "tight": true,
+      "_type": "people",
+      "_key": "a33d90f8312f"
+    },
+    {
+      "kicker": "How we deliver",
+      "title": "Structured for major projects.",
+      "intro": "Every job is run by a full project team, from the first estimate to the final as-built.",
+      "columns": "3",
+      "items": [
+        {
+          "title": "Estimating",
+          "text": "A dedicated estimating division prices tenders, prequalifications and change work for municipal, school district and private clients.",
+          "_key": "a3a71e26662b"
+        },
+        {
+          "title": "Pre-construction",
+          "text": "Traffic management plans, local bylaws and Good Neighbour programs are reviewed and in place before we mobilize.",
+          "_key": "be3fc271d4bc"
+        },
+        {
+          "title": "Project management",
+          "text": "A Senior Project Manager on every project, with a dedicated Project Manager running it day to day.",
+          "_key": "121b6c39777c"
+        },
+        {
+          "title": "Field operations",
+          "text": "Site superintendents and foremen lead the crews, with Trimble GPS grade control and digital reporting on site.",
+          "_key": "5d72e20c0d09"
+        },
+        {
+          "title": "Quality and close-out",
+          "text": "Coordinators manage QA/QC records, RFIs, testing and as-builts through to handover.",
+          "_key": "24a77f17a810"
+        },
+        {
+          "title": "Safety",
+          "text": "COR certified, with a Construction Safety Officer and a toolbox meeting at the start of every shift.",
+          "_key": "71342196cbcc"
+        }
+      ],
+      "tight": true,
+      "_type": "numberedList",
+      "_key": "17d10f0bdcdc"
+    },
+    {
+      "anchor": "region",
+      "kicker": "Where we work",
+      "title": "Across the Lower Mainland.",
+      "intro": "Head office in Richmond, yard in Langley, and work from the University Endowment Lands to Chilliwack.",
+      "tight": true,
+      "_type": "region",
+      "_key": "3488e18d9658"
+    },
+    {
+      "_type": "cta",
+      "_key": "258f4a009503"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "_id": "job-civil-foreman",
+  "_type": "job",
+  "title": "Civil Foreman",
+  "location": "Greater Vancouver",
+  "employment": "Full-time",
+  "open": true,
+  "order": 40
+}

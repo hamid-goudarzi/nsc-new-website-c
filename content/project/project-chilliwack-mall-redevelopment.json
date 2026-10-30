@@ -1,0 +1,57 @@
+{
+  "_id": "project-chilliwack-mall-redevelopment",
+  "_type": "project",
+  "name": "Chilliwack Mall Redevelopment",
+  "shortName": "Chilliwack Mall",
+  "slug": {
+    "_type": "slug",
+    "current": "chilliwack-mall-redevelopment"
+  },
+  "type": "Civil work",
+  "city": "Chilliwack",
+  "sector": "Development",
+  "group": "development",
+  "status": "Completed",
+  "live": false,
+  "year": "2021",
+  "order": 170,
+  "heroImage": {
+    "_type": "image",
+    "local": "chilliwack-site-plan",
+    "alt": "Building C site plan showing new storm and sanitary service connections, Chilliwack Mall",
+    "tag": "drawing"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "SmartCentres",
+      "_key": "2b296d2b4ad7"
+    },
+    {
+      "label": "Construction manager",
+      "value": "Wright Construction",
+      "_key": "2f3ef9053e8b"
+    },
+    {
+      "label": "Completed",
+      "value": "2021",
+      "_key": "484fdc54403d"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "65088881699b"
+    }
+  ],
+  "lede": "Civil works for the redevelopment of Chilliwack Mall.",
+  "body": "Delivered for SmartCentres with Wright Construction as construction manager.",
+  "scope": [
+    "Civil works"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [],
+  "homeService": "Civil work",
+  "homeClient": "SmartCentres",
+  "homePrime": "Wright Construction"
+}

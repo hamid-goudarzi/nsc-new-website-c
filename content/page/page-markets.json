@@ -1,0 +1,33 @@
+{
+  "_id": "page-markets",
+  "_type": "page",
+  "title": "Markets",
+  "slug": {
+    "_type": "slug",
+    "current": "markets"
+  },
+  "navKey": "markets",
+  "description": "Heavy civil work for municipalities, school districts, public facilities and private development across Metro Vancouver and the Fraser Valley.",
+  "order": 10,
+  "hero": {
+    "kicker": "Markets",
+    "title": "Built for the public,",
+    "highlight": "and the people who build for it.",
+    "subtitle": "We work for municipalities, school districts and public agencies, and for the construction managers and builders who deliver for them.",
+    "image": {
+      "_type": "image",
+      "local": "qe-exc",
+      "alt": "NSC crew and Kobelco excavator on road works in New Westminster"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "marketsList",
+      "_key": "1704d0f079e6"
+    },
+    {
+      "_type": "cta",
+      "_key": "f3ae8d28a529"
+    }
+  ]
+}

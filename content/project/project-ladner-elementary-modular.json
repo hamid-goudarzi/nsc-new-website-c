@@ -1,0 +1,91 @@
+{
+  "_id": "project-ladner-elementary-modular",
+  "_type": "project",
+  "name": "Ladner Elementary Modular Addition",
+  "shortName": "Ladner Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "ladner-elementary-modular"
+  },
+  "type": "Modular classroom addition",
+  "city": "Delta",
+  "sector": "Schools",
+  "group": "schools",
+  "status": "Completed",
+  "live": false,
+  "year": "2025",
+  "order": 50,
+  "heroImage": {
+    "_type": "image",
+    "local": "ladner-watermain-trench",
+    "alt": "NSC excavator beside an open trench with new water service pipe at Ladner Elementary"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #37",
+      "_key": "8ee13e270ec5"
+    },
+    {
+      "label": "Construction manager",
+      "value": "Unitech Construction Management",
+      "_key": "e7d5b243b40f"
+    },
+    {
+      "label": "Duration",
+      "value": "Apr to Dec 2025",
+      "_key": "fab7bcd6a154"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "68a7d14c9679"
+    }
+  ],
+  "lede": "Demolition, utilities and paving to make room for new modular classrooms at Ladner Elementary.",
+  "body": "We removed existing site infrastructure and prepared the ground for the modular buildings, then upgraded the storm, sanitary and water services to suit.\n\nThe job finished with reinforced concrete sidewalks and slabs, and new paving across the parking area and school yard.",
+  "scope": [
+    "Demolition and removal of existing site infrastructure",
+    "Site preparation for modular building installation",
+    "Storm and sanitary sewer system upgrade",
+    "Fire and domestic water upgrade",
+    "Reinforced concrete sidewalk and slabs",
+    "Asphalt overlay and new paving at the parking area and school yard"
+  ],
+  "facts": [
+    {
+      "value": "9 months",
+      "label": "Apr to Dec 2025",
+      "_key": "f605a08f29f6"
+    },
+    {
+      "value": "SD #37",
+      "label": "Delta School District",
+      "_key": "750c03d38e3a"
+    }
+  ],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "ladner-footing-trench",
+      "alt": "Excavated strip footing trench for the modular classrooms",
+      "_key": "c184072287d2"
+    },
+    {
+      "_type": "image",
+      "local": "ladner-site-prep",
+      "alt": "Excavated modular pad with geotextile and granular base",
+      "_key": "69b7ac325d80"
+    },
+    {
+      "_type": "image",
+      "local": "ladner-finished-pad",
+      "alt": "Completed modular classroom pad and surrounding site works",
+      "_key": "8c7f311e4e63"
+    }
+  ],
+  "homeService": "Civil, demolition & paving",
+  "homeClient": "School District #37",
+  "homePrime": "Unitech Construction Mgmt"
+}

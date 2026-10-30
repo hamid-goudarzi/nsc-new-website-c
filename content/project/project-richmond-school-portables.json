@@ -1,0 +1,58 @@
+{
+  "_id": "project-richmond-school-portables",
+  "_type": "project",
+  "name": "Richmond School District Portables",
+  "shortName": "Richmond SD Portables",
+  "slug": {
+    "_type": "slug",
+    "current": "richmond-school-portables"
+  },
+  "type": "Civil work",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 150,
+  "heroImage": {
+    "_type": "image",
+    "local": "richmond-portables-plan",
+    "alt": "Site plan for relocating a portable from Spul'u'kwuks Elementary to Talmey Elementary, Richmond",
+    "tag": "drawing"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "a1e0d5d42d15"
+    },
+    {
+      "label": "Construction manager",
+      "value": "Unitech Construction Management",
+      "_key": "3decaac07a76"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "7fc39e2da9c0"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "8b14b91370f1"
+    }
+  ],
+  "lede": "Civil works for portable classrooms across Richmond School District.",
+  "body": "Site preparation and servicing for portables at Richmond schools, delivered with Unitech Construction Management.",
+  "scope": [
+    "Site preparation",
+    "Servicing for portable classrooms"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [],
+  "homeService": "Civil work",
+  "homeClient": "School District #38",
+  "homePrime": "Unitech Construction Mgmt"
+}

@@ -1,0 +1,116 @@
+---
+// Renders a page's content blocks. Each block type matches one of the section styles used across the site,
+// so new pages built in the admin look like the rest of the site.
+import Img from './Img.astro';
+import Cta from './Cta.astro';
+import Region from './Region.astro';
+import { content } from '../lib/content.mjs';
+import { linkify, paras, pad2, initials, href, imgUrl, tagOf, tel, md, embedUrl } from '../lib/util.mjs';
+const { blocks = [], pre = '' } = Astro.props;
+const { settings: s, markets, people, jobs, projects } = await content();
+
+// An "offices" block straight after "audiences" shares its section, as on the Contact page.
+const groups = [];
+for (const b of blocks) {
+  if (b._type === 'offices' && groups.at(-1)?.[0]._type === 'audiences') groups.at(-1).push(b);
+  else groups.push([b]);
+}
+const sec = (b, extra = '') => ({ class: `sec${extra}`, id: b.anchor || undefined, style: b.tight ? 'padding-top:0' : undefined });
+const dlCls = c => c === '2' ? 'dl two' : c === '4' ? 'dl four' : 'dl';
+const leaders = people.filter(p => p.group === 'leadership');
+const team = people.filter(p => p.group !== 'leadership');
+const jobLink = j => j.applyLink ? href(j.applyLink, pre) : `mailto:${s.email}?subject=${encodeURIComponent(j.title + ' application')}`;
+const pickProjects = b => (b.projects?.length ? b.projects : projects.filter(p => !b.group || p.group === b.group)).slice(0, b.limit || 99);
+---
+{groups.map(([b, ...more]) => {
+  const t = b._type;
+  if (t === 'numberedList') return (
+    <section {...sec(b)}><div class="wrap">
+      <div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv" set:html={linkify(b.intro)} />}</div>
+      <ol class={dlCls(b.columns)}>{(b.items || []).map((it, i) => <li class="rv"><span class="mono">{pad2(i)}</span><h3>{it.title}</h3><p set:html={linkify(it.text)} /></li>)}</ol>
+      {b.photos?.length > 0 && <div class="sstrip">{b.photos.map(p => <figure class="rv"><Img image={p} pre={pre} sizes="(max-width:700px) 50vw, 25vw" /></figure>)}</div>}
+    </div></section>);
+  if (t === 'story') return (
+    <section {...sec(b)}><div class="wrap st-g2">
+      <div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>
+      <div class="st-txt">{paras(b.text).map(p => <p class="rv" set:html={linkify(p)} />)}</div>
+    </div>
+    {b.timeline?.length > 0 && <ol class="st-tl2 wrap">{b.timeline.map(x => <li class="rv"><b>{x.when}</b><span>{x.what}</span></li>)}</ol>}
+    </section>);
+  if (t === 'quote') return (
+    <section class="quote-band" id={b.anchor || undefined}><div class="wrap"><blockquote class="rv">“{b.text}”</blockquote>{b.attribution && <p class="mono">{b.attribution}</p>}</div></section>);
+  if (t === 'people') return (
+    <section {...sec(b)}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv">{b.intro}</p>}</div>
+      <div class="people lead3">{leaders.map(p => <article class="person lead rv">{p.photo ? <Img image={p.photo} pre={pre} class="ini ph" sizes="96px" alt="" /> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.bio}</p></article>)}</div>
+      {team.length > 0 && <h3 class="mono" style="margin:46px 0 16px;color:var(--muted)">{b.teamTitle || 'Project team'}</h3>}
+      {team.length > 0 && <div class="people">{team.map(p => <article class="person rv">{p.photo ? <Img image={p.photo} pre={pre} class="ini ph" sizes="96px" alt="" /> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.bio}</p></article>)}</div>}
+    </div></section>);
+  if (t === 'region') return (
+    <section class="sec region" id={b.anchor || undefined} style={b.tight ? 'padding-top:0' : undefined}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv">{b.intro}</p>}</div><Region projects={projects} pre={pre} /></div></section>);
+  if (t === 'corBand') return (
+    <section class="sec cor-band" id={b.anchor || undefined}><div class="wrap cb-g">
+      <div class="cb-badge rv"><b>COR</b><span>Certified</span><small>BC Construction Safety Alliance</small></div>
+      <div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}{b.highlight && ' '}{b.highlight && <span class="grad">{b.highlight}</span>}</h2>
+      {b.text && <p class="rv" style="color:#c9d0dc;margin-top:20px;max-width:58ch">{b.text}</p>}
+      {b.buttonLabel && <p class="rv" style="margin-top:22px"><a class="btn btn-glass" href={href(b.buttonLink, pre)}>{b.buttonLabel}</a></p>}</div>
+    </div></section>);
+  if (t === 'cards') return (
+    <section {...sec(b)}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv">{b.intro}</p>}</div>
+      <div class="paths">{(b.items || []).map(it => { const inner = <Fragment><Img image={it.image} pre={pre} sizes="(max-width:900px) 100vw, 33vw" alt={it.image?.alt || it.title} /><div><h3>{it.title}</h3><p>{it.text}</p></div></Fragment>; return it.link ? <a class="path rv" href={href(it.link, pre)} style="text-decoration:none;color:inherit">{inner}</a> : <article class="path rv">{inner}</article> })}</div>
+    </div></section>);
+  if (t === 'jobs') return (
+    <section {...sec(b)}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv" set:html={linkify(b.intro)} />}</div>
+      {jobs.length ? <div class="jobs2">{jobs.map(j => j.description ? (
+        <article class="job2 jx rv" id={`job-${j._id}`}><div><h3>{j.title}</h3><span class="mono">{[j.location, j.employment, j.salary].filter(Boolean).join(' · ')}</span>{j.summary && <p class="jd">{j.summary}</p>}
+          <details class="jdet"><summary>Full job description</summary><div class="prose" set:html={md(j.description)} /></details></div><a class="arr" href={jobLink(j)}>Apply ↗</a></article>)
+        : <a class="job2 rv" href={jobLink(j)}><div><h3>{j.title}</h3><span class="mono">{[j.location, j.employment, j.salary].filter(Boolean).join(' · ')}</span>{j.summary && <p class="jd">{j.summary}</p>}</div><span class="arr">Apply ↗</span></a>)}</div>
+        : <p class="rv" style="color:var(--muted)">{b.emptyText || 'No openings right now. Send your resume anyway and we will keep it on file.'}</p>}
+    </div></section>);
+  if (t === 'audiences') return (
+    <section class="sec" id={b.anchor || undefined}><div class="wrap"><div class="auds">{(b.items || []).map(a => <article class="aud rv" id={a.anchor || undefined}><p class="mono kick">{a.title}</p><p>{a.text}</p>{a.label && <a class="btn btn-glass" href={href(a.link, pre)}>{a.label} →</a>}</article>)}</div>
+    {more.length > 0 && <div class="offices">
+      {(s.offices || []).map(o => <div class="off rv"><p class="mono kick">{o.label}</p><h3 set:html={linkify(o.address)} />{o.mapUrl && <a href={o.mapUrl} target="_blank" rel="noopener">Open in Maps ↗</a>}</div>)}
+      <div class="off rv"><p class="mono kick">Reach us</p><h3><a href={tel(s.phone)}>{s.phone}</a><br><a href={`mailto:${s.email}`}>{s.email}</a></h3>{s.safetyEmail && <span>Safety: <a href={`mailto:${s.safetyEmail}`}>{s.safetyEmail}</a></span>}</div>
+    </div>}</div></section>);
+  if (t === 'offices') return (
+    <section {...sec(b)}><div class="wrap"><div class="offices">
+      {(s.offices || []).map(o => <div class="off rv"><p class="mono kick">{o.label}</p><h3 set:html={linkify(o.address)} />{o.mapUrl && <a href={o.mapUrl} target="_blank" rel="noopener">Open in Maps ↗</a>}</div>)}
+      <div class="off rv"><p class="mono kick">Reach us</p><h3><a href={tel(s.phone)}>{s.phone}</a><br><a href={`mailto:${s.email}`}>{s.email}</a></h3>{s.safetyEmail && <span>Safety: <a href={`mailto:${s.safetyEmail}`}>{s.safetyEmail}</a></span>}</div>
+    </div></div></section>);
+  if (t === 'marketsList') return (
+    <Fragment>
+    <div class="pchips"><div class="wrap"><nav aria-label="Markets">{markets.map(m => <a href={`#${m.anchor}`}>{m.title}</a>)}</nav></div></div>
+    {markets.map((m, i) => (
+      <section class={`mrow${i % 2 ? ' rev' : ''}`} id={m.anchor}><div class="wrap mr-g">
+        {m.projects?.[0] ? <a class="mr-ph rv" href={`${pre}projects/${m.projects[0].slug.current}.html`}><Img image={m.image} pre={pre} sizes="(max-width:900px) 100vw, 55vw" /><span class="nsc-badge"><img src={`${pre}nsc-logo.jpg`} alt="">NSC built</span></a>
+          : <div class="mr-ph rv"><Img image={m.image} pre={pre} sizes="(max-width:900px) 100vw, 55vw" /></div>}
+        <div class="mr-tx"><p class="mono kick">{pad2(i)} · Market</p><h2>{m.title}</h2><p class="mr-d">{m.description}</p>
+          <div class="mr-cols"><div><h3 class="mono">What we deliver</h3><ul>{(m.deliver || []).map(x => <li>{x}</li>)}</ul></div>
+          <div><h3 class="mono">Owners and partners</h3><ul class="cl">{(m.owners || []).map(x => <li>{x}</li>)}</ul></div></div>
+          {m.projects?.length > 0 && <Fragment><h3 class="mono" style="margin-top:26px">Projects</h3><div class="plinks">{m.projects.map(p => <a href={`${pre}projects/${p.slug.current}.html`}>{p.live && <i></i>}{p.shortName || p.name}<b>↗</b></a>)}</div></Fragment>}</div>
+      </div></section>))}
+    </Fragment>);
+  if (t === 'cta') return <Cta pre={pre} title={b.title} text={b.text} />;
+  // ---- general-purpose blocks for new pages ----
+  if (t === 'richText') return (
+    <section {...sec(b)}><div class="wrap prose-w">{b.kicker && <p class="mono kick">{b.kicker}</p>}{b.title && <h2 class="h2">{b.title}</h2>}<div class="prose rv" set:html={md(b.body)} /></div></section>);
+  if (t === 'imageText') return (
+    <section class={`mrow${b.reverse ? ' rev' : ''}`} id={b.anchor || undefined}><div class="wrap mr-g">
+      <div class="mr-ph rv"><Img image={b.image} pre={pre} sizes="(max-width:900px) 100vw, 55vw" /></div>
+      <div class="mr-tx">{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2>{b.title}</h2><div class="prose" set:html={md(b.body)} />
+        {b.buttonLabel && <p style="margin-top:24px"><a class="btn btn-glass" href={href(b.buttonLink, pre)}>{b.buttonLabel} →</a></p>}</div>
+    </div></section>);
+  if (t === 'gallery') return (
+    <section {...sec(b)}><div class="wrap">{b.kicker && <p class="mono kick">{b.kicker}</p>}{b.title && <h2 style="font-size:clamp(1.8rem,1rem + 2.6vw,3.4rem);margin-top:18px">{b.title}</h2>}
+      <div class="gal">{(b.images || []).map(g => <button type="button" class="rv" data-full={imgUrl(g, pre, 2560)} aria-label={`Open image: ${g.alt || ''}`}><Img image={g} pre={pre} sizes="(max-width:700px) 100vw, 33vw" />{tagOf(g) && <span class="g-tag mono">{tagOf(g)}</span>}</button>)}</div>
+    </div></section>);
+  if (t === 'projectsGrid') return (
+    <section {...sec(b)}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv">{b.intro}</p>}</div>
+      <div class="pgrid" style="margin-top:34px">{pickProjects(b).map(p => (
+        <a class="pcard rv" href={`${pre}projects/${p.slug.current}.html`}><div class="pc-img"><Img image={p.heroImage} pre={pre} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw" /><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
+        <div class="pc-b"><h3>{p.name}</h3><p>{p.type}</p><dl><div><dt>Where</dt><dd>{p.city}</dd></div><div><dt>Year</dt><dd>{p.year}</dd></div></dl><span class="pc-ar" aria-hidden="true">↗</span></div></a>))}</div>
+    </div></section>);
+  if (t === 'video') return (
+    <section {...sec(b)}><div class="wrap">{b.title && <h2 class="h2" style="margin-bottom:28px">{b.title}</h2>}<div class="vid rv"><iframe src={embedUrl(b.url)} title={b.title || 'Video'} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></div></section>);
+  return null;
+})}

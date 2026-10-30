@@ -1,0 +1,83 @@
+{
+  "_id": "project-agnes-supportive-housing",
+  "_type": "project",
+  "name": "Agnes Supportive Housing",
+  "shortName": "Agnes Supportive Housing",
+  "slug": {
+    "_type": "slug",
+    "current": "agnes-supportive-housing"
+  },
+  "type": "Earthworks and site services",
+  "city": "New Westminster",
+  "sector": "Development",
+  "group": "underway",
+  "status": "In progress",
+  "live": true,
+  "year": "Ongoing",
+  "order": 70,
+  "heroImage": {
+    "_type": "image",
+    "local": "agnes-excavator-loading",
+    "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "Keller Construction Ltd.",
+      "_key": "ce1d2e316abb"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Keller Construction Ltd.",
+      "_key": "3befd2d98a33"
+    },
+    {
+      "label": "Status",
+      "value": "In progress",
+      "_key": "157034f1c90b"
+    }
+  ],
+  "lede": "Earthworks and site services for a supportive housing building in New Westminster.",
+  "body": "We are carrying the excavation and site servicing for the new building, working for Keller Construction as prime contractor.",
+  "scope": [
+    "Excavation and earthworks",
+    "Site servicing"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "agnes-bulk-excavation",
+      "alt": "NSC excavator and grade checker in the bulk excavation for the building footprint",
+      "_key": "bc881da7def1"
+    },
+    {
+      "_type": "image",
+      "local": "agnes-manhole-shoring",
+      "alt": "NSC crew setting a precast manhole base inside a trench shoring box",
+      "_key": "7498696be641"
+    },
+    {
+      "_type": "image",
+      "local": "agnes-hydrant",
+      "alt": "New fire hydrant and ductile iron lead in an open trench",
+      "_key": "05c2b275218a"
+    },
+    {
+      "_type": "image",
+      "local": "agnes-watermain",
+      "alt": "Ductile iron water main with restrained joints in the trench",
+      "_key": "89eba6336a78"
+    },
+    {
+      "_type": "image",
+      "local": "agnes-manholes",
+      "alt": "Precast manholes and PVC service connections set on granular bedding",
+      "_key": "e827bcca7d1e"
+    }
+  ],
+  "homeService": "Earthworks & site services",
+  "homeClient": "Keller Construction",
+  "homePrime": "Keller Construction"
+}

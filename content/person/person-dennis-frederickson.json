@@ -1,0 +1,10 @@
+{
+  "_id": "person-dennis-frederickson",
+  "_type": "person",
+  "name": "Dennis Frederickson",
+  "role": "Owner, Co-Founder and Director",
+  "bio": "Over 40 years in construction and project management across residential, commercial, utility and earthmoving projects. Has led the company since 2022.",
+  "group": "leadership",
+  "order": 10,
+  "shortBio": "Over 40 years in construction and project management across residential, commercial, utility and earthmoving projects."
+}

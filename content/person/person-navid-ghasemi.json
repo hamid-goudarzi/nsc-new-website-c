@@ -1,0 +1,10 @@
+{
+  "_id": "person-navid-ghasemi",
+  "_type": "person",
+  "name": "Navid Ghasemi",
+  "role": "General Manager, Senior Project Manager",
+  "bio": "16 years in the industry. Bachelor’s in building engineering, master’s degrees in project management and construction engineering. Has managed projects from $1M to $10M.",
+  "group": "leadership",
+  "order": 30,
+  "shortBio": "16 years in the industry, with master’s degrees in project management and construction engineering. Has managed projects from $1M to $10M."
+}

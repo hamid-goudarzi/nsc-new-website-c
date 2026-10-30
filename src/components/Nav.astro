@@ -1,0 +1,15 @@
+---
+// Top navigation and mobile menu for every page except the home page.
+import { href } from '../lib/util.mjs';
+const { settings, pre = '', active = '' } = Astro.props;
+const nav = settings.nav || [];
+const isOn = n => active && (n._key === active || n.link.replace(/\.html.*$/, '') === active);
+---
+<nav class="pnav" aria-label="Main">
+  <a class="logo" href={`${pre}index.html`}><img src={`${pre}nsc-logo.jpg`} alt=""><b>{settings.companyName}</b></a>
+  <span class="sp"></span>
+  {nav.map(n => <a class={`lk${isOn(n) ? ' on' : ''}`} href={href(n.link, pre)} aria-current={isOn(n) ? 'page' : undefined}>{n.label}</a>)}
+  <a class="btn btn-blue" href={`${pre}contact.html`}>Request a bid</a>
+  <button class="pburger" type="button" aria-expanded="false" aria-controls="pmenu">Menu</button>
+</nav>
+<div class="pmenu" id="pmenu">{nav.map(n => <a href={href(n.link, pre)}>{n.label}</a>)}<a href={`${pre}contact.html`}>Contact</a></div>

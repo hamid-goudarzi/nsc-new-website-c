@@ -1,0 +1,60 @@
+---
+import Sub from '../../layouts/Sub.astro';
+import Img from '../../components/Img.astro';
+import Cta from '../../components/Cta.astro';
+import { content } from '../../lib/content.mjs';
+import { paras, imgUrl, tagOf } from '../../lib/util.mjs';
+import { breadcrumbs, projectLd } from '../../lib/seo.mjs';
+
+export async function getStaticPaths() {
+  const { projects } = await content();
+  return projects.map((p, i) => ({ params: { slug: p.slug.current }, props: { p, next: projects[(i + 1) % projects.length] } }));
+}
+const { p, next } = Astro.props;
+const { projectsPage: pp, settings } = await content();
+const ld = [breadcrumbs(settings, [['Home', ''], ['Projects', 'projects/index.html'], [p.name, `projects/${p.slug.current}.html`]]), projectLd(settings, p)];
+const pre = '../';
+const tag = tagOf(p.heroImage);
+const hcls = tag === 'Drawing' ? 'phero dwg' : tag === 'Illustration' ? 'phero illus' : 'phero';
+const gal = p.gallery || [];
+---
+<Sub title={p.name} fullTitle={p.seoTitle || `${p.name} | ${settings.companyName}`} description={p.description || p.lede} jsonld={ld} ogImage={imgUrl(p.heroImage)} active="projects" pre={pre}>
+<header class={hcls}>
+  <div class={`bg${tag === 'Illustration' ? ' ill' : ''}`}><Img image={p.heroImage} pre={pre} eager /></div>{tag && <span class="ill-tag mono">{tag}</span>}
+  <div class="wrap ph-in">
+    <a class="back" href="index.html">← All projects</a>
+    <div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span><span class="chip">{p.type}</span><span class="chip">{p.city}</span></div>
+    <h1>{p.name}</h1>
+    <p class="ph-sub">{[p.type, p.city, p.year].filter(Boolean).join(' · ')}</p>
+  </div>
+  {hcls === 'phero' && <span class="nsc-badge"><img src={`${pre}nsc-logo.jpg`} alt="">NSC built</span>}
+</header>
+<main>
+<div class="wrap"><dl class="fields">{(p.details || []).map(f => <div><dt>{f.label}</dt><dd>{f.value}</dd></div>)}</dl></div>
+<section class="sec">
+  <div class="wrap">
+    <div class="story">
+      <div class="body">
+        <p class="mono kick">About the project</p>
+        <p class="lede">{p.lede}</p>
+        {paras(p.body).map(t => <p>{t}</p>)}
+      </div>
+      {p.scope?.length > 0 && <aside class="scope rv"><h2>Scope of work</h2><ol>{p.scope.map(s => <li>{s}</li>)}</ol></aside>}
+    </div>
+    {p.facts?.length > 0 && <div class="facts">{p.facts.map(f => <div class="fact rv"><b>{f.value}</b><span>{f.label}</span></div>)}</div>}
+    {p.timeline?.length > 0 && <div class="tl"><p class="mono kick">How the job ran</p><ol>{p.timeline.map(t => <li class="rv"><b>{t.when}</b><span>{t.what}</span></li>)}</ol></div>}
+  </div>
+</section>
+{gal.length > 0 && <section class="sec" style="padding-top:0"><div class="wrap"><p class="mono kick">On site</p>
+  <h2 style="font-size:clamp(1.8rem,1rem + 2.6vw,3.4rem);margin-top:18px">From the field.</h2><div class="gal" id="gal">
+  {gal.map(g => <button type="button" class="rv" data-full={imgUrl(g, pre, 2560)} aria-label={`Open image: ${g.alt || ''}`}><Img image={g} pre={pre} sizes="(max-width:700px) 100vw, 33vw" />{tagOf(g) && <span class="g-tag mono">{tagOf(g)}</span>}</button>)}
+  </div></div></section>}
+{next && next !== p && <section>
+  <div class="wrap">
+    <a class="next" href={`${next.slug.current}.html`}><span class="mono">Next project</span><h2>{next.name} <span class="ar">→</span></h2></a>
+  </div>
+</section>}
+<Cta pre={pre} title={pp.ctaTitle || 'Planning a similar project?'} text={pp.ctaText} bidLink="../contact.html" />
+</main>
+<div slot="after">{gal.length > 0 && <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><button type="button" class="x">Close ✕</button><button type="button" class="pv" aria-label="Previous">←</button><button type="button" class="nx" aria-label="Next">→</button></div>}</div>
+</Sub>

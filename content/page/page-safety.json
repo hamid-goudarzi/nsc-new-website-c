@@ -1,0 +1,138 @@
+{
+  "_id": "page-safety",
+  "_type": "page",
+  "title": "Safety & Environment",
+  "slug": {
+    "_type": "slug",
+    "current": "safety"
+  },
+  "navKey": "safety",
+  "description": "COR certified health and safety program, a Construction Safety Officer and a toolbox meeting every shift. Environmental care on every site.",
+  "order": 20,
+  "hero": {
+    "kicker": "Safety & Environment",
+    "title": "Everyone home.",
+    "highlight": "Every shift.",
+    "subtitle": "Safety is how we plan, price and run every job. It is the first thing we talk about every morning.",
+    "image": {
+      "_type": "image",
+      "local": "tank",
+      "alt": "NSC crew in hard hats and vests on the Guildford Park detention tank"
+    }
+  },
+  "blocks": [
+    {
+      "kicker": "Health and safety",
+      "title": "A program, not a poster.",
+      "intro": "Our Certificate of Recognition confirms an audited health and safety program. It is backed by people on site every day: a Construction Safety Officer, experienced superintendents and foremen, and crews who look out for each other.",
+      "columns": "3",
+      "items": [
+        {
+          "title": "COR certified",
+          "text": "Our health and safety program is audited and certified under the Certificate of Recognition program of the BC Construction Safety Alliance.",
+          "_key": "8b4e001e2b88"
+        },
+        {
+          "title": "Safety officer on our sites",
+          "text": "A dedicated Construction Safety Officer monitors site activity, identifies hazards and works with every crew on compliance.",
+          "_key": "01f1bc0d4f8b"
+        },
+        {
+          "title": "Toolbox meeting every shift",
+          "text": "Every day starts with a toolbox meeting: the day’s tasks, the hazards that come with them and how we control them.",
+          "_key": "a5eb907b9a9d"
+        },
+        {
+          "title": "Excavation and shoring",
+          "text": "Trench boxes, shoring and safe access on every excavation, checked before anyone goes in.",
+          "_key": "91dc8e512ff6"
+        },
+        {
+          "title": "Locates before we dig",
+          "text": "Pre-locates, BC 1 Call and soil sampling before the first sawcut, so we know what is in the ground.",
+          "_key": "3d5e01fe642a"
+        },
+        {
+          "title": "Traffic and public safety",
+          "text": "Traffic management plans, flaggers and fenced work zones keep the public, students and residents clear of the work.",
+          "_key": "38836477b53b"
+        }
+      ],
+      "photos": [
+        {
+          "_type": "image",
+          "local": "agnes-manhole-shoring",
+          "alt": "NSC crew member setting a manhole base inside a shoring box",
+          "_key": "e1ccc1960ca2"
+        },
+        {
+          "_type": "image",
+          "local": "ubc-shoring",
+          "alt": "Excavator setting a trench shoring box at UBC",
+          "_key": "acf526f760e6"
+        },
+        {
+          "_type": "image",
+          "local": "mhcrew",
+          "alt": "NSC crew in full PPE setting a precast manhole",
+          "_key": "ac4ea25129a8"
+        },
+        {
+          "_type": "image",
+          "local": "qe-trench",
+          "alt": "NSC crew member in a deep trench on the Queen Elizabeth road works",
+          "_key": "9a8d4c9897d8"
+        }
+      ],
+      "_type": "numberedList",
+      "_key": "ba1e8bf063b1"
+    },
+    {
+      "kicker": "Certificate of Recognition",
+      "title": "Audited. Certified.",
+      "highlight": "Practised daily.",
+      "text": "COR is awarded to employers whose health and safety programs meet the provincial standard, verified by an external audit. For owners and construction managers it means a contractor whose program is documented, audited and in use on every site.",
+      "buttonLabel": "safety@nscltd.ca",
+      "buttonLink": "mailto:safety@nscltd.ca",
+      "_type": "corBand",
+      "_key": "7fbb3b7deea9"
+    },
+    {
+      "kicker": "Environment and community",
+      "title": "Good neighbours on every site.",
+      "intro": "Our work happens in neighbourhoods, schoolyards and campuses. We plan it to protect the ground, the water and the people around us.",
+      "columns": "2",
+      "items": [
+        {
+          "title": "Erosion and sediment control",
+          "text": "Sediment control measures on every site to keep soil and runoff out of storm systems and waterways.",
+          "_key": "260e923c11a5"
+        },
+        {
+          "title": "Good Neighbour programs",
+          "text": "Before we mobilize we review local bylaws and Good Neighbour programs for noise, dust, access and work hours.",
+          "_key": "f10804f7d7b9"
+        },
+        {
+          "title": "Occupied sites",
+          "text": "Schools, campuses and homes stay open while we work. At Queen Elizabeth Elementary, sewer work was scheduled over spring break.",
+          "_key": "715d5ff0d00e"
+        },
+        {
+          "title": "Services kept running",
+          "text": "On Kingston Road, every property stayed connected while new sewer and water services were built and transferred.",
+          "_key": "b85a019a8738"
+        }
+      ],
+      "tight": true,
+      "_type": "numberedList",
+      "_key": "304d39170fc1"
+    },
+    {
+      "title": "Prequalifying contractors?",
+      "text": "We provide our safety program documentation, COR certificate and prequalification package on request.",
+      "_type": "cta",
+      "_key": "797bddabbd0a"
+    }
+  ]
+}

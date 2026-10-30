@@ -1,0 +1,463 @@
+{
+  "_id": "home",
+  "_type": "home",
+  "heroChip": "Heavy civil · Metro Vancouver & Fraser Valley",
+  "heroTitle": "Built below.",
+  "heroHighlight": "Trusted above.",
+  "heroText": "Heavy civil contractor for Metro Vancouver and the Fraser Valley. We deliver large-scale underground utilities, earthworks, roadworks and site servicing for cities, school districts and builders.",
+  "heroStats": [
+    {
+      "value": "50+",
+      "label": "years combined experience",
+      "_key": "4d6276a8d868"
+    },
+    {
+      "value": "Large-scale",
+      "label": "civil & infrastructure",
+      "_key": "b9b4374f13a5"
+    },
+    {
+      "value": "COR",
+      "label": "certified safety",
+      "_key": "dd5f8a40fcff"
+    }
+  ],
+  "clients": [
+    "City of Vancouver",
+    "City of Surrey",
+    "University Endowment Lands",
+    "SD36 Surrey",
+    "SD38 Richmond",
+    "SD41 Burnaby",
+    "SD37 Delta",
+    "SD40 New Westminster",
+    "Pro-Can Construction",
+    "Unitech",
+    "Scott Special Projects",
+    "Kinetic",
+    "Keller",
+    "SmartCentres",
+    "Wright Construction"
+  ],
+  "statement": "We’re a heavy civil contractor with *over fifty years* of combined field experience. We take on *large-scale civil works* for cities, school districts and builders, with one accountable team from first sawcut to final as-built.",
+  "groundLeft": "Underground utilities · Earthworks · Roadworks",
+  "groundRight": "Richmond & Langley, BC",
+  "servicesTitle": "Full civil scope. One accountable contractor.",
+  "serviceTiles": [
+    {
+      "number": "01",
+      "label": "Earthwork",
+      "title": "Earthwork & excavation",
+      "text": "Bulk and detail excavation, hauling, material supply, contaminated soil and shoring.",
+      "tags": [
+        "Bulk excavation",
+        "Hauling",
+        "Shoring & shotcrete",
+        "Soil & gravel"
+      ],
+      "image": {
+        "_type": "image",
+        "local": "gexc",
+        "alt": "NSC CAT 330 excavator at Guildford Park Secondary"
+      },
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "49e9796661bf"
+    },
+    {
+      "number": "02",
+      "label": "Utilities",
+      "title": "Underground utilities",
+      "text": "",
+      "tags": [
+        "Sanitary",
+        "Storm",
+        "Water",
+        "Conduits"
+      ],
+      "image": {
+        "_type": "image",
+        "local": "mhpipe",
+        "alt": "New sanitary and storm manholes with PVC and concrete pipe on Kingston Road"
+      },
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "_key": "1a98f0132fde"
+    },
+    {
+      "number": "03",
+      "label": "Site prep",
+      "title": "Site preparation",
+      "text": "",
+      "tags": [
+        "Demolition",
+        "ESC",
+        "Grading"
+      ],
+      "image": {
+        "_type": "image",
+        "local": "gwide",
+        "alt": "Graded building pad beside the field at Guildford Park Secondary"
+      },
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "3487af4527e1"
+    },
+    {
+      "number": "04",
+      "label": "Roads",
+      "title": "Roads, curb & gutter",
+      "text": "",
+      "tags": [
+        "Subgrade",
+        "Curb & gutter",
+        "Road restoration"
+      ],
+      "image": {
+        "_type": "image",
+        "local": "curb",
+        "alt": "New concrete curb and gutter along the school field at Guildford Park"
+      },
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "79dd941c663e"
+    },
+    {
+      "number": "05",
+      "label": "Concrete",
+      "title": "Concrete work",
+      "text": "Sidewalks, curb and gutter, wheelchair and driveway letdowns, reinforced slabs and exposed aggregate.",
+      "tags": [],
+      "image": {
+        "_type": "image",
+        "local": "walk",
+        "alt": "New sidewalk, curb and restored road after sewer separation"
+      },
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "_key": "7ffa9ec4e3be"
+    }
+  ],
+  "featureProject": {
+    "_type": "reference",
+    "_ref": "project-guildford-park-secondary"
+  },
+  "featureImage": {
+    "_type": "image",
+    "local": "tank",
+    "alt": "Stormwater detention tank under construction at Guildford Park Secondary, with NSC excavators and crew"
+  },
+  "featureKicker": "Guildford Park Secondary · Surrey",
+  "featureTitle": "Infrastructure",
+  "featureHighlight": "built to last.",
+  "featureText": "The stormwater detention tank, deep utilities and full site servicing for one of the region’s largest school additions.",
+  "featureButton": "Explore Guildford Park",
+  "featureSpots": [
+    {
+      "x": 24.0,
+      "y": 17.0,
+      "title": "Bulk excavation",
+      "text": "CAT excavators on the pad",
+      "flip": false,
+      "_key": "f2d261e0e3d4"
+    },
+    {
+      "x": 57.0,
+      "y": 37.0,
+      "title": "NSC crew",
+      "text": "Laying out tank modules",
+      "flip": true,
+      "_key": "1fc25f83a7df"
+    },
+    {
+      "x": 40.0,
+      "y": 66.0,
+      "title": "Detention tank",
+      "text": "Modular chambers, stormwater storage",
+      "flip": false,
+      "_key": "408b2dc48904"
+    },
+    {
+      "x": 94.0,
+      "y": 40.0,
+      "title": "Liner",
+      "text": "Wraps the whole tank",
+      "flip": true,
+      "_key": "57ed71e4a168"
+    }
+  ],
+  "marketsTitle": "Built for the public, and the builders who serve it.",
+  "projectsTitle": "Schools, streets, seismic, sewers.",
+  "featured": [
+    {
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "text": "Separating the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems. Twelve new manholes, fifteen properties reconnected, prime contract.",
+      "image": {
+        "_type": "image",
+        "local": "mh2",
+        "alt": ""
+      },
+      "caption": "Twin manholes · UEL",
+      "_key": "5b08932dc2eb"
+    },
+    {
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "text": "Bulk excavation, a stormwater detention tank, deep utilities and frontage works for a major secondary school addition, delivered with Unitech for School District 36.",
+      "image": {
+        "_type": "image",
+        "local": "tank2",
+        "alt": ""
+      },
+      "caption": "Detention tank · Surrey",
+      "_key": "b3d411891483"
+    },
+    {
+      "project": {
+        "_type": "reference",
+        "_ref": "project-queen-elizabeth-elementary"
+      },
+      "text": "Rerouting a city sanitary forcemain, sewer work over spring break, and new road and frontage works for the Queen Elizabeth Elementary addition.",
+      "image": {
+        "_type": "image",
+        "local": "qe-exc",
+        "alt": ""
+      },
+      "caption": "Road works · New Westminster",
+      "_key": "5866cdf2e3c7"
+    },
+    {
+      "project": {
+        "_type": "reference",
+        "_ref": "project-fire-hall-12-kitsilano"
+      },
+      "text": "Civil scope for the seismic upgrade of Kitsilano’s Fire Hall No. 12, working with Scott Special Projects for the City of Vancouver.",
+      "image": {
+        "_type": "image",
+        "local": "fh12-piping",
+        "alt": ""
+      },
+      "caption": "Storm and sanitary · Kitsilano",
+      "_key": "9371cf07254b"
+    },
+    {
+      "project": {
+        "_type": "reference",
+        "_ref": "project-north-surrey-utility-improvements"
+      },
+      "text": "Our first prime contract with the City of Surrey: utility improvements through a live neighbourhood.",
+      "image": {
+        "_type": "image",
+        "local": "nsurrey-excavator",
+        "alt": ""
+      },
+      "caption": "Service trench · Surrey",
+      "_key": "8989ad59be8c"
+    }
+  ],
+  "regionTitle": "Across the Lower Mainland.",
+  "regionText": "From the University Endowment Lands to Chilliwack: city streets, school sites, active campuses and live public facilities. Head office in Richmond, yard in Langley.",
+  "fieldTitle": "Real crews. Real sites.",
+  "fieldText": "From our Kingston Road sewer separation and the Guildford Park Secondary addition. Every crew member in full PPE, every day.",
+  "fieldPhotos": [
+    {
+      "image": {
+        "_type": "image",
+        "local": "mhcrew",
+        "alt": "Setting a manhole · UEL"
+      },
+      "caption": "Setting a manhole · UEL",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "_key": "396fbbc333cd"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "mains",
+        "alt": "Water mains · Guildford"
+      },
+      "caption": "Water mains · Guildford",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "46201e288e98"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "pipes",
+        "alt": "Sewer pipe · UEL"
+      },
+      "caption": "Sewer pipe · UEL",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "_key": "be2737b8eda5"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "tank3",
+        "alt": "Detention tank · Guildford"
+      },
+      "caption": "Detention tank · Guildford",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "861d5123f052"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "cpipe",
+        "alt": "Storm pipe · UEL"
+      },
+      "caption": "Storm pipe · UEL",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "_key": "9480384b8fbd"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "deep",
+        "alt": "Deep excavation · Guildford"
+      },
+      "caption": "Deep excavation · Guildford",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "de58a7038a32"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "mhpit",
+        "alt": "Manhole crew · UEL"
+      },
+      "caption": "Manhole crew · UEL",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-kingston-road-sewer-separation"
+      },
+      "_key": "dd36668c969a"
+    },
+    {
+      "image": {
+        "_type": "image",
+        "local": "gwide2",
+        "alt": "Excavation · Guildford"
+      },
+      "caption": "Excavation · Guildford",
+      "project": {
+        "_type": "reference",
+        "_ref": "project-guildford-park-secondary"
+      },
+      "_key": "a0ce82e74e06"
+    }
+  ],
+  "storyTitle": "Founded on fifty years in the field.",
+  "storyImage": {
+    "_type": "image",
+    "local": "ggreenaway-footing-excavation",
+    "alt": "NSC CAT excavator and crew excavating footings at George Greenaway Elementary"
+  },
+  "storyText": "Neil Smith and Dennis Frederickson started the company in 2018. Neil brought over fifty years in excavation and heavy civil work, from small backfill jobs to highway projects with crews of fifty. Dennis brought over forty years in construction and project management across residential, commercial, utility and earthmoving work.\n\nSince Neil’s passing in 2022, Dennis has led the company through steady growth. The standard has not changed: quality work, on time, on budget, and everyone home safe.",
+  "storyTimeline": [
+    {
+      "when": "2018",
+      "what": "Founded in Richmond, BC",
+      "_key": "dab0540e0f69"
+    },
+    {
+      "when": "2020",
+      "what": "First prime contract with the City of Surrey",
+      "_key": "2f3d29d1d43d"
+    },
+    {
+      "when": "2022",
+      "what": "Dennis Frederickson takes the lead",
+      "_key": "ebfee9d6fde0"
+    },
+    {
+      "when": "Today",
+      "what": "Growing across Metro Vancouver and the Fraser Valley",
+      "_key": "036cdd738084"
+    }
+  ],
+  "deliverTitle": "Structured for major projects.",
+  "deliverText": "Every job is run by a full project team, from the first estimate to the final as-built. Owners and construction managers deal with one accountable contractor.",
+  "deliverSteps": [
+    {
+      "title": "Estimating",
+      "text": "A dedicated estimating division prices tenders, prequalifications and change work for municipal, school district and private clients.",
+      "_key": "a3a71e26662b"
+    },
+    {
+      "title": "Pre-construction",
+      "text": "Traffic management plans, local bylaws and Good Neighbour programs are reviewed and in place before we mobilize.",
+      "_key": "be3fc271d4bc"
+    },
+    {
+      "title": "Project management",
+      "text": "A Senior Project Manager on every project, with a dedicated Project Manager running it day to day.",
+      "_key": "121b6c39777c"
+    },
+    {
+      "title": "Field operations",
+      "text": "Site superintendents and foremen lead the crews, with Trimble GPS grade control and digital reporting on site.",
+      "_key": "5d72e20c0d09"
+    },
+    {
+      "title": "Quality and close-out",
+      "text": "Coordinators manage QA/QC records, RFIs, testing and as-builts through to handover.",
+      "_key": "24a77f17a810"
+    },
+    {
+      "title": "Safety",
+      "text": "COR certified, with a Construction Safety Officer and a toolbox meeting at the start of every shift.",
+      "_key": "71342196cbcc"
+    }
+  ],
+  "safetyTitle": "Everyone home. Every shift.",
+  "safetyText": "Our Certificate of Recognition from the BC Construction Safety Alliance confirms an audited health and safety program. A dedicated Construction Safety Officer works with every crew on hazard identification and compliance.",
+  "safetyPills": [
+    "BCCSA COR program",
+    "On-site safety officer",
+    "Trench & shoring protocols",
+    "Erosion & sediment control"
+  ],
+  "quote": "You’re only as strong as your weakest link.",
+  "quoteBy": "Dennis Frederickson · Owner and Director",
+  "leadershipTitle": "Experienced people, accountable for every project.",
+  "leadershipText": "A Senior Project Manager on every project, a dedicated estimating division, and site superintendents with decades in civil construction.",
+  "careersTitle": "Build what’s next with us.",
+  "careersText": "We’re hiring across Greater Vancouver. Join a team that invests in learning, so safe and efficient work becomes second nature.",
+  "contactTitle": "Let’s break",
+  "contactHighlight": "ground.",
+  "contactText": "Send drawings, a tender package or a prequalification request. An estimator will get back to you."
+}

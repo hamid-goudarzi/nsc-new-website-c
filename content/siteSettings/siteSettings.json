@@ -1,0 +1,76 @@
+{
+  "_id": "siteSettings",
+  "_type": "siteSettings",
+  "companyName": "Neil Smith Construction Ltd.",
+  "phone": "604-644-5884",
+  "email": "info@nscltd.ca",
+  "safetyEmail": "safety@nscltd.ca",
+  "siteUrl": "https://www.neilsmithconstruction.com",
+  "description": "Neil Smith Construction Ltd. — heavy civil contractor in Metro Vancouver and the Fraser Valley. Underground utilities, earthworks, roadworks, site servicing and concrete. COR certified.",
+  "footerBlurb": "Heavy civil contractor for municipalities, school districts and builders across Metro Vancouver and the Fraser Valley.",
+  "offices": [
+    {
+      "label": "Head office",
+      "address": "#206-6011 Westminster Hwy\nRichmond, BC V7C 4R9",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=6011+Westminster+Hwy+Richmond+BC",
+      "_key": "8ee1c0750f64"
+    },
+    {
+      "label": "Yard",
+      "address": "22617 Fraser Hwy\nLangley, BC V2Z 2T5",
+      "mapUrl": "https://www.google.com/maps/search/?api=1&query=22617+Fraser+Hwy+Langley+BC",
+      "_key": "aa4a668afee6"
+    }
+  ],
+  "linkedin": "https://www.linkedin.com/company/neil-smith-construction-ltd",
+  "instagram": "https://www.instagram.com/neilsmithconstruction",
+  "ctaTitle": "Planning a project?",
+  "ctaText": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day.",
+  "nav": [
+    {
+      "_key": "markets",
+      "label": "Markets",
+      "link": "markets.html"
+    },
+    {
+      "_key": "services",
+      "label": "Services",
+      "link": "index.html#services"
+    },
+    {
+      "_key": "projects",
+      "label": "Projects",
+      "link": "projects/index.html"
+    },
+    {
+      "_key": "safety",
+      "label": "Safety",
+      "link": "safety.html"
+    },
+    {
+      "_key": "about",
+      "label": "About",
+      "link": "about.html"
+    },
+    {
+      "_key": "careers",
+      "label": "Careers",
+      "link": "careers.html"
+    }
+  ],
+  "corLine": "COR Certified · BC Construction Safety Alliance",
+  "serviceAreas": [
+    "Metro Vancouver",
+    "Fraser Valley",
+    "Vancouver",
+    "Richmond",
+    "Surrey",
+    "Burnaby",
+    "New Westminster",
+    "Delta",
+    "Coquitlam",
+    "Langley",
+    "Chilliwack"
+  ],
+  "aiSummary": "Neil Smith Construction Ltd. (NSC) is a heavy civil contractor based in Richmond, British Columbia, with an equipment yard in Langley. Founded in 2018 by Neil Smith and Dennis Frederickson, the company builds underground utilities (sanitary sewer, storm sewer and watermains), earthworks and excavation, roadworks, curb and sidewalks, and site servicing for municipalities, school districts, public facilities and private developers across Metro Vancouver and the Fraser Valley.\n\nNSC works as a prime contractor and as a civil subcontractor to construction managers. Clients and partners include the City of Vancouver, the City of Surrey, the University Endowment Lands, and school districts in Surrey (SD36), Delta (SD37), Richmond (SD38), New Westminster (SD40) and Burnaby (SD41). The company holds a Certificate of Recognition (COR) from the BC Construction Safety Alliance."
+}

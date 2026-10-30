@@ -1,0 +1,64 @@
+{
+  "_id": "project-brighouse-modular-addition",
+  "_type": "project",
+  "name": "Brighouse Modular Addition",
+  "shortName": "Brighouse Modular Addition",
+  "slug": {
+    "_type": "slug",
+    "current": "brighouse-modular-addition"
+  },
+  "type": "Earthworks and civil works",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2024",
+  "order": 130,
+  "heroImage": {
+    "_type": "image",
+    "local": "brig-lockblock",
+    "alt": "Lock-block retaining wall and perforated drain pipe installed around the site"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "7f7f38bd23fd"
+    },
+    {
+      "label": "Construction manager",
+      "value": "Unitech Construction Management",
+      "_key": "a09e6a8d7c41"
+    },
+    {
+      "label": "Completed",
+      "value": "2024",
+      "_key": "eda9b64e20c5"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "9f045dcc766c"
+    }
+  ],
+  "lede": "Earthworks and civil works for a modular classroom addition at Brighouse Elementary.",
+  "body": "This followed our 2023 storm and sanitary upgrade at the same school, which included a detention tank and flow control manholes.",
+  "scope": [
+    "Earthworks",
+    "Civil works for modular classrooms"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "brig-curb",
+      "alt": "New concrete curb and gutter along the parking area",
+      "_key": "7a5e0d45622c"
+    }
+  ],
+  "homeService": "Earthworks & civil works",
+  "homeClient": "Richmond School District",
+  "homePrime": "Unitech Construction Mgmt"
+}

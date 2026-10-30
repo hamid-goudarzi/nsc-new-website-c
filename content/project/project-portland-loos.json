@@ -1,0 +1,76 @@
+{
+  "_id": "project-portland-loos",
+  "_type": "project",
+  "name": "Portland Loos",
+  "shortName": "Portland Loos",
+  "slug": {
+    "_type": "slug",
+    "current": "portland-loos"
+  },
+  "type": "Prefabricated public washroom",
+  "city": "Vancouver",
+  "sector": "Municipal",
+  "group": "city",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 140,
+  "heroImage": {
+    "_type": "image",
+    "local": "loos-sawcut",
+    "alt": "Worker breaking out concrete for a service trench at Coopers Park"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "City of Vancouver",
+      "_key": "f11ae97eb987"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Scott Special Projects",
+      "_key": "69b56fa5995f"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "199025aa81cf"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "13384a637c9c"
+    }
+  ],
+  "lede": "Site works and servicing for a prefabricated public washroom for the City of Vancouver.",
+  "body": "We prepared the site and connected services for the new prefabricated washroom, working with Scott Special Projects.",
+  "scope": [
+    "Site preparation",
+    "Utility servicing and connections"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "loos-manhole",
+      "alt": "New manhole frame set on its riser",
+      "_key": "f7b4186a2e87"
+    },
+    {
+      "_type": "image",
+      "local": "loos-sump",
+      "alt": "Sump and PVC sanitary fittings being installed",
+      "_key": "759ee01077e5"
+    },
+    {
+      "_type": "image",
+      "local": "loos-trench",
+      "alt": "Service trench across Columbia Park with excavator",
+      "_key": "d897790140cb"
+    }
+  ],
+  "homeService": "Prefabricated public washroom",
+  "homeClient": "City of Vancouver",
+  "homePrime": "Scott Special Projects"
+}

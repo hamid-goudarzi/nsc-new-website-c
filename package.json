@@ -1,0 +1,17 @@
+{
+  "name": "nsc-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/check-build.mjs",
+    "preview": "astro preview",
+    "admin:local": "node scripts/local-server.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.18.2"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

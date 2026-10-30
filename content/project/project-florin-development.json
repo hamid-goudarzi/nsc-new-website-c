@@ -1,0 +1,76 @@
+{
+  "_id": "project-florin-development",
+  "_type": "project",
+  "name": "Florin Development",
+  "shortName": "Florin Development",
+  "slug": {
+    "_type": "slug",
+    "current": "florin-development"
+  },
+  "type": "Residential development",
+  "city": "Coquitlam",
+  "sector": "Development",
+  "group": "underway",
+  "status": "In progress",
+  "live": true,
+  "year": "Ongoing",
+  "order": 90,
+  "heroImage": {
+    "_type": "image",
+    "local": "florin-excavator",
+    "alt": "Mini excavator placing gravel at the Florin townhouse site"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "Allaire Circadian LLP",
+      "_key": "d6566abd7750"
+    },
+    {
+      "label": "Contractor",
+      "value": "Neil Smith Construction (prime)",
+      "_key": "c2cc38419241"
+    },
+    {
+      "label": "Status",
+      "value": "In progress",
+      "_key": "de1fa33a0d22"
+    }
+  ],
+  "lede": "Residential development in Coquitlam, with Neil Smith Construction as prime contractor.",
+  "body": "We hold the prime contract for the civil and site work on this residential development for Allaire Circadian LLP.",
+  "scope": [
+    "Civil and site works for residential development"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "florin-storm",
+      "alt": "Storm pipe and gravel pad in an open excavation",
+      "_key": "144564a352d1"
+    },
+    {
+      "_type": "image",
+      "local": "florin-curb-walk",
+      "alt": "New curb and walkway subgrade beside the new building",
+      "_key": "04e05ec7113c"
+    },
+    {
+      "_type": "image",
+      "local": "florin-watermain",
+      "alt": "Crew laying pipe in a long trench",
+      "_key": "6c310605eb08"
+    },
+    {
+      "_type": "image",
+      "local": "florin-valve",
+      "alt": "Water main with valve installed in a trench",
+      "_key": "894f9d35705f"
+    }
+  ],
+  "homeService": "Residential development",
+  "homeClient": "Allaire Circadian LLP",
+  "homePrime": "Neil Smith Construction"
+}

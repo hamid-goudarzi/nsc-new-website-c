@@ -1,0 +1,9 @@
+{
+  "_id": "job-general-superintendent",
+  "_type": "job",
+  "title": "General Superintendent",
+  "location": "Greater Vancouver",
+  "employment": "Full-time",
+  "open": true,
+  "order": 30
+}

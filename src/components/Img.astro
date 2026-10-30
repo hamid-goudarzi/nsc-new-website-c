@@ -1,0 +1,6 @@
+---
+import { img } from '../lib/util.mjs';
+const { image, pre = '', sizes = '100vw', eager = false, class: cls, alt } = Astro.props;
+const a = img(image, pre, { sizes, eager });
+---
+{a && <img class={cls} src={a.src} srcset={a.srcset} sizes={a.sizes} alt={alt ?? a.alt} loading={a.loading} decoding="async" style={a.style}>}

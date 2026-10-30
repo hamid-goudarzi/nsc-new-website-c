@@ -1,0 +1,77 @@
+{
+  "_id": "project-tomsett-elementary",
+  "_type": "project",
+  "name": "Tomsett Elementary School",
+  "shortName": "Tomsett Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "tomsett-elementary"
+  },
+  "type": "Electrical and concrete",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 230,
+  "heroImage": {
+    "_type": "image",
+    "local": "tomsett-excavation",
+    "alt": "Excavator digging a utility trench beside Tomsett Elementary"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "4c9ad370f23e"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "4cb4475567eb"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "326927ed0f23"
+    }
+  ],
+  "lede": "BC Hydro and electrical upgrade, and concrete curb and gutter, at Tomsett Elementary.",
+  "body": "",
+  "scope": [
+    "BC Hydro and electrical upgrade",
+    "Concrete curb and gutter"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "tomsett-trench",
+      "alt": "Excavator straddling a bedded water service trench at Tomsett Elementary",
+      "_key": "2d99a44fa04a"
+    },
+    {
+      "_type": "image",
+      "local": "tomsett-watermain",
+      "alt": "New PVC water service laid in trench at Tomsett Elementary",
+      "_key": "66596e9f40f4"
+    },
+    {
+      "_type": "image",
+      "local": "tomsett-pipe-crew",
+      "alt": "NSC crew in hard hats checking grade on a water service trench at Tomsett Elementary",
+      "_key": "72f96248dbd1"
+    },
+    {
+      "_type": "image",
+      "local": "tomsett-valves",
+      "alt": "Gate valve assembly staged for the water service at Tomsett Elementary",
+      "_key": "0d680effd081"
+    }
+  ],
+  "homeService": "Electrical and concrete",
+  "homeClient": "School District #38",
+  "homePrime": ""
+}

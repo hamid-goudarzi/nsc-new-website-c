@@ -1,0 +1,12 @@
+---
+import { content } from '../lib/content.mjs';
+import { tel } from '../lib/util.mjs';
+const { pre = '', title, text, bidLink } = Astro.props;
+const { settings: s } = await content();
+---
+<section class="sec">
+  <div class="wrap cta">
+    <div><p class="mono kick">Contact</p><h2 style="margin-top:18px">{title || s.ctaTitle}</h2><p>{text || s.ctaText}</p></div>
+    <div class="row"><a class="btn btn-blue" href={bidLink || `${pre}contact.html`}>Request a bid →</a><a class="btn btn-glass" href={tel(s.phone)}>{s.phone}</a><a class="btn btn-glass" href={`mailto:${s.email}`}>{s.email}</a></div>
+  </div>
+</section>

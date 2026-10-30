@@ -1,0 +1,78 @@
+{
+  "_id": "project-brighouse-elementary",
+  "_type": "project",
+  "name": "Brighouse Elementary School",
+  "shortName": "Brighouse Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "brighouse-elementary"
+  },
+  "type": "Storm and sanitary upgrade",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 190,
+  "heroImage": {
+    "_type": "image",
+    "local": "brighouse-chamber",
+    "alt": "NSC crew setting a precast valve chamber with an excavator at Brighouse Elementary"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "32391a944b26"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "d35751daa9cf"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "ea9873ae4cfd"
+    }
+  ],
+  "lede": "Storm and sanitary sewer upgrade at Brighouse Elementary, with a new detention tank and flow control manholes.",
+  "body": "",
+  "scope": [
+    "Storm and sanitary sewer system upgrade",
+    "Detention tank",
+    "Flow control manholes"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "brighouse-hydrant",
+      "alt": "New fire hydrant and valve chamber installation at Brighouse Elementary",
+      "_key": "1287e4e47250"
+    },
+    {
+      "_type": "image",
+      "local": "brighouse-fittings",
+      "alt": "Ductile fittings and PVC water service below a precast chamber at Brighouse Elementary",
+      "_key": "a9328977fcf0"
+    },
+    {
+      "_type": "image",
+      "local": "brighouse-backflow",
+      "alt": "Double check valve assembly inside a precast chamber at Brighouse Elementary",
+      "_key": "8629087ec566"
+    },
+    {
+      "_type": "image",
+      "local": "brighouse-finished",
+      "alt": "Completed valve chamber lid and hydrant beside the new portables at Brighouse Elementary",
+      "_key": "dab4a3c0a981"
+    }
+  ],
+  "homeService": "Storm and sanitary upgrade",
+  "homeClient": "School District #38",
+  "homePrime": ""
+}

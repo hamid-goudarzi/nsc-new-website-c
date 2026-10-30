@@ -1,0 +1,59 @@
+{
+  "_id": "market-municipal",
+  "_type": "market",
+  "title": "Municipal and public works",
+  "anchor": "municipal",
+  "order": 10,
+  "image": {
+    "_type": "image",
+    "local": "mh2",
+    "alt": "CAT excavator over two new precast manholes on Kingston Road"
+  },
+  "description": "Sewer separation, utility renewal and road restoration on live streets, for cities and public agencies. We plan traffic, access and service connections so residents and businesses keep running while the work goes on.",
+  "deliver": [
+    "Sanitary and storm sewer separation and renewal",
+    "Watermains, services, hydrants and tie-ins",
+    "Manholes, catch basins and flow control",
+    "Road restoration, curb, gutter and sidewalks",
+    "Traffic management and Good Neighbour programs"
+  ],
+  "owners": [
+    "City of Vancouver",
+    "City of Surrey",
+    "University Endowment Lands"
+  ],
+  "projects": [
+    {
+      "_type": "reference",
+      "_ref": "project-kingston-road-sewer-separation",
+      "_key": "86ca41aabab2"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-north-surrey-utility-improvements",
+      "_key": "37bf04905ba9"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-fire-hall-12-kitsilano",
+      "_key": "9c7c37a93351"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-manitoba-yard-fuel-station",
+      "_key": "f8835ae50852"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-portland-loos",
+      "_key": "398dc746e7be"
+    }
+  ],
+  "homeTitle": "Municipal and public works",
+  "homeText": "Sewer separation, utilities and road restoration on live streets.",
+  "homeImage": {
+    "_type": "image",
+    "local": "cpipe",
+    "alt": "Concrete storm pipe staged along Kingston Road"
+  }
+}

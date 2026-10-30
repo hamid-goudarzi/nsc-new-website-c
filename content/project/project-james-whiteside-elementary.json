@@ -1,0 +1,77 @@
+{
+  "_id": "project-james-whiteside-elementary",
+  "_type": "project",
+  "name": "James Whiteside Elementary School",
+  "shortName": "James Whiteside Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "james-whiteside-elementary"
+  },
+  "type": "Water and electrical upgrade",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 200,
+  "heroImage": {
+    "_type": "image",
+    "local": "jwhiteside-excavator",
+    "alt": "Excavator placing granular fill for the portable site at James Whiteside Elementary"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "f4db21823c0e"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "2d5a25cad4c9"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "4432576a8ae7"
+    }
+  ],
+  "lede": "Fire and domestic water upgrade, and BC Hydro and electrical upgrade, at James Whiteside Elementary.",
+  "body": "",
+  "scope": [
+    "Fire and domestic water upgrade",
+    "BC Hydro and electrical upgrade"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "jwhiteside-pad-prep",
+      "alt": "Excavator, plate compactor and trucks preparing the portable pad at James Whiteside Elementary",
+      "_key": "f74547384e95"
+    },
+    {
+      "_type": "image",
+      "local": "jwhiteside-catch-basin",
+      "alt": "Precast catch basin barrel set in excavation at James Whiteside Elementary",
+      "_key": "cd541f563280"
+    },
+    {
+      "_type": "image",
+      "local": "jwhiteside-grate",
+      "alt": "New catch basin frame and grate set in granular base at James Whiteside Elementary",
+      "_key": "d5c7ef4660a4"
+    },
+    {
+      "_type": "image",
+      "local": "jwhiteside-pad",
+      "alt": "Finished concrete landing and restored edge at a portable, James Whiteside Elementary",
+      "_key": "a09ba8219ae0"
+    }
+  ],
+  "homeService": "Water and electrical upgrade",
+  "homeClient": "School District #38",
+  "homePrime": ""
+}

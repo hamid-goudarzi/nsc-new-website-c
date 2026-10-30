@@ -1,0 +1,40 @@
+---
+import Sub from '../../layouts/Sub.astro';
+import Img from '../../components/Img.astro';
+import Cta from '../../components/Cta.astro';
+import { content } from '../../lib/content.mjs';
+import { tagOf, imgUrl } from '../../lib/util.mjs';
+import { breadcrumbs, abs } from '../../lib/seo.mjs';
+const { projects, projectsPage: pp, settings } = await content();
+const ld = [breadcrumbs(settings, [['Home', ''], ['Projects', 'projects/index.html']]), { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Projects', description: pp.description, url: abs(settings, 'projects/index.html'), mainEntity: { '@type': 'ItemList', itemListElement: projects.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(settings, `projects/${p.slug.current}.html`), name: p.name })) } }];
+const pre = '../';
+const h = pp.hero || {};
+const known = (pp.groups || []).map(g => g.group);
+const groups = (pp.groups || []).map(g => ({ ...g, ps: projects.filter(p => p.group === g.group) }));
+const rest = projects.filter(p => !known.includes(p.group));
+if (rest.length) groups.push({ group: 'other', title: 'More projects', intro: '', ps: rest });
+const shown = groups.filter(g => g.ps.length);
+const client = p => (p.details || []).find(d => /^client$/i.test(d.label))?.value || '';
+const sizes = '(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw';
+---
+<Sub title="Projects" fullTitle={pp.seoTitle} description={pp.description} jsonld={ld} ogImage={imgUrl(h.image)} active="projects" pre={pre}>
+<header class="pihero">
+  <div class="bg"><Img image={h.image} pre={pre} eager /></div>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Home</a>
+    <p class="mono kick">{h.kicker}</p>
+    <h1>{h.title} {h.highlight && <span class="grad">{h.highlight}</span>}</h1>
+    <p class="pi-sub">{h.subtitle}</p>
+    {pp.stats?.length > 0 && <div class="pi-stats">{pp.stats.map(s => <div><b>{s.value}</b><span>{s.label}</span></div>)}</div>}
+  </div>
+</header>
+<div class="pchips"><div class="wrap"><nav aria-label="Project groups">{shown.map(g => <a href={`#${g.group}`}>{g.title}</a>)}</nav></div></div>
+<main>{shown.map((g, n) => (
+  <section class="pgroup" id={g.group}><div class="wrap"><div class="pg-h"><span class="pg-n mono">{String(n + 1).padStart(2, '0')}</span><h2>{g.title}</h2>{g.intro && <p>{g.intro}</p>}</div><div class="pgrid">
+  {g.ps.map(p => { const t = tagOf(p.heroImage); return (
+    <a class="pcard rv" href={`${p.slug.current}.html`}><div class={`pc-img${t === 'Drawing' ? ' dwg' : ''}`}><Img image={p.heroImage} pre={pre} sizes={sizes} />{t && <span class="ill-tag mono">{t}</span>}<span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
+    <div class="pc-b"><h3>{p.name}</h3><p>{p.type}</p><dl><div><dt>Where</dt><dd>{p.city}</dd></div><div><dt>Year</dt><dd>{p.year}</dd></div><div><dt>Client</dt><dd>{client(p)}</dd></div></dl><span class="pc-ar" aria-hidden="true">↗</span></div></a>) })}
+  </div></div></section>))}
+</main>
+<Cta pre={pre} title={pp.ctaTitle} text={pp.ctaText} bidLink="../contact.html" />
+</Sub>

@@ -1,0 +1,238 @@
+---
+// Home page. Text, photos, featured projects, people and jobs come from the admin (content/home/home.json and collections).
+import Img from '../components/Img.astro';
+import Region from '../components/Region.astro';
+import { content } from '../lib/content.mjs';
+import { tel, linkify, paras, initials, pad2, imgUrl } from '../lib/util.mjs';
+import svgs from '../components/home-svgs.json';
+import { organization, siteUrl } from '../lib/seo.mjs';
+const c = await content();
+const { settings: s, home: h, markets, projects, people, jobs } = c;
+const ld = [organization(c), { '@context': 'https://schema.org', '@type': 'WebSite', '@id': siteUrl(s) + '/#website', url: siteUrl(s) + '/', name: s.companyName, publisher: { '@id': siteUrl(s) + '/#organization' }, inLanguage: 'en-CA' }];
+const url = p => `projects/${p.slug.current}.html`;
+const tileCls = ['t1', 't2', 't4', 't5', 't6'];
+const tiles = (h.serviceTiles || []).slice(0, 5);
+const leaders = people.filter(p => p.group === 'leadership');
+const status = p => p.live ? 'In progress' : (/^\d{4}/.test(p.year || '') ? `Completed ${String(p.year).slice(0, 4)}` : 'Completed');
+const client = p => p.homeClient || (p.details || []).find(d => /^client$/i.test(d.label))?.value || '';
+const prime = p => p.homePrime ?? ((p.details || []).find(d => /prime|contractor|construction manager/i.test(d.label))?.value || '');
+const pageTitle = h.seoTitle || `${s.companyName} | Heavy Civil Construction, BC`;
+const canonical = s.siteUrl || 'https://www.neilsmithconstruction.com';
+const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').href : undefined;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06080c">
+<title>{pageTitle}</title>
+<link rel="icon" href="nsc-logo.jpg">
+<link rel="preload" as="image" href="media/film-poster.webp">
+<link rel="canonical" href={canonical + '/'}>
+<meta property="og:title" content={s.companyName}>
+<meta property="og:description" content={s.description}>
+{ogImg && <meta property="og:image" content={ogImg}>}
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonical + '/'}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content={s.description}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/home.css">
+{ld.map(j => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, '\\u003c')} />)}
+{s.googleVerification && <meta name="google-site-verification" content={s.googleVerification}>}
+{s.bingVerification && <meta name="msvalidate.01" content={s.bingVerification}>}
+<meta property="og:site_name" content={s.companyName}>
+<meta property="og:locale" content="en_CA">
+<link rel="apple-touch-icon" href="nsc-logo.jpg">
+</head>
+<body>
+<div class="exc" id="exc" aria-hidden="true" set:html={svgs.exc}></div>
+<nav class="nav" id="nav" aria-label="Main">
+  <a class="logo" href="#top"><img src="nsc-logo.jpg" alt="NSC logo"><b>{s.companyName}</b></a>
+  {(s.nav || []).map(n => <a class="lk" href={n.link.replace(/^index\.html(?=#)/, '')}>{n.label}</a>)}
+  <a class="btn btn-blue" href="contact.html">Request a bid <span class="ar">→</span></a>
+  <button class="burger" id="burger" type="button" aria-expanded="false">Menu</button>
+</nav>
+<div class="menu" id="menu">{(s.nav || []).map(n => <a href={n.link.replace(/^index\.html(?=#)/, '')}>{n.label}</a>)}<a href="contact.html">Contact</a></div>
+
+<header class="hero" id="top">
+  <img class="poster" src="media/film-poster.webp" alt="">
+  <video id="heroVid" muted playsinline loop autoplay preload="auto" aria-hidden="true"></video>
+  <div class="wrap hero-in">
+    <span class="chip"><span class="d"></span>{h.heroChip}</span>
+    <h1 class="split" data-split>{h.heroTitle}<br><span class="grad">{h.heroHighlight}</span></h1>
+    <div class="hero-row">
+      <div>
+        <p class="rv">{h.heroText}</p>
+        <div class="hero-ctas rv"><a class="btn btn-blue" href="#contact">Request a bid <span class="ar">→</span></a><a class="btn btn-glass" href="#projects">See projects</a></div>
+      </div>
+      <div class="hero-card rv">{(h.heroStats || []).map(st => { const m = String(st.value).match(/^(\d+)\+$/); return <div>{m ? <b data-to={m[1]} class="plus">0</b> : <b>{st.value}</b>}<span>{st.label}</span></div> })}</div>
+    </div>
+  </div>
+  <div class="scroll">SCROLL</div>
+</header>
+
+<div class="logos" aria-label="Clients"><p class="lg-label mono">Trusted by public owners and builders</p><div class="logos-t" id="logos">{(h.clients || []).map(c => <span>{c}</span>)}</div></div>
+
+<section class="statement">
+  <div class="wrap">
+    <p class="mono kick">Who we are</p>
+    <p class="stmt" id="stmt" style="margin-top:24px">{h.statement}</p>
+  </div>
+  <div class="vtype" aria-label="Groundwork">
+    <video id="typeVid" muted playsinline loop autoplay aria-hidden="true"></video>
+    <div class="mask" aria-hidden="true">GROUND</div>
+  </div>
+  <div class="wrap vtype-cap mono"><span>{h.groundLeft}</span><span>{h.groundRight}</span></div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <p class="mono kick">Services</p>
+    <h2 class="h2 split" data-split>{h.servicesTitle}</h2>
+    <div class="bento">
+      {tiles.map((t, i) => (
+        <Fragment>
+        <a class={`tile ${tileCls[i]} photo rv`} href={t.project ? url(t.project) : (t.link || 'projects/index.html')} aria-label={`${t.title}${t.project ? ' at ' + t.project.shortName : ''}`}><Img image={t.image} sizes={i === 0 ? '(max-width:900px) 100vw, 60vw' : '(max-width:900px) 100vw, 40vw'} /><span class="no">{t.number || pad2(i)} / {t.label}</span><span class="arr">↗</span><h3>{t.title}</h3>{t.text && <p>{t.text}</p>}{t.tags?.length > 0 && <div class="tags">{t.tags.map(x => <span>{x}</span>)}</div>}<span class="tl-go">View project →</span></a>
+        {i === 1 && <a class="tile t3 stat rv" href="markets.html" aria-label="Markets we serve"><span class="mono" style="color:var(--muted)">Markets we serve</span><ul class="mk-list">{markets.map(m => <li>{m.homeTitle || m.title}</li>)}</ul><span class="tl-go">View markets →</span></a>}
+        </Fragment>))}
+    </div>
+  </div>
+</section>
+
+{h.featureImage && <section class="zoom" id="zoom">
+  <div class="zoom-in">
+    <div class="zoom-media" id="zoomMedia"><div class="zimg" id="zoomImg"><Img image={h.featureImage} />{h.featureProject && <a class="zlink" href={url(h.featureProject)} aria-label={`Open the ${h.featureProject.name} project`}></a>}<div class="spots" id="spots" aria-hidden="true">{(h.featureSpots || []).map(sp => <span class={`spot${sp.flip ? ' r' : ''}`} style={`left:${sp.x}%;top:${sp.y}%`}><i></i><b>{sp.title}<small>{sp.text}</small></b></span>)}</div></div><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span>{h.featureProject && <a class="zcta btn btn-blue" id="zcta" href={url(h.featureProject)}>{h.featureButton || 'Explore project'} <span class="ar">→</span></a>}</div>
+    <div class="zoom-txt" id="zoomTxt"><p class="mono kick" style="justify-content:center">{h.featureKicker}</p><h2 style="margin-top:18px">{h.featureTitle}<br><span class="grad">{h.featureHighlight}</span></h2><p>{h.featureText}</p></div>
+  </div>
+</section>}
+
+<section class="sec mkts" id="markets">
+  <div class="wrap">
+    <div class="mk-h"><div><p class="mono kick">Markets</p><h2 class="h2 split" data-split>{h.marketsTitle}</h2></div><a class="btn btn-glass rv" href="markets.html">All markets <span class="ar">→</span></a></div>
+    <div class="mk-g">{markets.map((m, i) => <a class="mk rv" href={`markets.html#${m.anchor}`}><Img image={m.homeImage || m.image} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 25vw" /><div><span class="mono">{pad2(i)}</span><h3>{m.homeTitle || m.title}</h3><p>{m.homeText}</p><b>→</b></div></a>)}</div>
+  </div>
+</section>
+<section class="sec" id="projects">
+  <div class="wrap">
+    <p class="mono kick">Selected projects</p>
+    <h2 class="h2 split" data-split>{h.projectsTitle}</h2>
+    <div class="stack" id="stack">{(h.featured || []).filter(f => f.project).map((f, k) => { const p = f.project; return (
+      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)} aria-label={`Open ${p.name}`}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
+    <div class="allhead"><p class="mono kick">All projects · tap any to open</p><a class="btn btn-blue" href="projects/index.html">Browse all projects <span class="ar">→</span></a></div>
+    <div class="all" id="all" style="margin-top:16px">{projects.map(p => <a href={url(p)}>{p.live && <i>●</i>}{p.name}<b>↗</b></a>)}</div>
+  </div>
+</section>
+
+<section class="sec region" id="region">
+  <div class="wrap">
+    <div class="rg-h"><div><p class="mono kick">Where we work</p><h2 class="h2 split" data-split>{h.regionTitle}</h2></div>
+    <p class="rv">{h.regionText}</p></div>
+    <Region projects={projects} />
+  </div>
+</section>
+<section class="field" aria-label="Photos from our job sites">
+  <div class="wrap field-head"><div><p class="mono kick">From the field</p><h2 class="h2 split" data-split>{h.fieldTitle}</h2></div><p class="rv">{h.fieldText}</p></div>
+  <div class="field-row" id="fr1">{(h.fieldPhotos || []).map(f => <figure><a href={f.project ? url(f.project) : 'projects/index.html'} aria-label={`${f.caption}: open project`}><Img image={f.image} sizes="(max-width:700px) 60vw, 420px" alt={`NSC job site: ${f.caption}`} /><figcaption>{f.caption}</figcaption></a></figure>)}</div>
+</section>
+<section class="sec story" id="story">
+  <div class="wrap st-g">
+    <a class="st-ph rv" href="projects/index.html" aria-label="See all projects"><Img image={h.storyImage} sizes="(max-width:900px) 100vw, 55vw" /><span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="tl-go">All projects →</span></a>
+    <div>
+      <p class="mono kick">Our story</p>
+      <h2 class="h2 split" data-split>{h.storyTitle}</h2>
+      {paras(h.storyText).map(t => <p class="rv st-p">{t}</p>)}
+      {h.storyTimeline?.length > 0 && <ol class="st-tl rv">{h.storyTimeline.map(x => <li><b>{x.when}</b><span>{x.what}</span></li>)}</ol>}
+      <a class="btn btn-glass rv" href="about.html" style="margin-top:26px">About NSC <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+<section class="sec deliver" id="deliver">
+  <div class="wrap">
+    <div class="rg-h"><div><p class="mono kick">How we deliver</p><h2 class="h2 split" data-split>{h.deliverTitle}</h2></div>
+    <p class="rv">{h.deliverText}</p></div>
+    <ol class="dl">{(h.deliverSteps || []).map((it, i) => <li class="rv"><span class="mono">{pad2(i)}</span><h3>{it.title}</h3><p>{it.text}</p></li>)}</ol>
+  </div>
+</section>
+<section class="safety" id="safety">
+  <div class="wrap sf">
+    <div>
+      <p class="mono kick">Health &amp; safety</p>
+      <h2 class="split" data-split>{h.safetyTitle}</h2>
+      <p class="l rv">{h.safetyText}</p>
+      <div class="sf-pills rv">{(h.safetyPills || []).map(x => <span>{x}</span>)}</div>
+      <a class="btn btn-glass rv" href="safety.html" style="margin-top:26px">Safety &amp; Environment <span class="ar">→</span></a>
+    </div>
+    <div class="cor rv" aria-hidden="true">
+      <Fragment set:html={svgs.cor} />
+      <div><b>COR</b><span>CERTIFIED</span></div>
+    </div>
+  </div>
+</section>
+
+{h.quote && <section class="quote-band"><div class="wrap"><blockquote class="rv">“{h.quote}”</blockquote><p class="mono">{h.quoteBy}</p></div></section>}
+<section class="sec" id="leadership">
+  <div class="wrap">
+    <div class="mk-h"><div><p class="mono kick">Leadership</p><h2 class="h2 split" data-split>{h.leadershipTitle}</h2></div><a class="btn btn-glass rv" href="about.html#leadership">Meet the team <span class="ar">→</span></a></div>
+    <p class="rv lead-sub">{h.leadershipText}</p>
+    <div class="lead-g">{leaders.map(p => <article class="person lead rv">{p.photo ? <Img image={p.photo} class="ini ph" sizes="96px" alt="" /> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.shortBio || p.bio}</p></article>)}</div>
+  </div>
+</section>
+
+<section class="sec" id="careers" style="padding-top:0">
+  <div class="wrap">
+    <p class="mono kick">Careers</p>
+    <h2 class="h2 split" data-split>{h.careersTitle}</h2>
+    <p class="rv" style="margin-top:20px;color:var(--muted);max-width:52ch">{h.careersText} <a href="careers.html" style="color:#fff">Careers at NSC →</a></p>
+    <div class="jobs">{jobs.map(j => <a class="job rv" href="#contact" data-job={j.title}><div><h3>{j.title}</h3><span class="mono">{[j.location, j.employment].filter(Boolean).join(' · ')}</span></div><span class="arr">↗</span></a>)}</div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap ct">
+    <div class="ct-l">
+      <p class="mono kick">Contact</p>
+      <h2 class="split" data-split style="margin-top:20px">{h.contactTitle} <span class="grad">{h.contactHighlight}</span></h2>
+      <p>{h.contactText}</p>
+      <div class="ct-links"><a href={`mailto:${s.email}`}>{s.email}</a><a href={tel(s.phone)}>{s.phone}</a></div>
+      <div class="ct-offices">{(s.offices || []).map(o => <div><span class="mono" style="color:var(--dim)">{o.label}</span><p set:html={linkify(o.address)} /></div>)}</div>
+    </div>
+    <form id="form" novalidate class="rv" data-to={s.email}>
+      <div class="seg" role="radiogroup" aria-label="Inquiry type">
+        <label><input type="radio" name="t" value="Bid" checked><span>Bid / tender</span></label>
+        <label><input type="radio" name="t" value="Prequal"><span>Prequalification</span></label>
+        <label><input type="radio" name="t" value="Vendor"><span>Vendor</span></label>
+        <label><input type="radio" name="t" value="Job" id="tJob"><span>Careers</span></label>
+      </div>
+      <div class="f"><input name="name" placeholder="Your name" aria-label="Name" autocomplete="name"></div>
+      <div class="f"><input name="company" placeholder="Company" aria-label="Company" autocomplete="organization"></div>
+      <div class="f"><input name="email" type="email" placeholder="Email" aria-label="Email" autocomplete="email"></div>
+      <div class="f"><input name="phone" type="tel" placeholder="Phone" aria-label="Phone" autocomplete="tel"></div>
+      <div class="f full"><input name="city" placeholder="Project location" aria-label="Project location"></div>
+      <div class="f full"><textarea name="msg" id="msg" placeholder="Scope, schedule, tender date, drawings available…" aria-label="Project details"></textarea></div>
+      <div class="ff"><p id="note">We reply within one business day.</p><button class="btn btn-blue" type="submit">Send request <span class="ar">→</span></button></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div><a class="logo" href="#top" style="display:flex;align-items:center;gap:12px;padding:0"><img src="nsc-logo.jpg" alt="NSC logo" style="height:40px;border-radius:8px"><b style="font-family:var(--display);font-weight:600;color:#fff;font-size:15px">{s.companyName}</b></a><p class="p" style="margin-top:16px;max-width:36ch">Heavy civil contractor for Metro Vancouver and the Fraser Valley. COR certified.</p></div>
+      <div><h4>Explore</h4><a href="markets.html">Markets</a><a href="#services">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety &amp; Environment</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html#partners">Subcontractors &amp; suppliers</a></div>
+      <div><h4>Visit</h4>{(s.offices || []).map(o => <span class="p">{String(o.address).split('\n')[0]}, {(String(o.address).split('\n')[1] || '').split(',')[0]}</span>)}</div>
+      <div><h4>Connect</h4><a href={tel(s.phone)}>{s.phone}</a><a href={`mailto:${s.email}`}>{s.email}</a>{s.linkedin && <a href={s.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}{s.instagram && <a href={s.instagram} target="_blank" rel="noopener">Instagram ↗</a>}</div>
+    </div>
+    <div class="ft-bar"><span>© {new Date().getFullYear()} {s.companyName}</span><span>{s.corLine?.replace(/^COR Certified/, 'COR certified')}</span></div>
+    <div class="ft-big" aria-hidden="true">NEIL SMITH</div>
+  </div>
+</footer>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script is:inline src="assets/home.js"></script>
+</body>
+</html>

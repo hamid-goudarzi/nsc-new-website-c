@@ -1,0 +1,94 @@
+{
+  "_id": "project-william-cook-elementary",
+  "_type": "project",
+  "name": "William Cook Elementary School",
+  "shortName": "William Cook Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "william-cook-elementary"
+  },
+  "type": "Earthworks and civil works",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2024",
+  "order": 110,
+  "heroImage": {
+    "_type": "image",
+    "local": "cook-exc",
+    "alt": "NSC excavator excavating the pad with a crew member checking grade"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "9405f72ffd56"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Unitech Construction Management",
+      "_key": "708029f77220"
+    },
+    {
+      "label": "Completed",
+      "value": "2024",
+      "_key": "fa64c46f73c9"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "d5f67376c9f6"
+    }
+  ],
+  "lede": "Earthworks and civil works at William Cook Elementary in Richmond.",
+  "body": "Part of our ongoing work with Richmond School District and Unitech Construction Management.",
+  "scope": [
+    "Earthworks",
+    "Civil works"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "brig-grading",
+      "alt": "NSC excavator and crew member grading the granular base for the modular addition",
+      "_key": "23b08a9082d0"
+    },
+    {
+      "_type": "image",
+      "local": "cook-strip",
+      "alt": "Excavator and site dumper stripping topsoil along the field edge",
+      "_key": "d21f449481ef"
+    },
+    {
+      "_type": "image",
+      "local": "cook-demo",
+      "alt": "Excavator removing an old concrete slab during site prep",
+      "_key": "80a883f691ba"
+    },
+    {
+      "_type": "image",
+      "local": "cook-watermain",
+      "alt": "New PVC water main laid on bedding in the trench",
+      "_key": "a31e5ec44359"
+    },
+    {
+      "_type": "image",
+      "local": "cook-pad",
+      "alt": "Finished compacted gravel pad ready for the modular units",
+      "_key": "75eaaf6bc956"
+    },
+    {
+      "_type": "image",
+      "local": "cook-curb",
+      "alt": "New concrete curb along the modular building",
+      "_key": "2148fe0fafba"
+    }
+  ],
+  "homeService": "Earthworks & civil works",
+  "homeClient": "School District #38",
+  "homePrime": "Unitech Construction Mgmt"
+}

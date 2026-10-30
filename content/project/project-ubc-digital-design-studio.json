@@ -1,0 +1,77 @@
+{
+  "_id": "project-ubc-digital-design-studio",
+  "_type": "project",
+  "name": "UBC Applied Science Digital Design Studio",
+  "shortName": "UBC Digital Design Studio",
+  "slug": {
+    "_type": "slug",
+    "current": "ubc-digital-design-studio"
+  },
+  "type": "Earthworks and site services",
+  "city": "Vancouver",
+  "sector": "Schools",
+  "group": "schools",
+  "status": "Completed",
+  "live": false,
+  "year": "Completed",
+  "order": 100,
+  "heroImage": {
+    "_type": "image",
+    "local": "ubc-shoring",
+    "alt": "Excavator setting a trench shoring box beside the building"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "Kinetic Construction Ltd.",
+      "_key": "bbb29e7087fb"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Kinetic Construction Ltd.",
+      "_key": "d690fbda4d63"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "06a76923129b"
+    }
+  ],
+  "lede": "Earthworks and site services for the Applied Science Digital Design Studio on the UBC campus.",
+  "body": "Working for Kinetic Construction, we delivered the excavation and site servicing for the new studio building on an active campus.",
+  "scope": [
+    "Excavation and earthworks",
+    "Site servicing"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "ubc-exc",
+      "alt": "Bulk excavation with excavator, dump truck and grade checker",
+      "_key": "62cf6317b7d1"
+    },
+    {
+      "_type": "image",
+      "local": "ubc-chamber",
+      "alt": "Crew setting a precast chamber with electrical ducts in the excavation",
+      "_key": "8ed3bd3c443a"
+    },
+    {
+      "_type": "image",
+      "local": "ubc-machines",
+      "alt": "Excavator and track loader on the prepared subgrade",
+      "_key": "b8cff380e85b"
+    },
+    {
+      "_type": "image",
+      "local": "ubc-manhole",
+      "alt": "Manhole riser sections installed in the excavation",
+      "_key": "935a33bc885b"
+    }
+  ],
+  "homeService": "Earthworks & site services",
+  "homeClient": "Kinetic Construction",
+  "homePrime": "Kinetic Construction"
+}

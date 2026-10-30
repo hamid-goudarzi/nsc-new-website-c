@@ -1,0 +1,82 @@
+{
+  "_id": "project-howard-debeck-secondary",
+  "_type": "project",
+  "name": "Howard DeBeck Secondary School",
+  "shortName": "Howard DeBeck Secondary",
+  "slug": {
+    "_type": "slug",
+    "current": "howard-debeck-secondary"
+  },
+  "type": "Seismic upgrade and temporary portables",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2024",
+  "order": 120,
+  "heroImage": {
+    "_type": "image",
+    "local": "debeck-trench",
+    "alt": "Mini excavator opening a duct trench with precast box for the portables"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "8d8465efe961"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Unitech Construction Management",
+      "_key": "f524a3d9c714"
+    },
+    {
+      "label": "Completed",
+      "value": "2024",
+      "_key": "99dd43c78317"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "aeb9f9a818eb"
+    }
+  ],
+  "lede": "Site works for a seismic upgrade at Howard DeBeck Secondary, including the temporary portables that kept classes running.",
+  "body": "The scope covered site works for the seismic upgrade and the temporary portables used during construction, delivered with Unitech Construction Management.",
+  "scope": [
+    "Seismic upgrade site works",
+    "Site preparation and servicing for temporary portables"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "debeck-duct",
+      "alt": "Excavator digging the electrical duct trench beside the school",
+      "_key": "a83a3be6a24f"
+    },
+    {
+      "_type": "image",
+      "local": "debeck-walkway",
+      "alt": "New paved walkway along the portable classrooms",
+      "_key": "4658297b1e95"
+    },
+    {
+      "_type": "image",
+      "local": "debeck-exc",
+      "alt": "Excavator digging out the area during the seismic upgrade site work",
+      "_key": "2fe2d1bb3427"
+    },
+    {
+      "_type": "image",
+      "local": "debeck-curb",
+      "alt": "New concrete curb with prepared gravel base",
+      "_key": "b8b6a6ecd83b"
+    }
+  ],
+  "homeService": "Seismic & temporary portables",
+  "homeClient": "School District #38",
+  "homePrime": "Unitech Construction Mgmt"
+}

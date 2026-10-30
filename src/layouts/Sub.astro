@@ -1,0 +1,47 @@
+---
+// Layout for every page except the home page.
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { content } from '../lib/content.mjs';
+const { title, fullTitle, description, ogImage, active = '', pre = '', bodyClass, jsonld = [] } = Astro.props;
+const { settings, pages } = await content();
+const t = fullTitle || `${title} | ${settings.companyName}`;
+const canonical = new URL(Astro.url.pathname, settings.siteUrl || Astro.site).href;
+const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUrl || String(Astro.site)) + '/').href : undefined;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06080c">
+<title>{t}</title>
+{description && <meta name="description" content={description}>}
+<link rel="canonical" href={canonical}>
+<meta property="og:title" content={t}>
+{description && <meta property="og:description" content={description}>}
+{og && <meta property="og:image" content={og}>}
+<meta property="og:url" content={canonical}>
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content={settings.companyName}>
+<meta property="og:locale" content="en_CA">
+{settings.googleVerification && <meta name="google-site-verification" content={settings.googleVerification}>}
+{settings.bingVerification && <meta name="msvalidate.01" content={settings.bingVerification}>}
+<link rel="icon" href={`${pre}nsc-logo.jpg`}>
+<link rel="apple-touch-icon" href={`${pre}nsc-logo.jpg`}>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+{jsonld.filter(Boolean).map(j => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, '\\u003c')} />)}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href={`${pre}assets/project.css`}>
+</head>
+<body class={bodyClass}>
+<Nav settings={settings} pre={pre} active={active} />
+<slot />
+<Footer settings={settings} pages={pages} pre={pre} />
+<slot name="after" />
+<script is:inline src={`${pre}assets/site.js`}></script>
+</body>
+</html>

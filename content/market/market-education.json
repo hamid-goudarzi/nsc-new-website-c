@@ -1,0 +1,112 @@
+{
+  "_id": "market-education",
+  "_type": "market",
+  "title": "Education",
+  "anchor": "education",
+  "order": 20,
+  "image": {
+    "_type": "image",
+    "local": "tank",
+    "alt": "Stormwater detention tank under construction at Guildford Park Secondary"
+  },
+  "description": "Civil, underground utility and site services for school districts across Metro Vancouver: additions, modular classrooms, seismic upgrades and the frontage works that go with them, delivered around occupied schools and school calendars.",
+  "deliver": [
+    "Site servicing for additions and modular classrooms",
+    "Detention tanks and flow control manholes",
+    "Fire and domestic water, BC Hydro and electrical",
+    "Bulk and detailed excavation, grading and shoring",
+    "Curb, sidewalks, parking areas and paving"
+  ],
+  "owners": [
+    "School District #36 Surrey",
+    "School District #37 Delta",
+    "School District #38 Richmond",
+    "School District #40 New Westminster",
+    "School District #41 Burnaby",
+    "University of British Columbia"
+  ],
+  "projects": [
+    {
+      "_type": "reference",
+      "_ref": "project-guildford-park-secondary",
+      "_key": "38007ba33866"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-queen-elizabeth-elementary",
+      "_key": "4b353ffb9f49"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-george-greenaway-elementary",
+      "_key": "522c65b194dc"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-ladner-elementary-modular",
+      "_key": "8db381d2411e"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-parkcrest-elementary",
+      "_key": "1ee88bacc10f"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-william-cook-elementary",
+      "_key": "9da4fc69137f"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-howard-debeck-secondary",
+      "_key": "6793c2c126b1"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-brighouse-modular-addition",
+      "_key": "f412af7542fb"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-brighouse-elementary",
+      "_key": "a8bb4cc3b165"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-james-whiteside-elementary",
+      "_key": "057bc54642b2"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-mckinney-elementary",
+      "_key": "5a8941953ed3"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-mcroberts-secondary",
+      "_key": "8abf4d9efd63"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-tomsett-elementary",
+      "_key": "92e12eaf0ba6"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-richmond-school-portables",
+      "_key": "71c73cd17393"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-ubc-digital-design-studio",
+      "_key": "25e427b3ae3d"
+    }
+  ],
+  "homeTitle": "Education",
+  "homeText": "Site services for additions, modulars and school district programs.",
+  "homeImage": {
+    "_type": "image",
+    "local": "parkcrest-earthworks",
+    "alt": "Earthworks beside Parkcrest Elementary"
+  }
+}

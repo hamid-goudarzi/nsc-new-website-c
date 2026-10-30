@@ -1,0 +1,82 @@
+{
+  "_id": "project-fire-hall-12-kitsilano",
+  "_type": "project",
+  "name": "Fire Hall No. 12, Kitsilano",
+  "shortName": "Fire Hall No. 12",
+  "slug": {
+    "_type": "slug",
+    "current": "fire-hall-12-kitsilano"
+  },
+  "type": "Seismic upgrades",
+  "city": "Vancouver",
+  "sector": "Municipal",
+  "group": "underway",
+  "status": "In progress",
+  "live": true,
+  "year": "Ongoing",
+  "order": 80,
+  "heroImage": {
+    "_type": "image",
+    "local": "fh12-trench",
+    "alt": "Worker excavating a service trench along the Fire Hall 12 foundation"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "City of Vancouver",
+      "_key": "2f5662366a8a"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Scott Special Projects",
+      "_key": "e0229a68d616"
+    },
+    {
+      "label": "Status",
+      "value": "In progress",
+      "_key": "4162c0da5f5c"
+    }
+  ],
+  "lede": "Civil and earthwork support for the seismic upgrade of Kitsilano's Fire Hall No. 12.",
+  "body": "We work with Scott Special Projects for the City of Vancouver on the civil scope of the seismic upgrade.",
+  "scope": [
+    "Excavation and civil works supporting the seismic upgrade"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "fh12-excavator",
+      "alt": "Compact excavator working beside the fire hall",
+      "_key": "e302d968263c"
+    },
+    {
+      "_type": "image",
+      "local": "fh12-piping",
+      "alt": "Storm and sanitary piping being installed beside the building",
+      "_key": "06181ff20849"
+    },
+    {
+      "_type": "image",
+      "local": "fh12-perimeter",
+      "alt": "Perimeter trench along the brick fire hall wall",
+      "_key": "a2bb236ce006"
+    },
+    {
+      "_type": "image",
+      "local": "fh12-storm",
+      "alt": "New storm pipe and cleanout in an open trench",
+      "_key": "2337a074ec41"
+    },
+    {
+      "_type": "image",
+      "local": "fh12-apron",
+      "alt": "Finished concrete apron at the fire hall",
+      "_key": "eb33ce45449b"
+    }
+  ],
+  "homeService": "Seismic upgrades",
+  "homeClient": "City of Vancouver",
+  "homePrime": "Scott Special Projects"
+}

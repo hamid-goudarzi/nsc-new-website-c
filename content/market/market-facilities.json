@@ -1,0 +1,55 @@
+{
+  "_id": "market-facilities",
+  "_type": "market",
+  "title": "Public facilities and institutions",
+  "anchor": "facilities",
+  "order": 30,
+  "image": {
+    "_type": "image",
+    "local": "manitoba-tanks",
+    "alt": "Fuel tanks set in the lined excavation at Manitoba Yard"
+  },
+  "description": "Excavation, utilities and site works at operating public facilities: fire halls, city works yards, campus buildings and public amenities, coordinated with prime contractors and the people who use the site every day.",
+  "deliver": [
+    "Civil scope for seismic upgrades",
+    "Fuel systems, tanks and oil-water separators",
+    "Trench drains, slabs and aprons",
+    "Shoring and deep utility excavation beside structures",
+    "Service connections for new public buildings"
+  ],
+  "owners": [
+    "City of Vancouver",
+    "University of British Columbia",
+    "Scott Special Projects",
+    "Kinetic Construction"
+  ],
+  "projects": [
+    {
+      "_type": "reference",
+      "_ref": "project-fire-hall-12-kitsilano",
+      "_key": "1f369a60d76f"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-manitoba-yard-fuel-station",
+      "_key": "d6d987a16cb2"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-portland-loos",
+      "_key": "bebc02cc49b8"
+    },
+    {
+      "_type": "reference",
+      "_ref": "project-ubc-digital-design-studio",
+      "_key": "a11e4c81ba96"
+    }
+  ],
+  "homeTitle": "Public facilities",
+  "homeText": "Fire halls, works yards, campuses and public amenities.",
+  "homeImage": {
+    "_type": "image",
+    "local": "manitoba-tanks",
+    "alt": "Fuel tanks in the lined excavation at Manitoba Yard"
+  }
+}

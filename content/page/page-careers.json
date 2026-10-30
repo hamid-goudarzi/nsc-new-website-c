@@ -1,0 +1,103 @@
+{
+  "_id": "page-careers",
+  "_type": "page",
+  "title": "Careers",
+  "slug": {
+    "_type": "slug",
+    "current": "careers"
+  },
+  "navKey": "careers",
+  "description": "Careers at Neil Smith Construction: field and trades, project delivery and engineering roles on public infrastructure across Metro Vancouver.",
+  "order": 40,
+  "hero": {
+    "kicker": "Careers",
+    "title": "Build what’s next",
+    "highlight": "with us.",
+    "subtitle": "We are growing across Metro Vancouver and the Fraser Valley, and we are hiring people who take pride in doing civil work safely and well.",
+    "image": {
+      "_type": "image",
+      "local": "mhcrew",
+      "alt": "NSC crew setting a precast manhole on Kingston Road"
+    }
+  },
+  "blocks": [
+    {
+      "kicker": "Why NSC",
+      "title": "A career in the ground.",
+      "intro": "Public infrastructure, real responsibility and a team that backs you up.",
+      "columns": "4",
+      "items": [
+        {
+          "title": "Work that matters",
+          "text": "Sewers, watermains and school sites that communities rely on for decades.",
+          "_key": "27fa82064d8c"
+        },
+        {
+          "title": "Learn from the best",
+          "text": "Work beside superintendents and foremen with 15 to 20+ years in civil construction.",
+          "_key": "4b5aaaaa7065"
+        },
+        {
+          "title": "Safety first, always",
+          "text": "COR certified program, a safety officer on our sites and a toolbox meeting every shift.",
+          "_key": "6967c5cb02da"
+        },
+        {
+          "title": "Room to grow",
+          "text": "We invest in learning, so safe and efficient work becomes second nature and people move up.",
+          "_key": "cf6a5120c2a1"
+        }
+      ],
+      "_type": "numberedList",
+      "_key": "cf1d87f4e6da"
+    },
+    {
+      "kicker": "Career paths",
+      "title": "Find your place on the team.",
+      "tight": true,
+      "items": [
+        {
+          "title": "Field and trades",
+          "text": "Pipelayers, equipment operators, labourers, foremen and superintendents.",
+          "image": {
+            "_type": "image",
+            "local": "qe-pipelay",
+            "alt": "Field and trades"
+          },
+          "_key": "0b49f6679047"
+        },
+        {
+          "title": "Project delivery",
+          "text": "Project managers, project coordinators and estimators.",
+          "image": {
+            "_type": "image",
+            "local": "gexc",
+            "alt": "Project delivery"
+          },
+          "_key": "659b194fd2aa"
+        },
+        {
+          "title": "Engineering and technical",
+          "text": "Construction technologists, EITs, QA/QC and utility coordination.",
+          "image": {
+            "_type": "image",
+            "local": "ubc-chamber",
+            "alt": "Engineering and technical"
+          },
+          "_key": "7ed50b1bc743"
+        }
+      ],
+      "_type": "cards",
+      "_key": "8f35b6a6cc88"
+    },
+    {
+      "anchor": "openings",
+      "kicker": "Open positions",
+      "title": "We’re hiring.",
+      "intro": "Send your resume to info@nscltd.ca with the position in the subject line. Don’t see your role? Send it anyway.",
+      "tight": true,
+      "_type": "jobs",
+      "_key": "b3efb15461b9"
+    }
+  ]
+}

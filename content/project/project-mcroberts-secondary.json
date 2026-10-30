@@ -1,0 +1,54 @@
+{
+  "_id": "project-mcroberts-secondary",
+  "_type": "project",
+  "name": "McRoberts Secondary School",
+  "shortName": "McRoberts Secondary",
+  "slug": {
+    "_type": "slug",
+    "current": "mcroberts-secondary"
+  },
+  "type": "Sewer and water upgrade",
+  "city": "Richmond",
+  "sector": "Schools",
+  "group": "richmond",
+  "status": "Completed",
+  "live": false,
+  "year": "2023",
+  "order": 220,
+  "heroImage": {
+    "_type": "image",
+    "local": "ill-mcroberts-secondary",
+    "alt": "Illustration of the McRoberts Secondary School site",
+    "tag": "illustration"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #38",
+      "_key": "8d18453c7f74"
+    },
+    {
+      "label": "Completed",
+      "value": "2023",
+      "_key": "efa8808bb2d6"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "bbb034900c1d"
+    }
+  ],
+  "lede": "Storm and sanitary sewer upgrade, fire and domestic water upgrade and new paving at McRoberts Secondary.",
+  "body": "",
+  "scope": [
+    "Storm and sanitary sewer system upgrade",
+    "Fire and domestic water upgrade",
+    "New paving"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [],
+  "homeService": "Sewer and water upgrade",
+  "homeClient": "School District #38",
+  "homePrime": ""
+}

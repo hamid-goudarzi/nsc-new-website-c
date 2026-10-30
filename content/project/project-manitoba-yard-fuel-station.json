@@ -1,0 +1,81 @@
+{
+  "_id": "project-manitoba-yard-fuel-station",
+  "_type": "project",
+  "name": "Manitoba Yard Fuel Station",
+  "shortName": "Manitoba Yard Fuel Station",
+  "slug": {
+    "_type": "slug",
+    "current": "manitoba-yard-fuel-station"
+  },
+  "type": "Seismic upgrades",
+  "city": "Vancouver",
+  "sector": "Municipal",
+  "group": "city",
+  "status": "Completed",
+  "live": false,
+  "year": "2022",
+  "order": 160,
+  "heroImage": {
+    "_type": "image",
+    "local": "manitoba-tanks",
+    "alt": "Fuel tanks set in a lined excavation at the Manitoba Works Yard"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "City of Vancouver",
+      "_key": "42b401eb4192"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Scott Construction",
+      "_key": "ecbccde84a03"
+    },
+    {
+      "label": "Completed",
+      "value": "2022",
+      "_key": "195b46d13674"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "dd8b6e12240f"
+    }
+  ],
+  "lede": "Civil works supporting the seismic upgrade of the City of Vancouver's Manitoba Yard fuel station.",
+  "body": "A specialized job at an active city works yard, delivered with Scott Construction.",
+  "scope": [
+    "Excavation and civil works supporting the seismic upgrade"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "manitoba-trench-drain",
+      "alt": "New trench drain and concrete pad at the fuel station",
+      "_key": "b0a9d979a61d"
+    },
+    {
+      "_type": "image",
+      "local": "manitoba-bedding",
+      "alt": "Crew grading bedding in the lined tank excavation",
+      "_key": "c846d68ab4cb"
+    },
+    {
+      "_type": "image",
+      "local": "manitoba-excavator",
+      "alt": "Excavator and worker finishing grade at the trench drain",
+      "_key": "9189a173017f"
+    },
+    {
+      "_type": "image",
+      "local": "manitoba-separator",
+      "alt": "Oil-water separator with new storm connections",
+      "_key": "feea893257e8"
+    }
+  ],
+  "homeService": "Seismic upgrades",
+  "homeClient": "City of Vancouver",
+  "homePrime": "Scott Construction"
+}

@@ -1,0 +1,126 @@
+{
+  "_id": "project-queen-elizabeth-elementary",
+  "_type": "project",
+  "name": "Queen Elizabeth Elementary Addition",
+  "shortName": "Queen Elizabeth Elementary",
+  "slug": {
+    "_type": "slug",
+    "current": "queen-elizabeth-elementary"
+  },
+  "type": "Elementary school addition",
+  "city": "New Westminster",
+  "sector": "Schools",
+  "group": "underway",
+  "status": "In progress",
+  "live": true,
+  "year": "2024 to present",
+  "order": 30,
+  "heroImage": {
+    "_type": "image",
+    "local": "qe-exc",
+    "alt": "NSC excavator and crew excavating along the new curb line on the road"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #40",
+      "_key": "9b015bc3506b"
+    },
+    {
+      "label": "Prime contractor",
+      "value": "Pro-Can Construction Group",
+      "_key": "2496c70a8b31"
+    },
+    {
+      "label": "Started",
+      "value": "Sep 2024",
+      "_key": "addcca28929a"
+    },
+    {
+      "label": "Status",
+      "value": "In progress",
+      "_key": "fc2595e77a38"
+    }
+  ],
+  "lede": "Civil works for a new addition at Queen Elizabeth Elementary, including the realignment of a city sanitary forcemain and new road and frontage works.",
+  "body": "The new building sat over the path of an existing city sanitary forcemain. We rerouted and realigned the forcemain so the addition could proceed, keeping the city system in service.\n\nSanitary sewer work in the school grounds was scheduled over spring break, so the school could stay open for students and staff.\n\nOff the school site we built new road works for the city: streetlighting, curb and gutter, sidewalks, driveways and paving.",
+  "scope": [
+    "Rerouting and realignment of the city sanitary forcemain",
+    "Storm and sanitary sewer system upgrade",
+    "Fire and domestic water upgrade",
+    "Bulk and detailed excavation for the addition",
+    "Streetlighting installation and road upgrade",
+    "Concrete curb and gutter, sidewalks and driveways for the city",
+    "Onsite and offsite asphalt overlay and new paving"
+  ],
+  "facts": [
+    {
+      "value": "Forcemain",
+      "label": "rerouted and realigned",
+      "_key": "6dd3f7db8b57"
+    },
+    {
+      "value": "Spring break",
+      "label": "sewer work while school was out",
+      "_key": "bdf37d34d602"
+    },
+    {
+      "value": "Sep 2024",
+      "label": "started",
+      "_key": "64a6df65c1a2"
+    },
+    {
+      "value": "SD #40",
+      "label": "New Westminster Schools",
+      "_key": "b5a5e4eb5f89"
+    }
+  ],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "qe-manholes",
+      "alt": "Precast manholes and PVC sewer pipe set in the trench",
+      "_key": "699a0923f91c"
+    },
+    {
+      "_type": "image",
+      "local": "qe-sewer",
+      "alt": "New PVC sewer main laid in the trench along the lane",
+      "_key": "56434d8a6d16"
+    },
+    {
+      "_type": "image",
+      "local": "qe-pipelay",
+      "alt": "Crew laying PVC sewer pipe as the excavator places bedding",
+      "_key": "cf3939fd30ea"
+    },
+    {
+      "_type": "image",
+      "local": "qe-trench",
+      "alt": "Crew member in a deep utility trench with excavator",
+      "_key": "d4c8e03b3357"
+    },
+    {
+      "_type": "image",
+      "local": "qe-storm",
+      "alt": "Twin corrugated storm pipes installed in the trench",
+      "_key": "4a6c5bcc67f9"
+    },
+    {
+      "_type": "image",
+      "local": "qe-sidewalk",
+      "alt": "New concrete sidewalk along the road frontage",
+      "_key": "ec5b502b32af"
+    },
+    {
+      "_type": "image",
+      "local": "qe-curb",
+      "alt": "New curb and sidewalk on the street frontage",
+      "_key": "bdf99fd9bdc0"
+    }
+  ],
+  "homeService": "Civil work",
+  "homeClient": "School District #40",
+  "homePrime": "Pro-Can Construction Group"
+}

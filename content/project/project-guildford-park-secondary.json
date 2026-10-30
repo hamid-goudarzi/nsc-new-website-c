@@ -1,0 +1,165 @@
+{
+  "_id": "project-guildford-park-secondary",
+  "_type": "project",
+  "name": "Guildford Park Secondary School Addition",
+  "shortName": "Guildford Park Secondary",
+  "slug": {
+    "_type": "slug",
+    "current": "guildford-park-secondary"
+  },
+  "type": "Secondary school addition",
+  "city": "Surrey",
+  "sector": "Schools",
+  "group": "underway",
+  "status": "In progress",
+  "live": true,
+  "year": "2025 to present",
+  "order": 20,
+  "heroImage": {
+    "_type": "image",
+    "local": "tank",
+    "alt": "Stormwater detention tank under construction at Guildford Park Secondary, with excavators behind"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "School District #36",
+      "_key": "2cd5c3ea0e99"
+    },
+    {
+      "label": "Construction manager",
+      "value": "Unitech Construction Management",
+      "_key": "c3750449ae93"
+    },
+    {
+      "label": "Started",
+      "value": "Sep 2025",
+      "_key": "8ddf6fe19952"
+    },
+    {
+      "label": "Status",
+      "value": "In progress",
+      "_key": "7d3da652306c"
+    }
+  ],
+  "lede": "Full civil scope for a major secondary school addition in Surrey, from bulk excavation and a large stormwater detention tank to new frontage works.",
+  "body": "The addition sits beside the school's sports field. Before the building could go up, the site needed bulk excavation, new deep utilities and a way to hold back stormwater on site.\n\nThe centrepiece is an underground detention tank. We excavated the pit, placed the liner and built the tank from modular chambers, then installed the flow control manholes that meter water back into the city system.\n\nOnsite and offsite work continues around the occupied school, with fire and domestic water, BC Hydro and electrical, curb, sidewalks and paving.",
+  "scope": [
+    "Onsite and offsite storm and sanitary sewer system upgrade",
+    "Onsite and offsite fire and domestic water upgrade",
+    "BC Hydro and electrical upgrade",
+    "Bulk and detail excavation",
+    "Detention tank and flow control manholes",
+    "Concrete curb and gutter",
+    "Concrete sidewalk, letdowns and driveways",
+    "Onsite and offsite asphalt overlay and new paving"
+  ],
+  "facts": [
+    {
+      "value": "Detention tank",
+      "label": "built from modular chambers",
+      "_key": "7d007a4c3a79"
+    },
+    {
+      "value": "Onsite + offsite",
+      "label": "sewer and water upgrades",
+      "_key": "26042d5cec44"
+    },
+    {
+      "value": "Sep 2025",
+      "label": "mobilized",
+      "_key": "de3df804ecd2"
+    },
+    {
+      "value": "SD #36",
+      "label": "Surrey Schools",
+      "_key": "8dd6d5de1b4d"
+    }
+  ],
+  "timeline": [
+    {
+      "when": "Sep 2025",
+      "what": "Mobilization and bulk excavation",
+      "_key": "429657053310"
+    },
+    {
+      "when": "Sep 2025",
+      "what": "Detention tank liner and chamber install",
+      "_key": "121046567b2c"
+    },
+    {
+      "when": "Fall 2025",
+      "what": "Water, sewer and electrical upgrades",
+      "_key": "9e54ea9349bb"
+    },
+    {
+      "when": "Winter 2025",
+      "what": "Curb and gutter along the field",
+      "_key": "374b9d86a0e5"
+    },
+    {
+      "when": "2026",
+      "what": "Frontage works and paving",
+      "_key": "b42e23696330"
+    }
+  ],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "tank2",
+      "alt": "NSC crew placing detention tank modules in the lined pit",
+      "_key": "36be9f994211"
+    },
+    {
+      "_type": "image",
+      "local": "tank3",
+      "alt": "Detention tank modules being stacked",
+      "_key": "9293a2a223a9"
+    },
+    {
+      "_type": "image",
+      "local": "gexc",
+      "alt": "NSC CAT 330 excavator on the Guildford site",
+      "_key": "93aa7b9ba746"
+    },
+    {
+      "_type": "image",
+      "local": "mains",
+      "alt": "New fire and domestic water mains with gate valves",
+      "_key": "4ba9d8dfb22c"
+    },
+    {
+      "_type": "image",
+      "local": "gwide",
+      "alt": "Graded building pad beside the school field",
+      "_key": "32d4fee0b1c8"
+    },
+    {
+      "_type": "image",
+      "local": "deep",
+      "alt": "Deep utility excavation with ladder access",
+      "_key": "67b0d240f02d"
+    },
+    {
+      "_type": "image",
+      "local": "curb",
+      "alt": "New concrete curb and gutter along the school field",
+      "_key": "6377c0f68d0e"
+    },
+    {
+      "_type": "image",
+      "local": "gwide2",
+      "alt": "Excavation for the addition at Guildford Park",
+      "_key": "d2e62ac3a61a"
+    },
+    {
+      "_type": "image",
+      "local": "stock",
+      "alt": "Bulk excavation stockpile",
+      "_key": "3dbab30fdba5"
+    }
+  ],
+  "homeService": "Civil work",
+  "homeClient": "School District #36",
+  "homePrime": "Unitech"
+}

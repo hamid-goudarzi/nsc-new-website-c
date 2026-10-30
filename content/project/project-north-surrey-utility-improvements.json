@@ -1,0 +1,76 @@
+{
+  "_id": "project-north-surrey-utility-improvements",
+  "_type": "project",
+  "name": "North Surrey Utility Improvements",
+  "shortName": "North Surrey Utilities",
+  "slug": {
+    "_type": "slug",
+    "current": "north-surrey-utility-improvements"
+  },
+  "type": "Civil work",
+  "city": "Surrey",
+  "sector": "Municipal",
+  "group": "city",
+  "status": "Completed",
+  "live": false,
+  "year": "2020",
+  "order": 180,
+  "heroImage": {
+    "_type": "image",
+    "local": "nsurrey-excavator",
+    "alt": "Excavator opening a service trench as crew work in the cut, North Surrey"
+  },
+  "details": [
+    {
+      "label": "Client",
+      "value": "City of Surrey",
+      "_key": "2dbf65093896"
+    },
+    {
+      "label": "Contractor",
+      "value": "Neil Smith Construction (prime)",
+      "_key": "37c4d646ec88"
+    },
+    {
+      "label": "Completed",
+      "value": "2020",
+      "_key": "531a3a79753c"
+    },
+    {
+      "label": "Status",
+      "value": "Completed",
+      "_key": "22a7e878ef24"
+    }
+  ],
+  "lede": "Utility improvements for the City of Surrey, with Neil Smith Construction as prime contractor.",
+  "body": "Our first prime contract with the City of Surrey: underground utility work through a live neighbourhood.",
+  "scope": [
+    "Underground utility improvements",
+    "Road and surface restoration"
+  ],
+  "facts": [],
+  "timeline": [],
+  "gallery": [
+    {
+      "_type": "image",
+      "local": "nsurrey-trench-pipe",
+      "alt": "Crew connecting a new PVC service lateral in the trench",
+      "_key": "1dd2db3a3068"
+    },
+    {
+      "_type": "image",
+      "local": "nsurrey-lateral",
+      "alt": "Worker bedding a new PVC sewer pipe in a trench",
+      "_key": "e531f69c6fe3"
+    },
+    {
+      "_type": "image",
+      "local": "nsurrey-manhole",
+      "alt": "New PVC connection inside a sanitary manhole",
+      "_key": "e322ebe6dabd"
+    }
+  ],
+  "homeService": "Civil work",
+  "homeClient": "City of Surrey",
+  "homePrime": "Neil Smith Construction"
+}
