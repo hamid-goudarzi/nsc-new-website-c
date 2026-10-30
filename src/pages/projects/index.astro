@@ -17,7 +17,7 @@ const shown = groups.filter(g => g.ps.length);
 const client = p => (p.details || []).find(d => /^client$/i.test(d.label))?.value || '';
 const sizes = '(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw';
 ---
-<Sub title="Projects" fullTitle={pp.seoTitle} description={pp.description} jsonld={ld} ogImage={imgUrl(h.image)} active="projects" pre={pre}>
+<Sub path="projects/index.html" title="Projects" fullTitle={pp.seoTitle} description={pp.description} jsonld={ld} ogImage={imgUrl(h.image)} active="projects" pre={pre}>
 <header class="pihero">
   <div class="bg"><Img image={h.image} pre={pre} eager /></div>
   <div class="wrap">

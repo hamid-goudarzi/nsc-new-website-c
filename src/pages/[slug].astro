@@ -19,7 +19,7 @@ const ld = [breadcrumbs(c.settings, [['Home', ''], [p.title, `${p.slug.current}.
 if (blocks.some(b => b._type === 'jobs')) ld.push(...c.jobs.filter(j => j.description).map(j => jobLd(c.settings, j)));   // only jobs whose full description is shown on the page
 if (p.slug.current === 'about' || p.slug.current === 'contact') ld.push(organization(c));
 ---
-<Sub title={p.title} fullTitle={p.seoTitle} description={p.description} jsonld={ld} ogImage={imgUrl(h.image)} active={p.navKey || p.slug.current} bodyClass="cp">
+<Sub path={`${p.slug.current}.html`} title={p.title} fullTitle={p.seoTitle} description={p.description} jsonld={ld} ogImage={imgUrl(h.image)} active={p.navKey || p.slug.current} bodyClass="cp">
 {h.image ? (
 <header class="pihero cphero">
   <div class="bg"><Img image={h.image} eager /></div>

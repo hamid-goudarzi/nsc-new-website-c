@@ -3,10 +3,11 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { content } from '../lib/content.mjs';
-const { title, fullTitle, description, ogImage, active = '', pre = '', bodyClass, jsonld = [] } = Astro.props;
+const { title, fullTitle, description, ogImage, active = '', pre = '', bodyClass, jsonld = [], path = '' } = Astro.props;
 const { settings, pages } = await content();
 const t = fullTitle || `${title} | ${settings.companyName}`;
-const canonical = new URL(Astro.url.pathname, settings.siteUrl || Astro.site).href;
+const base = (settings.siteUrl || String(Astro.site)).replace(/\/$/, '');
+const canonical = `${base}/${path}`;
 const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUrl || String(Astro.site)) + '/').href : undefined;
 ---
 <!doctype html>

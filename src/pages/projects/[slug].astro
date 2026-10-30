@@ -18,7 +18,7 @@ const tag = tagOf(p.heroImage);
 const hcls = tag === 'Drawing' ? 'phero dwg' : tag === 'Illustration' ? 'phero illus' : 'phero';
 const gal = p.gallery || [];
 ---
-<Sub title={p.name} fullTitle={p.seoTitle || `${p.name} | ${settings.companyName}`} description={p.description || p.lede} jsonld={ld} ogImage={imgUrl(p.heroImage)} active="projects" pre={pre}>
+<Sub path={`projects/${p.slug.current}.html`} title={p.name} fullTitle={p.seoTitle || `${p.name} | ${settings.companyName}`} description={p.description || p.lede} jsonld={ld} ogImage={imgUrl(p.heroImage)} active="projects" pre={pre}>
 <header class={hcls}>
   <div class={`bg${tag === 'Illustration' ? ' ill' : ''}`}><Img image={p.heroImage} pre={pre} eager /></div>{tag && <span class="ill-tag mono">{tag}</span>}
   <div class="wrap ph-in">
