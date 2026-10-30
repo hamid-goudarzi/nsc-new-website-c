@@ -12,6 +12,17 @@
   },
   "redirects": [
     {
+      "source": "/in-memoriam",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/about.html",
+      "permanent": true
+    },
+    {
       "source": "/story",
       "has": [
         {
@@ -451,6 +462,11 @@
     {
       "source": "/copy-of-ubc",
       "destination": "/projects/brighouse-modular-addition.html",
+      "permanent": true
+    },
+    {
+      "source": "/in-memoriam",
+      "destination": "/about.html",
       "permanent": true
     }
   ],

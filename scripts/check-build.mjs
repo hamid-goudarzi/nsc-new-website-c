@@ -18,6 +18,10 @@ for (const f of html) {
   const rel = path.relative(DIST, f);
   if (!/<title>[^<]{5,}<\/title>/.test(t)) problems.push(`${rel}: no title`);
   if (!/<meta name="description" content="[^"]{20,}"/.test(t)) warn.push(`${rel}: no search description`);
+  const md = t.match(/<meta name="description" content="([^"]*)"/)?.[1] || '';
+  if (md.length > 170) warn.push(`${rel}: search description is ${md.length} characters (Google shows about 155)`);
+  const ti = t.match(/<title>([^<]*)<\/title>/)?.[1] || '';
+  if (ti.length > 70) warn.push(`${rel}: title is ${ti.length} characters (Google shows about 60)`);
   const canon = t.match(/<link rel="canonical" href="https?:\/\/[^/]+\/([^"]*)"/);
   if (!canon && !/name="robots" content="noindex"/.test(t)) problems.push(`${rel}: no canonical link`);
   else if (canon && canon[1] !== rel.replace(/\\/g, '/') && !(rel === 'index.html' && canon[1] === '')) problems.push(`${rel}: canonical points to /${canon[1]}`);

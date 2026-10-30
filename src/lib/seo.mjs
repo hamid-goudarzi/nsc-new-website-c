@@ -53,12 +53,20 @@ export function servicesLd(s, page) {
   return servicesOf(page).map(x => ({ '@context': 'https://schema.org', '@type': 'Service', name: x.name, serviceType: x.name, description: x.description,
     provider: { '@id': orgId(s) }, areaServed: (s.serviceAreas || []).map(n => ({ '@type': 'AdministrativeArea', name: n })), url: abs(s, `${page.slug.current}.html`) }));
 }
-export const projectTitle = (s, p) => p.seoTitle || `${p.name} | ${String(p.city || '').replace(/\s*\(.*\)/, '')} Civil Project | NSC`;
+export function projectTitle(s, p) {
+  if (p.seoTitle) return p.seoTitle;
+  const city = String(p.city || '').replace(/\s*\(.*\)/, '');
+  for (const t of [`${p.name} | ${city} | NSC`, `${p.shortName || p.name} | ${city} | NSC`, `${p.shortName || p.name} | NSC`]) if (t.length <= 62) return t;
+  return `${p.shortName || p.name} | NSC`;
+}
 export function projectDescription(p) {
   if (p.description) return p.description;
-  const d = p.lede || '';
+  const d = (p.lede || '').trim();
   if (d.length >= 120) return d;
-  return `${d} ${p.type ? p.type + ' in ' : 'Civil works in '}${p.city}, BC, delivered by Neil Smith Construction.`.trim();
+  for (const extra of [` ${p.type ? p.type + ' in ' : 'Civil works in '}${p.city}, BC, by Neil Smith Construction.`, ` Neil Smith Construction, ${p.city}, BC.`]) {
+    if ((d + extra).length <= 160) return d + extra;
+  }
+  return d;
 }
 
 export function breadcrumbs(s, trail) {
@@ -153,4 +161,18 @@ export function fullText(c) {
   if (extra.length) { L.push('## More pages', ''); for (const p of extra) L.push(`- [${p.title}](${u(p.slug.current + '.html')})${p.description ? ': ' + p.description : ''}`); L.push(''); }
   L.push('## Contact', '', `To request a bid or prequalification, send drawings or a tender package to ${s.email} or call ${s.phone}. Contact page: ${u('contact.html')}`, '');
   return L.filter(x => x !== undefined && x !== null).join('\n').replace(/\n{3,}/g, '\n\n');
+}
+
+// Which services a project used, guessed from its type and scope wording (for links between pages).
+const SERVICE_WORDS = [
+  ['utilities', 'Underground utilities', /sewer|sanitary|storm|water|manhole|hydrant|forcemain|utilit|servic|hydro|electrical|conduit|catch basin/i],
+  ['earthwork', 'Earthwork and excavation', /excavat|earthwork|shoring|bulk|soil|hauling/i],
+  ['stormwater', 'Stormwater detention', /detention|flow control/i],
+  ['site-preparation', 'Site preparation', /site prep|demolition|grading|modular|portable|site servic|site work/i],
+  ['roadworks', 'Roadworks, curb and gutter', /road|curb|gutter|paving|asphalt|parking|streetlight/i],
+  ['concrete', 'Concrete work', /concrete|sidewalk|slab|driveway|letdown/i],
+];
+export function projectServices(p) {
+  const text = [p.type, p.lede, ...(p.scope || [])].join(' ');
+  return SERVICE_WORDS.filter(([, , re]) => re.test(text)).map(([anchor, label]) => ({ anchor, label }));
 }

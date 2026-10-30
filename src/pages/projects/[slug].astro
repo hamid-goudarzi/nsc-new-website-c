@@ -4,14 +4,17 @@ import Img from '../../components/Img.astro';
 import Cta from '../../components/Cta.astro';
 import { content } from '../../lib/content.mjs';
 import { paras, imgUrl, tagOf } from '../../lib/util.mjs';
-import { breadcrumbs, projectLd, projectTitle, projectDescription } from '../../lib/seo.mjs';
+import { breadcrumbs, projectLd, projectTitle, projectDescription, projectServices } from '../../lib/seo.mjs';
 
 export async function getStaticPaths() {
   const { projects } = await content();
   return projects.map((p, i) => ({ params: { slug: p.slug.current }, props: { p, next: projects[(i + 1) % projects.length] } }));
 }
 const { p, next } = Astro.props;
-const { projectsPage: pp, settings } = await content();
+const { projectsPage: pp, settings, projects, markets } = await content();
+const svc = projectServices(p);
+const sameCity = projects.filter(x => x !== p && x.city === p.city).slice(0, 8);
+const market = markets.find(m => (m.projects || []).some(x => x._id === p._id));
 const ld = [breadcrumbs(settings, [['Home', ''], ['Projects', 'projects/index.html'], [p.name, `projects/${p.slug.current}.html`]]), projectLd(settings, p)];
 const pre = '../';
 const tag = tagOf(p.heroImage);
@@ -49,6 +52,11 @@ const gal = p.gallery || [];
   <h2 style="font-size:clamp(1.8rem,1rem + 2.6vw,3.4rem);margin-top:18px">From the field.</h2><div class="gal" id="gal">
   {gal.map(g => <button type="button" class="rv" data-full={imgUrl(g, pre, 2560)} aria-label={`Open image: ${g.alt || ''}`}><Img image={g} pre={pre} sizes="(max-width:700px) 100vw, 33vw" />{tagOf(g) && <span class="g-tag mono">{tagOf(g)}</span>}</button>)}
   </div></div></section>}
+{(svc.length > 0 || sameCity.length > 0 || market) && <section class="sec related" style="padding-top:0"><div class="wrap rel-g">
+  {svc.length > 0 && <div><h2 class="mono rel-h">Services on this project</h2><div class="plinks">{svc.map(x => <a href={`../services.html#${x.anchor}`}>{x.label}<b>↗</b></a>)}</div></div>}
+  {sameCity.length > 0 && <div><h2 class="mono rel-h">More projects in {p.city}</h2><div class="plinks">{sameCity.map(x => <a href={`${x.slug.current}.html`}>{x.live && <i></i>}{x.shortName || x.name}<b>↗</b></a>)}</div></div>}
+  {market && <div><h2 class="mono rel-h">Market</h2><div class="plinks"><a href={`../markets.html#${market.anchor}`}>{market.title}<b>↗</b></a></div></div>}
+</div></section>}
 {next && next !== p && <section>
   <div class="wrap">
     <a class="next" href={`${next.slug.current}.html`}><span class="mono">Next project</span><h2>{next.name} <span class="ar">→</span></h2></a>

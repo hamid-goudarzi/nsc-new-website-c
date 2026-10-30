@@ -9,7 +9,7 @@
   "navKey": "services",
   "order": 15,
   "seoTitle": "Heavy Civil Services: Utilities, Earthworks, Roads | NSC",
-  "description": "Underground utilities, sewer separation, earthworks, stormwater detention, roadworks, curb and gutter, concrete and site servicing across Metro Vancouver and the Fraser Valley.",
+  "description": "Underground utilities, sewer separation, earthworks, stormwater detention, roadworks, concrete and site servicing across Metro Vancouver and the Fraser Valley.",
   "hero": {
     "kicker": "Services",
     "title": "Full civil scope.",
@@ -39,10 +39,11 @@
       },
       "kicker": "01 · Earthwork",
       "title": "Earthwork and excavation",
-      "body": "Bulk and detailed excavation for new buildings, additions and site development, from school sites to supportive housing and residential development.\n\n- Bulk and detail excavation, grading and site preparation\n- Hauling, and supply of soil and gravel\n- Contaminated soil handling and soil sampling\n- Shoring and trench protection, including deep utility excavation beside structures\n\nRecent work: [Guildford Park Secondary](projects/guildford-park-secondary.html), [Agnes Supportive Housing](projects/agnes-supportive-housing.html), [George Greenaway Elementary](projects/george-greenaway-elementary.html).",
+      "body": "Bulk and detailed excavation for new buildings, additions and site development, from school sites to supportive housing and residential development.\n\n- Bulk and detail excavation, grading and site preparation\n- Hauling and disposal, and supply of soil and gravel\n- Contaminated soil handling and soil sampling\n- Shoring and shotcrete, trench protection and deep utility excavation beside structures\n\nRecent work: [Guildford Park Secondary](projects/guildford-park-secondary.html), [Agnes Supportive Housing](projects/agnes-supportive-housing.html), [George Greenaway Elementary](projects/george-greenaway-elementary.html).",
       "buttonLabel": "See Guildford Park",
       "buttonLink": "projects/guildford-park-secondary.html",
-      "reverse": false
+      "reverse": false,
+      "anchor": "earthwork"
     },
     {
       "_type": "imageText",
@@ -54,10 +55,11 @@
       },
       "kicker": "02 · Utilities",
       "title": "Underground utilities and sewer separation",
-      "body": "New and replacement sanitary sewer, storm sewer and watermains for cities, school districts and public agencies, including sewer separation on live residential streets.\n\n- Sanitary and storm sewer mains, manholes and catch basins\n- Watermains, water services, fire hydrants and tie-ins\n- Service connections to every property, with services kept running during the work\n- Forcemain rerouting and realignment\n- BC Hydro and electrical upgrades\n- CCTV inspection and pressure testing\n\nRecent work: [Kingston Road sewer separation](projects/kingston-road-sewer-separation.html) for the University Endowment Lands, [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) and [North Surrey utility improvements](projects/north-surrey-utility-improvements.html).",
+      "body": "New and replacement sanitary sewer, storm sewer and watermains for cities, school districts and public agencies, including sewer separation on live residential streets.\n\n- Sanitary and storm sewer mains, manholes and catch basins\n- Watermains, water services, fire hydrants and tie-ins\n- Electrical and communication conduits\n- Service connections to every property, with services kept running during the work\n- Forcemain rerouting and realignment\n- BC Hydro and electrical upgrades\n- CCTV inspection and pressure testing\n\nRecent work: [Kingston Road sewer separation](projects/kingston-road-sewer-separation.html) for the University Endowment Lands, [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) and [North Surrey utility improvements](projects/north-surrey-utility-improvements.html).",
       "buttonLabel": "See Kingston Road",
       "buttonLink": "projects/kingston-road-sewer-separation.html",
-      "reverse": true
+      "reverse": true,
+      "anchor": "utilities"
     },
     {
       "_type": "imageText",
@@ -72,7 +74,8 @@
       "body": "Underground detention tanks and the flow control manholes that meter stormwater back into the city system, built as part of school and site servicing projects.\n\n- Detention tank excavation, liner and modular chamber installation\n- Flow control manholes\n- Storm detention pipe and onsite storm systems\n\nRecent work: [Guildford Park Secondary](projects/guildford-park-secondary.html), [Brighouse Elementary](projects/brighouse-elementary.html) and [Parkcrest Elementary](projects/parkcrest-elementary.html).",
       "buttonLabel": "See the detention tank",
       "buttonLink": "projects/guildford-park-secondary.html",
-      "reverse": false
+      "reverse": false,
+      "anchor": "stormwater"
     },
     {
       "_type": "imageText",
@@ -84,10 +87,11 @@
       },
       "kicker": "04 · Site preparation",
       "title": "Site preparation and servicing",
-      "body": "Getting sites ready to build: demolition of existing site works, erosion and sediment control, grading, and full site servicing for new buildings and modular classrooms.\n\n- Demolition and removal of existing site infrastructure\n- Erosion and sediment control\n- Site grading and building pads\n- Site servicing for additions, modular classrooms and portables\n\nRecent work: [Ladner Elementary](projects/ladner-elementary-modular.html), [Richmond School District portables](projects/richmond-school-portables.html) and [UBC Digital Design Studio](projects/ubc-digital-design-studio.html).",
+      "body": "Getting sites ready to build: demolition of existing site works, erosion and sediment control, grading, and full site servicing for new buildings and modular classrooms.\n\n- Concrete and asphalt demolition and disposal, and removal of existing site infrastructure\n- Tree removal\n- Erosion and sediment control (ESC), including wheel wash\n- Site grading and building pads\n- Site servicing for additions, modular classrooms and portables\n\nRecent work: [Ladner Elementary](projects/ladner-elementary-modular.html), [Richmond School District portables](projects/richmond-school-portables.html) and [UBC Digital Design Studio](projects/ubc-digital-design-studio.html).",
       "buttonLabel": "See Ladner Elementary",
       "buttonLink": "projects/ladner-elementary-modular.html",
-      "reverse": true
+      "reverse": true,
+      "anchor": "site-preparation"
     },
     {
       "_type": "imageText",
@@ -99,10 +103,11 @@
       },
       "kicker": "05 · Roads",
       "title": "Roadworks, curb and gutter",
-      "body": "Road construction and restoration around new utilities and buildings, for cities and school districts.\n\n- Subgrade preparation and road construction\n- Concrete curb and gutter\n- Road restoration after utility work\n- Streetlighting installation and road upgrades\n- New parking areas\n- Asphalt overlay and new paving, placed by our asphalt subcontractor\n\nRecent work: [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) road works for New Westminster and [Parkcrest Elementary](projects/parkcrest-elementary.html) in Burnaby.",
+      "body": "Road construction and restoration around new utilities and buildings, for cities and school districts.\n\n- Grading and sloping, subgrade, subbase and base for road construction\n- Concrete curb and gutter\n- Road restoration after utility work\n- Streetlighting installation and road upgrades\n- New parking areas\n- Binder and surface course paving and asphalt overlay, placed by our asphalt subcontractor\n\nRecent work: [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) road works for New Westminster and [Parkcrest Elementary](projects/parkcrest-elementary.html) in Burnaby.",
       "buttonLabel": "See Queen Elizabeth Elementary",
       "buttonLink": "projects/queen-elizabeth-elementary.html",
-      "reverse": false
+      "reverse": false,
+      "anchor": "roadworks"
     },
     {
       "_type": "imageText",
@@ -114,10 +119,11 @@
       },
       "kicker": "06 · Concrete",
       "title": "Concrete work",
-      "body": "Concrete for streets, school sites and public facilities.\n\n- Sidewalks, driveways and letdowns, including wheelchair letdowns\n- Concrete curb and gutter\n- Reinforced concrete slabs, aprons and trench drains\n- Exposed aggregate\n\nRecent work: [Kingston Road](projects/kingston-road-sewer-separation.html), [McKinney Elementary](projects/mckinney-elementary.html) and [Manitoba Yard fuel station](projects/manitoba-yard-fuel-station.html).",
+      "body": "Concrete for streets, school sites and public facilities.\n\n- City sidewalks, driveways and letdowns, including wheelchair and driveway letdowns\n- Concrete curb and gutter\n- Reinforced concrete slabs, aprons and trench drains\n- Exposed aggregate slabs\n\nRecent work: [Kingston Road](projects/kingston-road-sewer-separation.html), [McKinney Elementary](projects/mckinney-elementary.html) and [Manitoba Yard fuel station](projects/manitoba-yard-fuel-station.html).",
       "buttonLabel": "See Kingston Road",
       "buttonLink": "projects/kingston-road-sewer-separation.html",
-      "reverse": true
+      "reverse": true,
+      "anchor": "concrete"
     },
     {
       "_type": "faq",
