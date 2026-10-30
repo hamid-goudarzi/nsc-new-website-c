@@ -67,8 +67,8 @@ const pickProjects = b => (b.projects?.length ? b.projects : projects.filter(p =
         : <p class="rv" style="color:var(--muted)">{b.emptyText || 'No openings right now. Send your resume anyway and we will keep it on file.'}</p>}
     </div></section>);
   if (t === 'audiences') return (
-    <section class="sec" id={b.anchor || undefined}><div class="wrap"><div class="auds">{(b.items || []).map(a => <article class="aud rv" id={a.anchor || undefined}><p class="mono kick">{a.title}</p><p>{a.text}</p>{a.label && <a class="btn btn-glass" href={href(a.link, pre)}>{a.label} →</a>}</article>)}</div>
-    {more.length > 0 && <div class="offices">
+    <section class="sec" id={b.anchor || undefined}><div class="wrap"><h2 class="sr-only">Ways to reach us</h2><div class="auds">{(b.items || []).map(a => <article class="aud rv" id={a.anchor || undefined}><p class="mono kick">{a.title}</p><p>{a.text}</p>{a.label && <a class="btn btn-glass" href={href(a.link, pre)}>{a.label} →</a>}</article>)}</div>
+    {more.length > 0 && <h2 class="sr-only">Offices and contact details</h2>}{more.length > 0 && <div class="offices">
       {(s.offices || []).map(o => <div class="off rv"><p class="mono kick">{o.label}</p><h3 set:html={linkify(o.address)} />{o.mapUrl && <a href={o.mapUrl} target="_blank" rel="noopener">Open in Maps ↗</a>}</div>)}
       <div class="off rv"><p class="mono kick">Reach us</p><h3><a href={tel(s.phone)}>{s.phone}</a><br><a href={`mailto:${s.email}`}>{s.email}</a></h3>{s.safetyEmail && <span>Safety: <a href={`mailto:${s.safetyEmail}`}>{s.safetyEmail}</a></span>}</div>
     </div>}</div></section>);

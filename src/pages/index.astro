@@ -37,9 +37,9 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <meta property="og:url" content={canonical + '/'}>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="description" content={s.description}>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/home.css">
 {ld.map(j => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, '\\u003c')} />)}
 {s.googleVerification && <meta name="google-site-verification" content={s.googleVerification}>}
@@ -53,7 +53,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <body>
 <div class="exc" id="exc" aria-hidden="true" set:html={svgs.exc}></div>
 <nav class="nav" id="nav" aria-label="Main">
-  <a class="logo" href="#top"><img src="nsc-logo.jpg" alt="NSC logo"><b>{s.companyName}</b></a>
+  <a class="logo" href="#top"><img src="nsc-logo.jpg" alt="NSC logo" width="96" height="96"><b>{s.companyName}</b></a>
   {(s.nav || []).map(n => <a class="lk" href={n.link.replace(/^index\.html(?=#)/, '')}>{n.label}</a>)}
   <a class="btn btn-blue" href="contact.html">Request a bid <span class="ar">→</span></a>
   <button class="burger" id="burger" type="button" aria-expanded="false">Menu</button>
@@ -84,7 +84,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
     <p class="mono kick">Who we are</p>
     <p class="stmt" id="stmt" style="margin-top:24px">{h.statement}</p>
   </div>
-  <div class="vtype" aria-label="Groundwork">
+  <div class="vtype" role="img" aria-label="Video of an NSC excavator digging, seen through the word GROUND">
     <video id="typeVid" muted playsinline loop autoplay aria-hidden="true"></video>
     <div class="mask" aria-hidden="true">GROUND</div>
   </div>
@@ -122,7 +122,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
     <p class="mono kick">Selected projects</p>
     <h2 class="h2 split" data-split>{h.projectsTitle}</h2>
     <div class="stack" id="stack">{(h.featured || []).filter(f => f.project).map((f, k) => { const p = f.project; return (
-      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)} aria-label={`Open ${p.name}`}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
+      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
     <div class="allhead"><p class="mono kick">All projects · tap any to open</p><a class="btn btn-blue" href="projects/index.html">Browse all projects <span class="ar">→</span></a></div>
     <div class="all" id="all" style="margin-top:16px">{projects.map(p => <a href={url(p)}>{p.live && <i>●</i>}{p.name}<b>↗</b></a>)}</div>
   </div>
@@ -223,10 +223,10 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <footer>
   <div class="wrap">
     <div class="ft">
-      <div><a class="logo" href="#top" style="display:flex;align-items:center;gap:12px;padding:0"><img src="nsc-logo.jpg" alt="NSC logo" style="height:40px;border-radius:8px"><b style="font-family:var(--display);font-weight:600;color:#fff;font-size:15px">{s.companyName}</b></a><p class="p" style="margin-top:16px;max-width:36ch">Heavy civil contractor for Metro Vancouver and the Fraser Valley. COR certified.</p></div>
-      <div><h4>Explore</h4><a href="markets.html">Markets</a><a href="services.html">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety &amp; Environment</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html#partners">Subcontractors &amp; suppliers</a></div>
-      <div><h4>Visit</h4>{(s.offices || []).map(o => <span class="p">{String(o.address).split('\n')[0]}, {(String(o.address).split('\n')[1] || '').split(',')[0]}</span>)}</div>
-      <div><h4>Connect</h4><a href={tel(s.phone)}>{s.phone}</a><a href={`mailto:${s.email}`}>{s.email}</a>{s.linkedin && <a href={s.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}{s.instagram && <a href={s.instagram} target="_blank" rel="noopener">Instagram ↗</a>}</div>
+      <div><a class="logo" href="#top" style="display:flex;align-items:center;gap:12px;padding:0"><img src="nsc-logo.jpg" alt="NSC logo" width="96" height="96" style="height:40px;width:40px;border-radius:8px"><b style="font-family:var(--display);font-weight:600;color:#fff;font-size:15px">{s.companyName}</b></a><p class="p" style="margin-top:16px;max-width:36ch">Heavy civil contractor for Metro Vancouver and the Fraser Valley. COR certified.</p></div>
+      <div><p class="fh">Explore</p><a href="markets.html">Markets</a><a href="services.html">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety &amp; Environment</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html#partners">Subcontractors &amp; suppliers</a></div>
+      <div><p class="fh">Visit</p>{(s.offices || []).map(o => <span class="p">{String(o.address).split('\n')[0]}, {(String(o.address).split('\n')[1] || '').split(',')[0]}</span>)}</div>
+      <div><p class="fh">Connect</p><a href={tel(s.phone)}>{s.phone}</a><a href={`mailto:${s.email}`}>{s.email}</a>{s.linkedin && <a href={s.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}{s.instagram && <a href={s.instagram} target="_blank" rel="noopener">Instagram ↗</a>}</div>
     </div>
     <div class="ft-bar"><span>© {new Date().getFullYear()} {s.companyName}</span><span>{s.corLine?.replace(/^COR Certified/, 'COR certified')}</span></div>
     <div class="ft-big" aria-hidden="true">NEIL SMITH</div>

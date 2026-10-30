@@ -1,7 +1,7 @@
 :root{
   --bg:#06080c;--bg-2:#0b0f16;--card:#0f141d;--glass:rgba(255,255,255,.06);--glass-2:rgba(255,255,255,.1);
   --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.18);
-  --text:#f2f4f8;--muted:#8e98ab;--dim:#5d6678;
+  --text:#f2f4f8;--muted:#8e98ab;--dim:#7f899c;
   --blue:#003ea5;--glow:#2f6bff;--glow-2:#7aa6ff;--orange:#ff6a2b;
   --display:"Unbounded",system-ui,sans-serif;--body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
   --ease:cubic-bezier(.16,1,.3,1);color-scheme:dark}
@@ -344,7 +344,7 @@ p{margin:0}
 .pf-brand p{margin-top:16px;max-width:36ch;color:#aab3c1}
 .pf-cor{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:12.5px;color:#c9d0dc;padding:7px 12px;border:1px solid var(--line-2);border-radius:999px}
 .pf-cor b{font-family:var(--display);color:#fff}
-.pfoot h4{margin:0 0 12px;font:400 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+.pfoot h4,.pfoot .fh{margin:0 0 12px;font:400 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
 .pfoot a{display:block;color:#c2c9d6;text-decoration:none;padding:3px 0}
 .pfoot a:hover{color:#fff}
 .pfoot .pf-g p{margin:0 0 12px;color:#aab3c1;line-height:1.5}
@@ -385,3 +385,5 @@ p{margin:0}
 
 /* photos keep their shape now that they carry width and height */
 img{height:auto}
+
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

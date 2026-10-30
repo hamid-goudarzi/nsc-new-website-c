@@ -2,6 +2,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const sizeCache = new Map();
+function hasSize(key, w) {
+  const id = key + '-' + w;
+  if (!sizeCache.has(id)) sizeCache.set(id, fs.existsSync(path.join(process.cwd(), 'public/media', `${id}.webp`)));
+  return sizeCache.get(id);
+}
+
 // Width and height of a WebP file, so browsers reserve space before photos load (no layout jumps).
 const dimCache = new Map();
 function webpSize(key) {
@@ -26,10 +33,11 @@ export function img(image, pre = '', { sizes = '100vw', eager = false } = {}) {
   if (!image?.local) return null;
   const k = image.local;
   const wh = webpSize(k);
+  const widths = [640, 1280, 1920, 2560].filter(w => w === 1280 || hasSize(k, w));
   return {
     width: wh?.[0], height: wh?.[1], fetchpriority: eager ? 'high' : undefined,
     src: `${pre}media/${k}-1280.webp`,
-    srcset: `${pre}media/${k}-1280.webp 1280w, ${pre}media/${k}-2560.webp 2560w`,
+    srcset: widths.map(w => `${pre}media/${k}-${w}.webp ${w}w`).join(', '),
     sizes, alt: image.alt || '', loading: eager ? undefined : 'lazy', decoding: 'async',
     style: image.focus ? `object-position:${image.focus}` : undefined,
   };

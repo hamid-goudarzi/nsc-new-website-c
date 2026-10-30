@@ -4,7 +4,11 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 
 /* video from embedded data */
-const hv0=document.getElementById('heroVid');const _t=document.createElement('video'),_av1=!!_t.canPlayType('video/mp4; codecs="av01.0.08M.08"'),_hevc=!!_t.canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"'),_small=innerWidth<=900||(navigator.connection&&navigator.connection.saveData);hv0.src=_small?(_av1?'media/film-1080-av1.mp4':'media/film-720.mp4'):(_av1?'media/film-1440-av1.mp4':(_hevc?'media/film-1440-hevc.mp4':'media/film-720.mp4'));const tv0=document.getElementById('typeVid');tv0.src=_av1?'media/dig-av1.mp4':'media/dig.mp4';if(!reduced){hv0.play().catch(()=>{});tv0.play().catch(()=>{})}
+const hv0=document.getElementById('heroVid');const _t=document.createElement('video'),_av1=!!_t.canPlayType('video/mp4; codecs="av01.0.08M.08"'),_hevc=!!_t.canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"'),_small=innerWidth<=900||(navigator.connection&&navigator.connection.saveData);const tv0=document.getElementById('typeVid');
+// Videos start after the page has loaded, so the text and poster photo appear first; the GROUND clip loads only when it is near the screen.
+const startHero=()=>{hv0.src=_small?(_av1?'media/film-1080-av1.mp4':'media/film-720.mp4'):(_av1?'media/film-1440-av1.mp4':(_hevc?'media/film-1440-hevc.mp4':'media/film-720.mp4'));if(!reduced)hv0.play().catch(()=>{})};
+if(document.readyState==='complete')setTimeout(startHero,200);else addEventListener('load',()=>setTimeout(startHero,200),{once:true});
+const tvo=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){tvo.disconnect();tv0.src=_av1?'media/dig-av1.mp4':'media/dig.mp4';if(!reduced)tv0.play().catch(()=>{})}},{rootMargin:'600px 0px'});tvo.observe(tv0);
 
 /* smooth scroll */
 let lenis=null;

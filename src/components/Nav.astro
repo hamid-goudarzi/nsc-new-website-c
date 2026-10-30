@@ -6,7 +6,7 @@ const nav = settings.nav || [];
 const isOn = n => active && (n._key === active || n.link.replace(/\.html.*$/, '') === active);
 ---
 <nav class="pnav" aria-label="Main">
-  <a class="logo" href={`${pre}index.html`}><img src={`${pre}nsc-logo.jpg`} alt=""><b>{settings.companyName}</b></a>
+  <a class="logo" href={`${pre}index.html`}><img src={`${pre}nsc-logo.jpg`} alt="" width="96" height="96"><b>{settings.companyName}</b></a>
   <span class="sp"></span>
   {nav.map(n => <a class={`lk${isOn(n) ? ' on' : ''}`} href={href(n.link, pre)} aria-current={isOn(n) ? 'page' : undefined}>{n.label}</a>)}
   <a class="btn btn-blue" href={`${pre}contact.html`}>Request a bid</a>

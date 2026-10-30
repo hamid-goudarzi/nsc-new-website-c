@@ -530,9 +530,11 @@ async function pickImage(done, multi = false) {
     for (const [n, fl] of files.entries()) {
       status.textContent = `Preparing photo ${n + 1} of ${files.length}…`;
       try {
-        const { big, small, previewUrl } = await resize(fl);
+        const { big, small, tiny, previewUrl } = await resize(fl);
         status.textContent = `Uploading photo ${n + 1} of ${files.length}…`;
-        const { key } = await api('upload', { name: fl.name, w2560: big, w1280: small });
+        const { key } = await api('upload', { name: fl.name, size: 2560, data: big });
+        await api('upload', { key, size: 1280, data: small });
+        await api('upload', { key, size: 640, data: tiny });
         state.preview.set(key, previewUrl); state.media?.unshift(key);
         done({ key, alt: '' });
       } catch (e) { toast(`${fl.name}: ${e.message}`, 'err', 8000); }
@@ -553,7 +555,7 @@ async function pickImage(done, multi = false) {
     more();
   } catch (e) { lib.innerHTML = ''; lib.append(h('p', { class: 'err' }, e.message)); }
 }
-// Resize in the browser to 2560 px and 1280 px WebP, so uploads are fast and the site stays sharp.
+// Resize in the browser to 2560, 1280 and 640 px WebP, so uploads are fast and the site stays sharp.
 async function resize(file) {
   let bmp;
   try { bmp = await createImageBitmap(file, { imageOrientation: 'from-image' }); }
@@ -570,8 +572,9 @@ async function resize(file) {
   let big = await out(2560, 0.82);
   if (big.size > 3e6) big = await out(2560, 0.7);
   const small = await out(1280, 0.82);
+  const tiny = await out(640, 0.8);
   const b64 = b => new Promise(r => { const fr = new FileReader(); fr.onload = () => r(String(fr.result).split(',')[1]); fr.readAsDataURL(b); });
-  return { big: await b64(big), small: await b64(small), previewUrl: URL.createObjectURL(small) };
+  return { big: await b64(big), small: await b64(small), tiny: await b64(tiny), previewUrl: URL.createObjectURL(small) };
 }
 
 // ---------------------------------------------------------------- users

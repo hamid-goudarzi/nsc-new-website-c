@@ -142,19 +142,22 @@ const handlers = {
     if (!t) fail(404, 'That version could not be found.');
     return { doc: JSON.parse(t) };
   },
+  // Photos arrive one size per request (2560, 1280 and 640 px WebP made in the browser), so no request is too large.
   async upload({ user, body }) {
-    const big = Buffer.from(String(body.w2560 || ''), 'base64'), small = Buffer.from(String(body.w1280 || ''), 'base64');
-    if (!isWebp(big) || !isWebp(small)) fail(400, 'Photos must be converted in the browser first. Try another photo.');
-    if (big.length > 3.2e6 || small.length > 1.5e6) fail(413, 'That photo is too large.');
-    const base = String(body.name || 'photo').toLowerCase().replace(/\.[a-z0-9]+$/, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'photo';
-    const key = `u-${base}-${Date.now().toString(36)}${crypto.randomBytes(2).toString('hex')}`;
-    await getStore().commit([
-      { path: `public/media/${key}-2560.webp`, base64: big.toString('base64') },
-      { path: `public/media/${key}-1280.webp`, base64: small.toString('base64') },
-    ], `[media] Upload photo ${key}`, author(user));
+    const size = +body.size;
+    if (![2560, 1920, 1280, 640].includes(size)) fail(400, 'Unknown photo size.');
+    const data = Buffer.from(String(body.data || ''), 'base64');
+    if (!isWebp(data)) fail(400, 'Photos must be converted in the browser first. Try another photo.');
+    if (data.length > { 2560: 3.2e6, 1920: 2e6, 1280: 1.5e6, 640: 6e5 }[size]) fail(413, 'That photo is too large.');
+    let key = String(body.key || '');
+    if (key) { if (!/^u-[a-z0-9-]{3,70}$/.test(key)) fail(400, 'Bad photo name.'); }
+    else {
+      const base = String(body.name || 'photo').toLowerCase().replace(/\.[a-z0-9]+$/, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40) || 'photo';
+      key = `u-${base}-${Date.now().toString(36)}${crypto.randomBytes(2).toString('hex')}`;
+    }
+    await getStore().commit([{ path: `public/media/${key}-${size}.webp`, base64: data.toString('base64') }], `[media] Upload photo ${key} (${size}px)`, author(user));
     return { key };
   },
-
   async media() {
     const files = await getStore().list('public/media/');
     const keys = files.filter(f => f.endsWith('-1280.webp')).map(f => f.slice('public/media/'.length, -'-1280.webp'.length));

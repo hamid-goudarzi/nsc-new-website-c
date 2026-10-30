@@ -1,0 +1,4 @@
+/* Fonts are served from this site (faster than Google Fonts, and no visitor data sent to third parties). */
+@font-face{font-family:"Unbounded";font-style:normal;font-display:swap;font-weight:200 900;src:url(../fonts/unbounded-latin-wght-normal.woff2) format("woff2-variations"),url(../fonts/unbounded-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"Manrope";font-style:normal;font-display:swap;font-weight:200 800;src:url(../fonts/manrope-latin-wght-normal.woff2) format("woff2-variations"),url(../fonts/manrope-latin-wght-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-display:swap;font-weight:100 800;src:url(../fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2-variations"),url(../fonts/jetbrains-mono-latin-wght-normal.woff2) format("woff2")}
