@@ -9,7 +9,7 @@
     "admin:local": "node scripts/local-server.mjs"
   },
   "dependencies": {
-    "astro": "^5.18.2"
+    "astro": "^7.4.2"
   },
   "engines": {
     "node": "22.x"
