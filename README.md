@@ -15,5 +15,5 @@ Keep the folders together. Links are relative, so the site works from any folder
 
 ## Publish with GitHub Pages
 **Settings → Pages →** Source: *Deploy from a branch*, branch `master`, folder `/ (root)`, **Save**.
-The site is live at `https://hamid-goudarzi.github.io/nsc-new-website-c/` a minute later.
+The site is live at `https://neilsmithconstructionltd.github.io/nsc-new-website/` a minute later.
 
