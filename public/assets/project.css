@@ -382,3 +382,6 @@ p{margin:0}
 .faq-i .prose{margin:0 0 24px;max-width:75ch}
 .pihero.plain{min-height:0;padding-top:clamp(130px,16vw,190px);padding-bottom:40px}
 .pihero.plain::after,.pihero.plain::before{display:none}
+
+/* photos keep their shape now that they carry width and height */
+img{height:auto}

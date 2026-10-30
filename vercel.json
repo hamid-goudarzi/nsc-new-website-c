@@ -12,6 +12,303 @@
   },
   "redirects": [
     {
+      "source": "/story",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/projects",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/careers.html",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/about.html#leadership",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/guildford",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/guildford-park-secondary.html",
+      "permanent": true
+    },
+    {
+      "source": "/uel",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/kingston-road-sewer-separation.html",
+      "permanent": true
+    },
+    {
+      "source": "/greenaway",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/george-greenaway-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/agnes",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/agnes-supportive-housing.html",
+      "permanent": true
+    },
+    {
+      "source": "/qees",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/queen-elizabeth-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/ubc",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/ubc-digital-design-studio.html",
+      "permanent": true
+    },
+    {
+      "source": "/ladner",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/ladner-elementary-modular.html",
+      "permanent": true
+    },
+    {
+      "source": "/firehall12",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/fire-hall-12-kitsilano.html",
+      "permanent": true
+    },
+    {
+      "source": "/florin",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/florin-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/portlandloos",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/portland-loos.html",
+      "permanent": true
+    },
+    {
+      "source": "/manitoba",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/manitoba-yard-fuel-station.html",
+      "permanent": true
+    },
+    {
+      "source": "/cook",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/william-cook-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/debeck",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/howard-debeck-secondary.html",
+      "permanent": true
+    },
+    {
+      "source": "/parkcrest",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/parkcrest-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/richmondportables",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/richmond-school-portables.html",
+      "permanent": true
+    },
+    {
+      "source": "/chiliwackmall",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/chilliwack-mall-redevelopment.html",
+      "permanent": true
+    },
+    {
+      "source": "/northernsurrey",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/north-surrey-utility-improvements.html",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-ubc",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/projects/brighouse-modular-addition.html",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "neilsmithconstruction.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/admin",
       "destination": "/admin/",
       "permanent": true
@@ -54,6 +351,106 @@
     {
       "source": "/our-projects",
       "destination": "/projects/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/story",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about.html#leadership",
+      "permanent": true
+    },
+    {
+      "source": "/guildford",
+      "destination": "/projects/guildford-park-secondary.html",
+      "permanent": true
+    },
+    {
+      "source": "/uel",
+      "destination": "/projects/kingston-road-sewer-separation.html",
+      "permanent": true
+    },
+    {
+      "source": "/greenaway",
+      "destination": "/projects/george-greenaway-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/agnes",
+      "destination": "/projects/agnes-supportive-housing.html",
+      "permanent": true
+    },
+    {
+      "source": "/qees",
+      "destination": "/projects/queen-elizabeth-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/ubc",
+      "destination": "/projects/ubc-digital-design-studio.html",
+      "permanent": true
+    },
+    {
+      "source": "/ladner",
+      "destination": "/projects/ladner-elementary-modular.html",
+      "permanent": true
+    },
+    {
+      "source": "/firehall12",
+      "destination": "/projects/fire-hall-12-kitsilano.html",
+      "permanent": true
+    },
+    {
+      "source": "/florin",
+      "destination": "/projects/florin-development.html",
+      "permanent": true
+    },
+    {
+      "source": "/portlandloos",
+      "destination": "/projects/portland-loos.html",
+      "permanent": true
+    },
+    {
+      "source": "/manitoba",
+      "destination": "/projects/manitoba-yard-fuel-station.html",
+      "permanent": true
+    },
+    {
+      "source": "/cook",
+      "destination": "/projects/william-cook-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/debeck",
+      "destination": "/projects/howard-debeck-secondary.html",
+      "permanent": true
+    },
+    {
+      "source": "/parkcrest",
+      "destination": "/projects/parkcrest-elementary.html",
+      "permanent": true
+    },
+    {
+      "source": "/richmondportables",
+      "destination": "/projects/richmond-school-portables.html",
+      "permanent": true
+    },
+    {
+      "source": "/chiliwackmall",
+      "destination": "/projects/chilliwack-mall-redevelopment.html",
+      "permanent": true
+    },
+    {
+      "source": "/northernsurrey",
+      "destination": "/projects/north-surrey-utility-improvements.html",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-ubc",
+      "destination": "/projects/brighouse-modular-addition.html",
       "permanent": true
     }
   ],

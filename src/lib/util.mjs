@@ -1,4 +1,23 @@
 // Small helpers shared by all templates: images, text, links.
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Width and height of a WebP file, so browsers reserve space before photos load (no layout jumps).
+const dimCache = new Map();
+function webpSize(key) {
+  if (dimCache.has(key)) return dimCache.get(key);
+  let d = null;
+  try {
+    const fd = fs.openSync(path.join(process.cwd(), 'public/media', `${key}-1280.webp`), 'r');
+    const b = Buffer.alloc(30); fs.readSync(fd, b, 0, 30, 0); fs.closeSync(fd);
+    const t = b.toString('ascii', 12, 16);
+    if (t === 'VP8X') d = [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+    else if (t === 'VP8 ') d = [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+    else if (t === 'VP8L') { const n = b.readUInt32LE(21); d = [1 + (n & 0x3fff), 1 + ((n >> 14) & 0x3fff)]; }
+  } catch { d = null; }
+  dimCache.set(key, d);
+  return d;
+}
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 export { esc };
 
@@ -6,7 +25,9 @@ export { esc };
 export function img(image, pre = '', { sizes = '100vw', eager = false } = {}) {
   if (!image?.local) return null;
   const k = image.local;
+  const wh = webpSize(k);
   return {
+    width: wh?.[0], height: wh?.[1], fetchpriority: eager ? 'high' : undefined,
     src: `${pre}media/${k}-1280.webp`,
     srcset: `${pre}media/${k}-1280.webp 1280w, ${pre}media/${k}-2560.webp 2560w`,
     sizes, alt: image.alt || '', loading: eager ? undefined : 'lazy', decoding: 'async',

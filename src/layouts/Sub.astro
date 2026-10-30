@@ -32,6 +32,7 @@ const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUr
 <link rel="icon" href={`${pre}nsc-logo.jpg`}>
 <link rel="apple-touch-icon" href={`${pre}nsc-logo.jpg`}>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" title="Company summary for AI assistants" href="/llms.txt">
 {jsonld.filter(Boolean).map(j => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, '\\u003c')} />)}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

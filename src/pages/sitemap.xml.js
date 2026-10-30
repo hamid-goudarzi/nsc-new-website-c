@@ -4,7 +4,7 @@ import { abs } from '../lib/seo.mjs';
 export async function GET() {
   const c = await content();
   const s = c.settings;
-  const today = new Date().toISOString().slice(0, 10);
+  const today = '2026-10-30';   // launch date, used until an item is edited in the admin
   const day = d => (d || today).slice(0, 10);
   const newest = ds => ds.map(d => d?._updatedAt).filter(Boolean).sort().at(-1);
   const img = i => i?.local ? `<image:image><image:loc>${abs(s, `media/${i.local}-2560.webp`)}</image:loc></image:image>` : '';

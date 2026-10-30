@@ -439,3 +439,6 @@ a.st-ph{display:block}
 .person h3{font-size:1.7rem;letter-spacing:-.025em;position:relative;margin-top:60px}
 .person .r{color:var(--glow-2);font-size:14px;margin-top:6px;position:relative;font-weight:600}
 .person p:last-child{color:#aab3c1;font-size:14.5px;margin-top:14px;position:relative}
+
+/* photos keep their shape now that they carry width and height */
+img{height:auto}
