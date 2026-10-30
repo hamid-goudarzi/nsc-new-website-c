@@ -8,7 +8,7 @@ const problems = [];
 const warn = [];
 const walk = d => fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);
 const files = walk(DIST);
-const html = files.filter(f => f.endsWith('.html') && !f.includes(`${path.sep}admin${path.sep}`));
+const html = files.filter(f => f.endsWith('.html') && !f.includes(`${path.sep}admin${path.sep}`) && !/^google[0-9a-f]+\.html$/.test(path.basename(f)));   // search engine verification files are not pages
 
 for (const need of ['index.html', 'projects/index.html', 'sitemap.xml', 'robots.txt', 'llms.txt', 'llms-full.txt', 'build.json']) {
   if (!fs.existsSync(path.join(DIST, need))) problems.push(`missing ${need}`);
