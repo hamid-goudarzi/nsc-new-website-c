@@ -1,7 +1,7 @@
 {
   "_id": "projectsPage",
   "_type": "projectsPage",
-  "description": "Projects by Neil Smith Construction Ltd.: school districts, sewer separation, utilities, earthworks and site servicing across Metro Vancouver and the Fraser Valley.",
+  "description": "Civil construction projects by Neil Smith Construction: school districts, sewer separation, watermains, earthworks and site servicing across Metro Vancouver and the Fraser Valley.",
   "hero": {
     "kicker": "Projects",
     "title": "Every job,",
@@ -68,5 +68,6 @@
     }
   ],
   "ctaTitle": "Planning a similar project?",
-  "ctaText": "Talk to our team about site services, civil works and earthworks."
+  "ctaText": "Talk to our team about site services, civil works and earthworks.",
+  "seoTitle": "Civil Construction Projects in Metro Vancouver | NSC"
 }

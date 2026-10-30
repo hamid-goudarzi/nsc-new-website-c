@@ -21,7 +21,7 @@ const canonical = s.siteUrl || 'https://www.neilsmithconstruction.com';
 const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').href : undefined;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -91,8 +91,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 
 <section class="sec" id="services">
   <div class="wrap">
-    <p class="mono kick">Services</p>
-    <h2 class="h2 split" data-split>{h.servicesTitle}</h2>
+    <div class="mk-h"><div><p class="mono kick">Services</p><h2 class="h2 split" data-split>{h.servicesTitle}</h2></div><a class="btn btn-glass rv" href="services.html">All services <span class="ar">→</span></a></div>
     <div class="bento">
       {tiles.map((t, i) => (
         <Fragment>
@@ -223,7 +222,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
   <div class="wrap">
     <div class="ft">
       <div><a class="logo" href="#top" style="display:flex;align-items:center;gap:12px;padding:0"><img src="nsc-logo.jpg" alt="NSC logo" style="height:40px;border-radius:8px"><b style="font-family:var(--display);font-weight:600;color:#fff;font-size:15px">{s.companyName}</b></a><p class="p" style="margin-top:16px;max-width:36ch">Heavy civil contractor for Metro Vancouver and the Fraser Valley. COR certified.</p></div>
-      <div><h4>Explore</h4><a href="markets.html">Markets</a><a href="#services">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety &amp; Environment</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html#partners">Subcontractors &amp; suppliers</a></div>
+      <div><h4>Explore</h4><a href="markets.html">Markets</a><a href="services.html">Services</a><a href="projects/index.html">Projects</a><a href="safety.html">Safety &amp; Environment</a><a href="about.html">About</a><a href="careers.html">Careers</a><a href="contact.html#partners">Subcontractors &amp; suppliers</a></div>
       <div><h4>Visit</h4>{(s.offices || []).map(o => <span class="p">{String(o.address).split('\n')[0]}, {(String(o.address).split('\n')[1] || '').split(',')[0]}</span>)}</div>
       <div><h4>Connect</h4><a href={tel(s.phone)}>{s.phone}</a><a href={`mailto:${s.email}`}>{s.email}</a>{s.linkedin && <a href={s.linkedin} target="_blank" rel="noopener">LinkedIn ↗</a>}{s.instagram && <a href={s.instagram} target="_blank" rel="noopener">Instagram ↗</a>}</div>
     </div>

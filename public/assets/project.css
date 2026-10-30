@@ -371,3 +371,14 @@ p{margin:0}
 .jdet{margin-top:12px}
 .jdet summary{cursor:pointer;color:#c9d0dc;font-weight:600}
 .jdet .prose{margin-top:12px;font-size:1rem}
+.faq-l{display:grid;gap:12px;margin-top:34px;max-width:980px}
+.faq-i{border:1px solid var(--line);border-radius:20px;background:var(--card);padding:0 26px;transition:border-color .3s}
+.faq-i[open]{border-color:rgba(122,166,255,.4)}
+.faq-i summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0;cursor:pointer}
+.faq-i summary::-webkit-details-marker{display:none}
+.faq-i summary h3{font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);letter-spacing:-.01em;margin:0}
+.faq-i summary span{font-family:var(--display);font-size:1.6rem;color:var(--glow-2);transition:transform .3s;flex:none}
+.faq-i[open] summary span{transform:rotate(45deg)}
+.faq-i .prose{margin:0 0 24px;max-width:75ch}
+.pihero.plain{min-height:0;padding-top:clamp(130px,16vw,190px);padding-bottom:40px}
+.pihero.plain::after,.pihero.plain::before{display:none}

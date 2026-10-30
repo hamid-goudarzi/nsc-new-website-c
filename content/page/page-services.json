@@ -1,0 +1,189 @@
+{
+  "_id": "page-services",
+  "_type": "page",
+  "title": "Services",
+  "slug": {
+    "_type": "slug",
+    "current": "services"
+  },
+  "navKey": "services",
+  "order": 15,
+  "seoTitle": "Heavy Civil Services: Utilities, Earthworks, Roads | NSC",
+  "description": "Underground utilities, sewer separation, earthworks, stormwater detention, roadworks, curb and gutter, concrete and site servicing across Metro Vancouver and the Fraser Valley.",
+  "hero": {
+    "kicker": "Services",
+    "title": "Full civil scope.",
+    "highlight": "One accountable contractor.",
+    "subtitle": "Underground utilities, earthworks, roadworks, concrete and site servicing for cities, school districts and builders across Metro Vancouver and the Fraser Valley.",
+    "image": {
+      "_type": "image",
+      "local": "mhcrew",
+      "alt": "NSC crew setting a precast manhole on new sanitary and storm pipe"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "0b4b633f3b91",
+      "kicker": "What we build",
+      "title": "One accountable contractor, from first sawcut to final as-built.",
+      "body": "Neil Smith Construction is a heavy civil contractor based in Richmond, BC, with a yard in Langley. We deliver underground utilities, earthworks, roadworks, concrete and site servicing for municipalities, school districts, public facilities and private developers across Metro Vancouver and the Fraser Valley.\n\nWe work as prime contractor, and as the civil contractor for construction managers and general contractors. Every project has a Senior Project Manager, a dedicated estimating division prices the work, and our COR certified safety program runs on every site."
+    },
+    {
+      "_type": "imageText",
+      "_key": "040564f04445",
+      "image": {
+        "_type": "image",
+        "local": "gexc",
+        "alt": "NSC CAT 330 excavator on bulk excavation at Guildford Park Secondary"
+      },
+      "kicker": "01 · Earthwork",
+      "title": "Earthwork and excavation",
+      "body": "Bulk and detailed excavation for new buildings, additions and site development, from school sites to supportive housing and residential development.\n\n- Bulk and detail excavation, grading and site preparation\n- Hauling, and supply of soil and gravel\n- Contaminated soil handling and soil sampling\n- Shoring and trench protection, including deep utility excavation beside structures\n\nRecent work: [Guildford Park Secondary](projects/guildford-park-secondary.html), [Agnes Supportive Housing](projects/agnes-supportive-housing.html), [George Greenaway Elementary](projects/george-greenaway-elementary.html).",
+      "buttonLabel": "See Guildford Park",
+      "buttonLink": "projects/guildford-park-secondary.html",
+      "reverse": false
+    },
+    {
+      "_type": "imageText",
+      "_key": "9600cf41dbe5",
+      "image": {
+        "_type": "image",
+        "local": "mhpipe",
+        "alt": "New sanitary and storm manholes with PVC and concrete pipe on Kingston Road"
+      },
+      "kicker": "02 · Utilities",
+      "title": "Underground utilities and sewer separation",
+      "body": "New and replacement sanitary sewer, storm sewer and watermains for cities, school districts and public agencies, including sewer separation on live residential streets.\n\n- Sanitary and storm sewer mains, manholes and catch basins\n- Watermains, water services, fire hydrants and tie-ins\n- Service connections to every property, with services kept running during the work\n- Forcemain rerouting and realignment\n- BC Hydro and electrical upgrades\n- CCTV inspection and pressure testing\n\nRecent work: [Kingston Road sewer separation](projects/kingston-road-sewer-separation.html) for the University Endowment Lands, [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) and [North Surrey utility improvements](projects/north-surrey-utility-improvements.html).",
+      "buttonLabel": "See Kingston Road",
+      "buttonLink": "projects/kingston-road-sewer-separation.html",
+      "reverse": true
+    },
+    {
+      "_type": "imageText",
+      "_key": "b79985f24d70",
+      "image": {
+        "_type": "image",
+        "local": "tank3",
+        "alt": "Stormwater detention tank modules being stacked at Guildford Park Secondary"
+      },
+      "kicker": "03 · Stormwater",
+      "title": "Stormwater detention and flow control",
+      "body": "Underground detention tanks and the flow control manholes that meter stormwater back into the city system, built as part of school and site servicing projects.\n\n- Detention tank excavation, liner and modular chamber installation\n- Flow control manholes\n- Storm detention pipe and onsite storm systems\n\nRecent work: [Guildford Park Secondary](projects/guildford-park-secondary.html), [Brighouse Elementary](projects/brighouse-elementary.html) and [Parkcrest Elementary](projects/parkcrest-elementary.html).",
+      "buttonLabel": "See the detention tank",
+      "buttonLink": "projects/guildford-park-secondary.html",
+      "reverse": false
+    },
+    {
+      "_type": "imageText",
+      "_key": "25756224f46e",
+      "image": {
+        "_type": "image",
+        "local": "gwide",
+        "alt": "Graded building pad beside the school field at Guildford Park Secondary"
+      },
+      "kicker": "04 · Site preparation",
+      "title": "Site preparation and servicing",
+      "body": "Getting sites ready to build: demolition of existing site works, erosion and sediment control, grading, and full site servicing for new buildings and modular classrooms.\n\n- Demolition and removal of existing site infrastructure\n- Erosion and sediment control\n- Site grading and building pads\n- Site servicing for additions, modular classrooms and portables\n\nRecent work: [Ladner Elementary](projects/ladner-elementary-modular.html), [Richmond School District portables](projects/richmond-school-portables.html) and [UBC Digital Design Studio](projects/ubc-digital-design-studio.html).",
+      "buttonLabel": "See Ladner Elementary",
+      "buttonLink": "projects/ladner-elementary-modular.html",
+      "reverse": true
+    },
+    {
+      "_type": "imageText",
+      "_key": "414b02433ed9",
+      "image": {
+        "_type": "image",
+        "local": "curb",
+        "alt": "New concrete curb and gutter along the school field at Guildford Park Secondary"
+      },
+      "kicker": "05 · Roads",
+      "title": "Roadworks, curb and gutter",
+      "body": "Road construction and restoration around new utilities and buildings, for cities and school districts.\n\n- Subgrade preparation and road construction\n- Concrete curb and gutter\n- Road restoration after utility work\n- Streetlighting installation and road upgrades\n- New parking areas\n- Asphalt overlay and new paving, placed by our asphalt subcontractor\n\nRecent work: [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) road works for New Westminster and [Parkcrest Elementary](projects/parkcrest-elementary.html) in Burnaby.",
+      "buttonLabel": "See Queen Elizabeth Elementary",
+      "buttonLink": "projects/queen-elizabeth-elementary.html",
+      "reverse": false
+    },
+    {
+      "_type": "imageText",
+      "_key": "38d71cf107cd",
+      "image": {
+        "_type": "image",
+        "local": "walk",
+        "alt": "New sidewalk, curb and restored road after the Kingston Road sewer separation"
+      },
+      "kicker": "06 · Concrete",
+      "title": "Concrete work",
+      "body": "Concrete for streets, school sites and public facilities.\n\n- Sidewalks, driveways and letdowns, including wheelchair letdowns\n- Concrete curb and gutter\n- Reinforced concrete slabs, aprons and trench drains\n- Exposed aggregate\n\nRecent work: [Kingston Road](projects/kingston-road-sewer-separation.html), [McKinney Elementary](projects/mckinney-elementary.html) and [Manitoba Yard fuel station](projects/manitoba-yard-fuel-station.html).",
+      "buttonLabel": "See Kingston Road",
+      "buttonLink": "projects/kingston-road-sewer-separation.html",
+      "reverse": true
+    },
+    {
+      "_type": "faq",
+      "_key": "da75cd652254",
+      "kicker": "Questions",
+      "title": "Frequently asked questions.",
+      "items": [
+        {
+          "_key": "8f6a59bf4156",
+          "q": "What does Neil Smith Construction do?",
+          "a": "Neil Smith Construction Ltd. (NSC) is a heavy civil contractor based in Richmond, British Columbia. We build underground utilities (sanitary sewer, storm sewer and watermains), earthworks and excavation, stormwater detention, roadworks, curb and gutter, concrete and site servicing for municipalities, school districts, public facilities and private developers."
+        },
+        {
+          "_key": "f47b3f89d44d",
+          "q": "Where do you work?",
+          "a": "Across Metro Vancouver and the Fraser Valley. We have built projects in Vancouver, the University Endowment Lands, Richmond, Surrey, Burnaby, New Westminster, Delta, Coquitlam and Chilliwack. Our head office is in Richmond and our yard is in Langley. See [where we work](about.html#region)."
+        },
+        {
+          "_key": "8ed1879c36fc",
+          "q": "Who are your clients?",
+          "a": "Cities and public agencies including the City of Vancouver, the City of Surrey and the University Endowment Lands; school districts in Surrey (SD36), Delta (SD37), Richmond (SD38), New Westminster (SD40) and Burnaby (SD41); and construction managers and builders such as Unitech Construction Management, Pro-Can Construction Group, Scott Special Projects, Kinetic Construction and Keller Construction."
+        },
+        {
+          "_key": "dcfb0f883086",
+          "q": "Do you work as a prime contractor or a subcontractor?",
+          "a": "Both. We hold prime contracts, such as the [Kingston Road sewer separation](projects/kingston-road-sewer-separation.html) for the University Endowment Lands and [North Surrey utility improvements](projects/north-surrey-utility-improvements.html) for the City of Surrey, and we deliver the civil scope for construction managers and general contractors on school, housing and public facility projects."
+        },
+        {
+          "_key": "7bd4cc13700b",
+          "q": "Are you COR certified?",
+          "a": "Yes. Our health and safety program holds a Certificate of Recognition (COR) from the BC Construction Safety Alliance. A dedicated Construction Safety Officer works with every crew, and every shift starts with a toolbox meeting. We provide our safety documentation and prequalification package on request. See [Safety and Environment](safety.html)."
+        },
+        {
+          "_key": "168676da9c24",
+          "q": "Can you work on occupied school sites and live streets?",
+          "a": "Yes. Much of our work is at schools that stay open and on residential streets. We schedule around school calendars, for example sewer work at Queen Elizabeth Elementary was done over spring break, and on Kingston Road every property stayed connected while new sewer and water services were built and transferred."
+        },
+        {
+          "_key": "d184d4b46e05",
+          "q": "Do you do paving?",
+          "a": "Paving is part of our road and site scopes. The asphalt is placed by our asphalt subcontractor, and we deliver the excavation, subgrade, utilities, curb, gutter and concrete around it."
+        },
+        {
+          "_key": "b832fa76e41e",
+          "q": "How do I request a bid or prequalification?",
+          "a": "Send drawings, a tender package or a prequalification request to info@nscltd.ca or call 604-644-5884. Our estimating team responds within one business day. See [Contact](contact.html)."
+        },
+        {
+          "_key": "fa147382dcf1",
+          "q": "Are you hiring?",
+          "a": "Yes. We hire field and trades roles, project delivery roles and engineering and technical roles across Greater Vancouver. See [Careers](careers.html) for open positions."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "235ec52392b7",
+      "kicker": "Projects",
+      "title": "Underway now.",
+      "intro": "Jobs our crews are on today.",
+      "group": "underway",
+      "tight": true
+    },
+    {
+      "_type": "cta",
+      "_key": "06ce7d44db01"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ const year = new Date().getFullYear();
         <p>{s.footerBlurb}</p>
         {s.corLine && <span class="pf-cor"><b>COR</b> {s.corLine.replace(/^COR\s*/, '')}</span>}</div>
       <div><h4>Company</h4><a href={`${pre}about.html`}>About</a><a href={`${pre}about.html#leadership`}>Leadership</a><a href={`${pre}safety.html`}>Safety &amp; Environment</a><a href={`${pre}careers.html`}>Careers</a>{extra.map(p => <a href={`${pre}${p.slug.current}.html`}>{p.navLabel || p.title}</a>)}</div>
-      <div><h4>Work</h4><a href={`${pre}markets.html`}>Markets</a><a href={`${pre}index.html#services`}>Services</a><a href={`${pre}projects/index.html`}>Projects</a><a href={`${pre}about.html#region`}>Where we work</a></div>
+      <div><h4>Work</h4><a href={`${pre}markets.html`}>Markets</a><a href={`${pre}services.html`}>Services</a><a href={`${pre}projects/index.html`}>Projects</a><a href={`${pre}about.html#region`}>Where we work</a></div>
       <div><h4>Contact</h4><a href={`${pre}contact.html`}>Request a bid</a><a href={`${pre}contact.html#partners`}>Subcontractors &amp; suppliers</a><a href={tel(s.phone)}>{s.phone}</a><a href={`mailto:${s.email}`}>{s.email}</a></div>
       <div><h4>Offices</h4>{(s.offices || []).map(o => <p>{o.label}<br><Fragment set:html={String(o.address).split('\n').map(l => l.replace(/&/g, '&amp;').replace(/</g, '&lt;')).join('<br>')} /></p>)}</div>
     </div>

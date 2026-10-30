@@ -19,8 +19,8 @@ for (const f of html) {
   if (!/<title>[^<]{5,}<\/title>/.test(t)) problems.push(`${rel}: no title`);
   if (!/<meta name="description" content="[^"]{20,}"/.test(t)) warn.push(`${rel}: no search description`);
   const canon = t.match(/<link rel="canonical" href="https?:\/\/[^/]+\/([^"]*)"/);
-  if (!canon) problems.push(`${rel}: no canonical link`);
-  else if (canon[1] !== rel.replace(/\\/g, '/') && !(rel === 'index.html' && canon[1] === '')) problems.push(`${rel}: canonical points to /${canon[1]}`);
+  if (!canon && !/name="robots" content="noindex"/.test(t)) problems.push(`${rel}: no canonical link`);
+  else if (canon && canon[1] !== rel.replace(/\\/g, '/') && !(rel === 'index.html' && canon[1] === '')) problems.push(`${rel}: canonical points to /${canon[1]}`);
   if ((t.match(/<h1[\s>]/g) || []).length !== 1) warn.push(`${rel}: should have exactly one main heading`);
   for (const m of t.matchAll(/\s(?:href|src|data-full)="([^"#?]+)(?:[#?][^"]*)?"/g)) {
     const u = m[1];

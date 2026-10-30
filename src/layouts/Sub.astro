@@ -3,7 +3,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { content } from '../lib/content.mjs';
-const { title, fullTitle, description, ogImage, active = '', pre = '', bodyClass, jsonld = [], path = '' } = Astro.props;
+const { title, fullTitle, description, ogImage, active = '', pre = '', bodyClass, jsonld = [], path = '', noindex = false } = Astro.props;
 const { settings, pages } = await content();
 const t = fullTitle || `${title} | ${settings.companyName}`;
 const base = (settings.siteUrl || String(Astro.site)).replace(/\/$/, '');
@@ -11,14 +11,14 @@ const canonical = `${base}/${path}`;
 const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUrl || String(Astro.site)) + '/').href : undefined;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#06080c">
 <title>{t}</title>
 {description && <meta name="description" content={description}>}
-<link rel="canonical" href={canonical}>
+{noindex ? <meta name="robots" content="noindex"> : <link rel="canonical" href={canonical}>}
 <meta property="og:title" content={t}>
 {description && <meta property="og:description" content={description}>}
 {og && <meta property="og:image" content={og}>}

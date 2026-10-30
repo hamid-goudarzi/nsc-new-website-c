@@ -1,0 +1,24 @@
+---
+// Shown for any address that doesn't exist. Points people (and crawlers) back to the main pages.
+import Sub from '../layouts/Sub.astro';
+import { content } from '../lib/content.mjs';
+const { projects } = await content();
+---
+<Sub noindex path="404.html" title="Page not found" description="This page does not exist. Find Neil Smith Construction's services, projects and contact details here." bodyClass="cp" pre="/">
+<header class="pihero cphero plain">
+  <div class="wrap">
+    <p class="mono kick">404</p>
+    <h1>That page isn’t <span class="grad">here.</span></h1>
+    <p class="pi-sub">It may have moved. Try one of these instead.</p>
+  </div>
+</header>
+<main>
+<section class="sec" style="padding-top:0"><div class="wrap">
+  <div class="plinks" style="margin-top:0">
+    <a href="/">Home<b>↗</b></a><a href="/services.html">Services<b>↗</b></a><a href="/projects/index.html">All projects<b>↗</b></a><a href="/markets.html">Markets<b>↗</b></a><a href="/about.html">About<b>↗</b></a><a href="/careers.html">Careers<b>↗</b></a><a href="/contact.html">Contact<b>↗</b></a>
+  </div>
+  <h2 class="mono" style="margin:40px 0 14px;color:var(--muted);font-size:13px">Projects</h2>
+  <div class="plinks">{projects.map(p => <a href={`/projects/${p.slug.current}.html`}>{p.live && <i></i>}{p.shortName || p.name}<b>↗</b></a>)}</div>
+</div></section>
+</main>
+</Sub>

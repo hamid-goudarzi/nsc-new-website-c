@@ -35,8 +35,30 @@ export function organization(c) {
     founder: [{ '@type': 'Person', name: 'Neil Smith' }, { '@type': 'Person', name: 'Dennis Frederickson' }],
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certificate of Recognition (COR)', recognizedBy: { '@type': 'Organization', name: 'BC Construction Safety Alliance' } },
     sameAs: [s.linkedin, s.instagram].filter(Boolean),
+    hasOfferCatalog: (() => { const sv = servicesOf(c.pages.find(p => p.slug.current === 'services')); return sv.length ? { '@type': 'OfferCatalog', name: 'Heavy civil construction services', itemListElement: sv.map(x => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: x.name, description: x.description } })) } : undefined; })(),
     subjectOf: projects.slice(0, 30).map(p => ({ '@type': 'CreativeWork', name: p.name, url: abs(s, `projects/${p.slug.current}.html`) })),
   };
+}
+
+const plain = t => String(t || '').replace(/\*\*|__|##+\s*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').trim();
+export function faqLd(blocks) {
+  const qs = blocks.filter(b => b._type === 'faq').flatMap(b => b.items || []).filter(x => x.q && x.a);
+  return qs.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: qs.map(x => ({ '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: plain(x.a) } })) } : null;
+}
+/** Services described on a page (each "Photo with text" section), as schema.org Service items. */
+export function servicesOf(page) {
+  return (page?.blocks || []).filter(b => b._type === 'imageText' && b.title).map(b => ({ name: b.title, description: plain(b.body).split('\n')[0] }));
+}
+export function servicesLd(s, page) {
+  return servicesOf(page).map(x => ({ '@context': 'https://schema.org', '@type': 'Service', name: x.name, serviceType: x.name, description: x.description,
+    provider: { '@id': orgId(s) }, areaServed: (s.serviceAreas || []).map(n => ({ '@type': 'AdministrativeArea', name: n })), url: abs(s, `${page.slug.current}.html`) }));
+}
+export const projectTitle = (s, p) => p.seoTitle || `${p.name} | ${String(p.city || '').replace(/\s*\(.*\)/, '')} Civil Project | NSC`;
+export function projectDescription(p) {
+  if (p.description) return p.description;
+  const d = p.lede || '';
+  if (d.length >= 120) return d;
+  return `${d} ${p.type ? p.type + ' in ' : 'Civil works in '}${p.city}, BC, delivered by Neil Smith Construction.`.trim();
 }
 
 export function breadcrumbs(s, trail) {
@@ -47,7 +69,7 @@ export function projectLd(s, p) {
   const client = (p.details || []).find(d => /^client$/i.test(d.label))?.value;
   return {
     '@context': 'https://schema.org', '@type': 'CreativeWork', '@id': abs(s, `projects/${p.slug.current}.html#project`),
-    name: p.name, headline: p.name, description: p.lede, url: abs(s, `projects/${p.slug.current}.html`),
+    name: p.name, headline: p.name, description: projectDescription(p), url: abs(s, `projects/${p.slug.current}.html`),
     image: [p.heroImage, ...(p.gallery || [])].filter(i => i?.local).slice(0, 6).map(i => abs(s, `media/${i.local}-2560.webp`)),
     genre: p.type, keywords: [p.type, p.sector, p.city, ...(p.scope || []).slice(0, 6)].filter(Boolean).join(', '),
     creator: { '@id': orgId(s) }, provider: { '@id': orgId(s) },
@@ -101,8 +123,13 @@ export function fullText(c) {
     `- Website: ${siteUrl(s)}/`, s.linkedin ? `- LinkedIn: ${s.linkedin}` : '', '');
   L.push('## About', '', h.heroText || '', '', ...paras(h.storyText), '');
   L.push('## Services', '');
-  for (const t of h.serviceTiles || []) L.push(`- **${t.title}**${t.text ? ': ' + t.text : ''}${t.tags?.length ? ` (${t.tags.join(', ')})` : ''}`);
+  const svc = pages.find(p => p.slug.current === 'services');
+  const svcBlocks = (svc?.blocks || []).filter(b => b._type === 'imageText' && b.title);
+  if (svcBlocks.length) for (const b of svcBlocks) L.push(`### ${b.title}`, '', plain(b.body), '');
+  else for (const t of h.serviceTiles || []) L.push(`- **${t.title}**${t.text ? ': ' + t.text : ''}${t.tags?.length ? ` (${t.tags.join(', ')})` : ''}`);
   L.push('');
+  const faqs = pages.flatMap(p => (p.blocks || []).filter(b => b._type === 'faq').flatMap(b => b.items || [])).filter(x => x.q && x.a);
+  if (faqs.length) { L.push('## Frequently asked questions', ''); for (const x of faqs) L.push(`### ${x.q}`, '', plain(x.a), ''); }
   L.push('## Markets', '');
   for (const m of markets) {
     L.push(`### ${m.title}`, '', m.description || '', '', ...(m.deliver || []).map(x => `- ${x}`), '');
@@ -122,7 +149,7 @@ export function fullText(c) {
     L.push('');
   }
   L.push('## Careers', '', jobs.length ? `Open positions (apply to ${s.email}):` : 'No open positions listed right now.', ...jobs.map(j => `- ${j.title} (${[j.location, j.employment].filter(Boolean).join(', ')})${j.summary ? ': ' + j.summary : ''}`), '', `Careers page: ${u('careers.html')}`, '');
-  const extra = pages.filter(p => !['markets', 'safety', 'about', 'careers', 'contact'].includes(p.slug.current));
+  const extra = pages.filter(p => !['markets', 'safety', 'about', 'careers', 'contact', 'services'].includes(p.slug.current));
   if (extra.length) { L.push('## More pages', ''); for (const p of extra) L.push(`- [${p.title}](${u(p.slug.current + '.html')})${p.description ? ': ' + p.description : ''}`); L.push(''); }
   L.push('## Contact', '', `To request a bid or prequalification, send drawings or a tender package to ${s.email} or call ${s.phone}. Contact page: ${u('contact.html')}`, '');
   return L.filter(x => x !== undefined && x !== null).join('\n').replace(/\n{3,}/g, '\n\n');

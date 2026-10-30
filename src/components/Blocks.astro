@@ -90,6 +90,10 @@ const pickProjects = b => (b.projects?.length ? b.projects : projects.filter(p =
           {m.projects?.length > 0 && <Fragment><h3 class="mono" style="margin-top:26px">Projects</h3><div class="plinks">{m.projects.map(p => <a href={`${pre}projects/${p.slug.current}.html`}>{p.live && <i></i>}{p.shortName || p.name}<b>↗</b></a>)}</div></Fragment>}</div>
       </div></section>))}
     </Fragment>);
+  if (t === 'faq') return (
+    <section {...sec(b, ' faq')}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv" set:html={linkify(b.intro)} />}</div>
+      <div class="faq-l">{(b.items || []).filter(it => it.q).map((it, i) => <details class="faq-i rv" open={i === 0 || undefined}><summary><h3>{it.q}</h3><span aria-hidden="true">+</span></summary><div class="prose" set:html={md(it.a)} /></details>)}</div>
+    </div></section>);
   if (t === 'cta') return <Cta pre={pre} title={b.title} text={b.text} />;
   // ---- general-purpose blocks for new pages ----
   if (t === 'richText') return (
