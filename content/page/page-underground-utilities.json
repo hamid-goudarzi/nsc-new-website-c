@@ -1,0 +1,161 @@
+{
+  "_id": "page-underground-utilities",
+  "_type": "page",
+  "title": "Underground Utilities and Sewer Separation",
+  "slug": {
+    "_type": "slug",
+    "current": "underground-utilities"
+  },
+  "navKey": "services",
+  "order": 18,
+  "showInFooter": true,
+  "seoTitle": "Underground Utilities & Sewer Contractor, Vancouver | NSC",
+  "description": "Sanitary and storm sewers, sewer separation, watermains, services, manholes and hydrants for cities, school districts and builders in Metro Vancouver.",
+  "hero": {
+    "kicker": "Underground utilities",
+    "title": "Sewer, storm and water.",
+    "highlight": "Installed and upgraded.",
+    "subtitle": "Underground utility contractor for municipalities, school districts and builders across Metro Vancouver and the Fraser Valley.",
+    "image": {
+      "_type": "image",
+      "local": "mh2",
+      "alt": "CAT excavator over two new precast manholes on Kingston Road"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "41744d78b03f",
+      "kicker": "Utility contractor",
+      "title": "Utilities on live streets and occupied sites.",
+      "body": "We install and upgrade sanitary sewers, storm sewers and watermains, with the manholes, catch basins, service connections and hydrants that go with them. Much of this work happens on live residential streets and around occupied schools, so we plan traffic, access and service connections to keep residents and businesses running while the work goes on.\n\nOn the [Western Crescent and Kingston Road sewer separation](projects/kingston-road-sewer-separation.html) for the University Endowment Lands we hold the prime contract: twelve new precast manholes, fifteen properties reconnected, seven new catch basins, and new sanitary and storm mains from 250 to 450 mm, with CCTV inspection and pressure testing before handover."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "db6da48efa0a",
+      "kicker": "What we install",
+      "title": "Underground utility services.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "d9c8b4393e1e",
+          "title": "Sanitary and storm sewers",
+          "text": "New and replacement mains, manholes, catch basins and storm leads."
+        },
+        {
+          "_key": "5b89b2fed57f",
+          "title": "Sewer separation",
+          "text": "Separating combined sewers into new sanitary and storm systems, with every property kept connected."
+        },
+        {
+          "_key": "51dfa6bd2dbe",
+          "title": "Watermains and services",
+          "text": "Watermains, fire and domestic water services, hydrants, valves and tie-ins."
+        },
+        {
+          "_key": "cdac288fedc5",
+          "title": "Forcemains",
+          "text": "Rerouting and realignment of sanitary forcemains, keeping the city system in service."
+        },
+        {
+          "_key": "166f7fbab475",
+          "title": "Electrical and communication conduits",
+          "text": "BC Hydro and electrical upgrades, and conduits for electrical and communication services."
+        },
+        {
+          "_key": "e391fb7da5af",
+          "title": "Testing and close-out",
+          "text": "CCTV inspection, pressure testing, abandonment of old manholes and as-builts."
+        }
+      ]
+    },
+    {
+      "_type": "imageText",
+      "_key": "5a2369c59cbb",
+      "image": {
+        "_type": "image",
+        "local": "mains",
+        "alt": "New fire and domestic water mains with gate valves"
+      },
+      "kicker": "Fire and domestic water",
+      "title": "Water services for new buildings.",
+      "reverse": true,
+      "body": "Onsite and offsite fire and domestic water upgrades are part of most of our school and development projects, including [Guildford Park Secondary](projects/guildford-park-secondary.html), [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html), [Parkcrest Elementary](projects/parkcrest-elementary.html) and [James Whiteside Elementary](projects/james-whiteside-elementary.html).",
+      "buttonLabel": "All services",
+      "buttonLink": "services.html"
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "86a4d3f01d2e",
+      "kicker": "Projects",
+      "title": "Utility projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "fea16a7c1354"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-north-surrey-utility-improvements",
+          "_key": "020df1d83250"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "8f45b64ab426"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "45139a5b6fd6"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-brighouse-elementary",
+          "_key": "de5e00527d93"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-mcroberts-secondary",
+          "_key": "6f73bd8bb01c"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "e1e18dbed802",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "cec611c67b9b",
+          "q": "Do you do sewer separation?",
+          "a": "Yes. On [Kingston Road](projects/kingston-road-sewer-separation.html) we replaced a combined sewer with new sanitary and storm systems laid side by side, each with its own manholes, service connections and catch basins."
+        },
+        {
+          "_key": "5fccd43242f6",
+          "q": "Do residents stay connected during the work?",
+          "a": "Yes. New services are installed ahead of time and transferred over once the new mains are tested, so every property stays connected through the job."
+        },
+        {
+          "_key": "358f6fb31c0c",
+          "q": "Do you hold municipal prime contracts?",
+          "a": "Yes. We hold the prime contract for the Kingston Road sewer separation for the University Endowment Lands, and our first prime contract with the City of Surrey was the [North Surrey utility improvements](projects/north-surrey-utility-improvements.html)."
+        },
+        {
+          "_key": "d10665ed1d81",
+          "q": "Do you test and inspect new mains?",
+          "a": "Yes. CCTV inspection and pressure testing are part of our utility scope, along with abandonment of old manholes and as-built records."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "735e14245a8e",
+      "title": "Tendering utility work?",
+      "text": "Send the drawings and tender documents. Our estimating team will respond within one business day."
+    }
+  ]
+}

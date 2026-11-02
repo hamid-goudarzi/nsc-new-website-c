@@ -1,0 +1,154 @@
+{
+  "_id": "page-school-site-works",
+  "_type": "page",
+  "title": "School Site Civil Works",
+  "slug": {
+    "_type": "slug",
+    "current": "school-site-works"
+  },
+  "navKey": "services",
+  "order": 17,
+  "showInFooter": true,
+  "seoTitle": "School Site Civil Contractor, BC School Districts | NSC",
+  "description": "Excavation, underground utilities, site servicing, concrete and paving for school additions, modular classrooms and seismic upgrades for BC school districts.",
+  "hero": {
+    "kicker": "Schools",
+    "title": "School site civil works.",
+    "highlight": "Built around the school year.",
+    "subtitle": "Excavation, underground utilities, site servicing, concrete and paving for school districts in Surrey, Richmond, New Westminster, Delta and Burnaby, and on the UBC campus.",
+    "image": {
+      "_type": "image",
+      "local": "tank2",
+      "alt": "NSC crew placing detention tank modules with CAT excavators behind, Guildford Park"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "0cc2f7f18c5f",
+      "kicker": "Education",
+      "title": "A civil contractor school districts rely on.",
+      "body": "School work is a large part of what we do. We deliver the civil scope for school additions, modular classrooms, portables, seismic upgrades and utility upgrades, working directly for school districts and for construction managers such as Unitech Construction Management and Pro-Can Construction Group.\n\nSchools usually stay open while we work. We plan around school calendars and keep students, staff and parents clear of the site. At Queen Elizabeth Elementary, sewer work in the school grounds was scheduled over spring break."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "424512c0fd8f",
+      "kicker": "What we deliver",
+      "title": "Civil works for school sites.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "77c29c1f6453",
+          "title": "Site servicing for additions",
+          "text": "Storm and sanitary sewer upgrades, fire and domestic water, and BC Hydro and electrical upgrades for new school buildings."
+        },
+        {
+          "_key": "3bb39ddb0359",
+          "title": "Modulars and portables",
+          "text": "Site preparation, pads and servicing for modular classrooms and portables."
+        },
+        {
+          "_key": "b8b7d8b8622e",
+          "title": "Stormwater detention",
+          "text": "Detention tanks and flow control manholes under school fields and grounds."
+        },
+        {
+          "_key": "fd071d2b1a38",
+          "title": "Excavation and grading",
+          "text": "Bulk and detailed excavation, grading and shoring for new construction."
+        },
+        {
+          "_key": "e3df4a916f1a",
+          "title": "Frontage and road works",
+          "text": "Curb and gutter, sidewalks, driveways, streetlighting and road upgrades for the city."
+        },
+        {
+          "_key": "d510281a480d",
+          "title": "Parking and paving",
+          "text": "New parking areas, concrete slabs, asphalt overlay and paving, with paving placed by our asphalt subcontractor."
+        }
+      ]
+    },
+    {
+      "_type": "richText",
+      "_key": "4d7ad5a6d74c",
+      "kicker": "Clients",
+      "title": "School districts and campuses.",
+      "tight": true,
+      "body": "- **School District #36 Surrey:** [Guildford Park Secondary](projects/guildford-park-secondary.html), [George Greenaway Elementary](projects/george-greenaway-elementary.html)\n- **School District #37 Delta:** [Ladner Elementary](projects/ladner-elementary-modular.html)\n- **School District #38 Richmond:** [William Cook](projects/william-cook-elementary.html), [Howard DeBeck](projects/howard-debeck-secondary.html), [Brighouse](projects/brighouse-elementary.html), [Brighouse modular addition](projects/brighouse-modular-addition.html), [James Whiteside](projects/james-whiteside-elementary.html), [McKinney](projects/mckinney-elementary.html), [McRoberts](projects/mcroberts-secondary.html), [Tomsett](projects/tomsett-elementary.html) and [district portables](projects/richmond-school-portables.html)\n- **School District #40 New Westminster:** [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html)\n- **School District #41 Burnaby:** [Parkcrest Elementary](projects/parkcrest-elementary.html)\n- **University of British Columbia:** [Applied Science Digital Design Studio](projects/ubc-digital-design-studio.html)"
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "8ec0cfc5de0b",
+      "kicker": "Projects",
+      "title": "Recent school projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "45139a5b6fd6"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "8f45b64ab426"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-george-greenaway-elementary",
+          "_key": "03bfaab1f7d3"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-ladner-elementary-modular",
+          "_key": "9494b635f20e"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-parkcrest-elementary",
+          "_key": "8a4aef9b68af"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-howard-debeck-secondary",
+          "_key": "24bf5668d4a5"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "6e5b2822a078",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "4a19a07b4322",
+          "q": "Do you work on occupied school sites?",
+          "a": "Yes. Most of our school projects happen while the school is open. We fence and separate the work, schedule disruptive work around the school calendar, and keep access clear for students, staff and parents."
+        },
+        {
+          "_key": "f2cd9a77d5be",
+          "q": "Which school districts have you worked for?",
+          "a": "School District #36 Surrey, #37 Delta, #38 Richmond, #40 New Westminster and #41 Burnaby, plus the University of British Columbia campus."
+        },
+        {
+          "_key": "ee0a5840db85",
+          "q": "Do you work for construction managers and general contractors?",
+          "a": "Yes. On school projects we often carry the civil package for construction managers such as Unitech Construction Management and Pro-Can Construction Group."
+        },
+        {
+          "_key": "86bc72c8a54b",
+          "q": "What do you deliver on a school addition?",
+          "a": "Typically excavation, storm and sanitary sewer upgrades, fire and domestic water, BC Hydro and electrical upgrades, detention tanks, curb, sidewalks, parking areas and paving. See [Guildford Park Secondary](projects/guildford-park-secondary.html) for a full scope."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "0777e4268c01",
+      "title": "Planning school site work?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

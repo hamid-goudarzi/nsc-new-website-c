@@ -40,8 +40,8 @@
       "kicker": "01 · Earthwork",
       "title": "Earthwork and excavation",
       "body": "Bulk and detailed excavation for new buildings, additions and site development, from school sites to supportive housing and residential development.\n\n- Bulk and detail excavation, grading and site preparation\n- Hauling and disposal, and supply of soil and gravel\n- Contaminated soil handling and soil sampling\n- Shoring and shotcrete, trench protection and deep utility excavation beside structures\n\nRecent work: [Guildford Park Secondary](projects/guildford-park-secondary.html), [Agnes Supportive Housing](projects/agnes-supportive-housing.html), [George Greenaway Elementary](projects/george-greenaway-elementary.html).",
-      "buttonLabel": "See Guildford Park",
-      "buttonLink": "projects/guildford-park-secondary.html",
+      "buttonLabel": "Excavation and earthworks",
+      "buttonLink": "excavation-earthworks.html",
       "reverse": false,
       "anchor": "earthwork"
     },
@@ -56,8 +56,8 @@
       "kicker": "02 · Utilities",
       "title": "Underground utilities and sewer separation",
       "body": "New and replacement sanitary sewer, storm sewer and watermains for cities, school districts and public agencies, including sewer separation on live residential streets.\n\n- Sanitary and storm sewer mains, manholes and catch basins\n- Watermains, water services, fire hydrants and tie-ins\n- Electrical and communication conduits\n- Service connections to every property, with services kept running during the work\n- Forcemain rerouting and realignment\n- BC Hydro and electrical upgrades\n- CCTV inspection and pressure testing\n\nRecent work: [Kingston Road sewer separation](projects/kingston-road-sewer-separation.html) for the University Endowment Lands, [Queen Elizabeth Elementary](projects/queen-elizabeth-elementary.html) and [North Surrey utility improvements](projects/north-surrey-utility-improvements.html).",
-      "buttonLabel": "See Kingston Road",
-      "buttonLink": "projects/kingston-road-sewer-separation.html",
+      "buttonLabel": "Underground utilities",
+      "buttonLink": "underground-utilities.html",
       "reverse": true,
       "anchor": "utilities"
     },
@@ -88,8 +88,8 @@
       "kicker": "04 · Site preparation",
       "title": "Site preparation and servicing",
       "body": "Getting sites ready to build: demolition of existing site works, erosion and sediment control, grading, and full site servicing for new buildings and modular classrooms.\n\n- Concrete and asphalt demolition and disposal, and removal of existing site infrastructure\n- Tree removal\n- Erosion and sediment control (ESC), including wheel wash\n- Site grading and building pads\n- Site servicing for additions, modular classrooms and portables\n\nRecent work: [Ladner Elementary](projects/ladner-elementary-modular.html), [Richmond School District portables](projects/richmond-school-portables.html) and [UBC Digital Design Studio](projects/ubc-digital-design-studio.html).",
-      "buttonLabel": "See Ladner Elementary",
-      "buttonLink": "projects/ladner-elementary-modular.html",
+      "buttonLabel": "School site works",
+      "buttonLink": "school-site-works.html",
       "reverse": true,
       "anchor": "site-preparation"
     },
@@ -169,7 +169,7 @@
         {
           "_key": "b832fa76e41e",
           "q": "How do I request a bid or prequalification?",
-          "a": "Send drawings, a tender package or a prequalification request to info@nscltd.ca or call 604-644-5884. Our estimating team responds within one business day. See [Contact](contact.html)."
+          "a": "Send drawings, a tender package or a prequalification request to info@nscltd.ca or call 604-644-5884. Our estimating team responds within one business day. See [Tenders and bids](tenders.html)."
         },
         {
           "_key": "fa147382dcf1",

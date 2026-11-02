@@ -1,0 +1,160 @@
+{
+  "_id": "page-excavation-earthworks",
+  "_type": "page",
+  "title": "Excavation and Earthworks",
+  "slug": {
+    "_type": "slug",
+    "current": "excavation-earthworks"
+  },
+  "navKey": "services",
+  "order": 16,
+  "showInFooter": true,
+  "seoTitle": "Excavation & Earthworks Contractor, Vancouver BC | NSC",
+  "description": "Bulk and detail excavation, earthworks, hauling, shoring and grading for schools, housing and public projects across Metro Vancouver and the Fraser Valley.",
+  "hero": {
+    "kicker": "Excavation and earthworks",
+    "title": "Bulk excavation.",
+    "highlight": "Done right, below grade.",
+    "subtitle": "Excavation and earthworks contractor for school districts, cities, construction managers and developers across Metro Vancouver and the Fraser Valley.",
+    "image": {
+      "_type": "image",
+      "local": "agnes-bulk-excavation",
+      "alt": "NSC excavator and grade checker in the bulk excavation for the building footprint"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "16226b6c97f5",
+      "kicker": "Excavation contractor",
+      "title": "From first cut to final grade.",
+      "body": "Neil Smith Construction is a heavy civil and excavation contractor based in Richmond, BC, with an equipment yard in Langley. Our crews carry out bulk and detail excavation, earthworks, grading and trenching for school additions, supportive housing, residential development, campus buildings and public facilities.\n\nWe run CAT and Kobelco excavators with grade checkers and Trimble GPS grade control on site, and we plan shoring, hauling and material supply as one scope, so the site is ready for the building trades on schedule."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "51c53fecbf7c",
+      "kicker": "What we do",
+      "title": "Excavation and earthwork services.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "056c95c8a245",
+          "title": "Bulk excavation",
+          "text": "Bulk excavation for building footprints, additions and detention tanks, with hauling and disposal of surplus material."
+        },
+        {
+          "_key": "f61e6c61e960",
+          "title": "Detail excavation",
+          "text": "Footings, utility trenches and building pads, excavated and backfilled to grade."
+        },
+        {
+          "_key": "0f2fdb1cdd36",
+          "title": "Shoring and trench safety",
+          "text": "Shoring and shotcrete, trench boxes and safe access on every excavation, checked before anyone goes in."
+        },
+        {
+          "_key": "f8c661f8eaaf",
+          "title": "Hauling and materials",
+          "text": "Hauling and disposal, and supply of soil, gravel and granular base."
+        },
+        {
+          "_key": "2376baff0767",
+          "title": "Contaminated soil",
+          "text": "Soil sampling before we dig, and handling of contaminated soil."
+        },
+        {
+          "_key": "90560e337e63",
+          "title": "Grading and site preparation",
+          "text": "Site grading, building pads, subgrade and compaction, demolition, tree removal and erosion and sediment control."
+        }
+      ]
+    },
+    {
+      "_type": "imageText",
+      "_key": "f224241982e2",
+      "image": {
+        "_type": "image",
+        "local": "ubc-shoring",
+        "alt": "Excavator setting a trench shoring box at UBC"
+      },
+      "kicker": "Safety below grade",
+      "title": "Deep excavation beside buildings and live streets.",
+      "body": "Much of our excavation happens next to occupied schools, campus buildings, fire halls and homes. We locate utilities before the first cut, use shoring and trench boxes, and keep traffic, students and residents clear of the work.\n\nOur health and safety program is COR certified, with a Construction Safety Officer on our sites and a toolbox meeting every shift.",
+      "buttonLabel": "Safety and environment",
+      "buttonLink": "safety.html"
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "b25d6c082ae5",
+      "kicker": "Projects",
+      "title": "Excavation and earthworks projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "45139a5b6fd6"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-agnes-supportive-housing",
+          "_key": "cd61913ad510"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-george-greenaway-elementary",
+          "_key": "03bfaab1f7d3"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-parkcrest-elementary",
+          "_key": "8a4aef9b68af"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-ubc-digital-design-studio",
+          "_key": "72d5d53e8f5a"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "8f45b64ab426"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "fd8165fee5a0",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "3d1173e6f3f6",
+          "q": "Do you take on bulk excavation for new buildings?",
+          "a": "Yes. We carry out bulk and detail excavation for school additions, supportive housing, residential development and campus buildings, for example at [Guildford Park Secondary](projects/guildford-park-secondary.html), [Agnes Supportive Housing](projects/agnes-supportive-housing.html) and the [UBC Digital Design Studio](projects/ubc-digital-design-studio.html)."
+        },
+        {
+          "_key": "53bc59baa8da",
+          "q": "Where do you do excavation work?",
+          "a": "Across Metro Vancouver and the Fraser Valley, including Vancouver, Richmond, Surrey, Burnaby, New Westminster, Delta, Coquitlam and Chilliwack. Our equipment yard is in Langley."
+        },
+        {
+          "_key": "bc9df13645a7",
+          "q": "Can you supply shoring, hauling and fill?",
+          "a": "Yes. Shoring and shotcrete, hauling and disposal, and supply of soil and gravel are part of our earthwork scope."
+        },
+        {
+          "_key": "eef3d18aeb4d",
+          "q": "How do I get an excavation price?",
+          "a": "Send drawings, the geotechnical report and the tender documents to info@nscltd.ca or call 604-644-5884. See [Tenders and bids](tenders.html)."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "8c673de483b5",
+      "title": "Planning excavation work?",
+      "text": "Send drawings, a geotechnical report or a tender package. Our estimating team will respond within one business day."
+    }
+  ]
+}

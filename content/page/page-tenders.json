@@ -1,0 +1,138 @@
+{
+  "_id": "page-tenders",
+  "_type": "page",
+  "title": "Tenders and Bids",
+  "slug": {
+    "_type": "slug",
+    "current": "tenders"
+  },
+  "navKey": "services",
+  "order": 19,
+  "showInFooter": true,
+  "seoTitle": "Excavation & Civil Tenders, BC | Request a Bid | NSC",
+  "description": "Send civil, excavation and underground utility tenders to Neil Smith Construction. Prime and subcontract bids across Metro Vancouver and the Fraser Valley.",
+  "hero": {
+    "kicker": "Tenders and bids",
+    "title": "Have a tender?",
+    "highlight": "Send it to us.",
+    "subtitle": "We price civil, excavation, earthworks and underground utility tenders for owners, construction managers and general contractors. Email info@nscltd.ca or call 604-644-5884.",
+    "image": {
+      "_type": "image",
+      "local": "gwide",
+      "alt": "Graded building pad beside the field at Guildford Park Secondary"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "numberedList",
+      "_key": "f23ee63c5f3c",
+      "kicker": "What we bid on",
+      "title": "Civil and excavation tenders.",
+      "columns": "3",
+      "items": [
+        {
+          "_key": "18056081e734",
+          "title": "Excavation and earthworks",
+          "text": "Bulk and detail excavation, shoring, hauling, grading and site preparation."
+        },
+        {
+          "_key": "c10437f660d8",
+          "title": "Underground utilities",
+          "text": "Sanitary, storm and water mains and services, sewer separation, manholes and hydrants."
+        },
+        {
+          "_key": "e0ddfe11fd05",
+          "title": "Site servicing",
+          "text": "Complete site servicing for school additions, modular classrooms, housing and commercial development."
+        },
+        {
+          "_key": "c1dc8d9cbece",
+          "title": "Roads and concrete",
+          "text": "Road construction and restoration, curb and gutter, sidewalks and slabs."
+        },
+        {
+          "_key": "0ef475a08dc6",
+          "title": "Stormwater",
+          "text": "Detention tanks and flow control manholes."
+        },
+        {
+          "_key": "305cc876c8d1",
+          "title": "Civil works packages",
+          "text": "Civil scope for seismic upgrades, public facilities and campus buildings."
+        }
+      ]
+    },
+    {
+      "_type": "numberedList",
+      "_key": "52ace3282514",
+      "kicker": "How to send a tender",
+      "title": "Four steps to a price.",
+      "columns": "4",
+      "tight": true,
+      "items": [
+        {
+          "_key": "b6af15596c85",
+          "title": "Send the documents",
+          "text": "Email drawings, specifications, the tender form and any geotechnical reports to info@nscltd.ca, with the closing date in the subject line."
+        },
+        {
+          "_key": "450dc6421d04",
+          "title": "We review the package",
+          "text": "Our estimating division prices the work and comes back to you with any questions. We respond within one business day."
+        },
+        {
+          "_key": "2b4c41faa35d",
+          "title": "Send addenda",
+          "text": "Send addenda to the same address so the estimate stays current to closing."
+        },
+        {
+          "_key": "9315aa3faa47",
+          "title": "Prequalification",
+          "text": "We provide our safety program documentation, COR certificate and prequalification package on request."
+        }
+      ]
+    },
+    {
+      "_type": "richText",
+      "_key": "ab294598bfa0",
+      "kicker": "Prime or subcontract",
+      "title": "We bid both ways.",
+      "tight": true,
+      "body": "We bid as prime contractor on municipal and private civil work, and as the civil subcontractor to construction managers and general contractors on school, housing and public facility projects.\n\nClients and partners include the City of Vancouver, the City of Surrey, the University Endowment Lands, school districts in Surrey, Delta, Richmond, New Westminster and Burnaby, Unitech Construction Management, Pro-Can Construction Group, Scott Special Projects, Kinetic Construction, Keller Construction and SmartCentres. See [all projects](projects/index.html)."
+    },
+    {
+      "_type": "faq",
+      "_key": "d81a029f944e",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "e6d554500df4",
+          "q": "Do you accept tenders from general contractors and construction managers?",
+          "a": "Yes. Much of our school, housing and public facility work is as the civil subcontractor to construction managers and general contractors."
+        },
+        {
+          "_key": "c0510ac382cc",
+          "q": "What area do you bid in?",
+          "a": "Metro Vancouver and the Fraser Valley, from the University Endowment Lands to Chilliwack. Our head office is in Richmond and our yard is in Langley."
+        },
+        {
+          "_key": "48cffccd53e9",
+          "q": "How quickly do you respond?",
+          "a": "Our estimating team responds within one business day of receiving a tender package or bid request."
+        },
+        {
+          "_key": "4431bd63c9f4",
+          "q": "Can you send a prequalification package?",
+          "a": "Yes. We provide our safety program documentation, COR certificate and prequalification package on request. Email info@nscltd.ca."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "341f39e87d8c",
+      "title": "Send your tender.",
+      "text": "Email drawings and tender documents to info@nscltd.ca or call 604-644-5884."
+    }
+  ]
+}
