@@ -1,6 +1,7 @@
 // Every public page, for Google, Bing and other search engines.
 import { content } from '../lib/content.mjs';
 import { abs } from '../lib/seo.mjs';
+import { areasOf } from '../lib/areas.mjs';
 export async function GET() {
   const c = await content();
   const s = c.settings;
@@ -12,6 +13,8 @@ export async function GET() {
     ['', newest([c.home, s, ...c.projects]), '1.0', img(c.home.featureImage)],
     ['projects/index.html', newest([c.projectsPage, ...c.projects]), '0.9', img(c.projectsPage.hero?.image)],
     ...c.pages.map(p => [`${p.slug.current}.html`, p._updatedAt, '0.8', img(p.hero?.image)]),
+    ['areas/index.html', newest(c.projects), '0.7', ''],
+    ...areasOf(c.projects).map(a => [`areas/${a.slug}.html`, newest(a.projects), '0.7', img(a.projects[0]?.heroImage)]),
     ...c.projects.map(p => [`projects/${p.slug.current}.html`, p._updatedAt, p.live ? '0.8' : '0.7', [p.heroImage, ...(p.gallery || [])].slice(0, 8).map(img).join('')]),
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

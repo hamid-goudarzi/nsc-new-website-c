@@ -1,0 +1,64 @@
+---
+// One page per city where NSC has built: real projects, services used there, and contact. Generated from the project records.
+import Sub from '../../layouts/Sub.astro';
+import Img from '../../components/Img.astro';
+import Cta from '../../components/Cta.astro';
+import { content } from '../../lib/content.mjs';
+import { areasOf, areaIntro, areaFacts, clientOf } from '../../lib/areas.mjs';
+import { breadcrumbs, abs, orgId, faqLd, projectServices } from '../../lib/seo.mjs';
+import { imgUrl, md, tel } from '../../lib/util.mjs';
+
+export async function getStaticPaths() {
+  const { projects } = await content();
+  const areas = areasOf(projects);
+  return areas.map(a => ({ params: { area: a.slug }, props: { a, others: areas.filter(x => x !== a) } }));
+}
+const { a, others } = Astro.props;
+const { settings: s } = await content();
+const pre = '../';
+const f = areaFacts(a);
+const intro = areaIntro(a, s);
+const hero = a.projects.find(p => p.heroImage?.local && !p.heroImage.tag)?.heroImage || a.projects[0]?.heroImage;
+const svc = [...new Map(a.projects.flatMap(p => projectServices(p)).map(x => [x.anchor, x])).values()];
+const faq = [
+  { q: `Is Neil Smith Construction a civil contractor in ${a.name}?`, a: `Yes. ${intro}` },
+  { q: `What has Neil Smith Construction built in ${a.name}?`, a: a.projects.map(p => `- [${p.name}](../projects/${p.slug.current}.html): ${p.type}${clientOf(p) ? ` for ${clientOf(p)}` : ''}${p.live ? ' (in progress)' : p.year ? ` (${p.year})` : ''}`).join('\n') },
+  { q: `How do I get a price for civil work in ${a.name}?`, a: `Send drawings, a tender package or a prequalification request to ${s.email} or call ${s.phone}. Our estimating team responds within one business day. See [Tenders and bids](../tenders.html).` },
+];
+const title = `Civil Contractor in ${a.name}, BC | Neil Smith Construction`;
+const desc = `Heavy civil contractor in ${a.name}, BC: ${f.types.slice(0, 3).join(', ')}. Excavation, underground utilities and site servicing by Neil Smith Construction.`.slice(0, 160).replace(/[,:\s]+\S*$/, '.');
+const ld = [
+  breadcrumbs(s, [['Home', ''], ['Areas we serve', 'areas/index.html'], [a.name, `areas/${a.slug}.html`]]),
+  { '@context': 'https://schema.org', '@type': 'Service', name: `Heavy civil construction in ${a.name}, BC`, serviceType: 'Heavy civil construction', provider: { '@id': orgId(s) },
+    areaServed: { '@type': 'City', name: a.name, containedInPlace: { '@type': 'AdministrativeArea', name: 'British Columbia' } }, url: abs(s, `areas/${a.slug}.html`),
+    hasOfferCatalog: { '@type': 'OfferCatalog', name: `Civil work in ${a.name}`, itemListElement: svc.map(x => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: x.label } })) } },
+  faqLd([{ _type: 'faq', items: faq }]),
+];
+---
+<Sub path={`areas/${a.slug}.html`} title={`Civil contractor in ${a.name}`} fullTitle={title.length <= 62 ? title : `Civil Contractor in ${a.name}, BC | NSC`} description={desc} jsonld={ld} ogImage={imgUrl(hero)} active="about" pre={pre} bodyClass="cp">
+<header class="pihero cphero">
+  <div class="bg"><Img image={hero} pre={pre} eager /></div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Areas we serve</a>
+    <p class="mono kick">Areas we serve</p>
+    <h1>Civil contractor in <span class="grad">{a.name}.</span></h1>
+    <p class="pi-sub">{intro}</p>
+  </div>
+</header>
+<main>
+<section class="sec"><div class="wrap">
+  <div class="rg-h"><div><p class="mono kick">Projects</p><h2 class="h2">Our work in {a.name}.</h2></div><p class="rv">Every project below was built by NSC crews in {a.name}{f.uel ? ' and the University Endowment Lands' : ''}.</p></div>
+  <div class="pgrid" style="margin-top:34px">{a.projects.map(p => (
+    <a class="pcard rv" href={`${pre}projects/${p.slug.current}.html`}><div class="pc-img"><Img image={p.heroImage} pre={pre} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw" /><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
+    <div class="pc-b"><h3>{p.name}</h3><p>{p.lede}</p><dl><div><dt>Type</dt><dd>{p.type}</dd></div><div><dt>Year</dt><dd>{p.year}</dd></div><div><dt>Client</dt><dd>{clientOf(p)}</dd></div></dl><span class="pc-ar" aria-hidden="true">↗</span></div></a>))}</div>
+</div></section>
+{svc.length > 0 && <section class="sec related" style="padding-top:0"><div class="wrap rel-g">
+  <div><h2 class="mono rel-h">Services delivered in {a.name}</h2><div class="plinks">{svc.map(x => <a href={`${pre}services.html#${x.anchor}`}>{x.label}<b>↗</b></a>)}</div></div>
+  <div><h2 class="mono rel-h">Nearby areas</h2><div class="plinks">{others.map(o => <a href={`${o.slug}.html`}>{o.name}<b>↗</b></a>)}</div></div>
+</div></section>}
+<section class="sec faq" style="padding-top:0"><div class="wrap"><div class="rg-h"><div><p class="mono kick">Questions</p><h2 class="h2">Working in {a.name}.</h2></div></div>
+  <div class="faq-l">{faq.map((it, i) => <details class="faq-i rv" open={i === 0 || undefined}><summary><h3>{it.q}</h3><span aria-hidden="true">+</span></summary><div class="prose" set:html={md(it.a)} /></details>)}</div>
+</div></section>
+<Cta pre={pre} title={`Planning civil work in ${a.name}?`} text="Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day." />
+</main>
+</Sub>

@@ -1,0 +1,37 @@
+---
+// Areas we serve: every city where NSC has built, with the map.
+import Sub from '../../layouts/Sub.astro';
+import Img from '../../components/Img.astro';
+import Region from '../../components/Region.astro';
+import Cta from '../../components/Cta.astro';
+import { content } from '../../lib/content.mjs';
+import { areasOf, areaFacts } from '../../lib/areas.mjs';
+import { breadcrumbs, abs, orgId } from '../../lib/seo.mjs';
+import { imgUrl } from '../../lib/util.mjs';
+const { settings: s, projects } = await content();
+const pre = '../';
+const areas = areasOf(projects);
+const hero = { local: 'gwide2', alt: 'Excavation for the school addition at Guildford Park, Surrey' };
+const ld = [breadcrumbs(s, [['Home', ''], ['Areas we serve', 'areas/index.html']]),
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Areas we serve', url: abs(s, 'areas/index.html'), about: { '@id': orgId(s) },
+    mainEntity: { '@type': 'ItemList', itemListElement: areas.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: `Civil contractor in ${a.name}, BC`, url: abs(s, `areas/${a.slug}.html`) })) } }];
+---
+<Sub path="areas/index.html" title="Areas we serve" fullTitle="Civil Contractor, Metro Vancouver and Fraser Valley | NSC" description="Heavy civil, excavation and underground utility contractor serving Vancouver, Richmond, Surrey, Burnaby, New Westminster, Delta, Coquitlam and Chilliwack." jsonld={ld} ogImage={imgUrl(hero)} active="about" pre={pre} bodyClass="cp">
+<header class="pihero cphero">
+  <div class="bg"><Img image={hero} pre={pre} eager /></div>
+  <div class="wrap">
+    <p class="mono kick">Areas we serve</p>
+    <h1>Metro Vancouver and <span class="grad">the Fraser Valley.</span></h1>
+    <p class="pi-sub">Heavy civil, excavation and underground utility work from our head office in Richmond and our equipment yard in Langley.</p>
+  </div>
+</header>
+<main>
+<section class="sec"><div class="wrap">
+  <div class="rg-h"><div><p class="mono kick">Cities</p><h2 class="h2">Where we have built.</h2></div><p class="rv">Each city page lists the projects our crews built there.</p></div>
+  <div class="auds" style="margin-top:34px">{areas.map(a => { const f = areaFacts(a); return (
+    <article class="aud rv"><p class="mono kick">{a.name}</p><p>{f.types.slice(0, 4).join(', ')}{f.clients.length ? `. Clients: ${f.clients.slice(0, 3).join(', ')}` : ''}.</p><a class="btn btn-glass" href={`${a.slug}.html`}>Civil contractor in {a.name} →</a></article>) })}</div>
+</div></section>
+<section class="sec region" style="padding-top:0"><div class="wrap"><Region projects={projects} pre={pre} /></div></section>
+<Cta pre={pre} />
+</main>
+</Sub>

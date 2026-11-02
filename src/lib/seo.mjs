@@ -143,6 +143,9 @@ export function fullText(c) {
     L.push(`### ${m.title}`, '', m.description || '', '', ...(m.deliver || []).map(x => `- ${x}`), '');
     if (m.owners?.length) L.push(`Owners and partners: ${m.owners.join(', ')}.`, '');
   }
+  L.push('## Areas served', '', `Metro Vancouver and the Fraser Valley, British Columbia. Head office in Richmond, equipment yard in Langley. Projects by city:`, '');
+  { const by = new Map(); for (const p of projects) { const n = String(p.city || '').replace(/\s*\(UEL\)\s*/, ''); if (!by.has(n)) by.set(n, []); by.get(n).push(p.name); }
+    for (const [n, ps] of by) L.push(`- **${n}:** ${ps.join('; ')} (${u('areas/' + n.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.html')})`); L.push(''); }
   L.push('## How projects are delivered', '', ...(h.deliverSteps || []).map(x => `- **${x.title}**: ${x.text}`), '');
   L.push('## Projects', '');
   for (const p of projects) {

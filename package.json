@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/check-build.mjs",
+    "build": "astro build && node scripts/check-build.mjs && node scripts/indexnow.mjs",
     "preview": "astro preview",
     "admin:local": "node scripts/local-server.mjs"
   },

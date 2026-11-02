@@ -1,5 +1,6 @@
 ---
 // "Where we work" map and project list, built from the projects' city field.
+import { areaName, areaSlug } from '../lib/areas.mjs';
 const { projects, pre = '' } = Astro.props;
 // Map positions for Lower Mainland cities (x, y, label x, label y, label anchor).
 const PINS = {
@@ -24,4 +25,4 @@ const pins = cities.filter(c => PINS[c]).map(c => ({ c, live: by(c).some(p => p.
 const label = 'Map of the Lower Mainland showing where NSC has built: ' + cities.join(', ');
 ---
 <div class="rmap-w rv"><svg class="rmap" viewBox="0 0 1200 520" role="img" aria-label={label}><Fragment set:html={HEAD} />{pins.map(p => <g class={`pin${p.live ? ' live' : ''}`}><circle class="halo" cx={p.xy[0]} cy={p.xy[1]} r="18"/><circle class="dot" cx={p.xy[0]} cy={p.xy[1]} r="6"/><text x={p.xy[2]} y={p.xy[3]} text-anchor={p.xy[4]}>{p.c}</text></g>)}<Fragment set:html={TAIL} /></svg><div class="rkey mono"><span><i class="k1"></i>Project</span><span><i class="k2"></i>Underway now</span><span><i class="k3"></i>Head office and yard</span></div></div>
-<div class="rcols">{cities.map(c => <div class="rc"><h3>{c}</h3>{by(c).map(p => <a href={`${pre}projects/${p.slug.current}.html`}>{p.live && <i></i>}{p.shortName || p.name}</a>)}</div>)}</div>
+<div class="rcols">{cities.map(c => <div class="rc"><h3><a href={`${pre}areas/${areaSlug(areaName(c))}.html`}>{c}</a></h3>{by(c).map(p => <a href={`${pre}projects/${p.slug.current}.html`}>{p.live && <i></i>}{p.shortName || p.name}</a>)}</div>)}</div>

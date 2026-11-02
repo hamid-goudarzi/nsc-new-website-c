@@ -390,3 +390,5 @@ img{height:auto}
 .rel-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px 40px;border-top:1px solid var(--line);padding-top:40px}
 .rel-h{font-size:12px;font-weight:400;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
 .related .plinks{margin-top:0}
+.rc h3 a{color:inherit;text-decoration:none;display:inline;padding:0;border:0;background:none}.rc h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.aud{min-width:0}.aud .btn{white-space:normal;text-align:center;max-width:100%}
