@@ -1,0 +1,165 @@
+{
+  "_id": "page-heavy-civil-contractor",
+  "_type": "page",
+  "title": "Heavy Civil Contractor",
+  "slug": {
+    "_type": "slug",
+    "current": "heavy-civil-contractor"
+  },
+  "navKey": "services",
+  "order": 15,
+  "showInFooter": true,
+  "seoTitle": "Heavy Civil Contractor, Vancouver & BC | Neil Smith Construction",
+  "description": "Heavy civil contractor in Metro Vancouver and the Fraser Valley, BC: underground utilities, excavation, earthworks, roadworks and site servicing. COR certified.",
+  "hero": {
+    "kicker": "Heavy civil contractor, BC",
+    "title": "Heavy civil contractor.",
+    "highlight": "Metro Vancouver and the Fraser Valley.",
+    "subtitle": "Neil Smith Construction builds underground utilities, excavation and earthworks, roadworks and site servicing for cities, school districts, public facilities and developers across British Columbia's Lower Mainland.",
+    "image": {
+      "_type": "image",
+      "local": "deep",
+      "alt": "Deep utility excavation with ladder access on an NSC heavy civil site"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "79b31e06f60c",
+      "kicker": "Who we are",
+      "title": "Heavy civil work, from the first cut to final restoration.",
+      "body": "Neil Smith Construction Ltd. (NSC) is a heavy civil contractor based in Richmond, BC, with an equipment yard in Langley. Neil Smith and Dennis Frederickson founded the company in 2018: Neil brought over fifty years of excavation and heavy civil experience, and Dennis, who leads NSC today, brought decades of construction and project management.\n\nWe work as prime contractor on municipal civil contracts and as the civil subcontractor to construction managers and general contractors on schools, housing and public buildings. Our own crews and equipment carry out the work, from the first excavation to final restoration, and our health and safety program is COR certified by the BC Construction Safety Alliance."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "9307ef95145c",
+      "kicker": "What heavy civil means at NSC",
+      "title": "Heavy civil construction services.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "70c3f3614094",
+          "title": "Underground utilities",
+          "text": "Sanitary sewer, storm sewer and watermains, services, manholes, hydrants and sewer separation."
+        },
+        {
+          "_key": "78a162068cbf",
+          "title": "Excavation and earthworks",
+          "text": "Bulk and detail excavation, shoring, hauling, grading and building pads."
+        },
+        {
+          "_key": "2b942560c827",
+          "title": "Site servicing",
+          "text": "Complete civil packages for school additions, modular classrooms, housing and commercial sites."
+        },
+        {
+          "_key": "f45034de7158",
+          "title": "Roadworks",
+          "text": "Road base, curb and gutter, sidewalks, walkways and surface restoration."
+        },
+        {
+          "_key": "8fdc2b47b583",
+          "title": "Stormwater",
+          "text": "Detention tanks, flow control manholes, catch basins and onsite storm systems."
+        },
+        {
+          "_key": "238ba1218178",
+          "title": "Concrete",
+          "text": "Curbs, slabs, pads, footings and site concrete as part of the civil scope."
+        }
+      ]
+    },
+    {
+      "_type": "imageText",
+      "_key": "837becd0e3ef",
+      "image": {
+        "_type": "image",
+        "local": "mains",
+        "alt": "NSC crew installing underground mains"
+      },
+      "kicker": "Who we work for",
+      "title": "Municipalities, school districts and builders.",
+      "body": "Our clients include the City of Vancouver, the City of Surrey, the University Endowment Lands and school districts in Surrey, Delta, Richmond, New Westminster and Burnaby. On building projects we work for construction managers and general contractors as the civil and excavation subcontractor.",
+      "buttonLabel": "Areas we serve",
+      "buttonLink": "areas/index.html"
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "b97f55b6e8f5",
+      "kicker": "Projects",
+      "title": "Heavy civil projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "af2239bfe21c"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "7a85454b859c"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-fire-hall-12-kitsilano",
+          "_key": "5773be9f7326"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-agnes-supportive-housing",
+          "_key": "58a90a0bca0c"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-north-surrey-utility-improvements",
+          "_key": "f0bd278701cb"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-parkcrest-elementary",
+          "_key": "b690d6df85ec"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "be9884f23287",
+      "kicker": "Questions",
+      "title": "About our heavy civil work.",
+      "items": [
+        {
+          "_key": "72d9d644cd89",
+          "q": "What is a heavy civil contractor?",
+          "a": "A heavy civil contractor builds the infrastructure below and around buildings and roads: sewers, watermains, storm systems, excavation, earthworks and roadworks. Neil Smith Construction does this work for public owners and builders across Metro Vancouver and the Fraser Valley."
+        },
+        {
+          "_key": "f8412ecbb889",
+          "q": "Where does Neil Smith Construction work?",
+          "a": "Across Metro Vancouver and the Fraser Valley, including Vancouver, Richmond, Surrey, Burnaby, New Westminster, Delta, Coquitlam, Langley and Chilliwack. See [Areas we serve](areas/index.html)."
+        },
+        {
+          "_key": "9f79d3332ffd",
+          "q": "Do you bid public tenders?",
+          "a": "Yes. We bid municipal and school district civil tenders as prime contractor, and civil and excavation packages for construction managers and general contractors. See [Tenders and bids](tenders.html)."
+        },
+        {
+          "_key": "50d233362efa",
+          "q": "Is Neil Smith Construction COR certified?",
+          "a": "Yes. Our health and safety program holds a Certificate of Recognition (COR) from the BC Construction Safety Alliance. See [Safety](safety.html)."
+        },
+        {
+          "_key": "ec969f4e2246",
+          "q": "How do I contact NSC about a project?",
+          "a": "Email info@nscltd.ca or call 604-644-5884. Our head office is at #206-6011 Westminster Highway, Richmond, BC."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "64d2d9539b98",
+      "title": "Need a heavy civil contractor?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}
