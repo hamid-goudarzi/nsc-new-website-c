@@ -34,7 +34,8 @@ export function organization(c) {
     foundingDate: '2018',
     founder: [{ '@type': 'Person', name: 'Neil Smith' }, { '@type': 'Person', name: 'Dennis Frederickson' }],
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certificate of Recognition (COR)', recognizedBy: { '@type': 'Organization', name: 'BC Construction Safety Alliance' } },
-    sameAs: [s.linkedin, s.instagram].filter(Boolean),
+    sameAs: [s.linkedin, s.instagram, s.googleMaps].filter(Boolean),
+    hasMap: s.googleMaps || undefined,
     hasOfferCatalog: (() => { const sv = servicesOf(c.pages.find(p => p.slug.current === 'services')); return sv.length ? { '@type': 'OfferCatalog', name: 'Heavy civil construction services', itemListElement: sv.map(x => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: x.name, description: x.description } })) } : undefined; })(),
     subjectOf: projects.slice(0, 30).map(p => ({ '@type': 'CreativeWork', name: p.name, url: abs(s, `projects/${p.slug.current}.html`) })),
   };

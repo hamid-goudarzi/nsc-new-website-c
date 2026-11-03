@@ -221,6 +221,7 @@ export const TYPES = {
       { name: 'offices', label: 'Offices', type: 'list', itemLabel: 'label', fields: [{ name: 'label', label: 'Name', type: 'string' }, { name: 'address', label: 'Address', type: 'text', rows: 2 }, { name: 'mapUrl', label: 'Map link', type: 'string' }] },
       { name: 'linkedin', label: 'LinkedIn link', type: 'string' },
       { name: 'instagram', label: 'Instagram link', type: 'string' },
+      { name: 'googleMaps', label: 'Google Maps / Business Profile link', type: 'string' },
       { type: 'heading', label: 'Menus and footer' },
       { name: 'nav', label: 'Top menu', type: 'list', itemLabel: 'label', inline: true, fields: [{ name: 'label', label: 'Text', type: 'string' }, { name: 'link', label: 'Link', type: 'string' }] },
       { name: 'footerBlurb', label: 'Footer text', type: 'text', rows: 2 },
