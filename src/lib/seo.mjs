@@ -29,7 +29,7 @@ export function organization(c) {
     address: offices[0] ? postal(offices[0].address) : undefined,
     location: offices.map(o => ({ '@type': 'Place', name: `${s.companyName} ${o.label.toLowerCase()}`, address: postal(o.address), hasMap: o.mapUrl })),
     areaServed: (s.serviceAreas?.length ? s.serviceAreas : ['Metro Vancouver', 'Fraser Valley', 'Lower Mainland, British Columbia']).map(n => ({ '@type': 'AdministrativeArea', name: n })),
-    knowsAbout: [...new Set([...(h.serviceTiles || []).map(t => t.title), ...markets.flatMap(m => m.deliver || [])])],
+    knowsAbout: [...new Set([...(h.serviceTiles || []).map(t => t.title), ...markets.flatMap(m => m.deliver || []), ...specialtyPages(c).map(p => p.title)])],
     slogan: [h.heroTitle, h.heroHighlight].filter(Boolean).join(' '),
     foundingDate: '2018',
     founder: [{ '@type': 'Person', name: 'Neil Smith' }, { '@type': 'Person', name: 'Dennis Frederickson' }],
@@ -42,6 +42,11 @@ export function organization(c) {
     subjectOf: projects.slice(0, 30).map(p => ({ '@type': 'CreativeWork', name: p.name, url: abs(s, `projects/${p.slug.current}.html`) })),
   };
 }
+
+/** Service landing pages (Services menu pages that feature real projects). */
+export const specialtyPages = c => (c.pages || []).filter(p => p.navKey === 'services' && p.slug.current !== 'services' && (p.blocks || []).some(b => b._type === 'projectsGrid'));
+/** Specialty pages whose project lists include this project. */
+export const pagesForProject = (c, p) => specialtyPages(c).filter(pg => pg.blocks.some(b => b._type === 'projectsGrid' && (b.projects || []).some(x => x?._id === p._id)));
 
 const DAYS = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
 /** "Mo-Fr 08:00-17:00" → schema.org opening hours. */

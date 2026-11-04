@@ -1,0 +1,141 @@
+{
+  "_id": "page-roadworks-curb-sidewalk",
+  "_type": "page",
+  "title": "Roadworks, Curb and Sidewalk",
+  "slug": {
+    "_type": "slug",
+    "current": "roadworks-curb-sidewalk"
+  },
+  "navKey": "services",
+  "order": 24,
+  "showInFooter": false,
+  "seoTitle": "Roadworks, Curb & Sidewalk Contractor, BC | NSC",
+  "description": "Road construction, concrete curb and gutter, sidewalks, driveways and frontage works for cities and school districts in Metro Vancouver.",
+  "hero": {
+    "kicker": "Roadworks and frontage",
+    "title": "Roadworks, curb and sidewalk.",
+    "highlight": "Frontage works done right.",
+    "subtitle": "Neil Smith Construction builds roads, concrete curb and gutter, sidewalks, letdowns and driveways, and restores the surface after utility work.",
+    "image": {
+      "_type": "image",
+      "local": "qe-exc",
+      "alt": "NSC crew and Kobelco excavator on road works in New Westminster"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "5d95760d107c",
+      "kicker": "Overview",
+      "title": "Roads and frontage for public owners.",
+      "body": "Frontage and road works are often the final, most visible part of a civil package. Our crews excavate and build road base, form and pour concrete curb and gutter, sidewalks, letdowns and driveways, and coordinate asphalt overlay and new paving.\n\nAt Queen Elizabeth Elementary in New Westminster we built new road and frontage works for the city, including streetlighting. At Guildford Park Secondary in Surrey and Parkcrest Elementary in Burnaby the scope included onsite and offsite curb, gutter, sidewalks, driveways and paving."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "cf6154a6e7f1",
+      "kicker": "Scope",
+      "title": "What our roadworks include.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "b403803751d2",
+          "title": "Road construction",
+          "text": "Excavation, subgrade and granular road base."
+        },
+        {
+          "_key": "e1b30ac94809",
+          "title": "Concrete curb and gutter",
+          "text": "Onsite and offsite curb and gutter for cities and schools."
+        },
+        {
+          "_key": "99349a887e80",
+          "title": "Sidewalks, letdowns and driveways",
+          "text": "Concrete sidewalks, letdowns and driveway crossings."
+        },
+        {
+          "_key": "c548c41cca79",
+          "title": "Streetlighting",
+          "text": "Streetlighting installation with road upgrades, as at Queen Elizabeth Elementary."
+        },
+        {
+          "_key": "65e2c82238c9",
+          "title": "Paving",
+          "text": "Asphalt overlay and new paving for roads, parking areas and school yards."
+        },
+        {
+          "_key": "0b97bb9ad55f",
+          "title": "Restoration",
+          "text": "Road and surface restoration after utility work."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "700119c262a6",
+      "kicker": "Projects",
+      "title": "Roadworks projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "362c69e0dfe2"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "eac85ee7dbe1"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-parkcrest-elementary",
+          "_key": "a181a75e695c"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-mckinney-elementary",
+          "_key": "28347220dcd4"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-tomsett-elementary",
+          "_key": "cf5d9e2b4ced"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-north-surrey-utility-improvements",
+          "_key": "56118c6af51e"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "22c3a2557731",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "5e849755a616",
+          "q": "Do you build curb, gutter and sidewalks?",
+          "a": "Yes. Concrete curb and gutter, sidewalks, letdowns and driveways are part of many of our school and city projects."
+        },
+        {
+          "_key": "dda34a5f9883",
+          "q": "Do you do road upgrades for cities?",
+          "a": "Yes. At Queen Elizabeth Elementary we built road and frontage upgrades for the City of New Westminster, including streetlighting."
+        },
+        {
+          "_key": "2bd610da3229",
+          "q": "How do I get a price?",
+          "a": "Send drawings or a tender package to info@nscltd.ca or call 604-644-5884."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "c87b89daf4a4",
+      "title": "Need road or frontage works?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

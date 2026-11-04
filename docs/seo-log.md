@@ -10,9 +10,14 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Google Search Console + Bing Webmaster verified (company Gmail neilsmithconstructionltd@gmail.com); Google Business Profile claimed and updated (categories, description, website, services, service area).
 - Competitor check: IWC Excavation, Norland/BEL/Copcan, TYBO, Jacob Bros, B&B rank for target searches; none had structured data, city pages or FAQs. Their edge: fleet/staff numbers, named client lists, news posts, directory listings.
 
+## Nov 4, 2026 — specialty pages (by hand)
+- Added 7 specialty pages built only from project records: sewer-contractor, watermain-contractor, stormwater-detention, modular-classroom-site-servicing, roadworks-curb-sidewalk, seismic-upgrade-site-works, civil-subcontractor. Each has scope, real project grid, FAQ (FAQPage schema) and CTA.
+- "Explore our civil work" cards on services.html and heavy-civil-contractor.html link all specialty pages; project pages show "Related specialties"; area pages show "Specialties in <city>". Specialty titles added to Organization knowsAbout.
+- 55 pages, build check clean, 0 axe violations, no horizontal scroll at 390 px.
+
 ## Next ideas
 - Project pages are thin (~130–200 words): build fuller, factual summaries from existing details/scope/timeline; link to services and areas.
-- Per-service pages from real projects: sewer separation (Kingston Road, UEL), watermain and water services, stormwater detention (Guildford Park), modular classroom site servicing (Ladner, Brighouse, Richmond portables), seismic upgrade site works (Fire Hall 12, DeBeck, Manitoba Yard).
+- Deepen the 7 specialty pages over time with more photos from their projects (galleries) and any new projects.
 - School district page(s): SD36 Surrey, SD37 Delta, SD38 Richmond, SD40 New Westminster, SD41 Burnaby — only projects in the repo.
 - Contact page is short (~120 words): add offices, hours, what to send for a bid, and FAQ.
 - Careers page (~200 words): add what roles NSC hires for and how to apply, from existing content only.

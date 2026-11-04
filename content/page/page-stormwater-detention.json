@@ -1,0 +1,126 @@
+{
+  "_id": "page-stormwater-detention",
+  "_type": "page",
+  "title": "Stormwater Detention",
+  "slug": {
+    "_type": "slug",
+    "current": "stormwater-detention"
+  },
+  "navKey": "services",
+  "order": 22,
+  "showInFooter": false,
+  "seoTitle": "Stormwater Detention Tanks & Storm Systems, BC | NSC",
+  "description": "Stormwater detention tanks, flow control manholes, catch basins and storm sewers for schools and public sites in Metro Vancouver.",
+  "hero": {
+    "kicker": "Stormwater",
+    "title": "Stormwater detention.",
+    "highlight": "Tanks, flow control and storm systems.",
+    "subtitle": "Neil Smith Construction builds stormwater detention tanks, flow control manholes and onsite storm systems for schools and public sites.",
+    "image": {
+      "_type": "image",
+      "local": "tank",
+      "alt": "NSC crew in hard hats and vests on the Guildford Park detention tank"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "24b9c8b566a8",
+      "kicker": "Overview",
+      "title": "Detention tanks for school sites.",
+      "body": "Many school additions and site upgrades now need onsite stormwater detention. Our crews excavate for the tank, install it, set flow control manholes and connect the storm system.\n\nAt Guildford Park Secondary in Surrey we built a large stormwater detention tank with flow control manholes as part of the full civil scope. At Brighouse Elementary in Richmond we installed a new detention tank and flow control manholes with the storm and sanitary upgrade."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "13c169795f42",
+      "kicker": "Scope",
+      "title": "What our stormwater work includes.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "15f7dc8cf23d",
+          "title": "Detention tanks",
+          "text": "Excavation, installation and backfill of stormwater detention tanks."
+        },
+        {
+          "_key": "0d99f528af3d",
+          "title": "Flow control manholes",
+          "text": "Manholes that release stored stormwater at the allowed rate."
+        },
+        {
+          "_key": "3d1318bd80e5",
+          "title": "Storm sewers and leads",
+          "text": "Onsite and offsite storm mains, leads and connections."
+        },
+        {
+          "_key": "4164a03924a3",
+          "title": "Catch basins and drainage",
+          "text": "Catch basins, perforated drain pipe and site drainage."
+        },
+        {
+          "_key": "8c874f92ae34",
+          "title": "Valve and precast chambers",
+          "text": "Setting precast chambers with our own excavators."
+        },
+        {
+          "_key": "7ec63f83c0ea",
+          "title": "Surface restoration",
+          "text": "Paving and concrete restoration over the work."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "db783cba7d62",
+      "kicker": "Projects",
+      "title": "Stormwater projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "c2de61db7943"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-brighouse-elementary",
+          "_key": "57c13ef9d05d"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "8243ca6045e0"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "d46a3e84f81f",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "2ab2104d4210",
+          "q": "Do you build stormwater detention tanks?",
+          "a": "Yes. We built detention tanks with flow control manholes at Guildford Park Secondary in Surrey and Brighouse Elementary in Richmond."
+        },
+        {
+          "_key": "ed0f7410c25b",
+          "q": "Can you do the full civil scope around the tank?",
+          "a": "Yes. At Guildford Park we delivered the whole civil package, from bulk excavation and the detention tank to sewer and water upgrades and frontage works."
+        },
+        {
+          "_key": "acbc14b30aa4",
+          "q": "How do I get a price?",
+          "a": "Send drawings or a tender package to info@nscltd.ca or call 604-644-5884."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "1877852ffe0f",
+      "title": "Planning stormwater detention?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

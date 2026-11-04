@@ -1,0 +1,151 @@
+{
+  "_id": "page-sewer-contractor",
+  "_type": "page",
+  "title": "Sewer Contractor",
+  "slug": {
+    "_type": "slug",
+    "current": "sewer-contractor"
+  },
+  "navKey": "services",
+  "order": 20,
+  "showInFooter": false,
+  "seoTitle": "Sewer Contractor, Vancouver & Lower Mainland | NSC",
+  "description": "Sanitary and storm sewer installation, upgrades and sewer separation for municipalities and school districts across Metro Vancouver. COR certified.",
+  "hero": {
+    "kicker": "Sanitary and storm sewers",
+    "title": "Sewer contractor.",
+    "highlight": "Sanitary, storm and sewer separation.",
+    "subtitle": "Neil Smith Construction installs and upgrades sanitary and storm sewers, from municipal sewer separation to full onsite and offsite sewer upgrades at schools.",
+    "image": {
+      "_type": "image",
+      "local": "mhpipe",
+      "alt": "New sanitary and storm manholes with PVC and concrete pipe on Kingston Road"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "21b540fd5edb",
+      "kicker": "Overview",
+      "title": "Sewer work for cities, the UEL and school districts.",
+      "body": "Neil Smith Construction is a heavy civil contractor based in Richmond, BC. Our crews install new sanitary and storm sewers, separate combined sewers, set manholes and catch basins, connect services and restore the street afterwards.\n\nFor the University Endowment Lands we separated the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems, with service connections to every property. For School Districts 36, 37, 38, 40 and 41 we have upgraded storm and sanitary systems at elementary and secondary schools, including the realignment of a city sanitary forcemain at Queen Elizabeth Elementary in New Westminster."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "ecd3c7d8bf2d",
+      "kicker": "Scope",
+      "title": "What our sewer work includes.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "981e35eaf502",
+          "title": "Sewer separation",
+          "text": "Replacing combined sewers with separate sanitary and storm mains, as on Kingston Road and Western Crescent for the University Endowment Lands."
+        },
+        {
+          "_key": "dd96b856bcf2",
+          "title": "New sanitary and storm mains",
+          "text": "Sanitary sewer from 250 to 375 mm and storm sewer from 250 to 450 mm on Kingston Road; onsite and offsite mains at schools."
+        },
+        {
+          "_key": "e634cb0a56fa",
+          "title": "Manholes and catch basins",
+          "text": "Precast manholes set in pairs, catch basins, storm leads and abandonment of old manholes."
+        },
+        {
+          "_key": "805285f0ef1b",
+          "title": "Service connections",
+          "text": "Sanitary and storm service connections to every property along the line."
+        },
+        {
+          "_key": "727d368cac8a",
+          "title": "Forcemain realignment",
+          "text": "Rerouting and realignment of the city sanitary forcemain at Queen Elizabeth Elementary."
+        },
+        {
+          "_key": "e00ac66309fd",
+          "title": "Testing and restoration",
+          "text": "CCTV inspection, pressure testing, and road and surface restoration."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "9f87796e0df6",
+      "kicker": "Projects",
+      "title": "Sewer projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "b45eff215a63"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "8f9ed25c6079"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "b4b50224976b"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-parkcrest-elementary",
+          "_key": "e9fe48a75ab6"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-brighouse-elementary",
+          "_key": "d973a52e6b90"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-mcroberts-secondary",
+          "_key": "4d271a4cbad3"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-ladner-elementary-modular",
+          "_key": "11a316fb5cec"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "128f9736ba38",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "d4125001e167",
+          "q": "Does Neil Smith Construction do sewer separation?",
+          "a": "Yes. For the University Endowment Lands we separated the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems. See [Kingston Road Sewer Separation](projects/kingston-road-sewer-separation.html)."
+        },
+        {
+          "_key": "e82dae0c30b1",
+          "q": "Do you install sewers at schools?",
+          "a": "Yes. We have upgraded storm and sanitary sewer systems for School Districts 36 (Surrey), 37 (Delta), 38 (Richmond), 40 (New Westminster) and 41 (Burnaby)."
+        },
+        {
+          "_key": "21411173502d",
+          "q": "Where do you work?",
+          "a": "Across Metro Vancouver and the Fraser Valley. See [Areas we serve](areas/index.html)."
+        },
+        {
+          "_key": "86b0f38eea77",
+          "q": "How do I get a price?",
+          "a": "Send drawings or a tender package to info@nscltd.ca or call 604-644-5884. See [Tenders and bids](tenders.html)."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "bae3adbb1ddf",
+      "title": "Need a sewer contractor?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

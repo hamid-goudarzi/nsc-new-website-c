@@ -5,7 +5,7 @@ import Img from '../../components/Img.astro';
 import Cta from '../../components/Cta.astro';
 import { content } from '../../lib/content.mjs';
 import { areasOf, areaIntro, areaFacts, clientOf } from '../../lib/areas.mjs';
-import { breadcrumbs, abs, orgId, faqLd, projectServices } from '../../lib/seo.mjs';
+import { breadcrumbs, abs, orgId, faqLd, projectServices, pagesForProject } from '../../lib/seo.mjs';
 import { imgUrl, md, tel } from '../../lib/util.mjs';
 
 export async function getStaticPaths() {
@@ -14,7 +14,9 @@ export async function getStaticPaths() {
   return areas.map(a => ({ params: { area: a.slug }, props: { a, others: areas.filter(x => x !== a) } }));
 }
 const { a, others } = Astro.props;
-const { settings: s } = await content();
+const all = await content();
+const { settings: s } = all;
+const specs = [...new Map(a.projects.flatMap(p => pagesForProject(all, p)).map(x => [x._id, x])).values()];
 const pre = '../';
 const f = areaFacts(a);
 const intro = areaIntro(a, s);
@@ -54,6 +56,7 @@ const ld = [
 </div></section>
 {svc.length > 0 && <section class="sec related" style="padding-top:0"><div class="wrap rel-g">
   <div><h2 class="mono rel-h">Services delivered in {a.name}</h2><div class="plinks">{svc.map(x => <a href={`${pre}services.html#${x.anchor}`}>{x.label}<b>↗</b></a>)}</div></div>
+  {specs.length > 0 && <div><h2 class="mono rel-h">Specialties in {a.name}</h2><div class="plinks">{specs.map(x => <a href={`${pre}${x.slug.current}.html`}>{x.title}<b>↗</b></a>)}</div></div>}
   <div><h2 class="mono rel-h">Nearby areas</h2><div class="plinks">{others.map(o => <a href={`${o.slug}.html`}>{o.name}<b>↗</b></a>)}</div></div>
 </div></section>}
 <section class="sec faq" style="padding-top:0"><div class="wrap"><div class="rg-h"><div><p class="mono kick">Questions</p><h2 class="h2">Working in {a.name}.</h2></div></div>

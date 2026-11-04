@@ -1,0 +1,136 @@
+{
+  "_id": "page-modular-classroom-site-servicing",
+  "_type": "page",
+  "title": "Modular Classroom Site Servicing",
+  "slug": {
+    "_type": "slug",
+    "current": "modular-classroom-site-servicing"
+  },
+  "navKey": "services",
+  "order": 23,
+  "showInFooter": false,
+  "seoTitle": "Modular Classroom & Portable Site Servicing, BC | NSC",
+  "description": "Site preparation, utilities and paving for modular classrooms and school portables in Richmond, Delta and across Metro Vancouver.",
+  "hero": {
+    "kicker": "School portables and modular classrooms",
+    "title": "Modular classroom site servicing.",
+    "highlight": "Ready for the building.",
+    "subtitle": "Neil Smith Construction prepares and services sites for modular classroom additions and portables, so schools can keep running while they grow.",
+    "image": {
+      "_type": "image",
+      "local": "brig-lockblock",
+      "alt": "Lock-block retaining wall and perforated drain pipe installed around the site"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "712a011157b8",
+      "kicker": "Overview",
+      "title": "Sites ready for modular buildings.",
+      "body": "Modular classrooms and portables need a prepared, serviced site before the building arrives. Our crews handle demolition of existing site infrastructure, excavation and grading, utilities and the concrete and paving around the new building.\n\nWe have done this work for School District 38 (Richmond) at Brighouse Elementary and on portables across the district, including temporary portables during the seismic upgrade at Howard DeBeck Secondary, and for School District 37 (Delta) at Ladner Elementary."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "cb1b6331d88d",
+      "kicker": "Scope",
+      "title": "What modular site work includes.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "cf575f103b2d",
+          "title": "Demolition and removal",
+          "text": "Removing existing site infrastructure to make room for the building."
+        },
+        {
+          "_key": "7d999addc668",
+          "title": "Site preparation",
+          "text": "Excavation, grading and granular pads for modular buildings and portables."
+        },
+        {
+          "_key": "90b10faf11b4",
+          "title": "Retaining and drainage",
+          "text": "Lock-block retaining walls and perforated drain pipe around the building."
+        },
+        {
+          "_key": "7055ec7be808",
+          "title": "Utilities",
+          "text": "Storm and sanitary sewer, fire and domestic water, and duct trenches for power."
+        },
+        {
+          "_key": "b54e8164732b",
+          "title": "Concrete",
+          "text": "Reinforced concrete sidewalks and slabs."
+        },
+        {
+          "_key": "d00945a63f58",
+          "title": "Paving",
+          "text": "Asphalt overlay and new paving at parking areas and school yards."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "c9d4c94f69bc",
+      "kicker": "Projects",
+      "title": "Modular and portable projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-ladner-elementary-modular",
+          "_key": "122786d861d5"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-brighouse-modular-addition",
+          "_key": "485f3192aa5a"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-richmond-school-portables",
+          "_key": "a5db56f7682c"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-howard-debeck-secondary",
+          "_key": "eb6aa0a18a62"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-james-whiteside-elementary",
+          "_key": "043299d3161e"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "45b775be6c3a",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "90ab9bcc70aa",
+          "q": "Do you prepare sites for modular classrooms?",
+          "a": "Yes. We have prepared and serviced sites for modular classrooms and portables for School District 38 (Richmond) and School District 37 (Delta)."
+        },
+        {
+          "_key": "17bfe835209b",
+          "q": "Can you work while the school is open?",
+          "a": "Yes. At Howard DeBeck Secondary we built the site for temporary portables that kept classes running during the seismic upgrade. See [School site works](school-site-works.html)."
+        },
+        {
+          "_key": "f6804267c9fe",
+          "q": "How do I get a price?",
+          "a": "Send drawings or a tender package to info@nscltd.ca or call 604-644-5884."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "eadcea49e1e5",
+      "title": "Adding modular classrooms?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

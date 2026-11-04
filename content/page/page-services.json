@@ -188,6 +188,147 @@
       "tight": true
     },
     {
+      "_type": "cards",
+      "_key": "8f9f24cb5b6f",
+      "kicker": "Specialties",
+      "title": "Explore our civil work.",
+      "intro": "Each specialty page lists the scope we deliver and the real projects behind it.",
+      "items": [
+        {
+          "_key": "2142f607bb2e",
+          "title": "Sewer Contractor",
+          "text": "Sanitary and storm sewer installation, upgrades and sewer separation for municipalities and school districts across Metro Vancouver.",
+          "link": "sewer-contractor.html",
+          "image": {
+            "_type": "image",
+            "local": "mhpipe",
+            "alt": "New sanitary and storm manholes with PVC and concrete pipe on Kingston Road"
+          }
+        },
+        {
+          "_key": "6abe4370b759",
+          "title": "Watermain Contractor",
+          "text": "Watermain tie-ins, fire and domestic water services, hydrants and water service renewals for cities and school districts in Metro Vancouver.",
+          "link": "watermain-contractor.html",
+          "image": {
+            "_type": "image",
+            "local": "ladner-watermain-trench",
+            "alt": "NSC excavator beside an open trench with new water service pipe at Ladner Elementary"
+          }
+        },
+        {
+          "_key": "b229ae12a1bb",
+          "title": "Stormwater Detention",
+          "text": "Stormwater detention tanks, flow control manholes, catch basins and storm sewers for schools and public sites in Metro Vancouver.",
+          "link": "stormwater-detention.html",
+          "image": {
+            "_type": "image",
+            "local": "tank",
+            "alt": "NSC crew in hard hats and vests on the Guildford Park detention tank"
+          }
+        },
+        {
+          "_key": "9d84f13791d8",
+          "title": "Modular Classroom Site Servicing",
+          "text": "Site preparation, utilities and paving for modular classrooms and school portables in Richmond, Delta and across Metro Vancouver.",
+          "link": "modular-classroom-site-servicing.html",
+          "image": {
+            "_type": "image",
+            "local": "brig-lockblock",
+            "alt": "Lock-block retaining wall and perforated drain pipe installed around the site"
+          }
+        },
+        {
+          "_key": "07a5df841eec",
+          "title": "Roadworks, Curb and Sidewalk",
+          "text": "Road construction, concrete curb and gutter, sidewalks, driveways and frontage works for cities and school districts in Metro Vancouver.",
+          "link": "roadworks-curb-sidewalk.html",
+          "image": {
+            "_type": "image",
+            "local": "qe-exc",
+            "alt": "NSC crew and Kobelco excavator on road works in New Westminster"
+          }
+        },
+        {
+          "_key": "54911fa2f3bc",
+          "title": "Seismic Upgrade Site Works",
+          "text": "Excavation and civil works supporting seismic upgrades of fire halls, schools and city facilities in Vancouver and Richmond.",
+          "link": "seismic-upgrade-site-works.html",
+          "image": {
+            "_type": "image",
+            "local": "fh12-trench",
+            "alt": "Worker excavating a service trench along the Fire Hall 12 foundation"
+          }
+        },
+        {
+          "_key": "cdca56a5dd75",
+          "title": "Civil Subcontractor",
+          "text": "Civil, excavation and site servicing subcontractor for general contractors and construction managers on schools, housing and commercial projects in BC.",
+          "link": "civil-subcontractor.html",
+          "image": {
+            "_type": "image",
+            "local": "agnes-excavator-loading",
+            "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street"
+          }
+        },
+        {
+          "_key": "800261cc9081",
+          "title": "Underground Utilities and Sewer Separation",
+          "text": "Sanitary and storm sewers, sewer separation, watermains, services, manholes and hydrants for cities, school districts and builders in Metro Vancouver.",
+          "link": "underground-utilities.html",
+          "image": {
+            "_type": "image",
+            "local": "mh2",
+            "alt": "CAT excavator over two new precast manholes on Kingston Road"
+          }
+        },
+        {
+          "_key": "d946eaf9c8fb",
+          "title": "Excavation and Earthworks",
+          "text": "Bulk and detail excavation, earthworks, hauling, shoring and grading for schools, housing and public projects across Metro Vancouver and the Fraser Valley.",
+          "link": "excavation-earthworks.html",
+          "image": {
+            "_type": "image",
+            "local": "agnes-bulk-excavation",
+            "alt": "NSC excavator and grade checker in the bulk excavation for the building footprint"
+          }
+        },
+        {
+          "_key": "c2a78806acfd",
+          "title": "School Site Civil Works",
+          "text": "Excavation, underground utilities, site servicing, concrete and paving for school additions, modular classrooms and seismic upgrades for BC school districts.",
+          "link": "school-site-works.html",
+          "image": {
+            "_type": "image",
+            "local": "tank2",
+            "alt": "NSC crew placing detention tank modules with CAT excavators behind, Guildford Park"
+          }
+        },
+        {
+          "_key": "74c14459c4e3",
+          "title": "Equipment",
+          "text": "Excavators, mini excavators, dozers, compaction, dump trucks and trench shoring run by NSC crews on civil and excavation work across Metro Vancouver.",
+          "link": "equipment.html",
+          "image": {
+            "_type": "image",
+            "local": "ubc-exc",
+            "alt": "Bulk excavation with excavator, dump truck and grade checker"
+          }
+        },
+        {
+          "_key": "cda539aa62ed",
+          "title": "Tenders and Bids",
+          "text": "Send civil, excavation and underground utility tenders to Neil Smith Construction.",
+          "link": "tenders.html",
+          "image": {
+            "_type": "image",
+            "local": "gwide",
+            "alt": "Graded building pad beside the field at Guildford Park Secondary"
+          }
+        }
+      ]
+    },
+    {
       "_type": "cta",
       "_key": "06ce7d44db01"
     }

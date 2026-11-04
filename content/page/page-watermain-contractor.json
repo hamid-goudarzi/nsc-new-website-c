@@ -1,0 +1,146 @@
+{
+  "_id": "page-watermain-contractor",
+  "_type": "page",
+  "title": "Watermain Contractor",
+  "slug": {
+    "_type": "slug",
+    "current": "watermain-contractor"
+  },
+  "navKey": "services",
+  "order": 21,
+  "showInFooter": false,
+  "seoTitle": "Watermain & Water Service Contractor, BC | NSC",
+  "description": "Watermain tie-ins, fire and domestic water services, hydrants and water service renewals for cities and school districts in Metro Vancouver.",
+  "hero": {
+    "kicker": "Watermains and water services",
+    "title": "Watermain contractor.",
+    "highlight": "Fire and domestic water.",
+    "subtitle": "Neil Smith Construction installs and upgrades fire and domestic water services, watermain tie-ins and hydrants for municipalities and school districts.",
+    "image": {
+      "_type": "image",
+      "local": "ladner-watermain-trench",
+      "alt": "NSC excavator beside an open trench with new water service pipe at Ladner Elementary"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "816fa28facf1",
+      "kicker": "Overview",
+      "title": "Water work for public owners.",
+      "body": "Our crews excavate, install and test water services and connect them to municipal watermains. On Kingston Road for the University Endowment Lands we renewed water services, installed a fire hydrant and made two watermain tie-ins alongside the sewer separation.\n\nAt schools in Surrey, Richmond, Delta, New Westminster and Burnaby we have upgraded onsite and offsite fire and domestic water services as part of additions, modular classrooms and site upgrades."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "c9465b117979",
+      "kicker": "Scope",
+      "title": "What our water work includes.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "5444e8408240",
+          "title": "Watermain tie-ins",
+          "text": "Connections to existing municipal watermains, as on Kingston Road."
+        },
+        {
+          "_key": "5adb20d6246f",
+          "title": "Fire and domestic water services",
+          "text": "New and upgraded onsite and offsite fire and domestic water services for schools and buildings."
+        },
+        {
+          "_key": "2af81b17a50d",
+          "title": "Fire hydrants",
+          "text": "Hydrant installation as part of street and service work."
+        },
+        {
+          "_key": "34e660f7562b",
+          "title": "Water service renewals",
+          "text": "Replacing water services to properties along a street."
+        },
+        {
+          "_key": "c92cd52ba138",
+          "title": "Trenching and backfill",
+          "text": "Excavation, bedding, backfill and compaction for water lines."
+        },
+        {
+          "_key": "de2283f09f8b",
+          "title": "Restoration",
+          "text": "Concrete and road surface restoration after the work."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "f6c1de008cda",
+      "kicker": "Projects",
+      "title": "Water projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "209d522b2ac0"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "ea7649cff7ce"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-james-whiteside-elementary",
+          "_key": "52ebdc75f68f"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-mcroberts-secondary",
+          "_key": "118348954417"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-parkcrest-elementary",
+          "_key": "135fb7f5f128"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "cbefdd915269"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-ladner-elementary-modular",
+          "_key": "7ec900081b47"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "34a5c5930872",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "1645778627c7",
+          "q": "Do you install watermains and water services?",
+          "a": "Yes. We install fire and domestic water services, make watermain tie-ins, renew water services and install hydrants."
+        },
+        {
+          "_key": "376aed19d802",
+          "q": "Who have you done water work for?",
+          "a": "The University Endowment Lands and School Districts 36, 37, 38, 40 and 41, among others. See the projects above."
+        },
+        {
+          "_key": "e8ada4e89e1a",
+          "q": "How do I get a price?",
+          "a": "Send drawings or a tender package to info@nscltd.ca or call 604-644-5884."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "e388f4b6258f",
+      "title": "Need water services installed?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

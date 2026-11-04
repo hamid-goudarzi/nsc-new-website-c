@@ -1,0 +1,126 @@
+{
+  "_id": "page-seismic-upgrade-site-works",
+  "_type": "page",
+  "title": "Seismic Upgrade Site Works",
+  "slug": {
+    "_type": "slug",
+    "current": "seismic-upgrade-site-works"
+  },
+  "navKey": "services",
+  "order": 25,
+  "showInFooter": false,
+  "seoTitle": "Seismic Upgrade Site Works & Excavation, BC | NSC",
+  "description": "Excavation and civil works supporting seismic upgrades of fire halls, schools and city facilities in Vancouver and Richmond.",
+  "hero": {
+    "kicker": "Seismic upgrades",
+    "title": "Seismic upgrade site works.",
+    "highlight": "Excavation that keeps facilities running.",
+    "subtitle": "Neil Smith Construction provides the excavation and civil works behind seismic upgrades of fire halls, schools and city facilities.",
+    "image": {
+      "_type": "image",
+      "local": "fh12-trench",
+      "alt": "Worker excavating a service trench along the Fire Hall 12 foundation"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "53a5ad368e0c",
+      "kicker": "Overview",
+      "title": "Civil support for seismic upgrades.",
+      "body": "Seismic upgrades often mean excavating beside foundations of buildings that must stay in use. Our crews dig carefully along foundations, handle services and backfill, and plan the site so the facility keeps operating.\n\nFor the City of Vancouver we have supported the seismic upgrades of Fire Hall No. 12 in Kitsilano and the Manitoba Yard fuel station. For School District 38 we did the site works for the seismic upgrade at Howard DeBeck Secondary in Richmond, including temporary portables so classes could continue."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "75675d2dc398",
+      "kicker": "Scope",
+      "title": "What seismic site work includes.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "c2a2e1d197e3",
+          "title": "Excavation along foundations",
+          "text": "Careful excavation beside existing foundations and footings."
+        },
+        {
+          "_key": "47a54bed2ddf",
+          "title": "Service trenches",
+          "text": "Trenching and reconnecting services around the building."
+        },
+        {
+          "_key": "e0e257927dab",
+          "title": "Civil works",
+          "text": "Backfill, compaction, drainage and surface restoration."
+        },
+        {
+          "_key": "2cdf6f47663c",
+          "title": "Temporary facilities",
+          "text": "Site preparation and servicing for temporary portables."
+        },
+        {
+          "_key": "ecf052eb069c",
+          "title": "Working around operations",
+          "text": "Planning access and staging so fire halls, schools and yards keep running."
+        },
+        {
+          "_key": "e788ecc5de54",
+          "title": "Safety",
+          "text": "COR certified safety program for work beside occupied buildings."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "a6bac80457a4",
+      "kicker": "Projects",
+      "title": "Seismic upgrade projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-fire-hall-12-kitsilano",
+          "_key": "dd0fae0b56de"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-manitoba-yard-fuel-station",
+          "_key": "4ba925120427"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-howard-debeck-secondary",
+          "_key": "6d85b2d1e64c"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "69878d07e44b",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "52292ddac0cf",
+          "q": "Do you work on seismic upgrade projects?",
+          "a": "Yes. We provided excavation and civil works for seismic upgrades at Fire Hall No. 12 and the Manitoba Yard fuel station for the City of Vancouver, and at Howard DeBeck Secondary for School District 38."
+        },
+        {
+          "_key": "de6341a91639",
+          "q": "Can you work while the building stays open?",
+          "a": "Yes. At Howard DeBeck Secondary we built the site for temporary portables so classes could continue."
+        },
+        {
+          "_key": "c7917521244d",
+          "q": "How do I get a price?",
+          "a": "Send drawings or a tender package to info@nscltd.ca or call 604-644-5884."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "9a27fcc29644",
+      "title": "Planning a seismic upgrade?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

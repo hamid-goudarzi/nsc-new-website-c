@@ -1,0 +1,131 @@
+{
+  "_id": "page-civil-subcontractor",
+  "_type": "page",
+  "title": "Civil Subcontractor",
+  "slug": {
+    "_type": "slug",
+    "current": "civil-subcontractor"
+  },
+  "navKey": "services",
+  "order": 26,
+  "showInFooter": false,
+  "seoTitle": "Civil & Excavation Subcontractor for General Contractors | NSC",
+  "description": "Civil, excavation and site servicing subcontractor for general contractors and construction managers on schools, housing and commercial projects in BC.",
+  "hero": {
+    "kicker": "For general contractors",
+    "title": "Civil subcontractor.",
+    "highlight": "For general contractors and CMs.",
+    "subtitle": "Neil Smith Construction is the civil, excavation and site servicing subcontractor for general contractors and construction managers across Metro Vancouver.",
+    "image": {
+      "_type": "image",
+      "local": "agnes-excavator-loading",
+      "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "a3a1c37b19c9",
+      "kicker": "Overview",
+      "title": "One contractor for the civil package.",
+      "body": "General contractors and construction managers bring us in to deliver the civil and excavation package on schools, housing and commercial projects: bulk and detail excavation, shoring, underground utilities, site servicing, concrete and paving.\n\nWe have worked for Keller Construction on Agnes Street supportive housing in New Westminster, for Kinetic Construction on the Applied Science Digital Design Studio at UBC, for SmartCentres on the Chilliwack Mall redevelopment. We also deliver full civil packages on school projects in Surrey, Richmond, New Westminster and Burnaby."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "78111788ebeb",
+      "kicker": "Scope",
+      "title": "What we deliver for builders.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "63341c6348cc",
+          "title": "Bulk and detail excavation",
+          "text": "Excavation for foundations and building pads."
+        },
+        {
+          "_key": "d75105688a50",
+          "title": "Shoring and trench boxes",
+          "text": "Trench shoring for deep utility and foundation work."
+        },
+        {
+          "_key": "92dbd6caf391",
+          "title": "Site servicing",
+          "text": "Storm, sanitary and water services from the building to the city mains."
+        },
+        {
+          "_key": "42498981f9c0",
+          "title": "Earthworks and grading",
+          "text": "Fill, compaction, granular base and final grading."
+        },
+        {
+          "_key": "1c3d79aa541c",
+          "title": "Concrete and paving",
+          "text": "Curb, gutter, sidewalks, slabs and paving coordination."
+        },
+        {
+          "_key": "1fba30f925b3",
+          "title": "Schedule and safety",
+          "text": "Our own crews and equipment, COR certified safety, one point of contact."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "e5f7429f04ca",
+      "kicker": "Projects",
+      "title": "Projects for builders.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-agnes-supportive-housing",
+          "_key": "ee3ee8079b5d"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-ubc-digital-design-studio",
+          "_key": "926e7388a060"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-chilliwack-mall-redevelopment",
+          "_key": "dca59d9974c4"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "a03aa07605ca"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "dc1afb7ed191",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "485d1b900d07",
+          "q": "Do you work as a subcontractor to general contractors?",
+          "a": "Yes. We deliver civil and excavation packages for general contractors and construction managers, including Keller Construction and Kinetic Construction."
+        },
+        {
+          "_key": "84fc6f07665a",
+          "q": "Can you price from tender drawings?",
+          "a": "Yes. Send the tender package to info@nscltd.ca and our estimating team will respond within one business day. See [Tenders and bids](tenders.html)."
+        },
+        {
+          "_key": "616ee10b8c6b",
+          "q": "Do you carry COR?",
+          "a": "Yes. Our safety program is COR certified by the BC Construction Safety Alliance. See [Safety](safety.html)."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "6e0816b93483",
+      "title": "Need a civil subcontractor?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}
