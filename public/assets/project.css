@@ -399,3 +399,23 @@ img{height:auto}
 .related .plinks{margin-top:0}
 .rc h3 a{color:inherit;text-decoration:none;display:inline;padding:0;border:0;background:none}.rc h3 a:hover{text-decoration:underline;text-underline-offset:3px}
 .aud{min-width:0}.aud .btn{white-space:normal;text-align:center;max-width:100%}
+
+/* NSC mark on project photos: glowing logo with a periodic glint. */
+.nsc-mark{position:absolute;right:14px;top:14px;z-index:2;width:36px;height:36px;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px rgba(122,166,255,.55),0 6px 18px -6px rgba(0,0,0,.6),0 0 16px -2px rgba(47,107,255,.7);animation:markglow 4s ease-in-out infinite;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.nsc-mark img{display:block;width:100%;height:100%}
+.nsc-mark::after{content:"";position:absolute;top:-30%;bottom:-30%;left:-80%;width:55%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg);animation:glint 4s ease-in-out infinite;animation-delay:inherit}
+.pcard:nth-child(3n+2) .nsc-mark,.pcard:nth-child(3n+2) .nsc-mark::after{animation-delay:1.3s}
+.pcard:nth-child(3n) .nsc-mark,.pcard:nth-child(3n) .nsc-mark::after{animation-delay:2.6s}
+.pcard:hover .nsc-mark{transform:scale(1.12) rotate(-3deg);box-shadow:0 0 0 1px rgba(160,195,255,.9),0 0 30px 2px rgba(47,107,255,.95)}
+@keyframes markglow{0%,100%{box-shadow:0 0 0 1px rgba(122,166,255,.45),0 6px 18px -6px rgba(0,0,0,.6),0 0 12px -4px rgba(47,107,255,.55)}50%{box-shadow:0 0 0 1px rgba(160,195,255,.85),0 6px 18px -6px rgba(0,0,0,.6),0 0 26px 0 rgba(47,107,255,.9)}}
+@keyframes glint{0%,62%{left:-80%}82%,100%{left:140%}}
+/* "NSC built" badge on project headers: bigger logo, brighter glint, pulsing ring. */
+.nsc-badge{animation:badgein .9s var(--ease) .4s both,badgeglow 4s ease-in-out 1.3s infinite}
+.nsc-badge img{width:30px;height:30px;border-radius:7px;box-shadow:0 0 14px -2px rgba(47,107,255,.9)}
+.nsc-badge::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.8),transparent);animation:sheen 4s var(--ease) 1.3s infinite}
+@keyframes badgein{from{opacity:0;transform:translateY(14px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes badgeglow{0%,100%{box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 0 24px -6px rgba(47,107,255,.6)}50%{box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 0 38px 0 rgba(47,107,255,.95)}}
+/* Header logo: soft blue glow on hover. */
+.logo img{transition:box-shadow .4s var(--ease),transform .4s var(--ease)}
+.logo:hover img{box-shadow:0 0 0 1px rgba(160,195,255,.8),0 0 22px rgba(47,107,255,.85);transform:rotate(-4deg) scale(1.06)}
+@media (prefers-reduced-motion:reduce){.nsc-mark,.nsc-mark::after,.nsc-badge,.nsc-badge::after{animation:none!important}}

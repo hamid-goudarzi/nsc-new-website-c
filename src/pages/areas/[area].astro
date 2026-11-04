@@ -51,7 +51,7 @@ const ld = [
 <section class="sec"><div class="wrap">
   <div class="rg-h"><div><p class="mono kick">Projects</p><h2 class="h2">Our work in {a.name}.</h2></div><p class="rv">Every project below was built by NSC crews in {a.name}{f.uel ? ' and the University Endowment Lands' : ''}.</p></div>
   <div class="pgrid" style="margin-top:34px">{a.projects.map(p => (
-    <a class="pcard rv" href={`${pre}projects/${p.slug.current}.html`}><div class="pc-img"><Img image={p.heroImage} pre={pre} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw" /><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
+    <a class="pcard rv" href={`${pre}projects/${p.slug.current}.html`}><div class="pc-img"><Img image={p.heroImage} pre={pre} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw" />{!p.heroImage?.tag && <span class="nsc-mark" aria-hidden="true"><img src={`${pre}nsc-logo.jpg`} alt="" width="96" height="96" loading="lazy"></span>}<span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
     <div class="pc-b"><h3>{p.name}</h3><p>{p.lede}</p><dl><div><dt>Type</dt><dd>{p.type}</dd></div><div><dt>Year</dt><dd>{p.year}</dd></div><div><dt>Client</dt><dd>{clientOf(p)}</dd></div></dl><span class="pc-ar" aria-hidden="true">↗</span></div></a>))}</div>
 </div></section>
 {svc.length > 0 && <section class="sec related" style="padding-top:0"><div class="wrap rel-g">

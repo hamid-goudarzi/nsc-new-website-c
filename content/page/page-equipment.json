@@ -18,8 +18,8 @@
     "subtitle": "Our crews run their own excavators, compaction equipment, trucks and shoring, from our equipment yard in Langley to job sites across Metro Vancouver and the Fraser Valley.",
     "image": {
       "_type": "image",
-      "local": "ubc-exc",
-      "alt": "Bulk excavation with excavator, dump truck and grade checker"
+      "local": "nsc-fleet",
+      "alt": "Three NSC excavators, Kobelco, CAT 336D and Doosan, lined up on an excavation site"
     }
   },
   "blocks": [
@@ -84,6 +84,18 @@
       "kicker": "On site",
       "title": "NSC equipment at work.",
       "images": [
+        {
+          "_type": "image",
+          "local": "nsc-fleet",
+          "alt": "Three NSC excavators, Kobelco, CAT 336D and Doosan, lined up on an excavation site",
+          "_key": "fleet01"
+        },
+        {
+          "_type": "image",
+          "local": "nsc-cat-school",
+          "alt": "NSC CAT excavator with NSC decals on a school addition site, crews and formwork behind",
+          "_key": "catsch01"
+        },
         {
           "_type": "image",
           "local": "tank2",

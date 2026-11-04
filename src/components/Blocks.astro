@@ -111,7 +111,7 @@ const pickProjects = b => (b.projects?.length ? b.projects : projects.filter(p =
   if (t === 'projectsGrid') return (
     <section {...sec(b)}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv">{b.intro}</p>}</div>
       <div class="pgrid" style="margin-top:34px">{pickProjects(b).map(p => (
-        <a class="pcard rv" href={`${pre}projects/${p.slug.current}.html`}><div class="pc-img"><Img image={p.heroImage} pre={pre} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw" /><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
+        <a class="pcard rv" href={`${pre}projects/${p.slug.current}.html`}><div class="pc-img"><Img image={p.heroImage} pre={pre} sizes="(max-width:700px) 100vw, (max-width:1100px) 50vw, 33vw" />{!p.heroImage?.tag && <span class="nsc-mark" aria-hidden="true"><img src={`${pre}nsc-logo.jpg`} alt="" width="96" height="96" loading="lazy"></span>}<span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span></div>
         <div class="pc-b"><h3>{p.name}</h3><p>{p.type}</p><dl><div><dt>Where</dt><dd>{p.city}</dd></div><div><dt>Year</dt><dd>{p.year}</dd></div></dl><span class="pc-ar" aria-hidden="true">↗</span></div></a>))}</div>
     </div></section>);
   if (t === 'video') return (
