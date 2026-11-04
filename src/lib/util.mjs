@@ -3,9 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const sizeCache = new Map();
-function hasSize(key, w) {
-  const id = key + '-' + w;
-  if (!sizeCache.has(id)) sizeCache.set(id, fs.existsSync(path.join(process.cwd(), 'public/media', `${id}.webp`)));
+function hasSize(key, w, ext = 'webp') {
+  const id = `${key}-${w}.${ext}`;
+  if (!sizeCache.has(id)) sizeCache.set(id, fs.existsSync(path.join(process.cwd(), 'public/media', id)));
   return sizeCache.get(id);
 }
 
@@ -34,7 +34,11 @@ export function img(image, pre = '', { sizes = '100vw', eager = false } = {}) {
   const k = image.local;
   const wh = webpSize(k);
   const widths = [640, 1280, 1920, 2560].filter(w => w === 1280 || hasSize(k, w));
+  // AVIF copies (about 40% smaller) are offered first when they exist for every web size; WebP stays as the fallback.
+  const aw = widths.filter(w => w < 2560);
+  const avif = aw.length && aw.every(w => hasSize(k, w, 'avif')) ? aw.map(w => `${pre}media/${k}-${w}.avif ${w}w`).join(', ') : undefined;
   return {
+    avif,
     width: wh?.[0], height: wh?.[1], fetchpriority: eager ? 'high' : undefined,
     src: `${pre}media/${k}-1280.webp`,
     srcset: widths.map(w => `${pre}media/${k}-${w}.webp ${w}w`).join(', '),

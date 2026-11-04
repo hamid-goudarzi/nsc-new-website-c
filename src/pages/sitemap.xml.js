@@ -5,7 +5,7 @@ import { areasOf } from '../lib/areas.mjs';
 export async function GET() {
   const c = await content();
   const s = c.settings;
-  const today = '2026-10-30';   // launch date, used until an item is edited in the admin
+  const today = '2026-11-04';   // last site-wide content update, used until an item is edited in the admin
   const day = d => (d || today).slice(0, 10);
   const newest = ds => ds.map(d => d?._updatedAt).filter(Boolean).sort().at(-1);
   const img = i => i?.local ? `<image:image><image:loc>${abs(s, `media/${i.local}-2560.webp`)}</image:loc></image:image>` : '';

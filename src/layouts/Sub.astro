@@ -1,4 +1,5 @@
 ---
+import { fontCss } from '../lib/fonts.mjs';
 // Layout for every page except the home page.
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -36,7 +37,7 @@ const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUr
 {jsonld.filter(Boolean).map(j => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, '\\u003c')} />)}
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href={`${pre}assets/fonts.css`}>
+<style is:inline set:html={fontCss(pre)}></style>
 <link rel="stylesheet" href={`${pre}assets/project.css`}>
 </head>
 <body class={bodyClass}>

@@ -36,11 +36,21 @@ export function organization(c) {
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certificate of Recognition (COR)', recognizedBy: { '@type': 'Organization', name: 'BC Construction Safety Alliance' } },
     sameAs: [s.linkedin, s.instagram, s.googleMaps].filter(Boolean),
     hasMap: s.googleMaps || undefined,
+    openingHoursSpecification: hoursLd(s.openingHours),
+    geo: s.geo ? (([la, lo]) => ({ '@type': 'GeoCoordinates', latitude: +la, longitude: +lo }))(String(s.geo).split(',')) : undefined,
     hasOfferCatalog: (() => { const sv = servicesOf(c.pages.find(p => p.slug.current === 'services')); return sv.length ? { '@type': 'OfferCatalog', name: 'Heavy civil construction services', itemListElement: sv.map(x => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: x.name, description: x.description } })) } : undefined; })(),
     subjectOf: projects.slice(0, 30).map(p => ({ '@type': 'CreativeWork', name: p.name, url: abs(s, `projects/${p.slug.current}.html`) })),
   };
 }
 
+const DAYS = { Mo: 'Monday', Tu: 'Tuesday', We: 'Wednesday', Th: 'Thursday', Fr: 'Friday', Sa: 'Saturday', Su: 'Sunday' };
+/** "Mo-Fr 08:00-17:00" → schema.org opening hours. */
+function hoursLd(h) {
+  const m = String(h || '').match(/^(Mo|Tu|We|Th|Fr|Sa|Su)-(Mo|Tu|We|Th|Fr|Sa|Su) (\d\d:\d\d)-(\d\d:\d\d)$/);
+  if (!m) return undefined;
+  const k = Object.keys(DAYS), days = k.slice(k.indexOf(m[1]), k.indexOf(m[2]) + 1).map(d => DAYS[d]);
+  return { '@type': 'OpeningHoursSpecification', dayOfWeek: days, opens: m[3], closes: m[4] };
+}
 const plain = t => String(t || '').replace(/\*\*|__|##+\s*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').trim();
 export function faqLd(blocks) {
   const qs = blocks.filter(b => b._type === 'faq').flatMap(b => b.items || []).filter(x => x.q && x.a);

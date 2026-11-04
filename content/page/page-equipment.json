@@ -1,0 +1,173 @@
+{
+  "_id": "page-equipment",
+  "_type": "page",
+  "title": "Equipment",
+  "slug": {
+    "_type": "slug",
+    "current": "equipment"
+  },
+  "navKey": "services",
+  "order": 18,
+  "showInFooter": true,
+  "seoTitle": "Excavation Equipment & Crews, BC | Neil Smith Construction",
+  "description": "Excavators, mini excavators, dozers, compaction, dump trucks and trench shoring run by NSC crews on civil and excavation work across Metro Vancouver.",
+  "hero": {
+    "kicker": "Civil construction equipment",
+    "title": "Equipment and fleet.",
+    "highlight": "In the right hands.",
+    "subtitle": "Our crews run their own excavators, compaction equipment, trucks and shoring, from our equipment yard in Langley to job sites across Metro Vancouver and the Fraser Valley.",
+    "image": {
+      "_type": "image",
+      "local": "ubc-exc",
+      "alt": "Bulk excavation with excavator, dump truck and grade checker"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "numberedList",
+      "_key": "7f22d19c0736",
+      "kicker": "Fleet",
+      "title": "What we run on site.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "1ab641a383d6",
+          "title": "Excavators",
+          "text": "CAT and Kobelco excavators for bulk excavation, utility trenches, pipe laying and setting manholes, chambers and detention tanks."
+        },
+        {
+          "_key": "407c914918b5",
+          "title": "Mini and compact excavators",
+          "text": "Compact machines for tight school sites, building perimeters, service trenches and work beside occupied buildings."
+        },
+        {
+          "_key": "f857958d473c",
+          "title": "Backhoes and breakers",
+          "text": "Backhoes with breaker attachments for concrete and asphalt removal, service connections and small excavations."
+        },
+        {
+          "_key": "7ace6cff6d64",
+          "title": "Dozers and skid steers",
+          "text": "Site grading, stripping, spreading granular base and building pads."
+        },
+        {
+          "_key": "fcb0adcf2dd3",
+          "title": "Compaction",
+          "text": "Drum compactors and plate compactors for subgrade, granular base, trench backfill and building pads."
+        },
+        {
+          "_key": "e2a3d17c54cd",
+          "title": "Trucks, dumpers and trailers",
+          "text": "Dump trucks, site dumpers, flat deck trucks and trailers and a pony trailer for hauling, material supply and moving equipment between sites."
+        },
+        {
+          "_key": "4fb15f3c2010",
+          "title": "Trench shoring",
+          "text": "Trench boxes and shoring for deep utility trenches and manhole excavations, so crews work safely below grade."
+        },
+        {
+          "_key": "bf1706629889",
+          "title": "GPS grade control",
+          "text": "Trimble GPS grade control and grade checkers on site for accurate excavation, pads and pipe grades."
+        },
+        {
+          "_key": "3086bbc80f71",
+          "title": "Equipment yard",
+          "text": "Machines and materials are based at our equipment yard in Langley, close to jobs across the Lower Mainland."
+        }
+      ]
+    },
+    {
+      "_type": "gallery",
+      "_key": "c4bac23a897b",
+      "kicker": "On site",
+      "title": "NSC equipment at work.",
+      "images": [
+        {
+          "_type": "image",
+          "local": "tank2",
+          "alt": "NSC crew placing detention tank modules with CAT excavators behind, Guildford Park",
+          "_key": "ce636d94ca5a"
+        },
+        {
+          "_type": "image",
+          "local": "qe-exc",
+          "alt": "NSC crew and Kobelco excavator on road works in New Westminster",
+          "_key": "784de3571310"
+        },
+        {
+          "_type": "image",
+          "local": "mh2",
+          "alt": "CAT excavator over two new precast manholes on Kingston Road",
+          "_key": "06999b97eaa2"
+        },
+        {
+          "_type": "image",
+          "local": "agnes-excavator-loading",
+          "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street",
+          "_key": "0a2989462c15"
+        },
+        {
+          "_type": "image",
+          "local": "ubc-shoring",
+          "alt": "Excavator setting a trench shoring box at UBC",
+          "_key": "602f58a70373"
+        },
+        {
+          "_type": "image",
+          "local": "ubc-machines",
+          "alt": "Excavator and track loader on the prepared subgrade",
+          "_key": "7ba56976784c"
+        },
+        {
+          "_type": "image",
+          "local": "cook-strip",
+          "alt": "Excavator and site dumper stripping topsoil along the field edge",
+          "_key": "ed7cb194a93d"
+        },
+        {
+          "_type": "image",
+          "local": "ggreenaway-compaction",
+          "alt": "Plate compactor on granular base between excavated footings",
+          "_key": "e2718d2a9bf5"
+        },
+        {
+          "_type": "image",
+          "local": "debeck-trench",
+          "alt": "Mini excavator opening a duct trench with precast box for the portables",
+          "_key": "057246c6f10f"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "1ff46b6bd578",
+      "kicker": "Questions",
+      "title": "About our equipment.",
+      "items": [
+        {
+          "_key": "1a9ef3da5b4c",
+          "q": "Does Neil Smith Construction use its own equipment?",
+          "a": "Yes. Our crews run their own excavators, compaction equipment, trucks and trench shoring, based at our equipment yard in Langley."
+        },
+        {
+          "_key": "2c17457f95bc",
+          "q": "Can you work on tight school and urban sites?",
+          "a": "Yes. We use mini and compact excavators and plan access, hauling and shoring around occupied schools, fire halls and streets. See [School site works](school-site-works.html)."
+        },
+        {
+          "_key": "d79f63f560b7",
+          "q": "Do you use GPS grade control?",
+          "a": "Yes. Trimble GPS grade control and grade checkers are used on site for excavation, building pads and pipe grades."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "9258a432f109",
+      "title": "Need machines and crews on your site?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}

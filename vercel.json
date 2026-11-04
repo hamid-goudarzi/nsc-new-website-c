@@ -23,6 +23,182 @@
       "permanent": true
     },
     {
+      "source": "/equipment",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/equipment.html",
+      "permanent": true
+    },
+    {
+      "source": "/utility",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/underground-utilities.html",
+      "permanent": true
+    },
+    {
+      "source": "/stormwater",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/services.html#stormwater",
+      "permanent": true
+    },
+    {
+      "source": "/earthwork",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/excavation-earthworks.html",
+      "permanent": true
+    },
+    {
+      "source": "/sitepreparation",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/excavation-earthworks.html",
+      "permanent": true
+    },
+    {
+      "source": "/concretework",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/services.html#concrete",
+      "permanent": true
+    },
+    {
+      "source": "/roadwork",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/services.html#roadworks",
+      "permanent": true
+    },
+    {
+      "source": "/safety-hub",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/safety.html",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry-services-page",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/book-online",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/fill-soil",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/fill-soil.html",
+      "permanent": true
+    },
+    {
+      "source": "/inventory",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/equipment.html",
+      "permanent": true
+    },
+    {
+      "source": "/inventory-1",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/equipment.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/",
+      "permanent": true
+    },
+    {
+      "source": "/new-homepage",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/",
+      "permanent": true
+    },
+    {
+      "source": "/service-page/:slug*",
+      "has": [
+        {
+          "type": "host",
+          "value": "(www\\.)?neilsmithconstructionltd\\.com"
+        }
+      ],
+      "destination": "https://www.neilsmithconstruction.com/services.html#roadworks",
+      "permanent": true
+    },
+    {
       "source": "/story",
       "has": [
         {
@@ -42,6 +218,21 @@
         }
       ],
       "destination": "https://www.neilsmithconstruction.com/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/areas",
+      "destination": "/areas/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/areas/",
+      "destination": "/areas/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/areas/:slug((?!index)[a-z-]+)",
+      "destination": "/areas/:slug.html",
       "permanent": true
     },
     {
@@ -325,12 +516,12 @@
       "permanent": true
     },
     {
-      "source": "/:page(about|services|markets|safety|careers|contact)",
+      "source": "/:page(about|services|markets|safety|careers|contact|tenders|heavy-civil-contractor|excavation-earthworks|school-site-works|underground-utilities)",
       "destination": "/:page.html",
       "permanent": true
     },
     {
-      "source": "/:page(about|services|markets|safety|careers|contact)/",
+      "source": "/:page(about|services|markets|safety|careers|contact|tenders|heavy-civil-contractor|excavation-earthworks|school-site-works|underground-utilities)/",
       "destination": "/:page.html",
       "permanent": true
     },
@@ -362,6 +553,86 @@
     {
       "source": "/our-projects",
       "destination": "/projects/index.html",
+      "permanent": true
+    },
+    {
+      "source": "/equipment",
+      "destination": "/equipment.html",
+      "permanent": true
+    },
+    {
+      "source": "/utility",
+      "destination": "/underground-utilities.html",
+      "permanent": true
+    },
+    {
+      "source": "/stormwater",
+      "destination": "/services.html#stormwater",
+      "permanent": true
+    },
+    {
+      "source": "/earthwork",
+      "destination": "/excavation-earthworks.html",
+      "permanent": true
+    },
+    {
+      "source": "/sitepreparation",
+      "destination": "/excavation-earthworks.html",
+      "permanent": true
+    },
+    {
+      "source": "/concretework",
+      "destination": "/services.html#concrete",
+      "permanent": true
+    },
+    {
+      "source": "/roadwork",
+      "destination": "/services.html#roadworks",
+      "permanent": true
+    },
+    {
+      "source": "/safety-hub",
+      "destination": "/safety.html",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry-services-page",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/book-online",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/fill-soil",
+      "destination": "/fill-soil.html",
+      "permanent": true
+    },
+    {
+      "source": "/inventory",
+      "destination": "/equipment.html",
+      "permanent": true
+    },
+    {
+      "source": "/inventory-1",
+      "destination": "/equipment.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-homepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/service-page/:slug*",
+      "destination": "/services.html#roadworks",
       "permanent": true
     },
     {

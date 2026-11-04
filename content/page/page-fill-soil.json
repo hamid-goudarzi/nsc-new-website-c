@@ -1,0 +1,65 @@
+{
+  "_id": "page-fill-soil",
+  "_type": "page",
+  "title": "Free Fill Soil",
+  "slug": {
+    "_type": "slug",
+    "current": "fill-soil"
+  },
+  "navKey": "services",
+  "order": 19,
+  "showInFooter": true,
+  "seoTitle": "Free Fill Soil & Placement, Lower Mainland BC | NSC",
+  "description": "Need fill soil? Neil Smith Construction offers free fill soil and placement in the Lower Mainland. Send your site address, quantity and access details.",
+  "hero": {
+    "kicker": "Fill soil · Lower Mainland",
+    "title": "Free fill soil.",
+    "highlight": "Delivered and placed.",
+    "subtitle": "Neil Smith Construction offers free fill soil and placement across the Lower Mainland. Tell us where your site is and how much you need. Email info@nscltd.ca or call 604-644-5884.",
+    "image": {
+      "_type": "image",
+      "local": "stock",
+      "alt": "Bulk excavation stockpile"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "numberedList",
+      "_key": "4ae6597d153f",
+      "kicker": "How to request fill",
+      "title": "Send us these details.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "cb09b7216629",
+          "title": "Site address",
+          "text": "Where the fill soil should be delivered and placed."
+        },
+        {
+          "_key": "b29f19c796bd",
+          "title": "Approximate quantity",
+          "text": "How much fill you need, in tonnes."
+        },
+        {
+          "_key": "68f2db4c1778",
+          "title": "Site access",
+          "text": "Truck access, gates, slopes and anything else our drivers and operators should know, plus your name, email and phone number."
+        }
+      ]
+    },
+    {
+      "_type": "richText",
+      "_key": "a2b77733d965",
+      "kicker": "Send a request",
+      "title": "Email or call us.",
+      "body": "Email your details to info@nscltd.ca or call our office at 604-644-5884. We will confirm availability and timing for your site.\n\nAvailability depends on our current excavation projects, so quantities and delivery dates can vary."
+    },
+    {
+      "_type": "cta",
+      "_key": "de481addbd20",
+      "title": "Need fill soil for your site?",
+      "text": "Send your site address, quantity and access details and we will get back to you."
+    }
+  ]
+}
