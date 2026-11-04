@@ -1,0 +1,18 @@
+# SEO and AI-search log
+
+Weekly improvement runs append here: what changed, why, and what to do next. Newest at the bottom.
+
+## Baseline (Oct 30 – Nov 4, 2026, set up by hand)
+- Site launched on www.neilsmithconstruction.com (Astro on Vercel) with admin, sitemap with images, robots (AI crawlers allowed), llms.txt / llms-full.txt, GeneralContractor schema (offer catalog, founders, COR, hours, geo, sameAs LinkedIn/Instagram/Google Business Profile), FAQPage, Service, BreadcrumbList, CreativeWork, JobPosting.
+- Landing pages: heavy-civil-contractor, excavation-earthworks, school-site-works, underground-utilities, tenders, equipment, fill-soil, services; areas/ city pages generated from project cities.
+- Keyword-led H1s on home and main pages; AVIF + WebP images; self-hosted fonts and Lenis; inline @font-face; 0 axe violations on 10 pages; PageSpeed services page mobile 97/100/100/100, desktop 100s.
+- Every old Wix URL (40 pages + 3 booking pages) has a specific 301 in vercel.json; old domain switch-over not done yet (owner will move it).
+- Google Search Console + Bing Webmaster verified (company Gmail neilsmithconstructionltd@gmail.com); Google Business Profile claimed and updated (categories, description, website, services, service area).
+- Competitor check: IWC Excavation, Norland/BEL/Copcan, TYBO, Jacob Bros, B&B rank for target searches; none had structured data, city pages or FAQs. Their edge: fleet/staff numbers, named client lists, news posts, directory listings.
+
+## Next ideas
+- Project pages are thin (~130–200 words): build fuller, factual summaries from existing details/scope/timeline; link to services and areas.
+- Per-service pages from real projects: sewer separation (Kingston Road, UEL), watermain and water services, stormwater detention (Guildford Park), modular classroom site servicing (Ladner, Brighouse, Richmond portables), seismic upgrade site works (Fire Hall 12, DeBeck, Manitoba Yard).
+- School district page(s): SD36 Surrey, SD37 Delta, SD38 Richmond, SD40 New Westminster, SD41 Burnaby — only projects in the repo.
+- Contact page is short (~120 words): add offices, hours, what to send for a bid, and FAQ.
+- Careers page (~200 words): add what roles NSC hires for and how to apply, from existing content only.
