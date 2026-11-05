@@ -23,7 +23,13 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Glowing NSC logo mark with glint on all project photo cards; stronger NSC built badge; logo hover glow. Reduced-motion respected.
 - Grading pipeline: denoise → gray-world WB (60%) → levels → filmic curve + CLAHE → clarity → warmth → vibrance → vignette → unsharp. Apply to new photos only (never re-grade an already graded file).
 
+## Nov 5, 2026 — professional photo finish (by hand, branch photos/pro-finish)
+- Re-finished 109 real site photos from the untouched originals (commit 12c3e60~1), replacing the Nov 4 grade: calmer phone over-sharpening and noise, neutral white balance, soft highlight roll-off, gentle local contrast, tamed loud colours, light sky filter and vignette, fine output sharpening.
+- Auto-levelled tilted shots (fh12-excavator, florin-excavator, jwhiteside-pad, parkcrest-crew, qe-exc) and recropped heroes to cut clutter: agnes-excavator-loading, qe-exc, ubc-shoring, tank, mhcrew.
+- Not touched: drawings and illustration, film-poster, and nsc-cat-school / nsc-fleet / nsc-valves (already finished, no originals). Every file kept at or below its previous size. No generated images.
+
 ## Next ideas
+- For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.
 - When new photos arrive, prefer wide, eye-level shots with crews and equipment; grade them with the same pipeline.
 - Project pages are thin (~130–200 words): build fuller, factual summaries from existing details/scope/timeline; link to services and areas.
