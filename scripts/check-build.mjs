@@ -34,7 +34,7 @@ for (const f of html) {
   }
   for (const m of t.matchAll(/\ssrcset="([^"]+)"/g)) {
     for (const part of m[1].split(',')) {
-      const u = part.trim().split(/\s+/)[0];
+      const u = part.trim().split(/\s+/)[0].split('?')[0];
       if (/^https?:/.test(u)) continue;
       if (!fs.existsSync(path.resolve(path.dirname(f), u))) problems.push(`${rel}: missing photo size → ${u}`);
     }

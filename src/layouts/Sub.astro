@@ -1,4 +1,5 @@
 ---
+import { assetVer } from '../lib/util.mjs';
 import { fontCss } from '../lib/fonts.mjs';
 // Layout for every page except the home page.
 import Nav from '../components/Nav.astro';
@@ -38,13 +39,13 @@ const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUr
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style is:inline set:html={fontCss(pre)}></style>
-<link rel="stylesheet" href={`${pre}assets/project.css`}>
+<link rel="stylesheet" href={`${pre}${assetVer('project.css')}`}>
 </head>
 <body class={bodyClass}>
 <Nav settings={settings} pre={pre} active={active} />
 <slot />
 <Footer settings={settings} pages={pages} pre={pre} />
 <slot name="after" />
-<script is:inline src={`${pre}assets/site.js`}></script>
+<script is:inline src={`${pre}${assetVer('site.js')}`}></script>
 </body>
 </html>

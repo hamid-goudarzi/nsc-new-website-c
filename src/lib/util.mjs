@@ -1,8 +1,31 @@
+import crypto from 'node:crypto';
 // Small helpers shared by all templates: images, text, links.
 import fs from 'node:fs';
 import path from 'node:path';
 
 const sizeCache = new Map();
+// Content fingerprint for a media file: the URL changes whenever the file changes, so browsers never show a stale copy.
+const verCache = new Map();
+export function ver(file) {
+  if (!verCache.has(file)) {
+    let v = '';
+    try { v = crypto.createHash('md5').update(fs.readFileSync(path.join(process.cwd(), 'public/media', file))).digest('hex').slice(0, 8); } catch {}
+    verCache.set(file, v ? `?v=${v}` : '');
+  }
+  return verCache.get(file);
+}
+/** Same fingerprint for files in public/assets (stylesheets, scripts). */
+export function assetVer(file) {
+  const id = 'assets/' + file;
+  if (!verCache.has(id)) {
+    let v = '';
+    try { v = crypto.createHash('md5').update(fs.readFileSync(path.join(process.cwd(), 'public/assets', file))).digest('hex').slice(0, 8); } catch {}
+    verCache.set(id, v ? `?v=${v}` : '');
+  }
+  return `assets/${file}${verCache.get(id)}`;
+}
+const m = (pre, file) => `${pre}media/${file}${ver(file)}`;
+
 function hasSize(key, w, ext = 'webp') {
   const id = `${key}-${w}.${ext}`;
   if (!sizeCache.has(id)) sizeCache.set(id, fs.existsSync(path.join(process.cwd(), 'public/media', id)));
@@ -36,17 +59,17 @@ export function img(image, pre = '', { sizes = '100vw', eager = false } = {}) {
   const widths = [640, 1280, 1920, 2560].filter(w => w === 1280 || hasSize(k, w));
   // AVIF copies (about 40% smaller) are offered first when they exist for every web size; WebP stays as the fallback.
   const aw = widths.filter(w => w < 2560);
-  const avif = aw.length && aw.every(w => hasSize(k, w, 'avif')) ? aw.map(w => `${pre}media/${k}-${w}.avif ${w}w`).join(', ') : undefined;
+  const avif = aw.length && aw.every(w => hasSize(k, w, 'avif')) ? aw.map(w => `${m(pre, `${k}-${w}.avif`)} ${w}w`).join(', ') : undefined;
   return {
     avif,
     width: wh?.[0], height: wh?.[1], fetchpriority: eager ? 'high' : undefined,
-    src: `${pre}media/${k}-1280.webp`,
-    srcset: widths.map(w => `${pre}media/${k}-${w}.webp ${w}w`).join(', '),
+    src: m(pre, `${k}-1280.webp`),
+    srcset: widths.map(w => `${m(pre, `${k}-${w}.webp`)} ${w}w`).join(', '),
     sizes, alt: image.alt || '', loading: eager ? undefined : 'lazy', decoding: 'async',
     style: image.focus ? `object-position:${image.focus}` : undefined,
   };
 }
-export const imgUrl = (image, pre = '', w = 1280) => image?.local ? `${pre}media/${image.local}-${w > 1280 ? 2560 : 1280}.webp` : '';
+export const imgUrl = (image, pre = '', w = 1280) => image?.local ? m(pre, `${image.local}-${w > 1280 ? 2560 : 1280}.webp`) : '';
 export const tagOf = image => image?.tag === 'drawing' ? 'Drawing' : image?.tag === 'illustration' ? 'Illustration' : '';
 
 /** Split a plain-text field into paragraphs (blank line = new paragraph). */

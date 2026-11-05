@@ -1,4 +1,5 @@
 ---
+import { assetVer } from '../lib/util.mjs';
 import { fontCss } from '../lib/fonts.mjs';
 // Home page. Text, photos, featured projects, people and jobs come from the admin (content/home/home.json and collections).
 import Img from '../components/Img.astro';
@@ -29,7 +30,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <meta name="theme-color" content="#06080c">
 <title>{pageTitle}</title>
 <link rel="icon" href="nsc-logo.jpg">
-<link rel="preload" as="image" href="media/film-poster-1280.webp" imagesrcset="media/film-poster-640.webp 640w, media/film-poster-1280.webp 1280w, media/film-poster.webp 2560w" imagesizes="100vw">
+<link rel="preload" as="image" href="media/film-poster-1280.webp?v=20261104" imagesrcset="media/film-poster-640.webp?v=20261104 640w, media/film-poster-1280.webp?v=20261104 1280w, media/film-poster.webp?v=20261104 2560w" imagesizes="100vw">
 <link rel="canonical" href={canonical + '/'}>
 <meta property="og:title" content={s.companyName}>
 <meta property="og:description" content={s.description}>
@@ -41,7 +42,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style is:inline set:html={fontCss()}></style>
-<link rel="stylesheet" href="assets/home.css">
+<link rel="stylesheet" href={assetVer('home.css')}>
 {ld.map(j => <script type="application/ld+json" set:html={JSON.stringify(j).replace(/</g, '\\u003c')} />)}
 {s.googleVerification && <meta name="google-site-verification" content={s.googleVerification}>}
 {s.bingVerification && <meta name="msvalidate.01" content={s.bingVerification}>}
@@ -62,7 +63,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <div class="menu" id="menu">{(s.nav || []).map(n => <a href={n.link.replace(/^index\.html(?=#)/, '')}>{n.label}</a>)}<a href="contact.html">Contact</a></div>
 
 <header class="hero" id="top">
-  <img class="poster" src="media/film-poster-1280.webp" srcset="media/film-poster-640.webp 640w, media/film-poster-1280.webp 1280w, media/film-poster.webp 2560w" sizes="100vw" alt="" width="2560" height="1440" fetchpriority="high">
+  <img class="poster" src="media/film-poster-1280.webp?v=20261104" srcset="media/film-poster-640.webp?v=20261104 640w, media/film-poster-1280.webp?v=20261104 1280w, media/film-poster.webp?v=20261104 2560w" sizes="100vw" alt="" width="2560" height="1440" fetchpriority="high">
   <video id="heroVid" muted playsinline loop autoplay preload="auto" aria-hidden="true"></video>
   <div class="wrap hero-in">
     <h1 class="hero-h"><span class="chip"><span class="d"></span>{h.heroChip}</span> <span class="hero-t split" data-split>{h.heroTitle}<br><span class="grad">{h.heroHighlight}</span></span></h1>
@@ -233,7 +234,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
   </div>
 </footer>
 
-<script is:inline src="assets/vendor/lenis.min.js" defer></script>
-<script is:inline src="assets/home.js" defer></script>
+<script is:inline src={assetVer('vendor/lenis.min.js')} defer></script>
+<script is:inline src={assetVer('home.js')} defer></script>
 </body>
 </html>
