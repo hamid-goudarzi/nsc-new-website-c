@@ -110,6 +110,16 @@
           "_type": "reference",
           "_ref": "project-ladner-elementary-modular",
           "_key": "7ec900081b47"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-agnes-supportive-housing",
+          "_key": "agnessupport"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-william-cook-elementary",
+          "_key": "williamcooke"
         }
       ]
     },

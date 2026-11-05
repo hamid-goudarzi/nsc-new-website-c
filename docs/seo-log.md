@@ -23,6 +23,15 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Glowing NSC logo mark with glint on all project photo cards; stronger NSC built badge; logo hover glow. Reduced-motion respected.
 - Grading pipeline: denoise → gray-world WB (60%) → levels → filmic curve + CLAHE → clarity → warmth → vibrance → vignette → unsharp. Apply to new photos only (never re-grade an already graded file).
 
+## Nov 5, 2026 — weekly run: project depth, contact page, specialty links
+- 17 thin project pages: added factual write-ups taken only from each project's scope, details and photo captions (client, year, what was built). The text also feeds llms-full.txt, so AI assistants get the same detail. Pages: agnes-supportive-housing, brighouse-elementary, brighouse-modular-addition, chilliwack-mall-redevelopment, fire-hall-12-kitsilano, florin-development, howard-debeck-secondary, james-whiteside-elementary, manitoba-yard-fuel-station, mckinney-elementary, mcroberts-secondary, north-surrey-utility-improvements, portland-loos, richmond-school-portables, tomsett-elementary, ubc-digital-design-studio, william-cook-elementary.
+- Contact page: new "What to send for a bid" list and 6-question FAQ (FAQPage schema): hours, response time, locations, work bid on, safety contact, jobs. New meta description. All editable in the admin with existing block types.
+- Specialty pages: added William Cook to modular-classroom-site-servicing and watermain-contractor, North Surrey to sewer-contractor, Agnes to watermain-contractor.
+- Sitemap date bumped to Nov 5.
+- Checks: build check clean (55 pages); no horizontal scroll at 1440/390 on 7 changed pages; axe 0 violations (contact page must be tested after its fade-in ends, otherwise axe falsely reports contrast). The sandbox blocks direct access to the live site, so live checks rely on the Vercel commit status.
+- Search check: searches this week returned mostly job boards and directories (CCIB, D&B, ConstructConnect, MajorProjects, BC Hydro civil underground page), with IWC and Southwest Contracting pages. Directory and supplier listings look like a real gap for NSC.
+- To confirm with Hamid: McKinney, Tomsett and James Whiteside photos show work beyond their listed scope (water services, portable pad, catch basins). The write-ups word this as "site photos also show".
+
 ## Next ideas
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.
 - When new photos arrive, prefer wide, eye-level shots with crews and equipment; grade them with the same pipeline.
@@ -31,3 +40,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - School district page(s): SD36 Surrey, SD37 Delta, SD38 Richmond, SD40 New Westminster, SD41 Burnaby — only projects in the repo.
 - Contact page is short (~120 words): add offices, hours, what to send for a bid, and FAQ.
 - Careers page (~200 words): add what roles NSC hires for and how to apply, from existing content only.
+- Careers page: remains thin. Then George Greenaway, Ladner and Parkcrest write-ups, which have medium depth.
+- Schools page already lists projects by district; a separate district page is probably not needed unless searches show demand.
