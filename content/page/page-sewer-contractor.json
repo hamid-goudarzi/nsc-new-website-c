@@ -110,6 +110,11 @@
           "_type": "reference",
           "_ref": "project-ladner-elementary-modular",
           "_key": "11a316fb5cec"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-north-surrey-utility-improvements",
+          "_key": "northsurreyu"
         }
       ]
     },

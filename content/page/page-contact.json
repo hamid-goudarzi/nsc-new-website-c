@@ -7,7 +7,7 @@
     "current": "contact"
   },
   "navKey": "",
-  "description": "Request a bid, send a prequalification request, or reach Neil Smith Construction Ltd. in Richmond and Langley, BC.",
+  "description": "Request a bid or prequalification from Neil Smith Construction Ltd. in Richmond, BC: what to send, office hours, locations and response time.",
   "order": 50,
   "hero": {
     "kicker": "Contact",
@@ -54,6 +54,70 @@
     {
       "_type": "offices",
       "_key": "8941fe0a9472"
+    },
+    {
+      "_type": "numberedList",
+      "_key": "c0a1b2d3e4f5",
+      "kicker": "Requesting a price",
+      "title": "What to send for a bid.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "c0a1b2d3e4f6",
+          "title": "Tender documents",
+          "text": "Drawings, specifications, the tender form and any geotechnical reports, emailed to info@nscltd.ca."
+        },
+        {
+          "_key": "c0a1b2d3e4f7",
+          "title": "Closing date",
+          "text": "Put the closing date in the subject line, and send any addenda to the same address."
+        },
+        {
+          "_key": "c0a1b2d3e4f8",
+          "title": "Prequalification forms",
+          "text": "Ask for our safety program documentation, COR certificate and prequalification package."
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "c0a1b2d3e4f9",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "tight": true,
+      "items": [
+        {
+          "_key": "c0a1b2d3e500",
+          "q": "What are your office hours?",
+          "a": "Monday to Friday, 8:00 am to 5:00 pm. Call 604-644-5884 or email info@nscltd.ca."
+        },
+        {
+          "_key": "c0a1b2d3e501",
+          "q": "How quickly do you respond to a bid request?",
+          "a": "Our estimating team responds within one business day of receiving a tender package or bid request."
+        },
+        {
+          "_key": "c0a1b2d3e502",
+          "q": "Where are you located?",
+          "a": "Our head office is at #206-6011 Westminster Hwy in Richmond, and our yard is at 22617 Fraser Hwy in Langley. We work across [Metro Vancouver and the Fraser Valley](areas/index.html)."
+        },
+        {
+          "_key": "c0a1b2d3e503",
+          "q": "What work do you bid on?",
+          "a": "Excavation and earthworks, underground utilities, site servicing, roads and concrete, stormwater and civil works packages, as prime contractor or civil subcontractor. See our [services](services.html) and [projects](projects/index.html)."
+        },
+        {
+          "_key": "c0a1b2d3e504",
+          "q": "Who do I contact about safety?",
+          "a": "Email safety@nscltd.ca. For our COR certification and safety program, see the [safety page](safety.html)."
+        },
+        {
+          "_key": "c0a1b2d3e505",
+          "q": "How do I apply for a job?",
+          "a": "See open positions on the [careers page](careers.html)."
+        }
+      ]
     }
   ],
   "seoTitle": "Request a Bid | Neil Smith Construction, Richmond BC"

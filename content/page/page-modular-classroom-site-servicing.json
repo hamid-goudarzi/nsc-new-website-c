@@ -100,6 +100,11 @@
           "_type": "reference",
           "_ref": "project-james-whiteside-elementary",
           "_key": "043299d3161e"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-william-cook-elementary",
+          "_key": "williamcooke"
         }
       ]
     },
