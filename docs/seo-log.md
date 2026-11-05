@@ -15,7 +15,17 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - "Explore our civil work" cards on services.html and heavy-civil-contractor.html link all specialty pages; project pages show "Related specialties"; area pages show "Specialties in <city>". Specialty titles added to Organization knowsAbout.
 - 55 pages, build check clean, 0 axe violations, no horizontal scroll at 390 px.
 
+## Nov 4, 2026 — photo and video finish (by hand)
+- All 109 site photos graded for a professional look (denoise, white balance, filmic tone curve, clarity, warmth, vignette, sharpening). Same pixel sizes; WebP/AVIF file sizes kept at or below the old ones. Drawings and illustrations untouched.
+- New photos from Hamid, recomposed and graded: nsc-cat-school (hero: heavy-civil-contractor), nsc-fleet (hero + gallery: equipment), nsc-valves (hero: watermain-contractor). Graduated sky filter on overcast shots.
+- Large-scale heroes: gwide2 (heavy civil, now replaced by nsc-cat-school), manitoba-tanks (seismic), brig-grading (modular). 1920 px sizes added for gwide2, brig-grading, ubc-exc, stock, mhpipe.
+- Home film and dig videos re-graded to match and re-encoded (AV1, HEVC, H.264) at or below previous sizes; poster regraded.
+- Glowing NSC logo mark with glint on all project photo cards; stronger NSC built badge; logo hover glow. Reduced-motion respected.
+- Grading pipeline: denoise → gray-world WB (60%) → levels → filmic curve + CLAHE → clarity → warmth → vibrance → vignette → unsharp. Apply to new photos only (never re-grade an already graded file).
+
 ## Next ideas
+- Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.
+- When new photos arrive, prefer wide, eye-level shots with crews and equipment; grade them with the same pipeline.
 - Project pages are thin (~130–200 words): build fuller, factual summaries from existing details/scope/timeline; link to services and areas.
 - Deepen the 7 specialty pages over time with more photos from their projects (galleries) and any new projects.
 - School district page(s): SD36 Surrey, SD37 Delta, SD38 Richmond, SD40 New Westminster, SD41 Burnaby — only projects in the repo.
