@@ -19,7 +19,12 @@
     "image": {
       "_type": "image",
       "local": "nsc-cat-school",
-      "alt": "NSC CAT excavator with NSC decals on a school addition site, crews and formwork behind"
+      "alt": "NSC CAT excavator with NSC decals on a school addition site, crews and formwork behind",
+      "logo": {
+        "x": 64.3,
+        "y": 22.7,
+        "s": 4
+      }
     }
   },
   "blocks": [
@@ -151,7 +156,12 @@
           "image": {
             "_type": "image",
             "local": "agnes-excavator-loading",
-            "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street"
+            "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street",
+            "logo": {
+              "x": 65.4,
+              "y": 29.6,
+              "s": 3.2
+            }
           }
         },
         {

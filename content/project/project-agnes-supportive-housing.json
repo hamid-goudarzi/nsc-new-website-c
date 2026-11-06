@@ -18,7 +18,12 @@
   "heroImage": {
     "_type": "image",
     "local": "agnes-excavator-loading",
-    "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street"
+    "alt": "NSC excavator loading a dump truck during street-front excavation on Agnes Street",
+    "logo": {
+      "x": 65.4,
+      "y": 29.6,
+      "s": 3.2
+    }
   },
   "heroVideo": {
     "mp4": "agnes-film-720.mp4",

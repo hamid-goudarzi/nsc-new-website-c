@@ -7,7 +7,12 @@
   "image": {
     "_type": "image",
     "local": "agnes-excavator-loading",
-    "alt": "NSC Kobelco excavator loading a truck at Agnes Supportive Housing"
+    "alt": "NSC Kobelco excavator loading a truck at Agnes Supportive Housing",
+    "logo": {
+      "x": 65.4,
+      "y": 29.6,
+      "s": 3.2
+    }
   },
   "description": "Earthworks and site services for residential, supportive housing and commercial development, working for owners and prime contractors from bulk excavation to final servicing.",
   "deliver": [
@@ -44,6 +49,11 @@
   "homeImage": {
     "_type": "image",
     "local": "agnes-excavator-loading",
-    "alt": "NSC Kobelco excavator at Agnes Supportive Housing"
+    "alt": "NSC Kobelco excavator at Agnes Supportive Housing",
+    "logo": {
+      "x": 65.4,
+      "y": 29.6,
+      "s": 3.2
+    }
   }
 }

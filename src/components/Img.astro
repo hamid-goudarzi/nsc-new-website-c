@@ -2,7 +2,10 @@
 import { img } from '../lib/util.mjs';
 const { image, pre = '', sizes = '100vw', eager = false, class: cls, alt } = Astro.props;
 const a = img(image, pre, { sizes, eager });
+// Optional shine on a real NSC logo that is already in the photo: image.logo = { x, y, s } (centre in % of the photo, size in % of its width).
+const lg = a && image?.logo && a.width && a.height ? image.logo : null;
 ---
 {a && (a.avif
   ? <picture><source type="image/avif" srcset={a.avif} sizes={a.sizes}><img class={cls} src={a.src} srcset={a.srcset} sizes={a.sizes} alt={alt ?? a.alt} loading={a.loading} decoding="async" style={a.style} width={a.width} height={a.height} fetchpriority={a.fetchpriority}></picture>
   : <img class={cls} src={a.src} srcset={a.srcset} sizes={a.sizes} alt={alt ?? a.alt} loading={a.loading} decoding="async" style={a.style} width={a.width} height={a.height} fetchpriority={a.fetchpriority}>)}
+{lg && <span class="logo-shine" aria-hidden="true" data-lx={lg.x} data-ly={lg.y} data-ls={lg.s || 5} data-ar={(a.width / a.height).toFixed(4)}></span>}

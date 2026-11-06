@@ -57,12 +57,17 @@
       ],
       "image": {
         "_type": "image",
-        "local": "gexc",
-        "alt": "NSC CAT 330 excavator at Guildford Park Secondary"
+        "local": "agnes-excavator-loading",
+        "alt": "NSC Kobelco excavator loading a truck during bulk excavation at Agnes Street, New Westminster",
+        "logo": {
+          "x": 65.4,
+          "y": 29.6,
+          "s": 3.2
+        }
       },
       "project": {
         "_type": "reference",
-        "_ref": "project-guildford-park-secondary"
+        "_ref": "project-agnes-supportive-housing"
       },
       "_key": "49e9796661bf"
     },
@@ -164,32 +169,32 @@
   "featureButton": "Explore Guildford Park",
   "featureSpots": [
     {
-      "x": 24.0,
-      "y": 17.0,
+      "x": 24,
+      "y": 17,
       "title": "Bulk excavation",
       "text": "CAT excavators on the pad",
       "flip": false,
       "_key": "f2d261e0e3d4"
     },
     {
-      "x": 57.0,
-      "y": 37.0,
+      "x": 57,
+      "y": 37,
       "title": "NSC crew",
       "text": "Laying out tank modules",
       "flip": true,
       "_key": "1fc25f83a7df"
     },
     {
-      "x": 40.0,
-      "y": 66.0,
+      "x": 40,
+      "y": 66,
       "title": "Detention tank",
       "text": "Modular chambers, stormwater storage",
       "flip": false,
       "_key": "408b2dc48904"
     },
     {
-      "x": 94.0,
-      "y": 40.0,
+      "x": 94,
+      "y": 40,
       "title": "Liner",
       "text": "Wraps the whole tank",
       "flip": true,

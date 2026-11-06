@@ -457,3 +457,12 @@ img{height:auto}
 
 .logo img{transition:box-shadow .4s var(--ease),transform .4s var(--ease)}
 .logo:hover img{box-shadow:0 0 0 1px rgba(160,195,255,.8),0 0 22px rgba(47,107,255,.85);transform:rotate(-4deg) scale(1.06)}
+
+/* Shine on a real NSC logo in a photo: soft flash plus a four-point star glint every few seconds. */
+.logo-shine{position:absolute;z-index:-1;pointer-events:none;opacity:0;display:none}
+.logo-shine.on{display:block}
+.logo-shine::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75) 0,rgba(150,190,255,.45) 22%,rgba(47,107,255,.12) 45%,transparent 66%);mix-blend-mode:screen}
+.logo-shine::after{content:"";position:absolute;left:50%;top:50%;width:70%;height:70%;transform:translate(-50%,-50%);background:linear-gradient(90deg,transparent 46%,#fff 50%,transparent 54%),linear-gradient(0deg,transparent 46%,#fff 50%,transparent 54%);mask:radial-gradient(circle,#000 0,transparent 70%);-webkit-mask:radial-gradient(circle,#000 0,transparent 70%);mix-blend-mode:screen}
+.logo-shine.on{animation:logoShine 5s ease-in-out infinite 1.2s}
+@keyframes logoShine{0%,72%{opacity:0;transform:scale(.55) rotate(0deg)}82%{opacity:1;transform:scale(1) rotate(25deg)}100%{opacity:0;transform:scale(1.25) rotate(45deg)}}
+@media (prefers-reduced-motion:reduce){.logo-shine.on{animation:none;opacity:0}}

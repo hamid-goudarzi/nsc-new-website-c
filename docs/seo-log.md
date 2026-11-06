@@ -63,6 +63,11 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Other projects have too few wide photos for a film; add more wide shots (or raw drone clips) first.
 - Next ideas raised with Hamid: labelled cutaway illustrations of what is underground (Kingston first), Google Earth before/after sliders with attribution, Kingston corridor map from NSC's drone map, all-projects aerial map, Langley yard fleet line-up drone shoot, monthly drone flights per site, half-day pro photographer.
 
+## Nov 6, 2026 — sharper Earthwork tile, NSC logo shine (by hand)
+- Home "Earthwork & excavation" tile: replaced the soft gexc photo with agnes-excavator-loading (sharp, real NSC Kobelco with NSC logo) and linked the tile to Agnes Supportive Housing.
+- New: images can carry logo {x, y, s}; a soft flash and star glint plays over a real NSC logo already in the photo every 5 s (off for reduced motion). Set on agnes-excavator-loading (boom logo) and nsc-cat-school (CAT boom logo) wherever they appear. Logos are never added to machines that do not carry one (many are rentals).
+- Deploys: Vercel blocked every commit from goudarzi.hamid@gmail.com and neilsmithconstructionltd@gmail.com ("commit email could not be matched to a GitHub account"). Fixed by committing as the NSC GitHub account's own commit email (see CLAUDE.md).
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.

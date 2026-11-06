@@ -124,3 +124,13 @@ addEventListener('resize',frame);frame();
     }
   });
 })();
+
+/* Shine on real NSC logos inside photos (same as site.js). */
+(()=>{
+const ss=[...document.querySelectorAll('.logo-shine')];if(!ss.length)return;
+const place=()=>ss.forEach(s=>{let im=s.previousElementSibling;if(im&&im.tagName==='PICTURE')im=im.querySelector('img');if(!im||!im.clientWidth)return;
+  const cw=im.clientWidth,ch=im.clientHeight,ar=+s.dataset.ar;let W=cw,H=cw/ar;if(H<ch){H=ch;W=ch*ar}
+  const d=W*s.dataset.ls/100,x=im.offsetLeft+(cw-W)/2+W*s.dataset.lx/100,y=im.offsetTop+(ch-H)/2+H*s.dataset.ly/100;
+  s.style.cssText=`left:${x-d}px;top:${y-d}px;width:${d*2}px;height:${d*2}px`;s.classList.add('on')});
+place();addEventListener('resize',place,{passive:true});addEventListener('load',place);
+})();
