@@ -20,6 +20,10 @@
     "local": "cook-exc",
     "alt": "NSC excavator excavating the pad with a crew member checking grade"
   },
+  "heroVideo": {
+    "mp4": "cook-film-720.mp4",
+    "av1": "cook-film-1080-av1.mp4"
+  },
   "details": [
     {
       "label": "Client",

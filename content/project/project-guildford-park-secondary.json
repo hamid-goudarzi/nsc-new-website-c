@@ -20,6 +20,10 @@
     "local": "tank",
     "alt": "Stormwater detention tank under construction at Guildford Park Secondary, with excavators behind"
   },
+  "heroVideo": {
+    "mp4": "guildford-film-720.mp4",
+    "av1": "guildford-film-1080-av1.mp4"
+  },
   "details": [
     {
       "label": "Client",

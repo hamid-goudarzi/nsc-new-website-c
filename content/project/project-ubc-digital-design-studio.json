@@ -20,6 +20,10 @@
     "local": "ubc-shoring",
     "alt": "Excavator setting a trench shoring box beside the building"
   },
+  "heroVideo": {
+    "mp4": "ubc-film-720.mp4",
+    "av1": "ubc-film-1080-av1.mp4"
+  },
   "details": [
     {
       "label": "Client",

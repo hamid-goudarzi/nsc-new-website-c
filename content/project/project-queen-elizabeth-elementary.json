@@ -20,6 +20,10 @@
     "local": "qe-exc",
     "alt": "NSC excavator and crew excavating along the new curb line on the road"
   },
+  "heroVideo": {
+    "mp4": "qe-film-720.mp4",
+    "av1": "qe-film-1080-av1.mp4"
+  },
   "details": [
     {
       "label": "Client",

@@ -20,6 +20,10 @@
     "local": "manitoba-tanks",
     "alt": "Fuel tanks set in a lined excavation at the Manitoba Works Yard"
   },
+  "heroVideo": {
+    "mp4": "manitoba-film-720.mp4",
+    "av1": "manitoba-film-1080-av1.mp4"
+  },
   "details": [
     {
       "label": "Client",

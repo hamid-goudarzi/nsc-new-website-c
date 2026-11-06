@@ -58,6 +58,11 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Template: projects can now have an optional heroVideo {mp4, av1} (admin: "Main video", advanced). The photo stays as the poster; the film loads after the page, fades in, and is skipped for reduced-motion and data-saver users.
 - The 150 s v6 edit in the Kingston Video folder is mostly a 3D map model with labels, so it was not used beyond that. Raw drone clips (no text) would allow longer, sharper films.
 
+## Nov 6, 2026 — hero films for six more projects (by hand)
+- Looping hero films (11–14 s) built only from each project's own finished site photos (slow camera moves, dissolves, seamless loop): Guildford Park (tank, gwide2, tank3, mains), Queen Elizabeth (qe-exc, qe-manholes, qe-trench, qe-sidewalk), UBC (ubc-shoring, ubc-exc, ubc-machines, ubc-chamber), Agnes (agnes-excavator-loading, agnes-bulk-excavation, agnes-manholes), Manitoba Yard (manitoba-tanks, manitoba-excavator, manitoba-trench-drain), William Cook (cook-exc, cook-strip, cook-demo, cook-pad). Files media/<name>-film-1080-av1.mp4 and -720.mp4, 3–5 MB each (bitrate capped).
+- Other projects have too few wide photos for a film; add more wide shots (or raw drone clips) first.
+- Next ideas raised with Hamid: labelled cutaway illustrations of what is underground (Kingston first), Google Earth before/after sliders with attribution, Kingston corridor map from NSC's drone map, all-projects aerial map, Langley yard fleet line-up drone shoot, monthly drone flights per site, half-day pro photographer.
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.
