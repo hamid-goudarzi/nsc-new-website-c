@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import path from 'node:path';
 import Sub from '../../layouts/Sub.astro';
 import Img from '../../components/Img.astro';
 import Cta from '../../components/Cta.astro';
@@ -23,6 +25,9 @@ const tag = tagOf(p.heroImage);
 const hcls = tag === 'Drawing' ? 'phero dwg' : tag === 'Illustration' ? 'phero illus' : 'phero';
 const gal = p.gallery || [];
 // Optional looping hero film (real project footage): AV1 for browsers that play it, H.264 for the rest. The photo stays underneath as the poster.
+// Optional labelled cutaway illustration (SVG in public/media), shown as "Under the street".
+let cut = null;
+if (p.cutaway?.svg) { try { cut = { ...p.cutaway, svg: fs.readFileSync(path.join(process.cwd(), 'public/media', p.cutaway.svg), 'utf8') }; } catch {} }
 const hv = p.heroVideo?.mp4 ? { mp4: `${pre}media/${p.heroVideo.mp4}${ver(p.heroVideo.mp4)}`, av1: p.heroVideo.av1 ? `${pre}media/${p.heroVideo.av1}${ver(p.heroVideo.av1)}` : '' } : null;
 ---
 <Sub path={`projects/${p.slug.current}.html`} title={p.name} fullTitle={projectTitle(settings, p)} description={projectDescription(p)} jsonld={ld} ogImage={imgUrl(p.heroImage)} active="projects" pre={pre}>
@@ -52,6 +57,12 @@ const hv = p.heroVideo?.mp4 ? { mp4: `${pre}media/${p.heroVideo.mp4}${ver(p.hero
     {p.timeline?.length > 0 && <div class="tl"><p class="mono kick">How the job ran</p><ol>{p.timeline.map(t => <li class="rv"><b>{t.when}</b><span>{t.what}</span></li>)}</ol></div>}
   </div>
 </section>
+{cut && <section class="sec cutsec" style="padding-top:0" aria-labelledby="cut-h"><div class="wrap">
+  <p class="mono kick">Under the street</p>
+  <h2 id="cut-h" style="font-size:clamp(1.8rem,1rem + 2.6vw,3.4rem);margin-top:18px">{cut.title || 'What we built underground.'}</h2>
+  <figure class="cutaway rv"><div class="cut-art" set:html={cut.svg} /><figcaption class="mono">Illustration, not to scale. Numbers match the list below.</figcaption></figure>
+  {cut.items?.length > 0 && <ol class="cut-list">{cut.items.map((t, i) => <li class="rv"><b>{i + 1}</b><span>{t}</span></li>)}</ol>}
+</div></section>}
 {gal.length > 0 && <section class="sec" style="padding-top:0"><div class="wrap"><p class="mono kick">On site</p>
   <h2 style="font-size:clamp(1.8rem,1rem + 2.6vw,3.4rem);margin-top:18px">From the field.</h2><div class="gal" id="gal">
   {gal.map(g => <button type="button" class="rv" data-full={imgUrl(g, pre, 2560)} aria-label={`Open image: ${g.alt || ''}`}><Img image={g} pre={pre} sizes="(max-width:700px) 100vw, 33vw" />{tagOf(g) && <span class="g-tag mono">{tagOf(g)}</span>}</button>)}

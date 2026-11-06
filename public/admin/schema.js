@@ -56,6 +56,11 @@ export const TYPES = {
         { name: 'mp4', label: 'Video file in media/ (H.264 .mp4)', type: 'string', help: 'e.g. kingston-film-720.mp4. Real project footage only, no text on it.' },
         { name: 'av1', label: 'Smaller AV1 copy in media/ (optional)', type: 'string', help: 'e.g. kingston-film-1080-av1.mp4' },
       ] },
+      { name: 'cutaway', label: 'Underground illustration (optional)', type: 'object', advanced: true, fields: [
+        { name: 'svg', label: 'Illustration file in media/ (.svg)', type: 'string', help: 'e.g. kingston-cutaway.svg. Labelled illustration of real work only.' },
+        { name: 'title', label: 'Heading', type: 'string' },
+        { name: 'items', label: 'Numbered notes (1, 2, 3... match the drawing)', type: 'strings' },
+      ] },
       { name: 'live', label: 'Underway now (shows a live dot)', type: 'bool' },
       { name: 'status', label: 'Status', type: 'string', help: 'e.g. In progress, Completed' },
       { name: 'type', label: 'Type of work', type: 'string', help: 'e.g. Municipal sewer separation' },

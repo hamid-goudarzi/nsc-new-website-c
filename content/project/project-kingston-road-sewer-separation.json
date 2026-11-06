@@ -110,6 +110,20 @@
       "_key": "f86f06dffe66"
     }
   ],
+  "cutaway": {
+    "svg": "kingston-cutaway.svg",
+    "title": "Two new systems where one pipe used to be.",
+    "items": [
+      "New storm sewer, 250 to 450 mm.",
+      "New sanitary sewer, 250 to 375 mm, laid beside the storm main.",
+      "Twelve new precast manholes, set in pairs: six storm and six sanitary.",
+      "Catch basins and storm leads: seven new catch basins tied into the storm main.",
+      "Sanitary and storm service connections to every property; 15 properties reconnected.",
+      "Water service renewals, a fire hydrant and two watermain tie-ins.",
+      "New concrete curb, driveways and sidewalk, then road restoration and paving.",
+      "The old combined sewer carried sanitary flow and stormwater in one pipe. It was replaced by the two new systems, and the existing manholes were abandoned."
+    ]
+  },
   "gallery": [
     {
       "_type": "image",

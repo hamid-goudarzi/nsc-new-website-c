@@ -68,6 +68,10 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - New: images can carry logo {x, y, s}; a soft flash and star glint plays over a real NSC logo already in the photo every 5 s (off for reduced motion). Set on agnes-excavator-loading (boom logo) and nsc-cat-school (CAT boom logo) wherever they appear. Logos are never added to machines that do not carry one (many are rentals).
 - Deploys: Vercel blocked every commit from goudarzi.hamid@gmail.com and neilsmithconstructionltd@gmail.com ("commit email could not be matched to a GitHub account"). Fixed by committing as the NSC GitHub account's own commit email (see CLAUDE.md).
 
+## Nov 6, 2026 — Kingston "Under the street" cutaway (by hand)
+- New labelled cutaway illustration (media/kingston-cutaway.svg, inline SVG with title/description, "Illustration, not to scale"): section across Kingston Road showing the new storm (250–450 mm) and sanitary (250–375 mm) mains, paired precast manholes, catch basin and storm lead, storm and sanitary services, water service, hydrant and watermain tie-in, curb, sidewalk and paving, and the replaced combined sewer. Numbered markers match an 8-item list built only from the project record.
+- Template: projects can have an optional cutaway {svg, title, items} (admin: "Underground illustration", advanced). Good next candidates: Guildford Park (detention tank and flow control manholes), Queen Elizabeth (forcemain realignment), Brighouse (detention tank).
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.

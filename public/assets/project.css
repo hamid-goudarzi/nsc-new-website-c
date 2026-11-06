@@ -430,3 +430,12 @@ img{height:auto}
 .logo-shine.on{animation:logoShine 5s ease-in-out infinite 1.2s}
 @keyframes logoShine{0%,72%{opacity:0;transform:scale(.55) rotate(0deg)}82%{opacity:1;transform:scale(1) rotate(25deg)}100%{opacity:0;transform:scale(1.25) rotate(45deg)}}
 @media (prefers-reduced-motion:reduce){.logo-shine.on{animation:none;opacity:0}}
+
+/* "Under the street" cutaway illustration on project pages */
+.cutaway{margin:clamp(28px,4vw,48px) 0 0;border:1px solid var(--line);border-radius:var(--r,22px);background:radial-gradient(80% 90% at 50% 40%,#0f1830,var(--bg-2));overflow:hidden}
+.cut-art svg{display:block;width:100%;height:auto}
+.cutaway figcaption{padding:12px 20px 16px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+.cut-list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px}
+.cut-list li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.cut-list b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 2px rgba(122,166,255,.55) inset;font-family:var(--mono);font-size:15px}
+.cut-list span{font-size:15px;line-height:1.5;color:#d7deea}
