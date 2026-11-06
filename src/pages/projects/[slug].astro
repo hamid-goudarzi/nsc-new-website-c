@@ -3,7 +3,7 @@ import Sub from '../../layouts/Sub.astro';
 import Img from '../../components/Img.astro';
 import Cta from '../../components/Cta.astro';
 import { content } from '../../lib/content.mjs';
-import { paras, imgUrl, tagOf } from '../../lib/util.mjs';
+import { paras, imgUrl, tagOf, ver } from '../../lib/util.mjs';
 import { breadcrumbs, projectLd, projectTitle, projectDescription, projectServices, pagesForProject } from '../../lib/seo.mjs';
 
 export async function getStaticPaths() {
@@ -22,10 +22,12 @@ const pre = '../';
 const tag = tagOf(p.heroImage);
 const hcls = tag === 'Drawing' ? 'phero dwg' : tag === 'Illustration' ? 'phero illus' : 'phero';
 const gal = p.gallery || [];
+// Optional looping hero film (real project footage): AV1 for browsers that play it, H.264 for the rest. The photo stays underneath as the poster.
+const hv = p.heroVideo?.mp4 ? { mp4: `${pre}media/${p.heroVideo.mp4}${ver(p.heroVideo.mp4)}`, av1: p.heroVideo.av1 ? `${pre}media/${p.heroVideo.av1}${ver(p.heroVideo.av1)}` : '' } : null;
 ---
 <Sub path={`projects/${p.slug.current}.html`} title={p.name} fullTitle={projectTitle(settings, p)} description={projectDescription(p)} jsonld={ld} ogImage={imgUrl(p.heroImage)} active="projects" pre={pre}>
 <header class={hcls}>
-  <div class={`bg${tag === 'Illustration' ? ' ill' : ''}`}><Img image={p.heroImage} pre={pre} eager /></div>{tag && <span class="ill-tag mono">{tag}</span>}
+  <div class={`bg${tag === 'Illustration' ? ' ill' : ''}`}><Img image={p.heroImage} pre={pre} eager />{hv && <video class="hvid" muted playsinline loop preload="none" aria-hidden="true" data-mp4={hv.mp4} data-av1={hv.av1}></video>}</div>{tag && <span class="ill-tag mono">{tag}</span>}
   <div class="wrap ph-in">
     <a class="back" href="index.html">← All projects</a>
     <div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span><span class="chip">{p.type}</span><span class="chip">{p.city}</span></div>
@@ -67,5 +69,5 @@ const gal = p.gallery || [];
 </section>}
 <Cta pre={pre} title={pp.ctaTitle || 'Planning a similar project?'} text={pp.ctaText} bidLink="../contact.html" />
 </main>
-<div slot="after">{gal.length > 0 && <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><button type="button" class="x">Close ✕</button><button type="button" class="pv" aria-label="Previous">←</button><button type="button" class="nx" aria-label="Next">→</button></div>}</div>
+<div slot="after">{hv && <script is:inline>(()=>{const v=document.querySelector('.phero .hvid');if(!v||matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData))return;const go=()=>{v.src=v.dataset.av1&&v.canPlayType('video/mp4; codecs="av01.0.08M.08"')?v.dataset.av1:v.dataset.mp4;v.addEventListener('playing',()=>v.classList.add('on'),{once:true});v.play().catch(()=>{})};document.readyState==='complete'?go():addEventListener('load',go,{once:true})})()</script>}{gal.length > 0 && <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><img alt=""><button type="button" class="x">Close ✕</button><button type="button" class="pv" aria-label="Previous">←</button><button type="button" class="nx" aria-label="Next">→</button></div>}</div>
 </Sub>

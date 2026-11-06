@@ -52,6 +52,10 @@ export const TYPES = {
       { name: 'slug', label: 'Web address', type: 'slug', from: 'name', prefix: 'projects/', suffix: '.html', required: true },
       { name: 'shortName', label: 'Short name (for maps and lists)', type: 'string' },
       { name: 'heroImage', label: 'Main photo', type: 'image', tag: true, required: true },
+      { name: 'heroVideo', label: 'Main video (optional, plays over the main photo)', type: 'object', advanced: true, fields: [
+        { name: 'mp4', label: 'Video file in media/ (H.264 .mp4)', type: 'string', help: 'e.g. kingston-film-720.mp4. Real project footage only, no text on it.' },
+        { name: 'av1', label: 'Smaller AV1 copy in media/ (optional)', type: 'string', help: 'e.g. kingston-film-1080-av1.mp4' },
+      ] },
       { name: 'live', label: 'Underway now (shows a live dot)', type: 'bool' },
       { name: 'status', label: 'Status', type: 'string', help: 'e.g. In progress, Completed' },
       { name: 'type', label: 'Type of work', type: 'string', help: 'e.g. Municipal sewer separation' },

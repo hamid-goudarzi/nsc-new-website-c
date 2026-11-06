@@ -53,6 +53,11 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Skipped: paving-day shots (asphalt subcontractor crew), close-ups.
 - Ideas: Google Earth "before" view with the sewer route drawn on, with Google attribution, next to the drone "after"; photos from others (school districts, GCs, cities) only with written permission and credit; short website video cut from the Kingston Video folder footage.
 
+## Nov 6, 2026 — Kingston hero film (by hand)
+- New 13 s looping film at the top of the Kingston project page, from real NSC drone material only: slow push-in on the full-res drone still, ~7 s of clean drone flight from NSC_Kingston_Sewer_Separation_v6_16x9.mp4 (the overlay-free stretch), slow glide over a straight-down drone still; crossfades and a seamless loop. Files: media/kingston-film-1080-av1.mp4 (3.9 MB) and kingston-film-720.mp4 (H.264, 6.2 MB).
+- Template: projects can now have an optional heroVideo {mp4, av1} (admin: "Main video", advanced). The photo stays as the poster; the film loads after the page, fades in, and is skipped for reduced-motion and data-saver users.
+- The 150 s v6 edit in the Kingston Video folder is mostly a 3D map model with labels, so it was not used beyond that. Raw drone clips (no text) would allow longer, sharper films.
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.

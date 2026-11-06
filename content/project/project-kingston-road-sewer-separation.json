@@ -20,6 +20,10 @@
     "local": "kingston-aerial",
     "alt": "Drone view of Kingston Road after sewer separation and paving, University Endowment Lands, October 2026"
   },
+  "heroVideo": {
+    "mp4": "kingston-film-720.mp4",
+    "av1": "kingston-film-1080-av1.mp4"
+  },
   "details": [
     {
       "label": "Client",
