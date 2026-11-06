@@ -20,6 +20,7 @@ Owner: Hamid Goudarzi (civil engineer / project coordinator at NSC). He is not a
 - Personal mirror: `hamid-goudarzi/nsc-new-website-c` — keep identical.
 - Publish: `git push <company> HEAD:master HEAD:cms` and `git push <mirror> HEAD:master HEAD:cms`. Check deploy: `gh api repos/NeilSmithConstructionLtd/nsc-new-website/commits/<sha>/statuses` (Vercel can take 2–15 min).
 - Commits starting with `[admin]` or `[media]` skip Vercel builds (admin saves use these).
+- Commit identity: Vercel (Hobby team) only builds commits whose author email is a verified email on a GitHub account connected to the Vercel team. As of Nov 6 2026, commits by goudarzi.hamid@gmail.com and neilsmithconstructionltd@gmail.com show "Blocked" ("commit email could not be matched to a GitHub account") in Vercel → Deployments and never go live. Vercel's connected GitHub account is NeilSmithConstructionLtd (id 350006125); on Hamid's computer this repo commits as `Neil Smith Construction <350006125+NeilSmithConstructionLtd@users.noreply.github.com>` (that account's own GitHub commit email, chosen by Hamid on Nov 6 2026). Don't borrow any other identity. After pushing, confirm the deployment says Ready, not just that the push worked.
 
 ## Build and check
 - Astro 5 static site, Node 22. `npm ci`, `npm run dev`, `npm run build` (runs `scripts/check-build.mjs` — fails on broken links/photos, bad JSON-LD, wrong canonicals; never bypass it), `npm run admin:local` (site + admin locally).
