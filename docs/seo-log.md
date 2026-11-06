@@ -37,6 +37,12 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Auto-levelled tilted shots (fh12-excavator, florin-excavator, jwhiteside-pad, parkcrest-crew, qe-exc) and recropped heroes to cut clutter: agnes-excavator-loading, qe-exc, ubc-shoring, tank, mhcrew.
 - Not touched: drawings and illustration, film-poster, and nsc-cat-school / nsc-fleet / nsc-valves (already finished, no originals). Every file kept at or below its previous size. No generated images.
 
+## Nov 6, 2026 — extra run requested by Hamid: careers and medium project pages
+- Careers: added a project grid (Kingston Road, Guildford Park, Queen Elizabeth), a 5-question FAQ (FAQPage schema), and descriptive alt text on the career path photos.
+- George Greenaway, Ladner and Parkcrest: added a paragraph each from scope and photo captions.
+- Contact page changes from Nov 5 confirmed live with WebFetch.
+- Google Jobs gap: the 4 open jobs have no descriptions, so no JobPosting schema is output. Needs real descriptions from Hamid.
+
 ## Nov 6, 2026 — Kingston Road drone stills (by hand)
 - Pulled three clean frames (no titles or overlay lines) from NSC's own Kingston drone reel (NSC_Kingston_Sewer_Separation_v6_16x9.mp4), picked the sharpest frame in each moment and gave them the Nov 5 pro finish. New hero: kingston-aerial (wide fall view of the finished road); gallery: kingston-aerial-top, kingston-aerial-street; old hero mh2 moved into the gallery. 1920 px (video resolution, not upscaled).
 - Other Desktop files checked: gpss_aerial_test.jpg is a map/satellite image (not NSC's, not used); NSC_workers_preview.jpg is a 3D render (not used). Agnes, George Greenaway, Ladner and Burnaby Childcare reels are built from photos with text overlays; ask Hamid for the original photos, and confirm Burnaby Childcare (Rowan Ave, 2024) details before adding it as a project.
@@ -50,5 +56,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - School district page(s): SD36 Surrey, SD37 Delta, SD38 Richmond, SD40 New Westminster, SD41 Burnaby — only projects in the repo.
 - Contact page is short (~120 words): add offices, hours, what to send for a bid, and FAQ.
 - Careers page (~200 words): add what roles NSC hires for and how to apply, from existing content only.
-- Careers page: remains thin. Then George Greenaway, Ladner and Parkcrest write-ups, which have medium depth.
+- Add JobPosting descriptions once Hamid supplies them.
 - Schools page already lists projects by district; a separate district page is probably not needed unless searches show demand.

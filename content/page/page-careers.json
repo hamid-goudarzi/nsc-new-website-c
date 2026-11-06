@@ -62,7 +62,7 @@
           "image": {
             "_type": "image",
             "local": "qe-pipelay",
-            "alt": "Field and trades"
+            "alt": "Crew laying PVC sewer pipe as the excavator places bedding"
           },
           "_key": "0b49f6679047"
         },
@@ -72,7 +72,7 @@
           "image": {
             "_type": "image",
             "local": "gexc",
-            "alt": "Project delivery"
+            "alt": "NSC CAT 330 excavator on bulk excavation at Guildford Park Secondary"
           },
           "_key": "659b194fd2aa"
         },
@@ -82,7 +82,7 @@
           "image": {
             "_type": "image",
             "local": "ubc-chamber",
-            "alt": "Engineering and technical"
+            "alt": "Crew setting a precast chamber with electrical ducts in the excavation"
           },
           "_key": "7ed50b1bc743"
         }
@@ -98,6 +98,64 @@
       "tight": true,
       "_type": "jobs",
       "_key": "b3efb15461b9"
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "ca0e01a1b2c3",
+      "kicker": "The work",
+      "title": "Projects our teams build.",
+      "tight": true,
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "ca0e01a1b2c4"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-guildford-park-secondary",
+          "_key": "ca0e01a1b2c5"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "ca0e01a1b2c6"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "ca0e01a1b2c7",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "tight": true,
+      "items": [
+        {
+          "_key": "ca0e01a1b2c8",
+          "q": "How do I apply?",
+          "a": "Send your resume to info@nscltd.ca with the position in the subject line. If you don't see your role listed, send it anyway."
+        },
+        {
+          "_key": "ca0e01a1b2c9",
+          "q": "What roles does NSC hire for?",
+          "a": "Field and trades, including pipelayers, equipment operators, labourers, foremen and superintendents. Project delivery, including project managers, project coordinators and estimators. Engineering and technical, including construction technologists, EITs, QA/QC and utility coordination."
+        },
+        {
+          "_key": "ca0e01a1b2d0",
+          "q": "Where would I work?",
+          "a": "On projects across [Metro Vancouver and the Fraser Valley](areas/index.html). Our head office is in Richmond and our equipment yard is in Langley."
+        },
+        {
+          "_key": "ca0e01a1b2d1",
+          "q": "What kind of projects would I work on?",
+          "a": "Sewers, watermains, school sites, roadworks and site servicing for municipalities, school districts and builders. See our [projects](projects/index.html)."
+        },
+        {
+          "_key": "ca0e01a1b2d2",
+          "q": "What is the safety program like?",
+          "a": "NSC is COR certified through the BC Construction Safety Alliance, with a safety officer on our sites and a toolbox meeting every shift. See our [safety page](safety.html)."
+        }
+      ]
     }
   ],
   "seoTitle": "Civil Construction Jobs in Greater Vancouver | NSC Careers"
