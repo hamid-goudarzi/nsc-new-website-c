@@ -17,8 +17,8 @@
   "order": 10,
   "heroImage": {
     "_type": "image",
-    "local": "mh2",
-    "alt": "CAT excavator over two new precast manholes on Kingston Road"
+    "local": "kingston-aerial",
+    "alt": "Drone view of the new road on Kingston Road after sewer separation, University Endowment Lands"
   },
   "details": [
     {
@@ -107,6 +107,24 @@
     }
   ],
   "gallery": [
+    {
+      "_type": "image",
+      "local": "kingston-aerial-top",
+      "alt": "Drone view looking straight down on the new paving and manhole lids on Kingston Road",
+      "_key": "k1a7e2b9c301"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-aerial-street",
+      "alt": "Drone view of the finished road, curb and new manhole lids on Kingston Road",
+      "_key": "k2b8f3cad412"
+    },
+    {
+      "_type": "image",
+      "local": "mh2",
+      "alt": "CAT excavator over two new precast manholes on Kingston Road",
+      "_key": "k3c9a4dbe523"
+    },
     {
       "_type": "image",
       "local": "mhcrew",
