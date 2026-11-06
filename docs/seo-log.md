@@ -72,6 +72,12 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - New labelled cutaway illustration (media/kingston-cutaway.svg, inline SVG with title/description, "Illustration, not to scale"): section across Kingston Road showing the new storm (250–450 mm) and sanitary (250–375 mm) mains, paired precast manholes, catch basin and storm lead, storm and sanitary services, water service, hydrant and watermain tie-in, curb, sidewalk and paving, and the replaced combined sewer. Numbered markers match an 8-item list built only from the project record.
 - Template: projects can have an optional cutaway {svg, title, items} (admin: "Underground illustration", advanced). Good next candidates: Guildford Park (detention tank and flow control manholes), Queen Elizabeth (forcemain realignment), Brighouse (detention tank).
 
+## Nov 6, 2026 — three more underground cutaways (by hand)
+- Guildford Park (guildford-cutaway.svg): lined detention tank built from modular chambers, flow control manhole metering to the city storm main, storm/sanitary/water/BC Hydro services to the addition, curb, sidewalk and paving.
+- Queen Elizabeth (qe-cutaway.svg): addition over the old forcemain path, forcemain rerouted around it (shown as an x-ray line on the surface), twin corrugated storm pipes, sanitary and water upgrades, excavation for the addition, streetlighting, curb, sidewalk and paving.
+- Brighouse (brighouse-cutaway.svg): storm and sanitary upgrade, detention tank, flow control manhole, precast valve chamber with double check valve assembly, PVC water service and new hydrant.
+- Each has a numbered list built only from that project's record and photo captions; all labelled "Illustration, not to scale".
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.

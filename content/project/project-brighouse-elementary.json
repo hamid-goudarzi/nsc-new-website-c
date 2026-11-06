@@ -46,6 +46,18 @@
   ],
   "facts": [],
   "timeline": [],
+  "cutaway": {
+    "svg": "brighouse-cutaway.svg",
+    "title": "Storm, sanitary and water under the school yard.",
+    "items": [
+      "Storm and sanitary sewer system upgrade.",
+      "New detention tank.",
+      "Flow control manholes.",
+      "Precast valve chamber with a double check valve assembly.",
+      "Ductile fittings and a PVC water service.",
+      "New fire hydrant."
+    ]
+  },
   "gallery": [
     {
       "_type": "image",

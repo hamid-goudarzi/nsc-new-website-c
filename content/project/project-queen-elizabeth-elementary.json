@@ -80,6 +80,20 @@
     }
   ],
   "timeline": [],
+  "cutaway": {
+    "svg": "qe-cutaway.svg",
+    "title": "A city forcemain, moved so the school could grow.",
+    "items": [
+      "The new addition sat over the path of an existing city sanitary forcemain.",
+      "We rerouted and realigned the forcemain around it, keeping the city system in service.",
+      "Storm and sanitary sewer system upgrade, with the sewer work in the school grounds done over spring break.",
+      "Twin corrugated storm pipes installed in the trench.",
+      "Fire and domestic water upgrade.",
+      "Bulk and detailed excavation for the addition.",
+      "Streetlighting installation and road upgrade for the city.",
+      "New concrete curb and gutter, sidewalks, driveways and paving."
+    ]
+  },
   "gallery": [
     {
       "_type": "image",

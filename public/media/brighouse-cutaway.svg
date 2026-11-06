@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="ct cd">
+<title id="ct">Illustration: the storm, sanitary and water work NSC built at Brighouse Elementary</title><desc id="cd">Cutaway illustration, not to scale, of the Brighouse Elementary site: upgraded storm and sanitary sewers, a new detention tank and flow control manholes, a precast valve chamber with a double check valve assembly, ductile fittings and a PVC water service, and a new fire hydrant.</desc>
+<defs><linearGradient id="soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a4f37"/><stop offset="1" stop-color="#2e2219"/></linearGradient><linearGradient id="side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3d2e21"/><stop offset="1" stop-color="#21180f"/></linearGradient><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d6a55"/><stop offset="1" stop-color="#55463a"/></linearGradient><pattern id="grav" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#8b8377"/><circle cx="3" cy="4" r="2" fill="#a39b8e"/><circle cx="10" cy="9" r="2.4" fill="#6f685e"/><circle cx="6" cy="12" r="1.4" fill="#b3ab9e"/></pattern><pattern id="cells" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="#16191e"/><rect x="3" y="3" width="24" height="24" rx="3" fill="none" stroke="#3b414a" stroke-width="3"/><circle cx="15" cy="15" r="6" fill="none" stroke="#2b3038" stroke-width="2"/></pattern><pattern id="conc" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#b6bcc3"/><circle cx="4" cy="5" r="1.2" fill="#8d939a"/><circle cx="12" cy="11" r="1.4" fill="#9aa0a7"/></pattern><radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#2f6bff" stop-opacity=".35"/><stop offset="1" stop-color="#2f6bff" stop-opacity="0"/></radialGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter><filter id="xg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<style>.n{font:700 26px var(--mono,monospace);fill:#fff}.lbl{font:600 17px var(--mono,monospace);fill:#c9d3e6;letter-spacing:.04em}</style>
+<circle cx="720.0" cy="560.0" r="520" fill="url(#glow)"/>
+<g filter="url(#sh)">
+<polygon points="1330.0,360.0 1540.0,240.0 1540.0,740.0 1330.0,860.0" fill="url(#side)"/>
+<polygon points="110.0,360.0 880.0,360.0 1090.0,240.0 320.0,240.0" fill="#24282e"/>
+<polygon points="880.0,360.0 1330.0,360.0 1540.0,240.0 1090.0,240.0" fill="#2f5a33"/>
+<polygon points="1273.5,318.0 1389.0,252.0 1389.0,162.0 1273.5,228.0" fill="#98a1ac"/>
+<polygon points="1033.5,318.0 1273.5,318.0 1273.5,228.0 1033.5,228.0" fill="#b9c0c9"/>
+<polygon points="1033.5,228.0 1273.5,228.0 1389.0,162.0 1149.0,162.0" fill="#e3e6ea"/>
+<polygon points="1045.5,286.5 1081.5,286.5 1081.5,250.5 1045.5,250.5" fill="#3c6fb8" fill-opacity="0.85"/>
+<polygon points="1105.5,286.5 1141.5,286.5 1141.5,250.5 1105.5,250.5" fill="#3c6fb8" fill-opacity="0.85"/>
+<polygon points="1165.5,286.5 1201.5,286.5 1201.5,250.5 1165.5,250.5" fill="#3c6fb8" fill-opacity="0.85"/>
+<polygon points="1225.5,286.5 1261.5,286.5 1261.5,250.5 1225.5,250.5" fill="#3c6fb8" fill-opacity="0.85"/>
+<ellipse cx="794.5" cy="306.0" rx="24" ry="10.1" fill="#5d636c" stroke="#9aa1aa" stroke-width="2"/>
+<polygon points="110.0,360.0 1330.0,360.0 1330.0,860.0 110.0,860.0" fill="url(#soil)"/>
+<polygon points="250.0,392.0 640.0,392.0 620.0,690.0 270.0,690.0" fill="url(#fill)" fill-opacity="0.85"/>
+<rect x="300" y="470" width="300" height="190" fill="url(#conc)" stroke="#7d848c" stroke-width="4"/>
+<rect x="318" y="488" width="264" height="154" fill="#2b3036"/>
+<rect x="318" y="590" width="264" height="52" fill="#3b6fa8" fill-opacity="0.55"/>
+<rect x="110" y="360" width="770" height="14" fill="#15171b"/>
+<rect x="110" y="374" width="770" height="30" fill="url(#grav)"/>
+<rect x="880" y="360" width="450" height="18" fill="#3a2d21"/>
+<polyline points="880.0,361.0 1330.0,361.0" fill="none" stroke="#4f8a46" stroke-width="4"/>
+<polyline points="120.0,520.0 300.0,540.0" fill="none" stroke="#0b0f16" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="120.0,520.0 300.0,540.0" fill="none" stroke="#3fd27a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="600.0,630.0 675.0,630.0" fill="none" stroke="#0b0f16" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="600.0,630.0 675.0,630.0" fill="none" stroke="#3fd27a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="120.0,470.0 1040.0,470.0" fill="none" stroke="#0b0f16" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="120.0,470.0 1040.0,470.0" fill="none" stroke="#4aa8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="668.0" y="404" width="64" height="276" fill="#c3c8ce" stroke="#8f969f" stroke-width="2"/>
+<rect x="675.0" y="410" width="50" height="264" fill="#3f444b"/>
+<polyline points="694.0,434.0 706.0,434.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,460.0 706.0,460.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,486.0 706.0,486.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,512.0 706.0,512.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,538.0 706.0,538.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,564.0 706.0,564.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,590.0 706.0,590.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,616.0 706.0,616.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,642.0 706.0,642.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<polyline points="694.0,668.0 706.0,668.0" fill="none" stroke="#9aa1aa" stroke-width="3"/>
+<rect x="696" y="610" width="8" height="58" fill="#d8dde3"/>
+<circle cx="700.0" cy="654.0" r="6" fill="#3f444b" stroke="#0b0f16" stroke-width="2"/>
+<polyline points="725.0,660.0 1320.0,690.0" fill="none" stroke="#0b0f16" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="725.0,660.0 1320.0,690.0" fill="none" stroke="#3fd27a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="120.0,760.0 1320.0,790.0" fill="none" stroke="#0b0f16" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="120.0,760.0 1320.0,790.0" fill="none" stroke="#ff5d4d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1040" y="400" width="130" height="120" fill="#c3c8ce" stroke="#8f969f" stroke-width="2"/>
+<rect x="1048" y="408" width="114" height="104" fill="#3f444b"/>
+<polyline points="1062.0,470.0 1150.0,470.0" fill="none" stroke="#0b0f16" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1062.0,470.0 1150.0,470.0" fill="none" stroke="#4aa8ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1080.0" cy="446.0" r="11" fill="none" stroke="#ff5d4d" stroke-width="4"/>
+<polyline points="1080.0,457.0 1080.0,470.0" fill="none" stroke="#ff5d4d" stroke-width="4"/>
+<circle cx="1130.0" cy="446.0" r="11" fill="none" stroke="#ff5d4d" stroke-width="4"/>
+<polyline points="1130.0,457.0 1130.0,470.0" fill="none" stroke="#ff5d4d" stroke-width="4"/>
+<polyline points="1170.0,470.0 1250.0,470.0 1250.0,420.0" fill="none" stroke="#0b0f16" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1170.0,470.0 1250.0,470.0 1250.0,420.0" fill="none" stroke="#4aa8ff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1241" y="314" width="18" height="46" rx="4" fill="#d8342b"/>
+<rect x="1236" y="308" width="28" height="9" rx="3" fill="#ef4a3e"/>
+<rect x="1235" y="330" width="30" height="8" rx="3" fill="#b72a22"/>
+</g>
+<polyline points="600.0,780.0 560.0,820.0" fill="none" stroke="#e9eef7" stroke-width="2" stroke-opacity="0.7"/>
+<circle cx="600.0" cy="780.0" r="5" fill="#e9eef7"/>
+<circle cx="560.0" cy="820.0" r="26" fill="#003ea5" stroke="#7aa6ff" stroke-width="3"/>
+<text x="560" y="829" text-anchor="middle" class="n">1</text>
+<polyline points="450.0,560.0 420.0,770.0" fill="none" stroke="#e9eef7" stroke-width="2" stroke-opacity="0.7"/>
+<circle cx="450.0" cy="560.0" r="5" fill="#e9eef7"/>
+<circle cx="420.0" cy="770.0" r="26" fill="#003ea5" stroke="#7aa6ff" stroke-width="3"/>
+<text x="420" y="779" text-anchor="middle" class="n">2</text>
+<polyline points="700.0,520.0 760.0,120.0" fill="none" stroke="#e9eef7" stroke-width="2" stroke-opacity="0.7"/>
+<circle cx="700.0" cy="520.0" r="5" fill="#e9eef7"/>
+<circle cx="760.0" cy="120.0" r="26" fill="#003ea5" stroke="#7aa6ff" stroke-width="3"/>
+<text x="760" y="129" text-anchor="middle" class="n">3</text>
+<polyline points="1105.0,446.0 1100.0,150.0" fill="none" stroke="#e9eef7" stroke-width="2" stroke-opacity="0.7"/>
+<circle cx="1105.0" cy="446.0" r="5" fill="#e9eef7"/>
+<circle cx="1100.0" cy="150.0" r="26" fill="#003ea5" stroke="#7aa6ff" stroke-width="3"/>
+<text x="1100" y="159" text-anchor="middle" class="n">4</text>
+<polyline points="900.0,470.0 880.0,600.0" fill="none" stroke="#e9eef7" stroke-width="2" stroke-opacity="0.7"/>
+<circle cx="900.0" cy="470.0" r="5" fill="#e9eef7"/>
+<circle cx="880.0" cy="600.0" r="26" fill="#003ea5" stroke="#7aa6ff" stroke-width="3"/>
+<text x="880" y="609" text-anchor="middle" class="n">5</text>
+<polyline points="1250.0,310.0 1300.0,110.0" fill="none" stroke="#e9eef7" stroke-width="2" stroke-opacity="0.7"/>
+<circle cx="1250.0" cy="310.0" r="5" fill="#e9eef7"/>
+<circle cx="1300.0" cy="110.0" r="26" fill="#003ea5" stroke="#7aa6ff" stroke-width="3"/>
+<text x="1300" y="119" text-anchor="middle" class="n">6</text>
+<rect x="1110" y="820" width="26" height="12" rx="6" fill="#3fd27a"/>
+<text x="1146" y="832" class="lbl">STORM</text>
+<rect x="1260" y="820" width="26" height="12" rx="6" fill="#ff5d4d"/>
+<text x="1296" y="832" class="lbl">SANITARY</text>
+<rect x="1410" y="820" width="26" height="12" rx="6" fill="#4aa8ff"/>
+<text x="1446" y="832" class="lbl">WATER</text>
+</svg>

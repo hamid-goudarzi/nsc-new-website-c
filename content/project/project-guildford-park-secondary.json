@@ -107,6 +107,20 @@
       "_key": "b42e23696330"
     }
   ],
+  "cutaway": {
+    "svg": "guildford-cutaway.svg",
+    "title": "A detention tank under the new school site.",
+    "items": [
+      "Bulk and detail excavation for the tank pit and the addition.",
+      "The pit was lined, then the detention tank was built from modular chambers.",
+      "Flow control manholes meter the stored stormwater back into the city system.",
+      "Onsite and offsite storm and sanitary sewer system upgrade.",
+      "Onsite and offsite fire and domestic water upgrade.",
+      "BC Hydro and electrical upgrade.",
+      "Concrete curb and gutter, sidewalk, letdowns and driveways.",
+      "Onsite and offsite asphalt overlay and new paving."
+    ]
+  },
   "gallery": [
     {
       "_type": "image",
