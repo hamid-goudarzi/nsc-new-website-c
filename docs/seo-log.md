@@ -47,6 +47,12 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Pulled three clean frames (no titles or overlay lines) from NSC's own Kingston drone reel (NSC_Kingston_Sewer_Separation_v6_16x9.mp4), picked the sharpest frame in each moment and gave them the Nov 5 pro finish. New hero: kingston-aerial (wide fall view of the finished road); gallery: kingston-aerial-top, kingston-aerial-street; old hero mh2 moved into the gallery. 1920 px (video resolution, not upscaled).
 - Other Desktop files checked: gpss_aerial_test.jpg is a map/satellite image (not NSC's, not used); NSC_workers_preview.jpg is a 3D render (not used). Agnes, George Greenaway, Ladner and Burnaby Childcare reels are built from photos with text overlays; ask Hamid for the original photos, and confirm Burnaby Childcare (Rowan Ave, 2024) details before adding it as a project.
 
+## Nov 6, 2026 — Kingston originals from NSC OneDrive (by hand)
+- Source: Navid's shared Kingston folders (PROJECTS/2026/Kingston Sewer Separation: Photo by month, and UEL Drone Photos, 199 DJI stills from Oct 23 2026). Scanned ~1,000 thumbnails; downloaded 9 originals.
+- Kingston hero is now the full-resolution drone still DJI_..._0876 (4032 px) instead of a video frame; kingston-aerial-top/-street replaced with full-res drone stills, new kingston-aerial-corner. New ground shots: kingston-trench-crew, kingston-shoring-crew, kingston-manholes (cropped to leave out a worker without a hard hat), kingston-trench-box, kingston-finished-road. All given the Nov 5 pro finish once.
+- Skipped: paving-day shots (asphalt subcontractor crew), close-ups.
+- Ideas: Google Earth "before" view with the sewer route drawn on, with Google attribution, next to the drone "after"; photos from others (school districts, GCs, cities) only with written permission and credit; short website video cut from the Kingston Video folder footage.
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.

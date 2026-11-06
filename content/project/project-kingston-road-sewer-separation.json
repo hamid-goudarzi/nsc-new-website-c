@@ -18,7 +18,7 @@
   "heroImage": {
     "_type": "image",
     "local": "kingston-aerial",
-    "alt": "Drone view of the new road on Kingston Road after sewer separation, University Endowment Lands"
+    "alt": "Drone view of Kingston Road after sewer separation and paving, University Endowment Lands, October 2026"
   },
   "details": [
     {
@@ -109,15 +109,51 @@
   "gallery": [
     {
       "_type": "image",
-      "local": "kingston-aerial-top",
-      "alt": "Drone view looking straight down on the new paving and manhole lids on Kingston Road",
-      "_key": "k1a7e2b9c301"
+      "local": "kingston-trench-crew",
+      "alt": "NSC excavator over a shored trench as the crew lays new sewer pipe on Kingston Road",
+      "_key": "kt01"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-shoring-crew",
+      "alt": "NSC crew in hard hats placing bedding around new PVC sewer pipe inside trench shoring",
+      "_key": "kt02"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-manholes",
+      "alt": "Two new precast manholes set in the excavation with an NSC excavator behind",
+      "_key": "kt03"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-trench-box",
+      "alt": "Deep excavation with trench box, track loader and excavator on Kingston Road",
+      "_key": "kt04"
     },
     {
       "_type": "image",
       "local": "kingston-aerial-street",
-      "alt": "Drone view of the finished road, curb and new manhole lids on Kingston Road",
-      "_key": "k2b8f3cad412"
+      "alt": "Drone view straight down on the new paving at a Kingston Road intersection",
+      "_key": "kt05"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-aerial-top",
+      "alt": "Drone view of the finished road, curb and manhole lids on Kingston Road",
+      "_key": "kt06"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-aerial-corner",
+      "alt": "Drone view of new paving along Kingston Road in fall",
+      "_key": "kt07"
+    },
+    {
+      "_type": "image",
+      "local": "kingston-finished-road",
+      "alt": "Finished Kingston Road after sewer separation and paving",
+      "_key": "kt08"
     },
     {
       "_type": "image",
