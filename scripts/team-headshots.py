@@ -36,7 +36,7 @@ ADJ = {}
 FEATHER = {'navid': 7}
 TRIM = {'fred': .22}          # white-backdrop photos: cut a little tighter so no light halo remains
 ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.4, ab=.9, floor=.88, contrast=1.12, target=(160., 151., 150.), range=80, sig=14, gamma=1.12)}
+SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=1., ab=1., floor=.8, contrast=1.1, target=(174., 153., 151.), range=90, sig=16, gamma=1.12)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
