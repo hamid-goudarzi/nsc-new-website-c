@@ -63,7 +63,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <div class="menu" id="menu">{(s.nav || []).map(n => <a href={n.link.replace(/^index\.html(?=#)/, '')}>{n.label}</a>)}<a href="contact.html">Contact</a></div>
 
 <header class="hero" id="top">
-  <img class="poster" src="media/film-poster-1280.webp?v=20261104" srcset="media/film-poster-640.webp?v=20261104 640w, media/film-poster-1280.webp?v=20261104 1280w, media/film-poster.webp?v=20261104 2560w" sizes="100vw" alt="" width="2560" height="1440" fetchpriority="high">
+  <img class="poster" src="media/film-poster-1280.webp?v=20261104" srcset="media/film-poster-640.webp?v=20261104 640w, media/film-poster-1280.webp?v=20261104 1280w, media/film-poster.webp?v=20261104 2560w" sizes="100vw" alt="NSC crew in hard hats beside new precast concrete manholes on a sewer job" width="2560" height="1440" fetchpriority="high">
   <video id="heroVid" muted playsinline loop autoplay preload="auto" aria-hidden="true"></video>
   <div class="wrap hero-in">
     <h1 class="hero-h"><span class="chip"><span class="d"></span>{h.heroChip}</span> <span class="hero-t split" data-split>{h.heroTitle}<br><span class="grad">{h.heroHighlight}</span></span></h1>
@@ -123,7 +123,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
     <p class="mono kick">Selected projects</p>
     <h2 class="h2 split" data-split>{h.projectsTitle}</h2>
     <div class="stack" id="stack">{(h.featured || []).filter(f => f.project).map((f, k) => { const p = f.project; return (
-      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
+      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={f.image?.alt || p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
     <div class="allhead"><p class="mono kick">All projects · tap any to open</p><a class="btn btn-blue" href="projects/index.html">Browse all projects <span class="ar">→</span></a></div>
     <div class="all" id="all" style="margin-top:16px">{projects.map(p => <a href={url(p)}>{p.live && <i>●</i>}{p.name}<b>↗</b></a>)}</div>
   </div>
@@ -138,7 +138,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 </section>
 <section class="field" aria-label="Photos from our job sites">
   <div class="wrap field-head"><div><p class="mono kick">From the field</p><h2 class="h2 split" data-split>{h.fieldTitle}</h2></div><p class="rv">{h.fieldText}</p></div>
-  <div class="field-row" id="fr1">{(h.fieldPhotos || []).map(f => <figure><a href={f.project ? url(f.project) : 'projects/index.html'} aria-label={`${f.caption}: open project`}><Img image={f.image} sizes="(max-width:700px) 60vw, 420px" alt={`NSC job site: ${f.caption}`} /><figcaption>{f.caption}</figcaption></a></figure>)}</div>
+  <div class="field-row" id="fr1">{(h.fieldPhotos || []).map(f => <figure><a href={f.project ? url(f.project) : 'projects/index.html'} aria-label={`${f.caption}: open project`}><Img image={f.image} sizes="(max-width:700px) 60vw, 420px" alt={f.image?.alt || `NSC job site: ${f.caption}`} /><figcaption>{f.caption}</figcaption></a></figure>)}</div>
 </section>
 <section class="sec story" id="story">
   <div class="wrap st-g">

@@ -213,7 +213,7 @@
       "image": {
         "_type": "image",
         "local": "mh2",
-        "alt": ""
+        "alt": "CAT excavator over two new precast manholes on Kingston Road, University Endowment Lands"
       },
       "caption": "Twin manholes · UEL",
       "_key": "5b08932dc2eb"
@@ -227,7 +227,7 @@
       "image": {
         "_type": "image",
         "local": "tank2",
-        "alt": ""
+        "alt": "NSC crew placing detention tank modules with CAT excavators behind, Guildford Park Secondary, Surrey"
       },
       "caption": "Detention tank · Surrey",
       "_key": "b3d411891483"
@@ -241,7 +241,7 @@
       "image": {
         "_type": "image",
         "local": "qe-exc",
-        "alt": ""
+        "alt": "NSC crew and Kobelco excavator on road works for Queen Elizabeth Elementary, New Westminster"
       },
       "caption": "Road works · New Westminster",
       "_key": "5866cdf2e3c7"
@@ -255,7 +255,7 @@
       "image": {
         "_type": "image",
         "local": "fh12-piping",
-        "alt": ""
+        "alt": "Storm and sanitary piping being installed beside Fire Hall No. 12, Kitsilano, Vancouver"
       },
       "caption": "Storm and sanitary · Kitsilano",
       "_key": "9371cf07254b"
@@ -269,7 +269,7 @@
       "image": {
         "_type": "image",
         "local": "nsurrey-excavator",
-        "alt": ""
+        "alt": "Excavator opening a service trench as crew work in the cut, North Surrey"
       },
       "caption": "Service trench · Surrey",
       "_key": "8989ad59be8c"
@@ -284,7 +284,7 @@
       "image": {
         "_type": "image",
         "local": "mhcrew",
-        "alt": "Setting a manhole · UEL"
+        "alt": "NSC crew setting a precast manhole on Kingston Road, University Endowment Lands"
       },
       "caption": "Setting a manhole · UEL",
       "project": {
@@ -297,7 +297,7 @@
       "image": {
         "_type": "image",
         "local": "mains",
-        "alt": "Water mains · Guildford"
+        "alt": "New fire and domestic water mains with gate valves at Guildford Park Secondary, Surrey"
       },
       "caption": "Water mains · Guildford",
       "project": {
@@ -310,7 +310,7 @@
       "image": {
         "_type": "image",
         "local": "pipes",
-        "alt": "Sewer pipe · UEL"
+        "alt": "New PVC sewer pipe in the trench on Kingston Road, University Endowment Lands"
       },
       "caption": "Sewer pipe · UEL",
       "project": {
@@ -323,7 +323,7 @@
       "image": {
         "_type": "image",
         "local": "tank3",
-        "alt": "Detention tank · Guildford"
+        "alt": "Stormwater detention tank modules being stacked at Guildford Park Secondary, Surrey"
       },
       "caption": "Detention tank · Guildford",
       "project": {
@@ -336,7 +336,7 @@
       "image": {
         "_type": "image",
         "local": "cpipe",
-        "alt": "Storm pipe · UEL"
+        "alt": "Concrete storm pipe staged along Kingston Road, University Endowment Lands"
       },
       "caption": "Storm pipe · UEL",
       "project": {
@@ -349,7 +349,7 @@
       "image": {
         "_type": "image",
         "local": "deep",
-        "alt": "Deep excavation · Guildford"
+        "alt": "Deep utility excavation with ladder access at Guildford Park Secondary, Surrey"
       },
       "caption": "Deep excavation · Guildford",
       "project": {
@@ -362,7 +362,7 @@
       "image": {
         "_type": "image",
         "local": "mhpit",
-        "alt": "Manhole crew · UEL"
+        "alt": "NSC crew working in a manhole excavation on Kingston Road, University Endowment Lands"
       },
       "caption": "Manhole crew · UEL",
       "project": {
@@ -375,7 +375,7 @@
       "image": {
         "_type": "image",
         "local": "gwide2",
-        "alt": "Excavation · Guildford"
+        "alt": "Excavation for the school addition at Guildford Park Secondary, Surrey"
       },
       "caption": "Excavation · Guildford",
       "project": {
@@ -465,5 +465,5 @@
   "contactTitle": "Let’s break",
   "contactHighlight": "ground.",
   "contactText": "Send drawings, a tender package or a prequalification request. An estimator will get back to you.",
-  "seoTitle": "Heavy Civil Construction, Vancouver BC | Neil Smith Construction"
+  "seoTitle": "Neil Smith Construction | Heavy Civil Contractor, Vancouver BC"
 }

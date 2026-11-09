@@ -89,3 +89,10 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Careers page (~200 words): add what roles NSC hires for and how to apply, from existing content only.
 - Add JobPosting descriptions once Hamid supplies them.
 - Schools page already lists projects by district; a separate district page is probably not needed unless searches show demand.
+
+## Nov 9, 2026 — home page SEO and photo text (by hand)
+- Home title now leads with the company name ("Neil Smith Construction | Heavy Civil Contractor, Vancouver BC", 62 chars), because a search for the company name did not find the new site. It no longer copies the heavy-civil-contractor page title.
+- Site description (home meta, Organization JSON-LD, llms.txt) now starts with "Neil Smith Construction is a COR certified heavy civil contractor in Metro Vancouver…" (150 chars).
+- Home photo alt text: the five Selected projects photos and eight From the field photos now describe what is in the photo and where (taken from the project records), instead of only the project name or "NSC job site: caption". The template uses the image's own alt and falls back to the old text. The hero poster has alt text now.
+- Photo check: all home photos are 1920–2560 px and sharp; no swaps needed. Softest: agnes-excavator-loading (2176 px original), mh2 and tank2.
+- Open question for Hamid: Kingston Road still shows "In progress" although the drone stills show paving done in October 2026.
