@@ -33,7 +33,9 @@ def background():
 
 # Per-person tone requests (lighter / less warm skin where asked)
 ADJ = {}
-FEATHER = {'navid': 7}   # soft hair edge where the original background was as dark as the hair
+FEATHER = {'navid': 7}
+ZOOM = {'justin': .84}
+SKINMATCH = {'hamid': dict(L=.6, ab=1.), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
@@ -48,7 +50,7 @@ def lab(x): return cv2.cvtColor(np.clip(x, 0, 255).astype(np.uint8), cv2.COLOR_R
 def unlab(x): return cv2.cvtColor(np.clip(x, 0, 255).astype(np.uint8), cv2.COLOR_LAB2RGB).astype(np.float32)
 def custom(name, rgb, a, y0, x0, chin):
     """Requested per-person edits, in output coordinates (eyes at EYE_Y*H, centred)."""
-    if name != 'hamid': return rgb
+    if name not in SKINMATCH: return rgb
     L = lab(rgb); h, w = a.shape
     ys = np.arange(h)[:, None] + y0; xs = np.arange(w)[None, :] + x0
     ey = EYE_Y * H; ed = EYE_D * H
@@ -60,8 +62,14 @@ def custom(name, rgb, a, y0, x0, chin):
     skin = np.exp(-d2 / (2 * 8. ** 2)) * (L[..., 0] > 60) * a
     skin = cv2.GaussianBlur(skin.astype(np.float32), (0, 0), 2)
     shift = SKIN_TARGET - ref
-    shift[0] *= .6                                        # move brightness part of the way, colour fully
-    L2 = L + skin[..., None] * shift
+    st = SKINMATCH[name]
+    skin = skin * np.clip(1 - np.abs(L[..., 0] - ref[0]) / 45, 0, 1)    # only mid-tone skin, never eye whites or lens glare
+    gain = float(np.clip(1 + st['L'] * (SKIN_TARGET[0] / ref[0] - 1), .9, 1.15))
+    L2 = L.copy()
+    L2[..., 0] = L[..., 0] * (1 + skin * (gain - 1))
+    L2[..., 1:] = L[..., 1:] + skin[..., None] * (shift[1:] * st['ab'])
+    if st.get('lift'):                                    # whole-subject exposure lift (clothes too), highlights protected
+        x = np.clip(L2[..., 0] / 255, 0, 1); L2[..., 0] = (1 - (1 - x) ** st["lift"]) * 255
     return unlab(L2)
 
 # Hand-traced shirt + collar outline on Hamid's original photo (source pixels); skin inside it is left alone by colour
@@ -160,7 +168,7 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
     rgb[..., 1] = np.where(band, g2, g).astype(np.uint8)
     fx, fy, fw, fh, rex, rey, lex, ley = fb
     eye = np.hypot(lex - rex, ley - rey); ecx, ecy = (rex + lex) / 2, (rey + ley) / 2
-    s = (EYE_D * H) / eye
+    s = (EYE_D * H) / eye * ZOOM.get(name, 1.)
     # extend the bottom edge (clothes continue down) so no photo ends in a hard line; the floor fade hides it
     pad = int(rgb.shape[0] * .6)
     rgb = cv2.copyMakeBorder(rgb, 0, pad, 0, 0, cv2.BORDER_REPLICATE)
