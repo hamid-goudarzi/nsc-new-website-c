@@ -96,3 +96,8 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Home photo alt text: the five Selected projects photos and eight From the field photos now describe what is in the photo and where (taken from the project records), instead of only the project name or "NSC job site: caption". The template uses the image's own alt and falls back to the old text. The hero poster has alt text now.
 - Photo check: all home photos are 1920–2560 px and sharp; no swaps needed. Softest: agnes-excavator-loading (2176 px original), mh2 and tank2.
 - Open question for Hamid: Kingston Road still shows "In progress" although the drone stills show paving done in October 2026.
+
+## Nov 9, 2026 — municipal page and "heavy civil construction" wording (by hand, Hamid's request)
+- Umit Sokel hidden from the team for now (person record kept with hidden: true; untick in admin to bring back).
+- New specialty page /municipal-contractor ("Municipal Infrastructure Contractor, Vancouver BC | NSC"): municipal scope and FAQ built only from project records: Kingston Road (UEL, prime; 12 manholes, 7 catch basins, 15 properties), North Surrey (City of Surrey, prime, 2020), Fire Hall No. 12, Manitoba Yard and Portland Loo (City of Vancouver, with Scott Special Projects / Scott Construction), and Queen Elizabeth forcemain reroute (New Westminster). Hero: Kingston drone still. Linked as the first specialty card on Services and Heavy Civil Contractor; it appears in the sitemap, llms.txt and the related-specialty links on those project pages automatically.
+- Home hero text now starts "Heavy civil construction for Metro Vancouver and the Fraser Valley…" and says "municipalities" instead of "cities".

@@ -83,6 +83,17 @@
       "intro": "Each specialty page lists the scope we deliver and the real projects behind it.",
       "items": [
         {
+          "_key": "965eb0a5b1c5",
+          "title": "Municipal Infrastructure Contractor",
+          "text": "Sewer separation, utility renewal, road restoration and civil works at city facilities for municipalities across Metro Vancouver.",
+          "link": "municipal-contractor.html",
+          "image": {
+            "_type": "image",
+            "local": "cpipe",
+            "alt": "Concrete storm pipe staged along Kingston Road"
+          }
+        },
+        {
           "_key": "2142f607bb2e",
           "title": "Sewer Contractor",
           "text": "Sanitary and storm sewer installation, upgrades and sewer separation for municipalities and school districts across Metro Vancouver.",

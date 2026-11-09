@@ -1,0 +1,166 @@
+{
+  "_id": "page-municipal-contractor",
+  "_type": "page",
+  "title": "Municipal Infrastructure Contractor",
+  "slug": {
+    "_type": "slug",
+    "current": "municipal-contractor"
+  },
+  "navKey": "services",
+  "order": 19,
+  "showInFooter": false,
+  "seoTitle": "Municipal Infrastructure Contractor, Vancouver BC | NSC",
+  "description": "Heavy civil construction for cities in Metro Vancouver: sewer separation, utility renewal, road restoration and civil works at public facilities.",
+  "hero": {
+    "kicker": "Municipal and public works",
+    "title": "Municipal contractor.",
+    "highlight": "Heavy civil construction for cities.",
+    "subtitle": "Neil Smith Construction builds underground utilities, roadworks and site works for the City of Vancouver, the City of Surrey and the University Endowment Lands, as prime contractor and as civil subcontractor.",
+    "image": {
+      "_type": "image",
+      "local": "kingston-aerial",
+      "alt": "Drone view of Kingston Road after sewer separation and paving, University Endowment Lands, October 2026"
+    }
+  },
+  "blocks": [
+    {
+      "_type": "richText",
+      "_key": "5e83ea19586e",
+      "kicker": "Overview",
+      "title": "Public works on live streets.",
+      "body": "Neil Smith Construction is a heavy civil contractor based in Richmond, BC, with an equipment yard in Langley. Our municipal work is underground utilities, road restoration and civil works at public facilities, built on streets and sites that stay open to the people who use them.\n\nFor the University Endowment Lands we hold the prime contract to separate the combined sewer on Western Crescent and Kingston Road: new sanitary and storm mains, 12 new precast manholes, 7 new catch basins and 15 properties reconnected, with every property kept connected through the job. For the City of Surrey we completed the North Surrey utility improvements in 2020 as prime contractor. For the City of Vancouver we have delivered the civil scope at Fire Hall No. 12 in Kitsilano, the Manitoba Yard fuel station and a Portland Loo public washroom, working with Scott Special Projects and Scott Construction. At Queen Elizabeth Elementary in New Westminster we rerouted a city sanitary forcemain and built new curb, sidewalk and road works for the city."
+    },
+    {
+      "_type": "numberedList",
+      "_key": "2a98bc7e3be9",
+      "kicker": "Scope",
+      "title": "What we build for municipalities.",
+      "columns": "3",
+      "tight": true,
+      "items": [
+        {
+          "_key": "59fba8ec7ef9",
+          "title": "Sewer separation and renewal",
+          "text": "Combined sewers replaced with separate sanitary and storm mains, as on Kingston Road and Western Crescent."
+        },
+        {
+          "_key": "e4eef9c9eb0e",
+          "title": "Watermains and services",
+          "text": "Water service renewals, fire hydrants and watermain tie-ins."
+        },
+        {
+          "_key": "066cb5e7b56c",
+          "title": "Manholes and catch basins",
+          "text": "Precast manholes, catch basins, storm leads and abandonment of old manholes."
+        },
+        {
+          "_key": "eb860050b6b0",
+          "title": "Forcemain realignment",
+          "text": "Rerouting a city sanitary forcemain at Queen Elizabeth Elementary in New Westminster."
+        },
+        {
+          "_key": "885efdd92b4f",
+          "title": "Road restoration",
+          "text": "Concrete curb, gutter, driveways and sidewalks, road restoration and paving."
+        },
+        {
+          "_key": "6afb2f2b7f05",
+          "title": "City facilities",
+          "text": "Excavation, site works and servicing at fire halls, works yards and public washrooms."
+        },
+        {
+          "_key": "60729e3db71f",
+          "title": "Testing and close-out",
+          "text": "CCTV inspection, pressure testing, QA/QC records and as-builts."
+        },
+        {
+          "_key": "66c852151aff",
+          "title": "Traffic and neighbours",
+          "text": "Traffic management plans, local bylaws and Good Neighbour programs in place before we mobilize."
+        },
+        {
+          "_key": "6a466167648d",
+          "title": "Safety",
+          "text": "COR certified, with a Construction Safety Officer and a toolbox meeting at the start of every shift."
+        }
+      ]
+    },
+    {
+      "_type": "projectsGrid",
+      "_key": "049ce1dd92cb",
+      "kicker": "Projects",
+      "title": "Municipal projects.",
+      "projects": [
+        {
+          "_type": "reference",
+          "_ref": "project-kingston-road-sewer-separation",
+          "_key": "39b55a8992e8"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-north-surrey-utility-improvements",
+          "_key": "fa0f4a494f82"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-fire-hall-12-kitsilano",
+          "_key": "ec86e79c20a4"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-manitoba-yard-fuel-station",
+          "_key": "4137e256e64f"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-portland-loos",
+          "_key": "d0ff1b76bda8"
+        },
+        {
+          "_type": "reference",
+          "_ref": "project-queen-elizabeth-elementary",
+          "_key": "1f9ec629b901"
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "500d4b00f00e",
+      "kicker": "Questions",
+      "title": "Common questions.",
+      "items": [
+        {
+          "_key": "2df03b433047",
+          "q": "Does Neil Smith Construction work for municipalities?",
+          "a": "Yes. Our clients include the City of Vancouver, the City of Surrey and the University Endowment Lands. See [Kingston Road Sewer Separation](projects/kingston-road-sewer-separation.html) and [North Surrey Utility Improvements](projects/north-surrey-utility-improvements.html)."
+        },
+        {
+          "_key": "c4beedfb3cad",
+          "q": "Do you bid as prime contractor on municipal work?",
+          "a": "Yes. We hold the prime contract on the Kingston Road sewer separation for the University Endowment Lands, and were prime contractor on the North Surrey utility improvements for the City of Surrey. We also work as civil subcontractor to general contractors on city facilities."
+        },
+        {
+          "_key": "7ba5cd484e3b",
+          "q": "Are you COR certified?",
+          "a": "Yes. NSC holds a Certificate of Recognition from the BC Construction Safety Alliance. See [Safety](safety.html)."
+        },
+        {
+          "_key": "bec2b332061c",
+          "q": "Where do you work?",
+          "a": "Across Metro Vancouver and the Fraser Valley. See [Areas we serve](areas/index.html)."
+        },
+        {
+          "_key": "339ca631280a",
+          "q": "How do we invite NSC to a tender?",
+          "a": "Send the tender package or prequalification request to info@nscltd.ca or call 604-644-5884. See [Tenders and bids](tenders.html)."
+        }
+      ]
+    },
+    {
+      "_type": "cta",
+      "_key": "914f0a6912a1",
+      "title": "Tendering municipal work?",
+      "text": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day."
+    }
+  ]
+}
