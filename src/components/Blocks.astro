@@ -42,7 +42,7 @@ const pickProjects = b => (b.projects?.length ? b.projects : projects.filter(p =
   if (t === 'people') return (
     <section {...sec(b)}><div class="wrap"><div class="rg-h"><div>{b.kicker && <p class="mono kick">{b.kicker}</p>}<h2 class="h2">{b.title}</h2></div>{b.intro && <p class="rv">{b.intro}</p>}</div>
       <div class="people lead3">{leaders.map(p => <article class="person lead rv">{p.photo ? <Img image={p.photo} pre={pre} class="ini ph" sizes="96px" alt="" /> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.bio}</p></article>)}</div>
-      {team.length > 0 && <h3 class="mono" style="margin:46px 0 16px;color:var(--muted)">{b.teamTitle || 'Project team'}</h3>}
+      {team.length > 0 && <h3 class="mono people-sub">{b.teamTitle || 'Project team'}</h3>}
       {team.length > 0 && <div class="people">{team.map(p => <article class="person rv">{p.photo ? <Img image={p.photo} pre={pre} class="ini ph" sizes="96px" alt="" /> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.bio}</p></article>)}</div>}
     </div></section>);
   if (t === 'region') return (
