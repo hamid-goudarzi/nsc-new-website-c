@@ -439,3 +439,5 @@ img{height:auto}
 .cut-list li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
 .cut-list b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 2px rgba(122,166,255,.55) inset;font-family:var(--mono);font-size:15px}
 .cut-list span{font-size:15px;line-height:1.5;color:#d7deea}
+/* In hero backgrounds the photo sits in normal flow, so the shine must stack above it. */
+.bg .logo-shine{z-index:1}
