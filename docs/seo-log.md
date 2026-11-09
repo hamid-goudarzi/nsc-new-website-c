@@ -115,3 +115,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Third pass (Hamid's review): Hamid's skin matched to Moe's tone (skin-only colour match), his navy jacket recoloured black and light-blue shirt white inside a hand-traced shirt outline (folds kept, pin kept); Navid made more natural (Real-ESRGAN blended with his own photo plus fine skin texture); every photo's bottom edge extended so none ends in a hard line.
 - Fourth pass: Justin framed further back; Justin's and Djoomart's exposure and skin tone evened out to match the team; the tablet rule that stretched an odd last card (Navid, Djoomart) to full width removed, so every card is the same size on all screens.
 - Hamid's portrait (his request): brighter, fresher skin tone with lifted shadows on jaw and temples, olive cast reduced, softer hair edge.
+- Hamid: pale version dialled back to a natural, warm tone (only slightly brighter than his original), shadows gently lifted.

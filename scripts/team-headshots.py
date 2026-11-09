@@ -35,7 +35,7 @@ def background():
 ADJ = {}
 FEATHER = {'navid': 7, 'hamid': 3}
 ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.5, ab=1., target=(182., 148., 137.), cap=1.1, shadows=1., range=75, sig=11), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
+SKINMATCH = {'hamid': dict(L=.2, ab=.75, target=(176., 150., 143.), cap=1.04, shadows=.45, range=70, sig=11), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
