@@ -34,8 +34,9 @@ def background():
 # Per-person tone requests (lighter / less warm skin where asked)
 ADJ = {}
 FEATHER = {'navid': 7}
+TRIM = {'fred': .22}          # white-backdrop photos: cut a little tighter so no light halo remains
 ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.6, ab=.45, floor=.85, contrast=1.1, target=(165., 150., 148.), range=80, sig=14, grain=4.5)}
+SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.6, ab=.55, floor=.85, contrast=1.15, target=(162., 150., 148.), range=80, sig=14, grain=2.4, detail=1, gamma=1.25)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
@@ -72,6 +73,14 @@ def custom(name, rgb, a, y0, x0, chin):
     if st.get('contrast'):                                # washed-out photo: restore contrast on the whole subject
         mu = (L2[..., 0] * a).sum() / (a.sum() + 1e-3)
         L2[..., 0] = L2[..., 0] * (1 - a) + (mu + (L2[..., 0] - mu) * st['contrast']) * a
+    if st.get('gamma'):                                   # overexposed: bring midtones down so features read
+        x = np.clip(L2[..., 0] / 255, 0, 1); L2[..., 0] = L2[..., 0] * (1 - a) + (x ** st['gamma'] * 255) * a
+    if st.get('detail'):                                  # local contrast on the face: eyes, brows, mouth come back
+        Lc = np.clip(L2[..., 0], 0, 255).astype(np.uint8)
+        cl = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(8, 8)).apply(Lc).astype(np.float32)
+        fz = cv2.GaussianBlur(((ys > ey - 1.2 * ed) & (ys < ey + 2.2 * ed)).astype(np.float32) * a, (0, 0), 8)
+        L2[..., 0] = L2[..., 0] * (1 - .55 * fz) + cl * .55 * fz
+        bl = cv2.GaussianBlur(L2[..., 0], (0, 0), 2.5); L2[..., 0] += (L2[..., 0] - bl) * .6 * fz
     if st.get('grain'):                                   # fine photographic texture on skin (very small source photos look waxy)
         gn = cv2.GaussianBlur(np.random.default_rng(31).normal(0, 1, a.shape).astype(np.float32), (0, 0), .9)
         L2[..., 0] += gn * st['grain'] * cv2.GaussianBlur(skin, (0, 0), 3)
@@ -145,7 +154,9 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
         pass
     cut = remove(im, session=sess, post_process_mask=True)  # RGBA
     rgb = np.array(cut)[..., :3]; a = np.array(cut)[..., 3].astype(np.float32) / 255
-    a = np.clip((a - .03) / .97, 0, 1)                   # trim the faintest halo only
+    tr = TRIM.get(name, .03)
+    a = np.clip((a - tr) / (1 - tr), 0, 1)              # trim the faintest halo
+    if name in TRIM: a = cv2.erode(a, np.ones((5, 5), np.uint8))
     fb = face_box(np.array(im))
     if fb is None: print(name, 'NO FACE'); continue
     rgb = clothes_src(name, rgb, a)
