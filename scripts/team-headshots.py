@@ -33,9 +33,9 @@ def background():
 
 # Per-person tone requests (lighter / less warm skin where asked)
 ADJ = {}
-FEATHER = {'navid': 7, 'hamid': 3}
+FEATHER = {'navid': 7}
 ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.2, ab=.75, target=(176., 150., 143.), cap=1.04, shadows=.45, range=70, sig=11), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
+SKINMATCH = {'hamid': dict(L=.2, ab=.75, target=(176., 150., 143.), cap=1.04, shadows=.45, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
@@ -73,6 +73,19 @@ def custom(name, rgb, a, y0, x0, chin):
         base = cv2.GaussianBlur(L2[..., 0], (0, 0), 12)
         lift = np.clip((ref[0] * gain - base) / 60, 0, 1) * st['shadows'] * 40
         L2[..., 0] += skin * lift
+    if st.get('hair'):                                    # crisp, rich, slightly glossy hair (dark pixels above the brows)
+        hair = ((ys < ey - .25 * ed) & (L[..., 0] < 95)).astype(np.float32) * a
+        hair = cv2.GaussianBlur(hair, (0, 0), 2)
+        Lh = L2[..., 0]
+        detail = Lh - cv2.GaussianBlur(Lh, (0, 0), 2.2)
+        top = ys.min() if hasattr(ys, 'min') else 0
+        hy = np.clip(1 - np.abs(ys - (ey - 1.55 * ed)) / (.9 * ed), 0, 1)          # band across the crown
+        hx = np.clip(1 - np.abs(xs - (W / 2 - .25 * ed)) / (1.6 * ed), 0, 1)
+        sheen = (hy * hx) ** 1.5 * np.clip(detail / 6, 0, 1)                         # only on strand highlights
+        Lh2 = Lh * .9 + detail * 1.1 + sheen * 26
+        L2[..., 0] = Lh * (1 - hair) + Lh2 * hair
+        L2[..., 1] = L2[..., 1] * (1 - hair) + (128 + (L2[..., 1] - 128) * .6) * hair   # neutral black, no brown cast
+        L2[..., 2] = L2[..., 2] * (1 - hair) + (126 + (L2[..., 2] - 128) * .5) * hair   # a touch cool
     if st.get('lift'):                                    # whole-subject exposure lift (clothes too), highlights protected
         x = np.clip(L2[..., 0] / 255, 0, 1); L2[..., 0] = (1 - (1 - x) ** st["lift"]) * 255
     return unlab(L2)
