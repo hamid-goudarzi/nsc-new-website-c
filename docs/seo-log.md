@@ -78,6 +78,10 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Brighouse (brighouse-cutaway.svg): storm and sanitary upgrade, detention tank, flow control manhole, precast valve chamber with double check valve assembly, PVC water service and new hydrant.
 - Each has a numbered list built only from that project's record and photo captions; all labelled "Illustration, not to scale".
 
+## Nov 9, 2026 — "heavy civil construction" (by hand)
+- Google Business Profile: description now opens "NSC is a heavy civil construction company…"; services added under Construction company: Heavy civil construction, Civil construction, Heavy civil contractor, Road construction. Primary category stayed Construction company (Google kept it); Excavating contractor, Civil engineering company, Road construction company are additional.
+- Website: heavy-civil-contractor page title/description lead with "Heavy civil construction"; new FAQ "Who does heavy civil construction in Metro Vancouver?"; company summary (llms.txt, schema) says "heavy civil construction company".
+
 ## Next ideas
 - For big wide "hero" views of machinery, book a drone or pro photographer day on the largest active sites (Guildford Park, Kingston Road, Queen Elizabeth), or brief crews to shoot wide landscape shots from high ground.
 - Ask Hamid which projects nsc-cat-school and nsc-fleet belong to, then add them to those project galleries with project-specific alt text.
