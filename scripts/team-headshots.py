@@ -12,7 +12,7 @@ os.makedirs(OUT, exist_ok=True)
 W, H = 1024, 1280                      # 4:5
 EYE_D = 0.13                          # distance between the eyes, fraction of frame height (same head size for all)
 EYE_Y = 0.40                           # eye line height from top
-sess = new_session(sys.argv[1] if len(sys.argv) > 1 else 'isnet-general-use')
+sess = new_session(sys.argv[1] if len(sys.argv) > 1 else 'birefnet-portrait')
 YUNET = os.path.join(os.path.dirname(__file__), 'yunet.onnx')
 
 def background():
@@ -30,6 +30,18 @@ def background():
     bg = bg * (1 - .35 * np.clip(v, 0, 1)[..., None] ** 2)
     noise = np.random.default_rng(7).normal(0, 1.2, bg.shape)  # fine grain, avoids banding
     return np.clip(bg + noise, 0, 255).astype(np.uint8)
+
+# Per-person tone requests (lighter / less warm skin where asked)
+ADJ = {'hamid': dict(exp=1.17, warm=-.05, sat=.80)}
+FEATHER = {'navid': 7}   # soft hair edge where the original background was as dark as the hair
+def adjust(name, rgb):
+    o = ADJ.get(name)
+    if not o: return rgb
+    f = rgb.astype(np.float32) / 255
+    f = 1 - (1 - f) ** o['exp']                         # lift mids/shadows, keep highlights
+    f[..., 0] *= 1 + o['warm']; f[..., 2] *= 1 - o['warm']
+    g = f.mean(2, keepdims=True); f = g + (f - g) * o['sat']
+    return np.clip(f * 255, 0, 255).astype(np.uint8)
 
 def grade(rgb):
     """Gentle, identical grade: gray-world white balance (half strength), slight contrast curve, mild warmth."""
@@ -59,10 +71,38 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
         pass
     cut = remove(im, session=sess, post_process_mask=True)  # RGBA
     rgb = np.array(cut)[..., :3]; a = np.array(cut)[..., 3].astype(np.float32) / 255
-    a = np.clip((a - .08) / .9, 0, 1)                    # trim faint halo
-    edge = ((a > 0) & (a < .9))[..., None]
-    gray = rgb.astype(np.float32).mean(2, keepdims=True)
-    rgb = np.where(edge, (gray * .75 + rgb * .25) * .8, rgb).astype(np.uint8)
+    a = np.clip((a - .03) / .97, 0, 1)                   # trim the faintest halo only
+    fb = face_box(np.array(im))
+    if fb is None: print(name, 'NO FACE'); continue
+    if name in FEATHER:                                  # smooth a choppy hair contour, only on dark hair above the eyes
+        fz = FEATHER[name]
+        soft = cv2.GaussianBlur(a, (0, 0), fz)
+        core = cv2.erode((a > .5).astype(np.uint8), np.ones((fz * 2 + 1,) * 2, np.uint8)).astype(np.float32)
+        fa = np.maximum(core, np.clip((soft - .15) / .7, 0, 1))
+        lum = cv2.GaussianBlur(np.asarray(im.convert('L'), np.float32), (0, 0), 3)
+        hair = (lum < 95).astype(np.float32) * (np.arange(a.shape[0])[:, None] < fb[5]).astype(np.float32)
+        hair = cv2.GaussianBlur(hair, (0, 0), fz)
+        a = a * (1 - hair) + fa * hair
+    # body below the chin is solid: fill between the outer shoulder edges (fixes shirts that matched the wall)
+    chin = int(fb[1] + fb[3] * 1.1)
+    if chin < a.shape[0] - 2:
+        m = (a[chin:] > .5)
+        L = np.where(m.any(1), m.argmax(1), a.shape[1]).astype(np.float32)
+        R = np.where(m.any(1), a.shape[1] - 1 - m[:, ::-1].argmax(1), -1).astype(np.float32)
+        L = np.minimum.accumulate(L); R = np.maximum.accumulate(R)      # shoulders only widen going down
+        xs = np.arange(a.shape[1])[None, :]
+        body = ((xs >= L[:, None]) & (xs <= R[:, None])).astype(np.float32)
+        full = np.zeros_like(a); full[chin:] = body
+        full = cv2.GaussianBlur(full, (0, 0), 1.5)
+        ramp = np.clip((np.arange(a.shape[0]) - chin) / (fb[3] * .5), 0, 1)[:, None]   # blend in below the chin
+        a = np.maximum(a, full * ramp)
+    # edge colour clean-up: semi-transparent pixels carry the old background colour.
+    # Replace their colour with the nearby solid-subject colour (alpha-weighted blur), so hair edges keep hair colour.
+    w = a ** 2
+    sig = max(2., min(im.size) * .006)
+    fg = cv2.GaussianBlur(rgb.astype(np.float32) * w[..., None], (0, 0), sig) / (cv2.GaussianBlur(w, (0, 0), sig)[..., None] + 1e-4)
+    mix = np.clip((.95 - a) / .6, 0, 1)[..., None]       # 0 inside, 1 at the faint edge
+    rgb = (rgb * (1 - mix) + fg * mix).clip(0, 255).astype(np.uint8)
     # green spill from park backgrounds: in a band along the subject edge, green may not exceed red/blue
     k = max(3, int(min(im.size) * .03)) | 1
     band = (cv2.dilate((a < .5).astype(np.uint8), np.ones((k, k), np.uint8)) > 0) & (a > 0)
@@ -71,17 +111,15 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
     k2 = max(5, int(min(im.size) * .07)) | 1
     wide = (cv2.dilate((a < .5).astype(np.uint8), np.ones((k2, k2), np.uint8)) > 0) & (a > 0)
     greenness = g - (r + b) / 2
-    a = np.where(wide, a * np.clip(1 - (greenness - 4) / 18, 0, 1), a).astype(np.float32)
+    a = np.where(wide, a * np.clip(1 - (greenness - 14) / 16, 0, 1), a).astype(np.float32)
     a = cv2.GaussianBlur(a, (0, 0), .8)
     g2 = np.minimum(g, np.maximum(r, b))
     rgb[..., 1] = np.where(band, g2, g).astype(np.uint8)
-    fb = face_box(np.array(im))
-    if fb is None: print(name, 'NO FACE'); continue
     fx, fy, fw, fh, rex, rey, lex, ley = fb
     eye = np.hypot(lex - rex, ley - rey); ecx, ecy = (rex + lex) / 2, (rey + ley) / 2
     s = (EYE_D * H) / eye
     nw, nh = int(im.width * s), int(im.height * s)
-    rgb_s = cv2.resize(grade(rgb), (nw, nh), interpolation=cv2.INTER_LANCZOS4 if s > 1 else cv2.INTER_AREA)
+    rgb_s = cv2.resize(adjust(name, grade(rgb)), (nw, nh), interpolation=cv2.INTER_LANCZOS4 if s > 1 else cv2.INTER_AREA)
     a_s = cv2.resize(a, (nw, nh), interpolation=cv2.INTER_LINEAR)
     if s > 1.3:                                            # upscaled sources: light unsharp to recover edges
         bl = cv2.GaussianBlur(rgb_s, (0, 0), 1.2 * s / 2)

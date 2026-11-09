@@ -458,3 +458,8 @@ img{height:auto}
 .person.has-ph .pbody{position:relative;padding:0 26px 26px;margin-top:-56px}
 .person.has-ph h3,.person.lead.has-ph h3{margin-top:0}
 @media (prefers-reduced-motion:reduce){.person.has-ph .pph img{transition:none}.person.has-ph:hover .pph img{transform:none}}
+
+/* Team cards: every card the same size (equal rows, same title size, same text area) */
+.people:has(.has-ph){grid-auto-rows:1fr}
+.person.has-ph .pbody{flex:1;min-height:13.5em}
+.person.has-ph h3,.person.lead.has-ph h3{font-size:1.5rem}
