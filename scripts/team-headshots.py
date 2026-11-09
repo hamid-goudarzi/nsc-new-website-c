@@ -33,9 +33,9 @@ def background():
 
 # Per-person tone requests (lighter / less warm skin where asked)
 ADJ = {}
-FEATHER = {'navid': 7}
+FEATHER = {'navid': 7, 'hamid': 3}
 ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.6, ab=1.), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
+SKINMATCH = {'hamid': dict(L=.5, ab=1., target=(182., 148., 137.), cap=1.1, shadows=1., range=75, sig=11), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
@@ -59,15 +59,20 @@ def custom(name, rgb, a, y0, x0, chin):
     ref = L[cheeks].mean(0)
     # skin mask: colour close to the cheeks, above the collar line
     d2 = ((L[..., 1] - ref[1]) ** 2 + (L[..., 2] - ref[2]) ** 2)
-    skin = np.exp(-d2 / (2 * 8. ** 2)) * (L[..., 0] > 60) * a
+    skin = np.exp(-d2 / (2 * SKINMATCH[name].get('sig', 8.) ** 2)) * (L[..., 0] > 45) * a
     skin = cv2.GaussianBlur(skin.astype(np.float32), (0, 0), 2)
-    shift = SKIN_TARGET - ref
     st = SKINMATCH[name]
-    skin = skin * np.clip(1 - np.abs(L[..., 0] - ref[0]) / 45, 0, 1)    # only mid-tone skin, never eye whites or lens glare
-    gain = float(np.clip(1 + st['L'] * (SKIN_TARGET[0] / ref[0] - 1), .9, 1.15))
+    tgt = np.array(st.get('target', SKIN_TARGET))
+    shift = tgt - ref
+    skin = skin * np.clip(1 - np.abs(L[..., 0] - ref[0]) / SKINMATCH[name].get('range', 45), 0, 1)    # only mid-tone skin, never eye whites or lens glare
+    gain = float(np.clip(1 + st['L'] * (tgt[0] / ref[0] - 1), .9, st.get('cap', 1.15)))
     L2 = L.copy()
     L2[..., 0] = L[..., 0] * (1 + skin * (gain - 1))
     L2[..., 1:] = L[..., 1:] + skin[..., None] * (shift[1:] * st['ab'])
+    if st.get('shadows'):                                 # open up shadowed skin (jaw, under the eyes) more than lit skin
+        base = cv2.GaussianBlur(L2[..., 0], (0, 0), 12)
+        lift = np.clip((ref[0] * gain - base) / 60, 0, 1) * st['shadows'] * 40
+        L2[..., 0] += skin * lift
     if st.get('lift'):                                    # whole-subject exposure lift (clothes too), highlights protected
         x = np.clip(L2[..., 0] / 255, 0, 1); L2[..., 0] = (1 - (1 - x) ** st["lift"]) * 255
     return unlab(L2)
