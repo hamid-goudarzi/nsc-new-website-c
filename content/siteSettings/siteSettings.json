@@ -31,11 +31,6 @@
   "ctaText": "Send drawings, a tender package or a prequalification request. Our estimating team will respond within one business day.",
   "nav": [
     {
-      "_key": "team",
-      "label": "Team",
-      "link": "about.html#leadership"
-    },
-    {
       "_key": "services",
       "label": "Services",
       "link": "services.html"
@@ -56,9 +51,9 @@
       "link": "about.html"
     },
     {
-      "_key": "careers",
-      "label": "Careers",
-      "link": "careers.html"
+      "_key": "team",
+      "label": "Team",
+      "link": "about.html#leadership"
     }
   ],
   "corLine": "COR Certified · BC Construction Safety Alliance",

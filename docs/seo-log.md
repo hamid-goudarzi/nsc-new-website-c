@@ -106,3 +106,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Moe Hosseini's role changed to Project Manager Assistant (bio adjusted to match).
 - Top menu: "Team" (about.html#leadership) replaces "Markets". The Markets page is still linked from the footer, the home page and the Services pages.
 - About page team section: normal top spacing (was squeezed against the section above), more room between the heading and the cards, a clear "Project team" divider line, odd last card spans full width on tablets, and the Team menu link no longer lands under the fixed menu.
+- Top menu trimmed: Services, Projects, Safety, About, Team (Careers removed from the top menu; still in the footer and the home page).
