@@ -35,7 +35,7 @@ def background():
 ADJ = {}
 FEATHER = {'navid': 7}
 ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.2, ab=.75, target=(176., 150., 143.), cap=1.04, shadows=.45, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08)}
+SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.6, ab=.45, floor=.85, contrast=1.1, target=(165., 150., 148.), range=80, sig=14, grain=4.5)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
@@ -65,10 +65,16 @@ def custom(name, rgb, a, y0, x0, chin):
     tgt = np.array(st.get('target', SKIN_TARGET))
     shift = tgt - ref
     skin = skin * np.clip(1 - np.abs(L[..., 0] - ref[0]) / SKINMATCH[name].get('range', 45), 0, 1)    # only mid-tone skin, never eye whites or lens glare
-    gain = float(np.clip(1 + st['L'] * (tgt[0] / ref[0] - 1), .9, st.get('cap', 1.15)))
+    gain = float(np.clip(1 + st['L'] * (tgt[0] / ref[0] - 1), st.get('floor', .9), st.get('cap', 1.15)))
     L2 = L.copy()
     L2[..., 0] = L[..., 0] * (1 + skin * (gain - 1))
     L2[..., 1:] = L[..., 1:] + skin[..., None] * (shift[1:] * st['ab'])
+    if st.get('contrast'):                                # washed-out photo: restore contrast on the whole subject
+        mu = (L2[..., 0] * a).sum() / (a.sum() + 1e-3)
+        L2[..., 0] = L2[..., 0] * (1 - a) + (mu + (L2[..., 0] - mu) * st['contrast']) * a
+    if st.get('grain'):                                   # fine photographic texture on skin (very small source photos look waxy)
+        gn = cv2.GaussianBlur(np.random.default_rng(31).normal(0, 1, a.shape).astype(np.float32), (0, 0), .9)
+        L2[..., 0] += gn * st['grain'] * cv2.GaussianBlur(skin, (0, 0), 3)
     if st.get('shadows'):                                 # open up shadowed skin (jaw, under the eyes) more than lit skin
         base = cv2.GaussianBlur(L2[..., 0], (0, 0), 12)
         lift = np.clip((ref[0] * gain - base) / 60, 0, 1) * st['shadows'] * 40
@@ -94,7 +100,7 @@ def custom(name, rgb, a, y0, x0, chin):
 HAMID_SHIRT = [(828, 470), (558, 485), (585, 550), (605, 600), (630, 670), (640, 750), (650, 853), (860, 853),
                (865, 770), (860, 700), (880, 650), (872, 590), (852, 530)]
 def clothes_src(name, rgb, a):
-    if name != 'hamid': return rgb
+    if name != 'hamid-old-photo': return rgb   # the hand-traced jacket/shirt edit was for Hamid's previous photo
     L = lab(rgb); h, w = a.shape
     poly = np.zeros((h, w), np.uint8); cv2.fillPoly(poly, [np.array(HAMID_SHIRT, np.int32)], 1)
     bb = L[..., 2]                                                         # blue-yellow: jacket ~102, shirt ~122, skin ~140
@@ -215,6 +221,9 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
     # floor fade so every portrait ends the same way
     fade = np.clip((np.arange(H) - H * .82) / (H * .18), 0, 1)[:, None, None] ** 1.5
     canvas = canvas * (1 - fade * .55) + np.array([13, 19, 32]) * fade * .55
+    A = np.zeros((H, W), np.float32); A[y0:y1, x0:x1] = sub_a[..., 0]
+    cv2.imwrite(os.path.join(OUT, f'{name}-alpha.png'), (A * 255).astype(np.uint8))
+    open(os.path.join(OUT, f'{name}-chin.txt'), 'w').write(str(oy + (fy + fh) * s))
     out = Image.fromarray(np.clip(canvas, 0, 255).astype(np.uint8))
     out.save(os.path.join(OUT, f'{name}.png'))
     print(name, 'scale %.2f' % s, 'src', im.size)

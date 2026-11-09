@@ -117,3 +117,7 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Hamid's portrait (his request): brighter, fresher skin tone with lifted shadows on jaw and temples, olive cast reduced, softer hair edge.
 - Hamid: pale version dialled back to a natural, warm tone (only slightly brighter than his original), shadows gently lifted.
 - Hamid: hair edge blur removed; crisp strand texture, rich neutral black and a subtle gloss on the crown.
+
+## Nov 9, 2026 — Hamid's new photo, Fred Mosavari added (by hand, Hamid's request)
+- Hamid's portrait replaced with his new photo (new hairstyle): bar background removed, drink/straw removed, teal print T-shirt made plain black, Real-ESRGAN enlarge blended with the photo, neon cast and harsh overhead shadows evened out. Scripts: scripts/team-hamid-prep.py, scripts/team-hamid-composite.py (solo mode).
+- New team member Fred Mosavari, Senior Estimator (order 35, after Hamid). Role text describes the job only; ask Hamid for Fred's experience/education to add. Portrait made from a 200 px photo (single Real-ESRGAN pass, gentle colour, fine texture) — soft; replace when a larger photo of Fred is available.
