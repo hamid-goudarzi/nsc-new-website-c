@@ -5,5 +5,6 @@
   "role": "Civil Estimator",
   "bio": "Master’s in civil engineering. Over 12 years estimating municipal, infrastructure and school district work.",
   "group": "team",
-  "order": 10
+  "order": 10,
+  "hidden": true
 }
