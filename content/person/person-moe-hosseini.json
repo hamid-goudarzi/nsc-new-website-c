@@ -2,8 +2,8 @@
   "_id": "person-moe-hosseini",
   "_type": "person",
   "name": "Moe Hosseini",
-  "role": "Project Coordinator",
-  "bio": "Master’s in civil engineering. Supports the project managers on municipal and school district projects, including QA/QC records, RFIs and as-builts.",
+  "role": "Project Manager Assistant",
+  "bio": "Master’s in civil engineering. Assists the project managers day to day on municipal and school district projects, with RFIs, QA/QC records and as-builts.",
   "group": "team",
   "order": 20
 }
