@@ -124,3 +124,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Hamid asked to bring back his previous portrait (black jacket, white shirt; from b9b6266). Fred's portrait rebuilt: midtones brought down (overexposed original), local contrast on eyes/brows/mouth, tighter matte to remove the white-backdrop halo, lighter skin texture.
 - Fred's portrait replaced with a larger photo he supplied (791x1024): one Real-ESRGAN pass blended with the photo, faded colour warmed to the team skin tone, contrast restored, white-backdrop halo trimmed, framed like the others.
 - Fred: skin brought from very bright/faded (L 204) to a natural warm tone close to the team (L ~183, warmer).
+- Fred: gentler colour correction that keeps natural skin variation, soft key light from one side, skin texture restored; framed a little further back. Justin framed a little further back too.

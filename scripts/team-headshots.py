@@ -35,8 +35,8 @@ def background():
 ADJ = {}
 FEATHER = {'navid': 7}
 TRIM = {'fred': .22}          # white-backdrop photos: cut a little tighter so no light halo remains
-ZOOM = {'justin': .84}
-SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=1., ab=1., floor=.8, contrast=1.1, target=(174., 153., 151.), range=90, sig=16, gamma=1.12)}
+ZOOM = {'justin': .76, 'fred': .9}
+SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.9, ab=.68, floor=.8, contrast=1.06, target=(168., 152., 150.), range=90, sig=16, gamma=1.08, key=.2, detail2=1, grain=2.2)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
@@ -63,6 +63,7 @@ def custom(name, rgb, a, y0, x0, chin):
     skin = np.exp(-d2 / (2 * SKINMATCH[name].get('sig', 8.) ** 2)) * (L[..., 0] > 45) * a
     skin = cv2.GaussianBlur(skin.astype(np.float32), (0, 0), 2)
     st = SKINMATCH[name]
+    ex_c = W / 2
     tgt = np.array(st.get('target', SKIN_TARGET))
     shift = tgt - ref
     skin = skin * np.clip(1 - np.abs(L[..., 0] - ref[0]) / SKINMATCH[name].get('range', 45), 0, 1)    # only mid-tone skin, never eye whites or lens glare
@@ -81,6 +82,20 @@ def custom(name, rgb, a, y0, x0, chin):
         fz = cv2.GaussianBlur(((ys > ey - 1.2 * ed) & (ys < ey + 2.2 * ed)).astype(np.float32) * a, (0, 0), 8)
         L2[..., 0] = L2[..., 0] * (1 - .55 * fz) + cl * .55 * fz
         bl = cv2.GaussianBlur(L2[..., 0], (0, 0), 2.5); L2[..., 0] += (L2[..., 0] - bl) * .6 * fz
+    if st.get('key'):                                     # soft key light from the viewer's left, gentle falloff to the right
+        side = np.clip((xs - ex_c) / (1.6 * ed), -1, 1)
+        shape = (-side) * st['key']                                    # +key on the lit side, -key on the shadow side
+        vert = np.clip(1 - np.abs(ys - (ey + .6 * ed)) / (3.2 * ed), 0, 1)
+        L2[..., 0] = L2[..., 0] * (1 + shape * vert * a)
+    if st.get('detail2'):                                 # skin surface: local contrast at pore and feature scale
+        Lw = L2[..., 0]
+        fine = Lw - cv2.GaussianBlur(Lw, (0, 0), 1.8)
+        mid = cv2.GaussianBlur(Lw, (0, 0), 3) - cv2.GaussianBlur(Lw, (0, 0), 14)
+        fz = cv2.GaussianBlur(skin, (0, 0), 3)
+        L2[..., 0] = Lw + (fine * .9 + mid * .5) * fz
+        # keep natural colour variation: redder in cheeks/lips, less in forehead (no flat single colour)
+        ca = L2[..., 1] - cv2.GaussianBlur(L2[..., 1], (0, 0), 20)
+        L2[..., 1] += ca * .6 * fz
     if st.get('grain'):                                   # fine photographic texture on skin (very small source photos look waxy)
         gn = cv2.GaussianBlur(np.random.default_rng(31).normal(0, 1, a.shape).astype(np.float32), (0, 0), .9)
         L2[..., 0] += gn * st['grain'] * cv2.GaussianBlur(skin, (0, 0), 3)
