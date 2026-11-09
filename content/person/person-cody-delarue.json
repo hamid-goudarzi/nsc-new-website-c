@@ -5,5 +5,10 @@
   "role": "Site Superintendent",
   "bio": "Over 15 years supervising civil work, including school district upgrades and underground sanitary, storm and water systems.",
   "group": "team",
-  "order": 40
+  "order": 40,
+  "photo": {
+    "_type": "image",
+    "local": "team-cody-delarue",
+    "alt": "Cody Delarue, Site Superintendent, Neil Smith Construction"
+  }
 }

@@ -466,3 +466,13 @@ img{height:auto}
 .logo-shine.on{animation:logoShine 5s ease-in-out infinite 1.2s}
 @keyframes logoShine{0%,72%{opacity:0;transform:scale(.55) rotate(0deg)}82%{opacity:1;transform:scale(1) rotate(25deg)}100%{opacity:0;transform:scale(1.25) rotate(45deg)}}
 @media (prefers-reduced-motion:reduce){.logo-shine.on{animation:none;opacity:0}}
+
+/* Team portraits: one studio style for everyone (real photos, cut out onto the NSC navy background) */
+.person.has-ph{padding:0;min-height:0;display:flex;flex-direction:column}
+.person.has-ph .pph{position:relative;aspect-ratio:4/5;overflow:hidden;background:#101624}
+.person.has-ph .pph img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.person.has-ph:hover .pph img{transform:scale(1.03)}
+.person.has-ph .pph::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(180deg,transparent,#0d1320 92%);pointer-events:none}
+.person.has-ph .pbody{position:relative;padding:0 26px 26px;margin-top:-56px}
+.person.has-ph h3,.person.lead.has-ph h3{margin-top:0}
+@media (prefers-reduced-motion:reduce){.person.has-ph .pph img{transition:none}.person.has-ph:hover .pph img{transform:none}}

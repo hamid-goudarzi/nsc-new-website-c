@@ -5,5 +5,10 @@
   "role": "Project Manager Assistant",
   "bio": "Master’s in civil engineering. Assists the project managers day to day on municipal and school district projects, with RFIs, QA/QC records and as-builts.",
   "group": "team",
-  "order": 20
+  "order": 20,
+  "photo": {
+    "_type": "image",
+    "local": "team-moe-hosseini",
+    "alt": "Moe Hosseini, Project Manager Assistant, Neil Smith Construction"
+  }
 }

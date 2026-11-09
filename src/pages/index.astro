@@ -180,7 +180,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
   <div class="wrap">
     <div class="mk-h"><div><p class="mono kick">Leadership</p><h2 class="h2 split" data-split>{h.leadershipTitle}</h2></div><a class="btn btn-glass rv" href="about.html#leadership">Meet the team <span class="ar">→</span></a></div>
     <p class="rv lead-sub">{h.leadershipText}</p>
-    <div class="lead-g">{leaders.map(p => <article class="person lead rv">{p.photo ? <Img image={p.photo} class="ini ph" sizes="96px" alt="" /> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.shortBio || p.bio}</p></article>)}</div>
+    <div class="lead-g">{leaders.map(p => <article class={`person lead rv${p.photo ? ' has-ph' : ''}`}>{p.photo ? <div class="pph"><Img image={p.photo} sizes="(max-width:700px) 100vw, 33vw" /></div> : <span class="ini" aria-hidden="true">{initials(p.name)}</span>}<div class="pbody"><h3>{p.name}</h3><p class="r">{p.role}</p><p>{p.shortBio || p.bio}</p></div></article>)}</div>
   </div>
 </section>
 

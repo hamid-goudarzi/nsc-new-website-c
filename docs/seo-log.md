@@ -107,3 +107,8 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Top menu: "Team" (about.html#leadership) replaces "Markets". The Markets page is still linked from the footer, the home page and the Services pages.
 - About page team section: normal top spacing (was squeezed against the section above), more room between the heading and the cards, a clear "Project team" divider line, odd last card spans full width on tablets, and the Team menu link no longer lands under the fixed menu.
 - Top menu trimmed: Services, Projects, Safety, About, Team (Careers removed from the top menu; still in the footer and the home page).
+
+## Nov 9, 2026 — team portraits, one studio style (branch team-photos, by hand)
+- Team photos taken from the team page on the old site (neilsmithconstructionltd.com/team), one real photo per person (8). Each was cut out (rembg isnet-general-use), placed on the same NSC navy studio background, framed by eye position so every head is the same size and height, given the same gentle colour grade, and had background colour fringes cleaned off the hair. Faces and clothing are not altered. Script: scripts/team-headshots.py (sources were the old-site originals).
+- Files media/team-<name>-{640,1280}.webp/.avif (4:5, 26–74 KB). Person records have photo set; About and home team cards now show the portrait at the top of each card.
+- Navid's original is small (362 px), so his portrait is softer than the others when shown large; a new phone photo against any plain wall would fix it.

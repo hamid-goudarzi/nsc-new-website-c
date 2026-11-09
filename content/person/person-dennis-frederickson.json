@@ -6,5 +6,10 @@
   "bio": "Over 40 years in construction and project management across residential, commercial, utility and earthmoving projects. Has led the company since 2022.",
   "group": "leadership",
   "order": 10,
-  "shortBio": "Over 40 years in construction and project management across residential, commercial, utility and earthmoving projects."
+  "shortBio": "Over 40 years in construction and project management across residential, commercial, utility and earthmoving projects.",
+  "photo": {
+    "_type": "image",
+    "local": "team-dennis-frederickson",
+    "alt": "Dennis Frederickson, Owner, Co-Founder and Director, Neil Smith Construction"
+  }
 }

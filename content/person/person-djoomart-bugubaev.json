@@ -5,5 +5,10 @@
   "role": "Construction Safety Officer",
   "bio": "Supports safe site operations by monitoring site activities, identifying hazards and helping crews follow safety standards.",
   "group": "team",
-  "order": 60
+  "order": 60,
+  "photo": {
+    "_type": "image",
+    "local": "team-djoomart-bugubaev",
+    "alt": "Djoomart Bugubaev, Construction Safety Officer, Neil Smith Construction"
+  }
 }

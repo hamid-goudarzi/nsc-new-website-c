@@ -5,5 +5,10 @@
   "role": "Site Superintendent",
   "bio": "Over 20 years in civil construction. Experienced on active school and urban sites, with Trimble GPS and grade control.",
   "group": "team",
-  "order": 50
+  "order": 50,
+  "photo": {
+    "_type": "image",
+    "local": "team-justin-mccormack",
+    "alt": "Justin McCormack, Site Superintendent, Neil Smith Construction"
+  }
 }

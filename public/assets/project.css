@@ -448,3 +448,13 @@ img{height:auto}
 .people-sub{display:flex;align-items:center;gap:16px;margin:clamp(48px,6vw,80px) 0 22px;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
 .people-sub::after{content:"";flex:1;height:1px;background:var(--line)}
 @media (max-width:620px){.people>.person:last-child:nth-child(odd){grid-column:auto}}
+
+/* Team portraits: one studio style for everyone (real photos, cut out onto the NSC navy background) */
+.person.has-ph{padding:0;min-height:0;display:flex;flex-direction:column}
+.person.has-ph .pph{position:relative;aspect-ratio:4/5;overflow:hidden;background:#101624}
+.person.has-ph .pph img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.person.has-ph:hover .pph img{transform:scale(1.03)}
+.person.has-ph .pph::after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(180deg,transparent,#0d1320 92%);pointer-events:none}
+.person.has-ph .pbody{position:relative;padding:0 26px 26px;margin-top:-56px}
+.person.has-ph h3,.person.lead.has-ph h3{margin-top:0}
+@media (prefers-reduced-motion:reduce){.person.has-ph .pph img{transition:none}.person.has-ph:hover .pph img{transform:none}}

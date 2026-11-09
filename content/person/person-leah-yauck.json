@@ -5,5 +5,10 @@
   "role": "Partner",
   "bio": "Trades background with training in small water systems and commercial construction.",
   "group": "leadership",
-  "order": 20
+  "order": 20,
+  "photo": {
+    "_type": "image",
+    "local": "team-leah-yauck",
+    "alt": "Leah Yauck, Partner, Neil Smith Construction"
+  }
 }

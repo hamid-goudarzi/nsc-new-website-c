@@ -6,5 +6,10 @@
   "bio": "16 years in the industry. Bachelor’s in building engineering, master’s degrees in project management and construction engineering. Has managed projects from $1M to $10M.",
   "group": "leadership",
   "order": 30,
-  "shortBio": "16 years in the industry, with master’s degrees in project management and construction engineering. Has managed projects from $1M to $10M."
+  "shortBio": "16 years in the industry, with master’s degrees in project management and construction engineering. Has managed projects from $1M to $10M.",
+  "photo": {
+    "_type": "image",
+    "local": "team-navid-ghasemi",
+    "alt": "Navid Ghasemi, General Manager, Senior Project Manager, Neil Smith Construction"
+  }
 }
