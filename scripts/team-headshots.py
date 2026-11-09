@@ -32,7 +32,7 @@ def background():
     return np.clip(bg + noise, 0, 255).astype(np.uint8)
 
 # Per-person tone requests (lighter / less warm skin where asked)
-ADJ = {'hamid': dict(exp=1.17, warm=-.05, sat=.80)}
+ADJ = {}
 FEATHER = {'navid': 7}   # soft hair edge where the original background was as dark as the hair
 def adjust(name, rgb):
     o = ADJ.get(name)
@@ -42,6 +42,48 @@ def adjust(name, rgb):
     f[..., 0] *= 1 + o['warm']; f[..., 2] *= 1 - o['warm']
     g = f.mean(2, keepdims=True); f = g + (f - g) * o['sat']
     return np.clip(f * 255, 0, 255).astype(np.uint8)
+
+SKIN_TARGET = np.array([161., 150., 149.])   # Moe's cheek colour (OpenCV LAB), the reference skin tone
+def lab(x): return cv2.cvtColor(np.clip(x, 0, 255).astype(np.uint8), cv2.COLOR_RGB2LAB).astype(np.float32)
+def unlab(x): return cv2.cvtColor(np.clip(x, 0, 255).astype(np.uint8), cv2.COLOR_LAB2RGB).astype(np.float32)
+def custom(name, rgb, a, y0, x0, chin):
+    """Requested per-person edits, in output coordinates (eyes at EYE_Y*H, centred)."""
+    if name != 'hamid': return rgb
+    L = lab(rgb); h, w = a.shape
+    ys = np.arange(h)[:, None] + y0; xs = np.arange(w)[None, :] + x0
+    ey = EYE_Y * H; ed = EYE_D * H
+    # cheek reference patches (below each eye)
+    cheeks = ((np.abs(ys - (ey + .55 * ed)) < .22 * ed) & (np.abs(np.abs(xs - W / 2) - .55 * ed) < .25 * ed) & (a > .9))
+    ref = L[cheeks].mean(0)
+    # skin mask: colour close to the cheeks, above the collar line
+    d2 = ((L[..., 1] - ref[1]) ** 2 + (L[..., 2] - ref[2]) ** 2)
+    skin = np.exp(-d2 / (2 * 8. ** 2)) * (L[..., 0] > 60) * a
+    skin = cv2.GaussianBlur(skin.astype(np.float32), (0, 0), 2)
+    shift = SKIN_TARGET - ref
+    shift[0] *= .6                                        # move brightness part of the way, colour fully
+    L2 = L + skin[..., None] * shift
+    return unlab(L2)
+
+# Hand-traced shirt + collar outline on Hamid's original photo (source pixels); skin inside it is left alone by colour
+HAMID_SHIRT = [(828, 470), (558, 485), (585, 550), (605, 600), (630, 670), (640, 750), (650, 853), (860, 853),
+               (865, 770), (860, 700), (880, 650), (872, 590), (852, 530)]
+def clothes_src(name, rgb, a):
+    if name != 'hamid': return rgb
+    L = lab(rgb); h, w = a.shape
+    poly = np.zeros((h, w), np.uint8); cv2.fillPoly(poly, [np.array(HAMID_SHIRT, np.int32)], 1)
+    bb = L[..., 2]                                                         # blue-yellow: jacket ~102, shirt ~122, skin ~140
+    shirtc = np.clip((134 - bb) / 6, 0, 1)                                 # shirt-or-jacket colours, not skin
+    jackc = np.clip((121 - bb) / 5, 0, 1)                                  # clearly navy
+    shirt = cv2.GaussianBlur(poly.astype(np.float32), (0, 0), 2.5) * cv2.GaussianBlur(shirtc.astype(np.float32), (0, 0), 1.5) * a
+    yy = np.arange(h)[:, None]
+    jacket = cv2.GaussianBlur(((yy > 440) & (poly == 0)).astype(np.float32), (0, 0), 3) * cv2.GaussianBlur(jackc.astype(np.float32), (0, 0), 1.5) * a
+    shade = cv2.GaussianBlur(L[..., 0], (0, 0), 7)
+    sm = shade[poly > 0].mean()
+    wht = L.copy(); wht[..., 0] = np.clip(226 + (shade - sm) * .45 + (L[..., 0] - shade) * .10, 150, 248); wht[..., 1] = 128; wht[..., 2] = 127
+    blk = L.copy(); blk[..., 0] = 10 + L[..., 0] * .32; blk[..., 1] = 128; blk[..., 2] = 128
+    out = L * (1 - shirt[..., None]) + wht * shirt[..., None]
+    out = out * (1 - jacket[..., None]) + blk * jacket[..., None]
+    return unlab(out).astype(np.uint8)
 
 def grade(rgb):
     """Gentle, identical grade: gray-world white balance (half strength), slight contrast curve, mild warmth."""
@@ -74,6 +116,7 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
     a = np.clip((a - .03) / .97, 0, 1)                   # trim the faintest halo only
     fb = face_box(np.array(im))
     if fb is None: print(name, 'NO FACE'); continue
+    rgb = clothes_src(name, rgb, a)
     if name in FEATHER:                                  # smooth a choppy hair contour, only on dark hair above the eyes
         fz = FEATHER[name]
         soft = cv2.GaussianBlur(a, (0, 0), fz)
@@ -118,7 +161,11 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
     fx, fy, fw, fh, rex, rey, lex, ley = fb
     eye = np.hypot(lex - rex, ley - rey); ecx, ecy = (rex + lex) / 2, (rey + ley) / 2
     s = (EYE_D * H) / eye
-    nw, nh = int(im.width * s), int(im.height * s)
+    # extend the bottom edge (clothes continue down) so no photo ends in a hard line; the floor fade hides it
+    pad = int(rgb.shape[0] * .6)
+    rgb = cv2.copyMakeBorder(rgb, 0, pad, 0, 0, cv2.BORDER_REPLICATE)
+    a = cv2.copyMakeBorder(a, 0, pad, 0, 0, cv2.BORDER_REPLICATE)
+    nw, nh = int(rgb.shape[1] * s), int(rgb.shape[0] * s)
     rgb_s = cv2.resize(adjust(name, grade(rgb)), (nw, nh), interpolation=cv2.INTER_LANCZOS4 if s > 1 else cv2.INTER_AREA)
     a_s = cv2.resize(a, (nw, nh), interpolation=cv2.INTER_LINEAR)
     if s > 1.3:                                            # upscaled sources: light unsharp to recover edges
@@ -136,6 +183,7 @@ for f in sorted(glob.glob(os.path.join(SRC, '*.*'))):
         sub_a = sub_a * (1 - ramp)
     # soft blue rim on the subject edge (same for everyone)
     edge = cv2.GaussianBlur(sub_a[..., 0], (0, 0), 6) - cv2.GaussianBlur(sub_a[..., 0], (0, 0), 1.5)
+    sub_rgb = custom(name, sub_rgb, sub_a[..., 0], y0, x0, chin=oy + (fy + fh) * s)
     canvas[y0:y1, x0:x1] = canvas[y0:y1, x0:x1] * (1 - sub_a) + sub_rgb * sub_a
     canvas[y0:y1, x0:x1] += np.clip(-edge, 0, 1)[..., None] * np.array([40, 80, 160]) * .5 * sub_a
     # floor fade so every portrait ends the same way
