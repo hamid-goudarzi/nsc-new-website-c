@@ -1,6 +1,6 @@
 ---
 // Top navigation and mobile menu for every page except the home page.
-import { href } from '../lib/util.mjs';
+import { href, tel } from '../lib/util.mjs';
 const { settings, pre = '', active = '' } = Astro.props;
 const nav = settings.nav || [];
 const isOn = n => active && (n._key === active || n.link.replace(/\.html.*$/, '') === active);
@@ -12,4 +12,4 @@ const isOn = n => active && (n._key === active || n.link.replace(/\.html.*$/, ''
   <a class="btn btn-blue" href={`${pre}contact.html`}>Request a bid</a>
   <button class="pburger" type="button" aria-expanded="false" aria-controls="pmenu">Menu</button>
 </nav>
-<div class="pmenu" id="pmenu">{nav.map(n => <a href={href(n.link, pre)}>{n.label}</a>)}<a href={`${pre}contact.html`}>Contact</a></div>
+<div class="pmenu" id="pmenu">{nav.map(n => <a href={href(n.link, pre)}>{n.label}</a>)}<a href={`${pre}contact.html`}>Contact</a><div class="menu-x"><a class="btn btn-blue" href={`${pre}contact.html`}>Request a bid</a><div class="menu-sub"><a href={`${pre}careers.html`}>Careers</a><a href={`${pre}markets.html`}>Markets</a><a href={`${pre}tenders.html`}>Tenders</a><a href={`${pre}areas/index.html`}>Areas we serve</a></div><div class="menu-ct"><a href={tel(settings.phone)}>{settings.phone}</a><a href={`mailto:${settings.email}`}>{settings.email}</a></div></div></div>

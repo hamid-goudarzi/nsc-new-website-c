@@ -462,3 +462,17 @@ img{height:auto}
 .people:has(.has-ph){grid-auto-rows:1fr}
 .person.has-ph .pbody{flex:1;min-height:13.5em}
 .person.has-ph h3,.person.lead.has-ph h3{font-size:1.5rem}
+
+/* Readability and tap targets (audit Nov 10 2026): no label under 12px */
+.fields dt,.pc-b dt,.ill-tag{font-size:12px}
+.pfoot h4,.pfoot .fh{font-size:12px}
+.nsc-badge{font-size:12px}
+.rc a{padding:8px 0;min-height:32px}
+.pf-bar a{display:inline-block;padding:6px 0}
+/* Phone menu: bid button, secondary pages and contact */
+.pmenu .menu-x{margin:8px 6px 6px;padding-top:12px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.pmenu .menu-x a{font-family:inherit;font-size:14.5px;padding:8px 10px}
+.pmenu .menu-x .btn{align-self:flex-start;padding:12px 20px}
+.pmenu .menu-sub,.pmenu .menu-ct{display:flex;flex-wrap:wrap;gap:2px 8px}
+.pmenu .menu-sub a{color:#c9d0dc}
+.pmenu .menu-ct a{color:var(--glow-2)}

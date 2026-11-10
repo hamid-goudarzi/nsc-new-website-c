@@ -125,3 +125,10 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Fred's portrait replaced with a larger photo he supplied (791x1024): one Real-ESRGAN pass blended with the photo, faded colour warmed to the team skin tone, contrast restored, white-backdrop halo trimmed, framed like the others.
 - Fred: skin brought from very bright/faded (L 204) to a natural warm tone close to the team (L ~183, warmer).
 - Fred: gentler colour correction that keeps natural skin variation, soft key light from one side, skin texture restored; framed a little further back. Justin framed a little further back too.
+
+## Nov 10, 2026 — site-wide design and usability audit (by hand)
+- Automated test of all 56 pages at 1440 px and 390 px (Playwright + axe, Edge): 0 accessibility violations, no sideways scroll, no script errors, one H1 per page. Remaining "small targets" are inline text links (allowed).
+- Phone menu (home and all inner pages) now ends with a Request a bid button, Careers / Markets / Tenders / Areas we serve, and the phone number and email, like the menus on large contractor sites.
+- Home: removed the 23-name project chip list under Selected projects (cluttered; the projects page lists them all). Now "23 projects across the Lower Mainland" + Browse all projects.
+- Readability: all small mono labels (card fields, photo tags, footer headings, NSC badges) raised from 10.5–11.5 px to 12 px; area links in the map lists and footer social links made taller to tap.
+- Heavy Civil Contractor page title shortened to 46 chars (was 64).
