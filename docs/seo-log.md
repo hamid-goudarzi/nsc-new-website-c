@@ -136,3 +136,6 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Home: removed the 23-name project chip list under Selected projects (cluttered; the projects page lists them all). Now "23 projects across the Lower Mainland" + Browse all projects.
 - Readability: all small mono labels (card fields, photo tags, footer headings, NSC badges) raised from 10.5–11.5 px to 12 px; area links in the map lists and footer social links made taller to tap.
 - Heavy Civil Contractor page title: kept the parallel run's "Heavy Civil Construction & Contractor, Vancouver BC | NSC" (57 chars).
+
+## Nov 10, 2026 — team
+- Djoomart Bugubaev hidden from the website at Hamid's request (record kept with hidden: true; untick in admin to bring back).
