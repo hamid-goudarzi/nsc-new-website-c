@@ -2,13 +2,13 @@
   "_id": "person-fred-mosavari",
   "_type": "person",
   "name": "Fred Mosavari",
-  "role": "Senior Estimator",
-  "bio": "Leads estimating on civil tenders, prequalifications and change work for municipal, school district and private clients, from quantity takeoff to final bid.",
+  "role": "Civil Estimator",
+  "bio": "Prices civil tenders, prequalifications and change work for municipal, school district and private clients, from quantity takeoff to final bid.",
   "group": "team",
   "order": 35,
   "photo": {
     "_type": "image",
     "local": "team-fred-mosavari",
-    "alt": "Fred Mosavari, Senior Estimator, Neil Smith Construction"
+    "alt": "Fred Mosavari, Civil Estimator, Neil Smith Construction"
   }
 }
