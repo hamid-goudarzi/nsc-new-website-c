@@ -9,8 +9,8 @@
   "navKey": "services",
   "order": 15,
   "showInFooter": true,
-  "seoTitle": "Heavy Civil Contractor in Vancouver & BC | NSC",
-  "description": "Heavy civil contractor in Metro Vancouver and the Fraser Valley, BC: underground utilities, excavation, earthworks, roadworks and site servicing. COR certified.",
+  "seoTitle": "Heavy Civil Construction & Contractor, Vancouver BC | NSC",
+  "description": "Heavy civil construction in Metro Vancouver and the Fraser Valley: underground utilities, excavation, earthworks, roadworks and site servicing. COR certified.",
   "hero": {
     "kicker": "Heavy civil contractor, BC",
     "title": "Heavy civil contractor.",
@@ -294,6 +294,11 @@
           "_key": "72d9d644cd89",
           "q": "What is a heavy civil contractor?",
           "a": "A heavy civil contractor builds the infrastructure below and around buildings and roads: sewers, watermains, storm systems, excavation, earthworks and roadworks. Neil Smith Construction does this work for public owners and builders across Metro Vancouver and the Fraser Valley."
+        },
+        {
+          "_key": "f8b8b282f60f",
+          "q": "Who does heavy civil construction in Metro Vancouver?",
+          "a": "Neil Smith Construction is a heavy civil construction company based in Richmond, BC. We build sewers, watermains, storm systems, excavation and earthworks, roads and full site servicing for cities, school districts and builders across Metro Vancouver and the Fraser Valley. See our [projects](projects/index.html) and [services](services.html)."
         },
         {
           "_key": "f8412ecbb889",
