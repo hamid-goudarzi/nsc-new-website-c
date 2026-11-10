@@ -10,10 +10,10 @@
   "type": "Seismic upgrades",
   "city": "Vancouver",
   "sector": "Municipal",
-  "group": "underway",
-  "status": "In progress",
-  "live": true,
-  "year": "Ongoing",
+  "group": "city",
+  "status": "Completed",
+  "live": false,
+  "year": "",
   "order": 80,
   "heroImage": {
     "_type": "image",
@@ -33,7 +33,7 @@
     },
     {
       "label": "Status",
-      "value": "In progress",
+      "value": "Completed",
       "_key": "4162c0da5f5c"
     }
   ],

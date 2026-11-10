@@ -139,3 +139,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 
 ## Nov 10, 2026 — team
 - Djoomart Bugubaev hidden from the website at Hamid's request (record kept with hidden: true; untick in admin to bring back).
+- Project status update from Hamid: only Guildford Park Secondary, Queen Elizabeth Elementary and Agnes Supportive Housing are in progress. Kingston Road (Completed 2026), Fire Hall No. 12 and Florin Development marked Completed and moved to Cities and public works / Commercial development; present-tense wording made past tense on the project pages, home cards, municipal and underground-utilities pages. Ask Hamid for the completion years of Fire Hall No. 12 and Florin.

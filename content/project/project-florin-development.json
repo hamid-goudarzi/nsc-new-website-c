@@ -10,10 +10,10 @@
   "type": "Residential development",
   "city": "Coquitlam",
   "sector": "Development",
-  "group": "underway",
-  "status": "In progress",
-  "live": true,
-  "year": "Ongoing",
+  "group": "development",
+  "status": "Completed",
+  "live": false,
+  "year": "",
   "order": 90,
   "heroImage": {
     "_type": "image",
@@ -33,12 +33,12 @@
     },
     {
       "label": "Status",
-      "value": "In progress",
+      "value": "Completed",
       "_key": "de1fa33a0d22"
     }
   ],
   "lede": "Residential development in Coquitlam, with Neil Smith Construction as prime contractor.",
-  "body": "We hold the prime contract for the civil and site work on this residential development for Allaire Circadian LLP.\n\nWork on the townhouse site includes storm pipe and gravel pads in open excavation, pipe laid in a long trench, a water main with valve, and new curb and walkway subgrade beside the new building.",
+  "body": "We held the prime contract for the civil and site work on this residential development for Allaire Circadian LLP.\n\nWork on the townhouse site included storm pipe and gravel pads in open excavation, pipe laid in a long trench, a water main with valve, and new curb and walkway subgrade beside the new building.",
   "scope": [
     "Civil and site works for residential development"
   ],

@@ -10,9 +10,9 @@
   "type": "Municipal sewer separation",
   "city": "Vancouver (UEL)",
   "sector": "Municipal",
-  "group": "underway",
-  "status": "In progress",
-  "live": true,
+  "group": "city",
+  "status": "Completed",
+  "live": false,
   "year": "2026",
   "order": 10,
   "heroImage": {
@@ -41,13 +41,18 @@
       "_key": "233b400fe8eb"
     },
     {
+      "_key": "complration",
+      "label": "Completed",
+      "value": "2026"
+    },
+    {
       "label": "Status",
-      "value": "Final restoration, fall 2026",
+      "value": "Completed",
       "_key": "2ddc51e29b0f"
     }
   ],
-  "lede": "Separating the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems for the University Endowment Lands.",
-  "body": "The existing combined sewer carried sanitary flow and stormwater in one pipe. We replaced it with two new systems laid side by side: a sanitary main and a storm main, each with its own manholes, service connections and catch basins.\n\nThe work ran through a quiet residential street with homes on both sides. Every property stayed connected through the job. New services were installed ahead of time and transferred over once the new mains were tested.\n\nWe hold the prime contract and deliver the excavation, pipe, manholes, water services and concrete, with paving placed by our asphalt subcontractor.",
+  "lede": "We separated the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems for the University Endowment Lands.",
+  "body": "The existing combined sewer carried sanitary flow and stormwater in one pipe. We replaced it with two new systems laid side by side: a sanitary main and a storm main, each with its own manholes, service connections and catch basins.\n\nThe work ran through a quiet residential street with homes on both sides. Every property stayed connected through the job. New services were installed ahead of time and transferred over once the new mains were tested.\n\nWe held the prime contract and delivered the excavation, pipe, manholes, water services and concrete, with paving placed by our asphalt subcontractor.",
   "scope": [
     "Layout, sawcutting, pre-locates and soil sampling",
     "New sanitary sewer, 250 to 375 mm",
