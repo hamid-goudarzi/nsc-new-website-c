@@ -141,3 +141,16 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Djoomart Bugubaev hidden from the website at Hamid's request (record kept with hidden: true; untick in admin to bring back).
 - Project status update from Hamid: only Guildford Park Secondary, Queen Elizabeth Elementary and Agnes Supportive Housing are in progress. Kingston Road (Completed 2026), Fire Hall No. 12 and Florin Development marked Completed and moved to Cities and public works / Commercial development; present-tense wording made past tense on the project pages, home cards, municipal and underground-utilities pages. Ask Hamid for the completion years of Fire Hall No. 12 and Florin.
 - Titles (Hamid's request): Hamid Goudarzi now Construction Technologist; Fred Mosavari now Civil Estimator (was Senior Estimator), text adjusted.
+
+## Nov 12, 2026 — weekly run: Clients and partners page
+- New page /clients.html ("Clients: Cities, School Districts and Builders | NSC"), generated only from the project records (Client, Prime contractor, Construction manager fields): municipalities and public owners, school districts (SD36, 37, 38, 40, 41 with city names), general contractors and construction managers (Unitech, Pro-Can, Keller, Scott Special Projects, Kinetic, Scott Construction, Wright), private owners (Allaire Circadian LLP, SmartCentres). Each client lists its projects with type, city, year and NSC's role (prime, or civil subcontractor to whom); role is left blank where the record does not say. No counts or totals. 4-question FAQ (FAQPage), CollectionPage + ItemList + BreadcrumbList schema. Stays current when projects are edited in the admin.
+- Why: competitors' edge is named client lists, and AI assistants answer "who has worked for SD38 / Unitech / City of Vancouver" from pages like this. Linked from the footer (Work) and phone menu; added to sitemap, llms.txt (new "Clients and partners" section) and llms-full.txt.
+- Fix: area pages and llms.txt lowercased project types ("civil works package c-028"); now only the first letter is lowercased (C-028 kept).
+- Sitemap date bumped to Nov 12.
+- Checks: build check clean (57 pages); clients, Burnaby and About pages at 1440/390: no sideways scroll, axe 0 violations.
+- Search check: "civil contractor Vancouver underground utilities school site works" still returns directories (CCIB, ConstructConnect, BC Hydro civil contractor list) and Norland's service pages; a search for the company name did not surface the new site — the old Wix domain switch and directory listings remain the biggest gaps.
+
+### Next ideas
+- Link the clients page from About and the civil-subcontractor page body (admin text).
+- Ask Hamid for completion years of Fire Hall No. 12, Florin and UBC (shown without a year).
+- Project pages remain 120–250 words; add facts only when Hamid supplies them (quantities, durations).

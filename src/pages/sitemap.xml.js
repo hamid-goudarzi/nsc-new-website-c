@@ -5,7 +5,7 @@ import { areasOf } from '../lib/areas.mjs';
 export async function GET() {
   const c = await content();
   const s = c.settings;
-  const today = '2026-11-06';   // last site-wide content update, used until an item is edited in the admin
+  const today = '2026-11-12';   // last site-wide content update, used until an item is edited in the admin
   const day = d => (d || today).slice(0, 10);
   const newest = ds => ds.map(d => d?._updatedAt).filter(Boolean).sort().at(-1);
   const img = i => i?.local ? `<image:image><image:loc>${abs(s, `media/${i.local}-2560.webp`)}</image:loc></image:image>` : '';
@@ -14,6 +14,7 @@ export async function GET() {
     ['projects/index.html', newest([c.projectsPage, ...c.projects]), '0.9', img(c.projectsPage.hero?.image)],
     ...c.pages.map(p => [`${p.slug.current}.html`, p._updatedAt, '0.8', img(p.hero?.image)]),
     ['areas/index.html', newest(c.projects), '0.7', ''],
+    ['clients.html', newest(c.projects), '0.7', ''],
     ...areasOf(c.projects).map(a => [`areas/${a.slug}.html`, newest(a.projects), '0.7', img(a.projects[0]?.heroImage)]),
     ...c.projects.map(p => [`projects/${p.slug.current}.html`, p._updatedAt, p.live ? '0.8' : '0.7', [p.heroImage, ...(p.gallery || [])].slice(0, 8).map(img).join('')]),
   ];

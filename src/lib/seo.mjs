@@ -1,5 +1,6 @@
 // Structured data (schema.org JSON-LD) and plain-text summaries for search engines and AI assistants.
 import { paras } from './util.mjs';
+import { clientsOf } from './clients.mjs';
 
 export const siteUrl = s => (s.siteUrl || 'https://www.neilsmithconstruction.com').replace(/\/$/, '');
 export const abs = (s, p) => `${siteUrl(s)}/${String(p || '').replace(/^(\.\.\/)+|^\//g, '')}`;
@@ -162,6 +163,8 @@ export function fullText(c) {
   L.push('## Areas served', '', `Metro Vancouver and the Fraser Valley, British Columbia. Head office in Richmond, equipment yard in Langley. Projects by city:`, '');
   { const by = new Map(); for (const p of projects) { const n = String(p.city || '').replace(/\s*\(UEL\)\s*/, ''); if (!by.has(n)) by.set(n, []); by.get(n).push(p.name); }
     for (const [n, ps] of by) L.push(`- **${n}:** ${ps.join('; ')} (${u('areas/' + n.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.html')})`); L.push(''); }
+  L.push('## Clients and partners', '', `Page: ${u('clients.html')}`, '');
+  for (const g of clientsOf(projects)) L.push(`### ${g.title}`, '', ...g.items.map(c => `- **${c.name}:** ${c.projects.map(p => p.name).join('; ')}`), '');
   L.push('## How projects are delivered', '', ...(h.deliverSteps || []).map(x => `- **${x.title}**: ${x.text}`), '');
   L.push('## Projects', '');
   for (const p of projects) {

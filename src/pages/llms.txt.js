@@ -2,6 +2,7 @@
 import { content } from '../lib/content.mjs';
 import { abs } from '../lib/seo.mjs';
 import { areasOf, areaFacts } from '../lib/areas.mjs';
+import { clientsOf } from '../lib/clients.mjs';
 export async function GET() {
   const { settings: s, home: h, pages, projects, markets } = await content();
   const u = p => abs(s, p);
@@ -13,7 +14,10 @@ export async function GET() {
     '## Main pages', '',
     `- [Home](${u('')}): overview, services, selected projects and contact`,
     ...pages.map(p => `- [${p.title}](${u(p.slug.current + '.html')})${p.description ? ': ' + p.description : ''}`),
-    `- [All projects](${u('projects/index.html')}): every project with scope, client and photos`, '',
+    `- [All projects](${u('projects/index.html')}): every project with scope, client and photos`,
+    `- [Clients and partners](${u('clients.html')}): every owner, school district, general contractor and construction manager, with their projects`, '',
+    '## Clients and partners', '',
+    ...clientsOf(projects).map(g => `- ${g.title}: ${g.items.map(c => c.name).join(', ')}`), '',
     '## Areas served', '',
     ...areasOf(projects).map(a => `- [Civil contractor in ${a.name}, BC](${u(`areas/${a.slug}.html`)}): ${areaFacts(a).types.slice(0, 4).join(', ')}`), '',
     '## Markets', '',

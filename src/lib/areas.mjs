@@ -24,7 +24,7 @@ export const clientOf = p => (p.details || []).find(d => /^client$/i.test(d.labe
 export function areaFacts(a) {
   const ps = a.projects;
   const clients = uniq(ps.map(clientOf));
-  const types = uniq(ps.map(p => String(p.type || '').toLowerCase()));
+  const types = uniq(ps.map(p => String(p.type || '').replace(/^[A-Z](?=[a-z])/, ch => ch.toLowerCase())));
   const services = uniq(ps.flatMap(p => projectServices(p).map(s => s.label)));
   const live = ps.filter(p => p.live);
   const uel = ps.some(p => /\(UEL\)/.test(p.city));

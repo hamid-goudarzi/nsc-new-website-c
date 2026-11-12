@@ -1,0 +1,62 @@
+---
+// Clients and partners: every owner, school district, general contractor and construction manager in the project records,
+// each with the projects NSC built for or with them. Generated from content/project/*.json, so it stays current when projects are edited in the admin.
+import Sub from '../layouts/Sub.astro';
+import Img from '../components/Img.astro';
+import Cta from '../components/Cta.astro';
+import { content } from '../lib/content.mjs';
+import { clientsOf, roleOn } from '../lib/clients.mjs';
+import { breadcrumbs, abs, orgId, faqLd } from '../lib/seo.mjs';
+import { imgUrl, md } from '../lib/util.mjs';
+const { settings: s, projects } = await content();
+const pre = '';
+const groups = clientsOf(projects);
+const hero = { _type: 'image', local: 'kingston-aerial', alt: 'Drone view of Kingston Road after sewer separation and paving, University Endowment Lands, October 2026' };
+const names = id => groups.find(g => g.id === id)?.items.map(c => c.name) || [];
+const list = xs => xs.length <= 1 ? (xs[0] || '') : xs.slice(0, -1).join(', ') + ' and ' + xs.at(-1);
+const plink = p => `[${p.name}](projects/${p.slug.current}.html)`;
+const primeJobs = projects.filter(p => (p.details || []).some(d => /^contractor$/i.test(d.label) && /neil smith/i.test(d.value)));
+const faq = [
+  { q: 'Who has Neil Smith Construction worked for?', a: `NSC has built civil works for ${list([...names('public'), ...names('private')])}, and for ${list(names('schools'))}. On many jobs NSC is the civil subcontractor to ${list(names('contractors'))}.` },
+  { q: 'Which school districts has NSC built for?', a: groups.find(g => g.id === 'schools')?.items.map(c => `- **${c.name}:** ${c.projects.map(plink).join(', ')}`).join('\n') || '' },
+  { q: 'Does NSC work as a prime contractor?', a: `Yes. NSC was the prime contractor on ${list(primeJobs.map(plink))}. NSC also works as the civil, excavation and underground utilities subcontractor to general contractors and construction managers. See [Civil subcontractor](civil-subcontractor.html).` },
+  { q: 'How do I invite NSC to bid?', a: `Send drawings, a tender package or a prequalification request to ${s.email} or call ${s.phone}. See [Tenders and bids](tenders.html).` },
+];
+const ld = [
+  breadcrumbs(s, [['Home', ''], ['Clients and partners', 'clients.html']]),
+  { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Clients and partners of Neil Smith Construction', url: abs(s, 'clients.html'), about: { '@id': orgId(s) },
+    mainEntity: { '@type': 'ItemList', itemListElement: groups.flatMap(g => g.items).map((c, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': 'Organization', name: c.name } })) } },
+  faqLd([{ _type: 'faq', items: faq }]),
+];
+---
+<Sub path="clients.html" title="Clients and partners" fullTitle="Clients: Cities, School Districts and Builders | NSC" description="Cities, school districts, developers and general contractors Neil Smith Construction has built civil works for in Metro Vancouver, with the projects for each." jsonld={ld} ogImage={imgUrl(hero)} active="about" pre={pre} bodyClass="cp">
+<header class="pihero cphero">
+  <div class="bg"><Img image={hero} pre={pre} eager /></div>
+  <div class="wrap">
+    <p class="mono kick">Clients and partners</p>
+    <h1>Who we <span class="grad">build for.</span></h1>
+    <p class="pi-sub">Municipalities, school districts, developers and the general contractors and construction managers we work with, each linked to the projects our crews built.</p>
+  </div>
+</header>
+<main>
+{groups.map((g, gi) => <section class="sec" id={g.id} style={gi ? 'padding-top:0' : undefined}><div class="wrap">
+  <div class="rg-h"><div><p class="mono kick">{String(gi + 1).padStart(2, '0')}</p><h2 class="h2">{g.title}.</h2></div></div>
+  <div class="auds cl-g" style="margin-top:34px">{g.items.map(c => (
+    <article class="aud rv" id={c.slug}><h3 class="mono kick">{c.name}</h3>
+      <ul class="cl-l">{c.projects.map(p => { const r = roleOn(c, p); return <li><a href={`projects/${p.slug.current}.html`}>{p.name}</a><span>{[p.type, p.city, p.live ? 'in progress' : p.year].filter(Boolean).join(' · ')}{r ? ` · ${r}` : ''}</span></li>; })}</ul>
+    </article>))}</div>
+</div></section>)}
+<section class="sec faq" style="padding-top:0"><div class="wrap"><div class="rg-h"><div><p class="mono kick">Questions</p><h2 class="h2">Working with NSC.</h2></div></div>
+  <div class="faq-l">{faq.map((it, i) => <details class="faq-i rv" open={i === 0 || undefined}><summary><h3>{it.q}</h3><span aria-hidden="true">+</span></summary><div class="prose" set:html={md(it.a)} /></details>)}</div>
+</div></section>
+<Cta pre={pre} />
+</main>
+</Sub>
+<style is:global>
+.cl-g{align-items:start}
+.cl-l{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.cl-l li{display:grid;gap:4px}
+.cl-l a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:rgba(122,166,255,.5);text-underline-offset:3px}
+.cl-l a:hover{text-decoration-color:#fff}
+.cl-l span{color:#b9c1ce;font-size:14.5px;line-height:1.45}
+</style>
