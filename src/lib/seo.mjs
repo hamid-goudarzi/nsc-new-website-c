@@ -32,7 +32,6 @@ export function organization(c) {
     areaServed: (s.serviceAreas?.length ? s.serviceAreas : ['Metro Vancouver', 'Fraser Valley', 'Lower Mainland, British Columbia']).map(n => ({ '@type': 'AdministrativeArea', name: n })),
     knowsAbout: [...new Set([...(h.serviceTiles || []).map(t => t.title), ...markets.flatMap(m => m.deliver || []), ...specialtyPages(c).map(p => p.title)])],
     slogan: [h.heroTitle, h.heroHighlight].filter(Boolean).join(' '),
-    foundingDate: '2018',
     founder: [{ '@type': 'Person', name: 'Neil Smith' }, { '@type': 'Person', name: 'Dennis Frederickson' }],
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certificate of Recognition (COR)', recognizedBy: { '@type': 'Organization', name: 'BC Construction Safety Alliance' } },
     sameAs: [s.linkedin, s.instagram, s.googleMaps].filter(Boolean),

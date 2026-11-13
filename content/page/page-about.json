@@ -24,17 +24,12 @@
     {
       "kicker": "Our story",
       "title": "Founded on fifty years in the field.",
-      "text": "Neil Smith had been working in excavation and heavy civil construction since 1970 when he and Dennis Frederickson incorporated Neil Smith Construction in 2018. Neil brought over fifty years in excavation, heavy civil and agricultural work, from small backfill jobs to major highway projects with crews of fifty or more. Dennis brought decades of experience in residential and commercial construction and project management.\n\nAfter Neil’s passing in 2022, Dennis took over leadership of the company and has guided it through steady growth: from utility upgrades and bulk excavation to school district programs, municipal sewer separation and specialized public facilities.\n\nToday the company carries the standards it was founded on: quality work, delivered safely, on time and on budget.",
+      "text": "Neil Smith and Dennis Frederickson built Neil Smith Construction together. Neil brought over fifty years, going back to 1970, in excavation, heavy civil and agricultural work, from small backfill jobs to major highway projects with crews of fifty or more. Dennis brought decades of experience in residential and commercial construction and project management.\n\nAfter Neil’s passing in 2022, Dennis took over leadership of the company and has guided it through steady growth: from utility upgrades and bulk excavation to school district programs, municipal sewer separation and specialized public facilities.\n\nToday the company carries the standards it was founded on: quality work, delivered safely, on time and on budget.",
       "timeline": [
         {
           "when": "1970",
           "what": "Neil Smith starts in excavation and heavy civil work",
           "_key": "since1970ab"
-        },
-        {
-          "when": "2018",
-          "what": "Incorporated in Richmond, BC",
-          "_key": "6c472ac475c5"
         },
         {
           "when": "2020",
@@ -68,7 +63,7 @@
       "tight": true,
       "kicker": "At a glance",
       "title": "Company facts.",
-      "body": "- **Name:** Neil Smith Construction Ltd. (NSC)\n- **What we do:** heavy civil construction: excavation and earthworks, underground utilities and sewer separation, stormwater detention, roadworks, concrete and site servicing\n- **Experience:** heavy civil work since 1970\n- **Incorporated:** 2018, by Neil Smith and Dennis Frederickson\n- **Led by:** Dennis Frederickson, Owner, Co-Founder and Director\n- **Head office:** #206-6011 Westminster Hwy, Richmond, BC V7C 4R9\n- **Equipment yard:** 22617 Fraser Hwy, Langley, BC V2Z 2T5\n- **Service area:** Metro Vancouver and the Fraser Valley. See [areas we serve](areas/index.html)\n- **Safety:** COR certified, BC Construction Safety Alliance\n- **Markets:** municipal and public works, school districts, public facilities and institutions, private development and housing\n- **Clients include:** City of Vancouver, City of Surrey, University Endowment Lands, school districts #36 Surrey, #37 Delta, #38 Richmond, #40 New Westminster and #41 Burnaby\n- **Contracts:** prime contractor, and civil subcontractor to construction managers and general contractors\n- **Contact:** 604-644-5884 · info@nscltd.ca"
+      "body": "- **Name:** Neil Smith Construction Ltd. (NSC)\n- **What we do:** heavy civil construction: excavation and earthworks, underground utilities and sewer separation, stormwater detention, roadworks, concrete and site servicing\n- **Experience:** heavy civil work since 1970\n- **Founders:** Neil Smith and Dennis Frederickson\n- **Led by:** Dennis Frederickson, Owner, Co-Founder and Director\n- **Head office:** #206-6011 Westminster Hwy, Richmond, BC V7C 4R9\n- **Equipment yard:** 22617 Fraser Hwy, Langley, BC V2Z 2T5\n- **Service area:** Metro Vancouver and the Fraser Valley. See [areas we serve](areas/index.html)\n- **Safety:** COR certified, BC Construction Safety Alliance\n- **Markets:** municipal and public works, school districts, public facilities and institutions, private development and housing\n- **Clients include:** City of Vancouver, City of Surrey, University Endowment Lands, school districts #36 Surrey, #37 Delta, #38 Richmond, #40 New Westminster and #41 Burnaby\n- **Contracts:** prime contractor, and civil subcontractor to construction managers and general contractors\n- **Contact:** 604-644-5884 · info@nscltd.ca"
     },
     {
       "kicker": "What we stand for",
