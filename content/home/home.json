@@ -8,7 +8,7 @@
   "heroStats": [
     {
       "value": "50+",
-      "label": "years in heavy civil · since 1970",
+      "label": "years in heavy civil · since 1966",
       "_key": "4d6276a8d868"
     },
     {
@@ -39,7 +39,7 @@
     "SmartCentres",
     "Wright Construction"
   ],
-  "statement": "We’re a heavy civil contractor built on *over fifty years* of field experience, going back to 1970. We take on *large-scale civil works* for cities, school districts and builders, with one accountable team from first sawcut to final as-built.",
+  "statement": "We’re a heavy civil contractor built on *over fifty years* of field experience, going back to 1966. We take on *large-scale civil works* for cities, school districts and builders, with one accountable team from first sawcut to final as-built.",
   "groundLeft": "Underground utilities · Earthworks · Roadworks",
   "groundRight": "Richmond & Langley, BC",
   "servicesTitle": "Full civil scope. One accountable contractor.",
@@ -391,12 +391,12 @@
     "local": "ggreenaway-footing-excavation",
     "alt": "NSC CAT excavator and crew excavating footings at George Greenaway Elementary"
   },
-  "storyText": "Neil Smith and Dennis Frederickson built the company together. Neil brought over fifty years in excavation and heavy civil work, going back to 1970, from small backfill jobs to highway projects with crews of fifty. Dennis brought over forty years in construction and project management across residential, commercial, utility and earthmoving work.\n\nSince Neil’s passing in 2022, Dennis has led the company through steady growth. The standard has not changed: quality work, on time, on budget, and everyone home safe.",
+  "storyText": "Neil Smith and Dennis Frederickson built the company together. Neil brought over fifty years in excavation and heavy civil work, going back to 1966, from small backfill jobs to highway projects with crews of fifty. Dennis brought over forty years in construction and project management across residential, commercial, utility and earthmoving work.\n\nSince Neil’s passing in 2022, Dennis has led the company through steady growth. The standard has not changed: quality work, on time, on budget, and everyone home safe.",
   "storyTimeline": [
     {
-      "when": "1970",
+      "when": "1966",
       "what": "Neil Smith starts in excavation and heavy civil work",
-      "_key": "since1970aa"
+      "_key": "since1966aa"
     },
     {
       "when": "2020",
