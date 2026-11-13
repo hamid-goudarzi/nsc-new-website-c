@@ -159,3 +159,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Hamid: don't mention when the company was founded. Removed the founding/incorporation year (2018) from home and About story text and timelines, About facts (now 'Founders: Neil Smith and Dennis Frederickson'), heavy civil page, AI summary and Organization JSON-LD (foundingDate dropped). Experience since 1970 stays.
 - Google Business Profile description re-saved without the founding year ('Started by Neil Smith and Dennis Frederickson'); pending Google review.
 - Hamid: experience goes back to 1966 (not 1970). All 14 mentions changed (hero stat, statement, story text/timelines, About facts, heavy civil page, projects stat, meta description, AI summary).
+- Google Business Profile description re-saved with 1966 and no founding year; pending Google review (the earlier 1970 version had gone live).
