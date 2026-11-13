@@ -162,3 +162,7 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Google Business Profile description re-saved with 1966 and no founding year; pending Google review (the earlier 1970 version had gone live).
 - Hamid: experience is now '35+ years', with no year anywhere. Stats (home, projects), statement, story titles ('Built on 35+ years in the field.'), About facts, meta description, AI summary updated; 1966 timeline entries removed; Neil's personal history now 'decades'.
 - Google Business Profile description re-saved with '35+ years of heavy civil experience' and no year; pending Google review.
+
+## Nov 13, 2026 — four Guildford Park photos from Hamid
+- New (already published/edited by NSC, so resized only, not re-graded): guildford-watermain-valves (crew on fire/domestic water mains with gate valves), guildford-tank-pad (graded tank excavation), guildford-tank-modules (crew on detention tank modules and liner), guildford-bulk-excavation (CAT and Kubota on bulk excavation for the addition). Matched to Guildford Park by site, fence, field and NSC-logo machines.
+- Used: first four photos of the Guildford Park gallery; home 'From the field' (replace mains and gwide2); home Site preparation tile (replaces gwide); School Site Works hero (replaces tank2).

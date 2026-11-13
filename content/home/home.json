@@ -105,8 +105,8 @@
       ],
       "image": {
         "_type": "image",
-        "local": "gwide",
-        "alt": "Graded building pad beside the field at Guildford Park Secondary"
+        "local": "guildford-tank-pad",
+        "alt": "Excavation for the stormwater detention tank, graded and compacted, at Guildford Park Secondary, Surrey"
       },
       "project": {
         "_type": "reference",
@@ -296,8 +296,8 @@
     {
       "image": {
         "_type": "image",
-        "local": "mains",
-        "alt": "New fire and domestic water mains with gate valves at Guildford Park Secondary, Surrey"
+        "local": "guildford-watermain-valves",
+        "alt": "NSC crew installing new fire and domestic water mains with gate valves at Guildford Park Secondary, Surrey"
       },
       "caption": "Water mains · Guildford",
       "project": {
@@ -374,10 +374,10 @@
     {
       "image": {
         "_type": "image",
-        "local": "gwide2",
-        "alt": "Excavation for the school addition at Guildford Park Secondary, Surrey"
+        "local": "guildford-bulk-excavation",
+        "alt": "NSC CAT and Kubota excavators on bulk excavation for the school addition at Guildford Park Secondary, Surrey"
       },
-      "caption": "Excavation · Guildford",
+      "caption": "Bulk excavation · Guildford",
       "project": {
         "_type": "reference",
         "_ref": "project-guildford-park-secondary"

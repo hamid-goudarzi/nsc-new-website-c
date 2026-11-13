@@ -124,6 +124,26 @@
   "gallery": [
     {
       "_type": "image",
+      "local": "guildford-tank-modules",
+      "alt": "NSC crew on the stormwater detention tank modules and liner at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-watermain-valves",
+      "alt": "NSC crew installing new fire and domestic water mains with gate valves at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-bulk-excavation",
+      "alt": "NSC CAT and Kubota excavators on bulk excavation for the school addition at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-tank-pad",
+      "alt": "Excavation for the stormwater detention tank, graded and compacted, at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
       "local": "tank2",
       "alt": "NSC crew placing detention tank modules in the lined pit",
       "_key": "36be9f994211"
