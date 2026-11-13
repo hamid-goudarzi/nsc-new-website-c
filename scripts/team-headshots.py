@@ -34,9 +34,9 @@ def background():
 # Per-person tone requests (lighter / less warm skin where asked)
 ADJ = {}
 FEATHER = {'navid': 7}
-TRIM = {'fred': .22}          # white-backdrop photos: cut a little tighter so no light halo remains
-ZOOM = {'justin': .76, 'fred': .9}
-SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.9, ab=.68, floor=.8, contrast=1.06, target=(168., 152., 150.), range=90, sig=16, gamma=1.08, key=.2, detail2=1, grain=2.2)}
+TRIM = {}          # white-backdrop photos: cut a little tighter so no light halo remains
+ZOOM = {'justin': .76, 'fred': .7}
+SKINMATCH = {'hamid': dict(L=.55, ab=.9, target=(176., 150., 145.), cap=1.14, shadows=.6, range=70, sig=11, hair=1), 'justin': dict(L=.75, ab=.7, lift=1.18), 'djoomart': dict(L=.6, ab=.6, lift=1.08), 'fred': dict(L=.3, ab=.35, range=70, sig=12)}
 def adjust(name, rgb):
     o = ADJ.get(name)
     if not o: return rgb
