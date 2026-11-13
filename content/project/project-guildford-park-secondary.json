@@ -124,8 +124,23 @@
   "gallery": [
     {
       "_type": "image",
+      "local": "guildford-nsc-fleet",
+      "alt": "NSC Kobelco, Kubota and CAT excavators lined up at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
       "local": "guildford-tank-modules",
       "alt": "NSC crew on the stormwater detention tank modules and liner at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-tank-excavation",
+      "alt": "Excavation and base preparation for the stormwater detention tank at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-liner-install",
+      "alt": "NSC crew placing the liner for the stormwater detention tank at Guildford Park Secondary, Surrey"
     },
     {
       "_type": "image",
@@ -136,6 +151,21 @@
       "_type": "image",
       "local": "guildford-bulk-excavation",
       "alt": "NSC CAT and Kubota excavators on bulk excavation for the school addition at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-bulk-excavation-wide",
+      "alt": "NSC CAT excavator on bulk excavation for the school addition at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-hauling",
+      "alt": "Trucks hauling excavated material during bulk excavation at Guildford Park Secondary, Surrey"
+    },
+    {
+      "_type": "image",
+      "local": "guildford-site-overview",
+      "alt": "NSC excavators on site works around the Guildford Park Secondary addition, Surrey"
     },
     {
       "_type": "image",
