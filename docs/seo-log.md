@@ -154,3 +154,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Link the clients page from About and the civil-subcontractor page body (admin text).
 - Ask Hamid for completion years of Fire Hall No. 12, Florin and UBC (shown without a year).
 - Project pages remain 120–250 words; add facts only when Hamid supplies them (quantities, durations).
+- Experience (Hamid's correction): NSC's experience goes back to 1970; 2018 is the incorporation year. Hero stat now '50+ years in heavy civil · since 1970'; home statement, home and About story text and timelines (new 1970 entry, 2018 'Incorporated'), About facts, heavy civil page, projects page stat, Google description (site meta + Organization JSON-LD) and the AI summary (llms.txt) all say 50+ years since 1970. JSON-LD foundingDate stays 2018 (the legal record).
