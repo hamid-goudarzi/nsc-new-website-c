@@ -161,3 +161,4 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Hamid: experience goes back to 1966 (not 1970). All 14 mentions changed (hero stat, statement, story text/timelines, About facts, heavy civil page, projects stat, meta description, AI summary).
 - Google Business Profile description re-saved with 1966 and no founding year; pending Google review (the earlier 1970 version had gone live).
 - Hamid: experience is now '35+ years', with no year anywhere. Stats (home, projects), statement, story titles ('Built on 35+ years in the field.'), About facts, meta description, AI summary updated; 1966 timeline entries removed; Neil's personal history now 'decades'.
+- Google Business Profile description re-saved with '35+ years of heavy civil experience' and no year; pending Google review.
