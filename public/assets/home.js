@@ -35,7 +35,7 @@ if(reduced)$$('.rv,[data-split]').forEach(e=>e.classList.add('in'));
 /* counters */
 
 const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.to,t1=performance.now();const st=n=>{const k=reduced?1:Math.min(1,(n-t1)/1800),v=Math.round(to*(1-Math.pow(1-k,4)));el.firstChild.textContent=v;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}),{threshold:.5});
-$$('[data-to]').forEach(el=>cio.observe(el));
+$$('b[data-to]').forEach(el=>cio.observe(el));
 
 /* statement words */
 const stmt=$('#stmt');
@@ -161,4 +161,49 @@ function frame(){const r=sc.getBoundingClientRect(),vh=innerHeight,k=cl(-r.top,0
   if(on||k===0||k===1)set(k)}
 let tick=false;addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{frame();tick=false})}},{passive:true});
 addEventListener('resize',frame);frame();
+})();
+
+/* ---- Motion pack (same block in home.js and site.js): tilt, magnetic buttons, scroll pipe, velocity skew, contour canvas, hero parallax, cutaway draw-in ---- */
+(()=>{
+const D=document,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,save=navigator.connection&&navigator.connection.saveData;
+if(reduced||save)return;
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches,$$=(s,r=D)=>[...r.querySelectorAll(s)];
+D.documentElement.classList.add('fx');
+if(fine){
+  // 3D tilt with a moving glare
+  $$('.tile,.pcard,.person.has-ph,.aud').forEach(el=>{const g=D.createElement('span');g.className='fx-glare';g.setAttribute('aria-hidden','true');el.appendChild(g);
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      el.style.transform='perspective(1000px) rotateX('+((.5-y)*6)+'deg) rotateY('+((x-.5)*7)+'deg) translateZ(0)';el.style.transition='transform .12s linear';g.style.setProperty('--gx',x*100+'%');g.style.setProperty('--gy',y*100+'%');g.style.opacity=1});
+    el.addEventListener('pointerleave',()=>{el.style.transition='transform .7s cubic-bezier(.16,1,.3,1)';el.style.transform='';g.style.opacity=0})});
+  // magnetic primary buttons
+  $$('.btn-blue').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.28)+'px,'+((e.clientY-r.top-r.height/2)*.4)+'px)'});
+    b.addEventListener('pointerleave',()=>{b.style.transform=''})});
+}
+// scroll pipe (home, wide screens): a pipe that fills as you scroll, one manhole per section
+const secs=[['top','Top'],['built-below','Built below'],['services','Services'],['projects','Projects'],['region','Where we work'],['story','Our story'],['safety','Safety'],['leadership','Team'],['contact','Contact']].map(a=>[D.getElementById(a[0]),a[1],a[0]]).filter(x=>x[0]);
+let pipe=null,dots=[];
+if(D.querySelector('.hero')&&secs.length>4){pipe=D.createElement('nav');pipe.className='fx-pipe';pipe.setAttribute('aria-label','Page sections');
+  pipe.innerHTML='<i></i>'+secs.map((s,i)=>'<a href="#'+s[2]+'" style="top:'+(i/(secs.length-1)*100)+'%"><span>'+s[1]+'</span></a>').join('');D.body.appendChild(pipe);dots=$$('a',pipe);
+  dots.forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();secs[i][0].scrollIntoView({behavior:'smooth'})}))}
+// contour-line canvases behind dark sections (home)
+const topo=$$('.statement,.contact').map(sec=>{const c=D.createElement('canvas');c.className='fx-topo';c.setAttribute('aria-hidden','true');sec.classList.add('fx-host');sec.prepend(c);return {c,sec,on:false,ctx:c.getContext('2d')}});
+const tio=new IntersectionObserver(es=>es.forEach(e=>{const t=topo.find(x=>x.sec===e.target);if(t)t.on=e.isIntersecting}));topo.forEach(t=>tio.observe(t.sec));
+function drawTopo(t,time){const c=t.c,w=c.clientWidth,h=c.clientHeight;if(!w)return;const dpr=Math.min(1.5,devicePixelRatio||1);if(c.width!==Math.round(w*dpr)){c.width=Math.round(w*dpr);c.height=Math.round(h*dpr)}
+  const x=t.ctx;x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,h);x.lineWidth=1;const n=w<700?9:15,T=time/5200;
+  for(let i=0;i<n;i++){const by=h*(i+.5)/n;x.beginPath();for(let px=0;px<=w;px+=18){const u=px/w*6.283;const y=by+Math.sin(u*1.3+T+i*.55)*26+Math.sin(u*2.9-T*1.4+i*1.3)*11+Math.cos(u*.6+T*.6+i*.2)*30;if(px)x.lineTo(px,y);else x.moveTo(px,y)}
+    x.strokeStyle='rgba(122,166,255,'+(i%4===0?.16:.07)+')';x.stroke()}}
+// cutaway illustrations draw themselves in
+$$('.cut-art').forEach(a=>{const svg=a.querySelector('svg');if(!svg)return;let ns=[...svg.children].filter(n=>!/^(defs|style|title|desc)$/.test(n.tagName));
+  ns=ns.flatMap(n=>n.tagName==='g'&&n.children.length>12?[...n.children]:[n]);const step=Math.min(45,1900/ns.length);ns.forEach((n,i)=>{n.classList.add('fx-d');n.style.transitionDelay=Math.round(i*step)+'ms'});
+  new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){a.classList.add('in');o.disconnect()}}),{threshold:.25}).observe(a)});
+const heroBg=D.querySelector('.phero .bg'),skewEls=$$('.field,.logos');
+let ly=scrollY,vel=0,last=0;
+function loop(time){const y=scrollY,vh=innerHeight;vel+=((y-ly)-vel)*.18;ly=y;
+  const sk=Math.max(-7,Math.min(7,vel*.22));skewEls.forEach(el=>el.style.setProperty('--sk',sk.toFixed(2)));
+  if(heroBg&&y<vh*1.2)heroBg.style.transform='translate3d(0,'+(y*.22).toFixed(1)+'px,0)';
+  if(pipe){const max=D.documentElement.scrollHeight-vh,k=max>0?y/max:0;pipe.style.setProperty('--k',k.toFixed(4));let cur=0;secs.forEach((s,i)=>{if(s[0].getBoundingClientRect().top<vh*.5)cur=i});
+    dots.forEach((a,i)=>{a.classList.toggle('on',i===cur);a.classList.toggle('done',i<cur)});pipe.classList.toggle('show',y>vh*.6)}
+  if(time-last>42){last=time;topo.forEach(t=>t.on&&drawTopo(t,time))}
+  requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
 })();

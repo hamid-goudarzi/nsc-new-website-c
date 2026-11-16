@@ -182,3 +182,8 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Page transitions on every page (native cross-document View Transitions): new page wipes up from the ground; a project card photo grows into the project page hero.
 - First-visit opening on the home page (once per session, CSS only): NSC mark, a horizon line, then the screen splits open onto the hero.
 - Tested: build check, axe 0 violations on all 57 pages, no sideways scroll or console errors at 1440 and 390 px. Lighthouse not run yet.
+
+## Nov 16, 2026 — motion upgrade, preview B (branch motion, not live)
+- Motion pack appended to home.js and site.js (off for reduced motion and data-saver): 3D tilt with glare on service tiles, project cards, team portraits and audience cards; magnetic Request-a-bid buttons; scroll pipe on the right edge of the home page (wide screens) with one manhole per section; client strip and field photos lean with scroll speed; animated contour lines behind the statement and contact sections; gallery photos open with a curtain wipe; project heroes get parallax and a rising title; cutaway illustrations assemble piece by piece when scrolled to.
+- Fixed an older bug found while testing: the home contact form showed 'NaN' at the top (the number counter also matched the form's data-to email attribute). Still on the live site until this branch is published.
+- Tested: build check; axe 0 violations on 57 pages; no sideways scroll or console errors at 1440 and 390 px; clicking a project card navigates correctly with the transition. Lighthouse on this computer: home 72 (live site 65 in the same run), Guildford project page 92 (live 93), so no measurable speed cost.
