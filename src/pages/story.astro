@@ -1,0 +1,150 @@
+---
+// DEMO (branch "story"): a landing-page concept. One circle opens the page, shrinks to a point, and that point draws
+// the whole NSC story as a single continuous line while you scroll; at the end the point grows back into the closing screen.
+// Text uses only facts already on the site. Not linked from anywhere and marked noindex.
+import { assetVer } from '../lib/util.mjs';
+import { fontCss } from '../lib/fonts.mjs';
+import { content } from '../lib/content.mjs';
+const { settings: s } = await content();
+
+const G = 560;                       // ground line in the 900-high world
+let x = 320, y = G;
+const d = [`M${x} ${y}`], marks = [];
+const L = (dx, dy) => { x += dx; y += dy; d.push(`L${x} ${y}`); };
+const P = pts => { const ox = x, oy = y; pts.forEach(([px, py]) => { x = ox + px; y = oy + py; d.push(`L${x} ${y}`); }); };
+const mark = () => marks.push(d.length);   // number of path commands drawn before this chapter starts
+
+mark();                                                             // 01 layout
+L(240, 0); P([[0, -78], [36, -64], [0, -50], [0, 0]]); L(210, 0);  // survey stake with flag
+mark();                                                             // 02 excavation
+P([[0, -34], [230, -34], [230, 0], [230, -34], [190, -34], [190, -80], [330, -262], [452, -132], [430, -70], [486, -62], [468, -138], [338, -232], [176, -80],
+   [120, -80], [120, -132], [50, -132], [50, -80], [30, -80], [30, -34], [230, -34], [230, 0]]);
+L(190, 0);
+mark();                                                             // 03 underground utilities
+L(0, 230); L(230, 0); L(0, -228); L(58, 0); L(0, 228); L(210, 0);
+d.push(`a44 44 0 1 1 88 0`, `a44 44 0 1 1 -88 0`); L(88, 0); L(170, 0);
+mark();                                                             // 04 stormwater detention
+L(0, -112); for (let i = 0; i < 4; i++) { L(46, 0); L(0, 112); L(46, 0); L(0, -112); } L(0, 112); L(150, 0);
+mark();                                                             // 05 roads, curb and sidewalk
+L(0, -230); L(70, 0); L(0, -16); L(130, 0); L(0, 16); L(150, 0);
+mark();                                                             // 06 built for the public
+P([[0, -150], [92, -150], [92, -212], [164, -212], [164, -150], [362, -150], [362, 0]]); L(70, 0);
+for (let i = 0; i < 2; i++) { P([[0, -72], [56, -122], [112, -72], [112, 0]]); L(52, 0); }
+L(260, 0);
+mark();                                                             // end
+const W = x + 500;
+const chapters = [
+  ['01', 'It starts with a line.', 'Layout, sawcutting, pre-locates and soil sampling.'],
+  ['02', 'Earthwork and excavation.', 'Bulk and detail excavation, hauling, material supply, contaminated soil and shoring.'],
+  ['03', 'Underground utilities.', 'Sanitary, storm and water: mains, precast manholes, services and tie-ins.'],
+  ['04', 'Stormwater detention.', 'Lined detention tanks built from modular chambers, with flow control manholes.'],
+  ['05', 'Roads, curb and sidewalk.', 'Curb and gutter, sidewalks, driveways and road restoration.'],
+  ['06', 'Built for the public.', 'Schools, streets and public facilities across Metro Vancouver and the Fraser Valley.'],
+];
+---
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06080c">
+<meta name="robots" content="noindex">
+<title>Story demo | Neil Smith Construction</title>
+<link rel="icon" href="nsc-logo.jpg">
+<style is:inline set:html={fontCss()}></style>
+<link rel="stylesheet" href={assetVer('home.css')}>
+<style is:inline>
+.st{position:relative;height:900vh}
+.st-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
+.st-world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+.st-world svg{display:block;overflow:visible}
+.st-line{fill:none;stroke:url(#st-g);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 10px rgba(47,107,255,.9))}
+.st-orb{position:absolute;left:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#2f6bff;box-shadow:0 0 30px 6px rgba(47,107,255,.7);will-change:transform;z-index:3}
+.st-open,.st-end{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 22px;pointer-events:none}
+.st-open h1{font-size:clamp(2.8rem,1rem + 9vw,9rem);letter-spacing:-.06em;line-height:.92}
+.st-open p,.st-end p{margin-top:22px;font:600 12px var(--mono);letter-spacing:.3em;text-transform:uppercase}
+.st-open .hint{margin-top:9vh;display:flex;flex-direction:column;align-items:center;gap:10px}
+.st-open .hint i{display:block;width:2px;height:54px;background:#fff;transform-origin:50% 0;animation:st-drip 1.6s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes st-drip{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.st-end{opacity:0}
+.st-end h2{font-size:clamp(2.6rem,1rem + 8vw,8rem);letter-spacing:-.06em;line-height:.92}
+.st-end .row{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;pointer-events:auto}
+.st-end .btn-w{background:#fff;color:#002a73}
+.st-end .btn-o{border-color:rgba(255,255,255,.6);color:#fff}
+.st-cap{position:absolute;z-index:2;left:clamp(20px,5vw,80px);top:clamp(96px,14vh,150px);width:min(560px,86vw)}
+.st-cap div{position:absolute;left:0;top:0;width:100%;opacity:0;transform:translateY(26px);transition:opacity .5s,transform .8s var(--ease)}
+.st-cap div.on{opacity:1;transform:none}
+.st-cap b{font:600 13px var(--mono);letter-spacing:.2em;color:var(--glow-2)}
+.st-cap h2{margin-top:12px;font-size:clamp(1.9rem,1rem + 3.4vw,4.4rem);letter-spacing:-.045em;line-height:1}
+.st-cap p{margin-top:14px;color:#c9d0dc;font-size:clamp(15px,.5vw + 12px,19px);max-width:44ch}
+.st-top{position:absolute;z-index:6;left:0;right:0;top:0;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,40px)}
+.st-top a{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:600 14px var(--display)}
+.st-top img{width:34px;height:34px;border-radius:9px}
+.st-top .back{font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(6,8,12,.35)}
+.st-prog{position:absolute;z-index:6;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
+.st-prog i{display:block;height:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#2f6bff,#7aa6ff)}
+.st.static{height:auto}.st.static .st-pin{position:relative;height:auto;padding:110px 0 60px}
+.st.static .st-world{position:relative;transform:none!important;width:100%;overflow-x:auto}.st.static .st-world svg{width:1800px;height:auto}
+.st.static .st-orb,.st.static .st-open .hint,.st.static .st-prog{display:none}
+.st.static .st-open,.st.static .st-end,.st.static .st-cap{position:relative;inset:auto;opacity:1;padding:20px clamp(20px,5vw,80px);align-items:flex-start;text-align:left}
+.st.static .st-cap div{position:relative;opacity:1;transform:none;margin-bottom:26px}
+</style>
+</head>
+<body>
+<main class="st" id="st">
+  <div class="st-pin">
+    <div class="st-top"><a href="index.html"><img src="nsc-logo.jpg" alt="" width="96" height="96">{s.companyName}</a><a class="back" href="index.html">Current home page</a></div>
+    <div class="st-world" id="stWorld" aria-hidden="true">
+      <svg width={W} height="900" viewBox={`0 0 ${W} 900`} focusable="false">
+        <defs>
+          <linearGradient id="st-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2={W} y2="0"><stop offset="0" stop-color="#7aa6ff"/><stop offset=".5" stop-color="#2f6bff"/><stop offset="1" stop-color="#9cc0ff"/></linearGradient>
+          <linearGradient id="st-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141b2a"/><stop offset="1" stop-color="#06080c"/></linearGradient>
+          <pattern id="st-d" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="5" cy="7" r="1.3" fill="#fff" fill-opacity=".07"/><circle cx="19" cy="20" r="1" fill="#fff" fill-opacity=".05"/></pattern>
+        </defs>
+        <rect x="-2000" y={G} width={W + 4000} height={900 - G + 600} fill="url(#st-s)"/>
+        <rect x="-2000" y={G} width={W + 4000} height={900 - G + 600} fill="url(#st-d)"/>
+        <line x1="-2000" y1={G} x2={W + 2000} y2={G} stroke="#fff" stroke-opacity=".12" stroke-width="2"/>
+        <path id="stPath" class="st-line" d={d.join(' ')} data-marks={marks.join(',')}/>
+      </svg>
+    </div>
+    <div class="st-orb" id="stOrb" aria-hidden="true"></div>
+    <div class="st-open" id="stOpen"><h1>Built below.</h1><p>Neil Smith Construction · Heavy civil construction</p><div class="hint"><i></i><p style="margin:0">Scroll to follow the line</p></div></div>
+    <div class="st-cap" id="stCap">{chapters.map(c => <div><b>{c[0]}</b><h2>{c[1]}</h2><p>{c[2]}</p></div>)}</div>
+    <div class="st-end" id="stEnd"><h2>Trusted above.</h2><p>COR certified · Metro Vancouver and the Fraser Valley</p><div class="row"><a class="btn btn-w" href="contact.html">Request a bid →</a><a class="btn btn-o" href="projects/index.html">See projects</a></div></div>
+    <div class="st-prog" aria-hidden="true"><i id="stBar"></i></div>
+  </div>
+</main>
+<script is:inline src={assetVer('vendor/lenis.min.js')}></script>
+<script is:inline>
+(()=>{
+const st=document.getElementById('st'),world=document.getElementById('stWorld'),path=document.getElementById('stPath'),orb=document.getElementById('stOrb'),
+  open=document.getElementById('stOpen'),end=document.getElementById('stEnd'),caps=[...document.querySelectorAll('#stCap div')],bar=document.getElementById('stBar');
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){st.classList.add('static');return}
+if(window.Lenis){const l=new Lenis({lerp:.09,smoothWheel:true});const raf=t=>{l.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}
+const len=path.getTotalLength();path.style.strokeDasharray=len+' '+len;
+// chapter starts: first path length at which the line reaches each mark's x
+const cmds=path.getAttribute('d').match(/[MLa][^MLa]*/g),tmp=path.cloneNode(false);tmp.removeAttribute('id');const ml=path.dataset.marks.split(',').map(n=>{tmp.setAttribute('d',cmds.slice(0,+n).join(' '));return tmp.getTotalLength()});
+const cl=(v,a,b)=>Math.min(1,Math.max(0,(v-a)/(b-a))),ez=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const A=.07,B=.93;let cx=0,cy=0,init=false;
+function frame(){
+  const vw=innerWidth,vh=innerHeight,r=st.getBoundingClientRect(),k=cl(-r.top,0,st.offsetHeight-vh);
+  const p=cl(k,A,B),at=len*p,pt=path.getPointAtLength(at),sc=Math.min(vh/900,vw/720);
+  path.style.strokeDashoffset=len-at;
+  // camera follows the tip, eased; the tip sits a little right of centre
+  const tx=vw*(vw<760?.62:.58)-pt.x*sc,ty=(vh-900*sc)/2+(560-pt.y)*sc*.35;
+  if(!init){cx=tx;cy=ty;init=true}else{cx+=(tx-cx)*.14;cy+=(ty-cy)*.14}
+  world.style.transform='translate3d('+cx.toFixed(1)+'px,'+cy.toFixed(1)+'px,0) scale('+sc.toFixed(4)+')';
+  const sx=cx+pt.x*sc,sy=cy+pt.y*sc,cover=Math.hypot(vw,vh)*2.2/22;
+  const o=1-ez(cl(k,0,A)),e=ez(cl(k,B,1)),s=1+(cover-1)*Math.max(o,e);
+  orb.style.transform='translate3d('+sx.toFixed(1)+'px,'+sy.toFixed(1)+'px,0) scale('+s.toFixed(3)+')';
+  open.style.opacity=1-cl(k,0,A*.6);open.style.transform='scale('+(1+cl(k,0,A)*.25)+')';open.style.visibility=k<A?'visible':'hidden';
+  end.style.opacity=cl(k,B+.03,.995);end.style.transform='scale('+(.9+cl(k,B,1)*.1)+')';end.style.pointerEvents=k>.97?'auto':'none';
+  let cur=-1;if(k>A*.9&&k<B)ml.forEach((m,i)=>{if(i<caps.length&&at>=m-2)cur=i});caps.forEach((c,i)=>c.classList.toggle('on',i===cur));
+  bar.style.transform='scaleX('+k.toFixed(4)+')';
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
