@@ -601,36 +601,3 @@ html.seen .intro{display:none}
 .fx .phero h1{animation:fx-rise 1s cubic-bezier(.16,1,.3,1) .15s both}
 .fx .phero .ph-sub,.fx .phero .top,.fx .phero .back{animation:fx-rise 1s cubic-bezier(.16,1,.3,1) .32s both}
 @keyframes fx-rise{from{transform:translateY(46px)}to{transform:none}}
-
-/* ---- Home opening: one-line scroll story (src/components/Story.astro) ---- */
-.st{position:relative;height:720vh}
-.st-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
-.st-world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
-.st-world svg{display:block;overflow:visible}
-.st-line{fill:none;stroke:url(#st-g);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
-.st-glow{fill:none;stroke:#2f6bff;stroke-opacity:.28;stroke-width:18;stroke-linecap:round;stroke-linejoin:round}
-.st-orb{position:absolute;left:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#2f6bff;box-shadow:0 0 30px 6px rgba(47,107,255,.7);will-change:transform;z-index:3}
-.st-open,.st-end{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 22px;pointer-events:none}
-.st-open p,.st-end p{margin-top:22px;font:600 12px var(--mono);letter-spacing:.3em;text-transform:uppercase}
-.st-open .hint{margin-top:9vh;display:flex;flex-direction:column;align-items:center;gap:10px}
-.st-open .hint i{display:block;width:2px;height:54px;background:#fff;transform-origin:50% 0;animation:st-drip 1.6s cubic-bezier(.7,0,.2,1) infinite}
-@keyframes st-drip{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-.st-end{opacity:0}
-.st-end .row{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;pointer-events:auto}
-.st-end .btn-w{background:#fff;color:#002a73}
-.st-end .btn-o{border-color:rgba(255,255,255,.6);color:#fff}
-.st-cap{position:absolute;z-index:2;left:clamp(20px,5vw,80px);top:clamp(96px,14vh,150px);width:min(560px,86vw)}
-.st-cap div{position:absolute;left:0;top:0;width:100%;opacity:0;transform:translateY(26px);transition:opacity .5s,transform .8s var(--ease)}
-.st-cap div.on{opacity:1;transform:none}
-.st-cap b{font:600 13px var(--mono);letter-spacing:.2em;color:var(--glow-2)}
-.st-cap h2{margin-top:12px;font-size:clamp(1.9rem,1rem + 3.4vw,4.4rem);letter-spacing:-.045em;line-height:1}
-.st-cap p{margin-top:14px;color:#c9d0dc;font-size:clamp(15px,.5vw + 12px,19px);max-width:44ch}
-.st-prog{position:absolute;z-index:6;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08)}
-.st-prog i{display:block;height:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#2f6bff,#7aa6ff)}
-.st-open .st-h,.st-end .st-h{text-transform:none}
-.st-open .st-h{font-family:var(--display);font-weight:600;font-size:clamp(2.8rem,1rem + 9vw,9rem);letter-spacing:-.06em;line-height:.92;margin:0}
-.st-end .st-h{font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,1rem + 8vw,8rem);letter-spacing:-.06em;line-height:.92;margin:0}
-.st-skip{position:absolute;z-index:6;right:clamp(16px,4vw,40px);bottom:26px;font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#fff;text-decoration:none;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(6,8,12,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.st-skip:hover{background:rgba(6,8,12,.6)}
-@media (max-width:760px){.st{height:620vh}.st-cap{top:104px}}
-.st.static{display:none}
