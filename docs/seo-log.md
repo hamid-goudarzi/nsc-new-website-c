@@ -194,3 +194,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Nov 16 2026: Logo (menu and footer) and the Projects page "Home" link now go to the clean home address instead of /index.html.
 
 - Nov 16 2026: Home page: (1) as you scroll, the hero film shrinks into a centred card with four site photos around it; (2) "Under the street" is now an interactive 3D model of the Kingston Road sewers (three.js, loaded only near the section; source scripts/under3d.src.mjs, rebuild with npm run build:3d) instead of the drawn scroll scene. Text and numbers from the Kingston project record.
+
+- Nov 16 2026: Home hero collage: two Queen Elizabeth site photos (qe-excavator-site, qe-watermain-crew; source PROJECTS/2024/Queen Elizabeth School/Pictures/202412, finished with scripts/qe-finish.py) replace the Guildford fleet and manhole close-up; both also added to the Queen Elizabeth gallery.
