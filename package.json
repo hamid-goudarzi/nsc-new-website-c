@@ -10,7 +10,7 @@
     "build:3d": "esbuild scripts/under3d.src.mjs --bundle --minify --format=esm --target=es2020 --outfile=public/assets/under3d.js"
   },
   "dependencies": {
-    "astro": "^5.18.2"
+    "astro": "^7.4.12"
   },
   "engines": {
     "node": "22.x"
