@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 <footer class="pfoot">
   <div class="wrap">
     <div class="pf-g">
-      <div class="pf-brand"><a class="logo" href={`${pre}index.html`}><img src={`${pre}nsc-logo.jpg`} alt="" width="96" height="96"><b>{s.companyName}</b></a>
+      <div class="pf-brand"><a class="logo" href={pre || "./"}><img src={`${pre}nsc-logo.jpg`} alt="" width="96" height="96"><b>{s.companyName}</b></a>
         <p>{s.footerBlurb}</p>
         {s.corLine && <span class="pf-cor"><b>COR</b> {s.corLine.replace(/^COR\s*/, '')}</span>}</div>
       <div><p class="fh">Company</p><a href={`${pre}about.html`}>About</a><a href={`${pre}about.html#leadership`}>Leadership</a><a href={`${pre}safety.html`}>Safety &amp; Environment</a><a href={`${pre}careers.html`}>Careers</a></div>

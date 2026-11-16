@@ -190,3 +190,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 
 ## Nov 16, 2026 — story opening removed (Hamid did not like it)
 - The one-line scroll story (blue circle, single line through six chapters) was tried as the home page opening and reverted the same day; the home page is back to the short logo opening + hero film. Hamid's new style reference: wearebulletproof.com.
+
+- Nov 16 2026: Logo (menu and footer) and the Projects page "Home" link now go to the clean home address instead of /index.html.
