@@ -21,6 +21,9 @@ const client = p => p.homeClient || (p.details || []).find(d => /^client$/i.test
 const prime = p => p.homePrime ?? ((p.details || []).find(d => /prime|contractor|construction manager/i.test(d.label))?.value || '');
 const pageTitle = h.seoTitle || `${s.companyName} | Heavy Civil Construction, BC`;
 const canonical = s.siteUrl || 'https://www.neilsmithconstruction.com';
+// photos that appear around the opening film as it shrinks into a card: real site photos from the project records
+const allPics = projects.flatMap(p => [p.heroImage, ...(p.gallery || []).map(g => g.image || g)]).filter(Boolean);
+const collage = ['guildford-nsc-fleet', 'kingston-aerial', 'qe-manholes', 'tank'].map(k => allPics.find(i => i.local === k)).filter(Boolean);
 const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').href : undefined;
 ---
 <!doctype html>
@@ -65,6 +68,8 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 </nav>
 <div class="menu" id="menu">{(s.nav || []).map(n => <a href={n.link.replace(/^index\.html(?=#)/, '')}>{n.label}</a>)}<a href="contact.html">Contact</a><div class="menu-x"><a class="btn btn-blue" href="contact.html">Request a bid <span class="ar">→</span></a><div class="menu-sub"><a href="careers.html">Careers</a><a href="markets.html">Markets</a><a href="tenders.html">Tenders</a><a href="areas/index.html">Areas we serve</a></div><div class="menu-ct"><a href={tel(s.phone)}>{s.phone}</a><a href={`mailto:${s.email}`}>{s.email}</a></div></div></div>
 
+<div class="hx" id="hx"><div class="hx-pin">
+<div class="hx-col" aria-hidden="true">{collage.map((im, i) => <figure class={`c${i}`}><Img image={im} sizes="(max-width:760px) 42vw, 20vw" alt="" /></figure>)}</div>
 <header class="hero" id="top">
   <img class="poster" src="media/film-poster-1280.webp?v=20261104" srcset="media/film-poster-640.webp?v=20261104 640w, media/film-poster-1280.webp?v=20261104 1280w, media/film-poster.webp?v=20261104 2560w" sizes="100vw" alt="NSC crew in hard hats beside new precast concrete manholes on a sewer job" width="2560" height="1440" fetchpriority="high">
   <video id="heroVid" muted playsinline loop autoplay preload="auto" aria-hidden="true"></video>
@@ -79,7 +84,9 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
     </div>
   </div>
   <div class="scroll">SCROLL</div>
+  <a class="btn hx-pill" href="#projects">See our projects <span class="ar">→</span></a>
 </header>
+</div></div>
 
 <div class="logos" aria-label="Clients"><p class="lg-label mono">Trusted by public owners and builders</p><div class="logos-t" id="logos">{(h.clients || []).map(c => <span>{c}</span>)}</div></div>
 

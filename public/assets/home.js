@@ -61,11 +61,11 @@ $('#form').addEventListener('submit',e=>{e.preventDefault();const f=e.target,n=$
 /* scroll-driven effects */
 const nav=$('#nav'),hero=$('#top'),hv=$('#heroVid'),zoom=$('#zoom'),zm=$('#zoomMedia'),zi=$('#zoomImg');
 const links=$$('.nav .lk'),secs=links.map(a=>{const h=a.getAttribute('href');return h.startsWith('#')?$(h):null});
-let lastY=0;
+let lastY=0,hxp=-1;const hx=$('#hx');
 function frame(){
   const y=scrollY,vh=innerHeight;
   nav.classList.toggle('hide',y>lastY&&y>vh*.8&&!menu.classList.contains('open'));lastY=y;
-  if(!reduced&&y<vh){hv.style.transform=`scale(1.04) translateY(${y*.25}px)`}
+  if(hx){const p=reduced?0:Math.min(1,Math.max(0,y/(hx.offsetHeight-vh)));if(p!==hxp){hxp=p;hx.style.setProperty('--p',p.toFixed(4));hx.classList.toggle('card',p>.5)}}else if(!reduced&&y<vh){hv.style.transform=`scale(1.04) translateY(${y*.25}px)`}
   // statement
   const r=stmt.getBoundingClientRect(),k=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.4)));const lit=Math.round(k*ws.length);ws.forEach((w,i)=>w.classList.toggle('lit',reduced||i<lit));
   // zoom
