@@ -50,16 +50,17 @@ export function mount(root) {
   for (let x = -H + 2.5; x < H; x += 5) box('surface', 2.2, .02, .16, x, .17, 0, 0xe6ebf3, .9, null, 0, S);   // centre line
 
   // mains: storm and sanitary side by side, on a slight grade
-  const mSan = mat('sanitary', 0xeef2f8, 1, { emissive: 0x4a5368, roughness: .38 });
-  const mStorm = mat('storm', 0x2f6bff, 1, { emissive: 0x1238b0, roughness: .35 });
-  const mWater = mat('water', 0x63d2ff, 1, { emissive: 0x0d5a7a, roughness: .3 });
+  // colour code: sanitary red, storm green, water blue
+  const mSan = mat('sanitary', 0xe5483b, 1, { emissive: 0x6a1410, roughness: .38 });
+  const mStorm = mat('storm', 0x2fbf6a, 1, { emissive: 0x0d5a2c, roughness: .35 });
+  const mWater = mat('water', 0x2f8bff, 1, { emissive: 0x0d3a8a, roughness: .3 });
   const mMhS = mat('sanitary', 0xb9c0cb, .96, { roughness: .9 }), mMhT = mat('storm', 0xb9c0cb, .96, { roughness: .9 });
   const sanY = x => -4.75 + (x + H) * .006, stY = x => -3.75 + (x + H) * .006, sanZ = -1.45, stZ = 1.45;
   pipe('sanitary', [-H, sanY(-H), sanZ], [H, sanY(H), sanZ], .44, mSan, .2);
   pipe('storm', [-H, stY(-H), stZ], [H, stY(H), stZ], .58, mStorm, 0);
   // manholes in pairs, with lids in the road
   for (const x of [-21, 0, 21]) {
-    for (const [layer, z, y0, mm, ring] of [['sanitary', sanZ, sanY(x) - .5, mMhS, 0xeef2f8], ['storm', stZ, stY(x) - .6, mMhT, 0x2f6bff]]) {
+    for (const [layer, z, y0, mm, ring] of [['sanitary', sanZ, sanY(x) - .5, mMhS, 0xe5483b], ['storm', stZ, stY(x) - .6, mMhT, 0x2fbf6a]]) {
       const h = .12 - y0, c = new THREE.Mesh(new THREE.CylinderGeometry(.7, .95, h, 32), mm); c.position.set(x, y0 + h / 2, z); world.add(c); grow.push({ m: c, delay: .9, pop: true });
       const lid = new THREE.Mesh(new THREE.CylinderGeometry(.62, .62, .08, 32), mat('surface', 0x0a0d13, 1)); lid.position.set(x, .2, z); world.add(lid);
       const tr = new THREE.Mesh(new THREE.TorusGeometry(.66, .05, 10, 40), mat(layer, ring, 1, { emissive: ring, emissiveIntensity: .5 })); tr.rotation.x = Math.PI / 2; tr.position.set(x, .25, z); world.add(tr);
@@ -68,7 +69,7 @@ export function mount(root) {
   // catch basins at the curb with storm leads
   for (const [x, s] of [[-12, 1], [-12, -1], [12, 1], [12, -1]]) {
     box('storm', .95, 1.5, .95, x, -.62, s * 3.6, 0xb9c0cb, .96, null, 0, { roughness: .9 });
-    box('storm', .8, .04, .6, x, .18, s * 3.6, 0x0a0d13, 1, 0x2f6bff, 1);
+    box('storm', .8, .04, .6, x, .18, s * 3.6, 0x0a0d13, 1, 0x2fbf6a, 1);
     pipe('storm', [x, -1.15, s * 3.6], [x, stY(x), stZ], .2, mStorm, 1.3, 16);
   }
   // sanitary and storm service connections to every property
@@ -81,8 +82,8 @@ export function mount(root) {
   pipe('water', [-H, -1.55, 3.1], [H, -1.55, 3.1], .24, mWater, .5, 20);
   pipe('water', [-16, -1.55, 3.1], [-16, -1.55, 5], .12, mWater, 1.9, 14);
   pipe('water', [-16, -1.55, 5], [-16, .3, 5], .12, mWater, 2, 14);
-  const hyd = new THREE.Mesh(new THREE.CylinderGeometry(.2, .24, 1.05, 18), mat('water', 0xff6a2b, 1, { emissive: 0x5a1c05 })); hyd.position.set(-16, .8, 5); world.add(hyd);
-  const cap = new THREE.Mesh(new THREE.SphereGeometry(.22, 16, 10), mat('water', 0xff6a2b, 1, { emissive: 0x5a1c05 })); cap.position.set(-16, 1.36, 5); world.add(cap);
+  const hyd = new THREE.Mesh(new THREE.CylinderGeometry(.2, .24, 1.05, 18), mat('water', 0xffc233, 1, { emissive: 0x5a3f05 })); hyd.position.set(-16, .8, 5); world.add(hyd);
+  const cap = new THREE.Mesh(new THREE.SphereGeometry(.22, 16, 10), mat('water', 0xffc233, 1, { emissive: 0x5a3f05 })); cap.position.set(-16, 1.36, 5); world.add(cap);
 
   // labels: text lives in the page (so it is readable without WebGL); here they are pinned to points on the model
   const labels = [...root.querySelectorAll('.u3-labels [data-at]')].map(el => ({ el, p: new THREE.Vector3(...el.dataset.at.split(',').map(Number)), layer: el.dataset.l || '' }));

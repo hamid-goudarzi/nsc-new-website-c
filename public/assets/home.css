@@ -656,8 +656,8 @@ html.seen .intro{display:none}
 .u3-tabs button:hover{color:#fff}
 .u3-tabs button.on{background:#fff;color:#06080c}
 .u3-tabs i{width:9px;height:9px;border-radius:50%;background:#8e98ab}
-.u3-tabs .k-all{background:linear-gradient(135deg,#eef2f8 0 33%,#2f6bff 33% 66%,#63d2ff 66%)}
-.u3-tabs .k-sanitary{background:#eef2f8;box-shadow:0 0 0 1px rgba(0,0,0,.35)}.u3-tabs .k-storm{background:#2f6bff}.u3-tabs .k-water{background:#63d2ff}.u3-tabs .k-surface{background:#566070}
+.u3-tabs .k-all{background:linear-gradient(135deg,#e5483b 0 33%,#2fbf6a 33% 66%,#2f8bff 66%)}
+.u3-tabs .k-sanitary{background:#e5483b}.u3-tabs .k-storm{background:#2fbf6a}.u3-tabs .k-water{background:#2f8bff}.u3-tabs .k-surface{background:#566070}
 .u3-hint{color:#aab3c1;font-size:11px}
 .u3-figs{display:grid;grid-template-columns:repeat(3,1fr);margin:clamp(20px,2.6vw,34px) 0 0;border-top:1px solid var(--line)}
 .u3-figs div{padding:18px 18px 0 0}.u3-figs div+div{padding-left:18px;border-left:1px solid var(--line)}
