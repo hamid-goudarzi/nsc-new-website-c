@@ -23,7 +23,7 @@ const pageTitle = h.seoTitle || `${s.companyName} | Heavy Civil Construction, BC
 const canonical = s.siteUrl || 'https://www.neilsmithconstruction.com';
 // photos that appear around the opening film as it shrinks into a card: real site photos from the project records
 const allPics = projects.flatMap(p => [p.heroImage, ...(p.gallery || []).map(g => g.image || g)]).filter(Boolean);
-const collage = ['guildford-nsc-fleet', 'kingston-aerial', 'qe-manholes', 'tank'].map(k => allPics.find(i => i.local === k)).filter(Boolean);
+const collage = ['qe-excavator-site', 'kingston-aerial', 'qe-watermain-crew', 'tank'].map(k => allPics.find(i => i.local === k)).filter(Boolean);
 const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').href : undefined;
 ---
 <!doctype html>

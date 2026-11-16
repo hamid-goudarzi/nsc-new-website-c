@@ -136,6 +136,20 @@
       "local": "qe-curb",
       "alt": "New curb and sidewalk on the street frontage",
       "_key": "bdf99fd9bdc0"
+    },
+    {
+      "_type": "image",
+      "local": "qe-excavator-site",
+      "alt": "NSC Kobelco excavator and skid steer on site works at Queen Elizabeth Elementary, New Westminster",
+      "_key": "fdc36e05115c",
+      "focus": "70% 55%"
+    },
+    {
+      "_type": "image",
+      "local": "qe-watermain-crew",
+      "alt": "NSC crew in hard hats fitting a new water main with valves at Queen Elizabeth Elementary",
+      "_key": "60ecd3637b5d",
+      "focus": "38% 50%"
     }
   ],
   "homeService": "Civil work",
