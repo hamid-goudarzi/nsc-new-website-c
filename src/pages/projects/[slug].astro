@@ -32,7 +32,7 @@ const hv = p.heroVideo?.mp4 ? { mp4: `${pre}media/${p.heroVideo.mp4}${ver(p.hero
 ---
 <Sub path={`projects/${p.slug.current}.html`} title={p.name} fullTitle={projectTitle(settings, p)} description={projectDescription(p)} jsonld={ld} ogImage={imgUrl(p.heroImage)} active="projects" pre={pre}>
 <header class={hcls}>
-  <div class={`bg${tag === 'Illustration' ? ' ill' : ''}`}><Img image={p.heroImage} pre={pre} eager />{hv && <video class="hvid" muted playsinline loop preload="none" aria-hidden="true" data-mp4={hv.mp4} data-av1={hv.av1}></video>}</div>{tag && <span class="ill-tag mono">{tag}</span>}
+  <div class={`bg${tag === 'Illustration' ? ' ill' : ''}`} style={`view-transition-name:p-${p.slug.current}`}><Img image={p.heroImage} pre={pre} eager />{hv && <video class="hvid" muted playsinline loop preload="none" aria-hidden="true" data-mp4={hv.mp4} data-av1={hv.av1}></video>}</div>{tag && <span class="ill-tag mono">{tag}</span>}
   <div class="wrap ph-in">
     <a class="back" href="index.html">← All projects</a>
     <div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{p.status}</span><span class="chip">{p.type}</span><span class="chip">{p.city}</span></div>

@@ -4,6 +4,7 @@ import { fontCss } from '../lib/fonts.mjs';
 // Home page. Text, photos, featured projects, people and jobs come from the admin (content/home/home.json and collections).
 import Img from '../components/Img.astro';
 import Region from '../components/Region.astro';
+import Xray from '../components/Xray.astro';
 import { content } from '../lib/content.mjs';
 import { tel, linkify, paras, initials, pad2, imgUrl, metaDesc } from '../lib/util.mjs';
 import svgs from '../components/home-svgs.json';
@@ -51,8 +52,10 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <link rel="apple-touch-icon" href="nsc-logo.jpg">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/plain" title="Company summary for AI assistants" href="/llms.txt">
+<script is:inline>try{if(sessionStorage.getItem('nscIntro')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('seen');else sessionStorage.setItem('nscIntro','1')}catch(e){}</script>
 </head>
 <body>
+<div class="intro" aria-hidden="true"><i class="it"></i><i class="ib"></i><div class="im"><img src="nsc-logo.jpg" alt="" width="96" height="96"><span></span><b>Built below. Trusted above.</b></div></div>
 <div class="exc" id="exc" aria-hidden="true" set:html={svgs.exc}></div>
 <nav class="nav" id="nav" aria-label="Main">
   <a class="logo" href="#top"><img src="nsc-logo.jpg" alt="NSC logo" width="96" height="96"><b>{s.companyName}</b></a>
@@ -92,6 +95,8 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
   <div class="wrap vtype-cap mono"><span>{h.groundLeft}</span><span>{h.groundRight}</span></div>
 </section>
 
+{(() => { const kp = projects.find(p => p._id === 'project-kingston-road-sewer-separation'); return kp ? <Xray project={kp} href={url(kp)} /> : null; })()}
+
 <section class="sec" id="services">
   <div class="wrap">
     <div class="mk-h"><div><p class="mono kick">Services</p><h2 class="h2 split" data-split>{h.servicesTitle}</h2></div><a class="btn btn-glass rv" href="services.html">All services <span class="ar">→</span></a></div>
@@ -123,7 +128,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
     <p class="mono kick">Selected projects</p>
     <h2 class="h2 split" data-split>{h.projectsTitle}</h2>
     <div class="stack" id="stack">{(h.featured || []).filter(f => f.project).map((f, k) => { const p = f.project; return (
-      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={f.image?.alt || p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
+      <article class="scard" style={`--i:${k}`}><div class="sc-info"><div class="top"><span class="chip"><span class={`d ${p.live ? 'o' : ''}`}></span>{status(p)}</span><span class="chip">{p.homeService || p.type}</span></div><h3>{p.name}</h3><p>{f.text || p.lede}</p><dl class="sc-meta"><div><dt>Client</dt><dd>{client(p)}</dd></div><div><dt>Prime</dt><dd>{prime(p)}</dd></div><div><dt>Where</dt><dd>{p.city}</dd></div></dl><a class="sc-link" href={url(p)}>View project <span>→</span></a></div><a class="sc-vis" href={url(p)} style={`view-transition-name:p-${p.slug.current}`}><Img image={f.image || p.heroImage} sizes="(max-width:860px) 100vw, 60vw" alt={f.image?.alt || p.name} />{f.caption && <span class="ph-tag">{f.caption}</span>}<span class="nsc-badge"><img src="nsc-logo.jpg" alt="">NSC built</span><span class="big">{pad2(k)}</span></a></article>) })}</div>
     <div class="allhead"><p class="mono kick">{projects.length} projects across the Lower Mainland</p><a class="btn btn-blue" href="projects/index.html">Browse all projects <span class="ar">→</span></a></div>
   </div>
 </section>

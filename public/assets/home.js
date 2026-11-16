@@ -134,3 +134,31 @@ const place=()=>ss.forEach(s=>{let im=s.previousElementSibling;if(im&&im.tagName
   s.style.cssText=`left:${x-d}px;top:${y-d}px;width:${d*2}px;height:${d*2}px`;s.classList.add('on')});
 place();addEventListener('resize',place,{passive:true});addEventListener('load',place);
 })();
+
+/* "Built below" scroll x-ray: elements with data-t/data-a animate against scroll progress through the section. */
+(()=>{
+const sc=document.querySelector('.xray');if(!sc)return;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduced){sc.classList.add('static');return}
+const cl=(v,a,b)=>Math.min(1,Math.max(0,(v-a)/(b-a))),ez=p=>1-Math.pow(1-p,3);
+const els=[...sc.querySelectorAll('[data-t]')].map(el=>{const n=el.dataset.a.split(',').map(Number),t=el.dataset.t,o={el,n,t,v:+el.dataset.v||0,last:-9};
+  if(t==='draw'){o.len=el.getTotalLength();el.style.strokeDasharray=el.classList.contains('xr-trench')?'':o.len+' '+o.len;if(el.classList.contains('xr-trench')){o.t='wipe'}}
+  return o});
+let live=false;
+function set(k){sc.style.setProperty('--k',k.toFixed(4));
+  els.forEach(o=>{const n=o.n;let p=o.t==='lift'?ez(cl(k,n[0],n[1]))-ez(cl(k,n[2],n[3])):o.t==='step'?+(k>=n[0]&&k<n[1]):ez(cl(k,n[0],n[1]));
+    if(Math.abs(p-o.last)<.002)return;o.last=p;const s=o.el.style;
+    if(o.t==='draw')s.strokeDashoffset=o.len*(1-p);
+    else if(o.t==='wipe'||o.t==='fade')s.opacity=p;
+    else if(o.t==='dim')s.opacity=1-p*o.v;
+    else if(o.t==='rise'){s.opacity=Math.min(1,p*1.6);s.transform=`translateY(${(1-p)*o.v}px)`}
+    else if(o.t==='lift'){s.transform=`translateY(${p*o.v}px)`;s.opacity=1-p*.45}
+    else if(o.t==='count')o.el.textContent=Math.round(o.v*p);
+    else if(o.t==='step')o.el.classList.toggle('on',!!p)});
+}
+function frame(){const r=sc.getBoundingClientRect(),vh=innerHeight,k=cl(-r.top,0,sc.offsetHeight-vh);
+  const on=r.top<vh&&r.bottom>0;if(on!==live){live=on;sc.classList.toggle('live',on)}
+  if(on||k===0||k===1)set(k)}
+let tick=false;addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(()=>{frame();tick=false})}},{passive:true});
+addEventListener('resize',frame);frame();
+})();

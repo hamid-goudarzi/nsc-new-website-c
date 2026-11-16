@@ -1,0 +1,106 @@
+---
+// "Built below" scroll scene for the home page: the street opens and the underground builds itself as you scroll.
+// Facts come only from the Kingston Road project record (facts + scope). Illustration, not to scale.
+// Each animated element carries data-t (type) and data-a (start,end of scroll progress 0..1); public/assets/home.js drives them.
+const { project, href } = Astro.props;
+const fact = re => (project?.facts || []).find(f => re.test(f.label))?.value;
+const manholes = fact(/manhole/i) || '12', basins = fact(/catch/i) || '7', props = fact(/propert/i) || '15', mains = fact(/main/i) || '250 to 450 mm';
+const G = 262;                                  // ground line
+const pairs = [330, 800, 1270];                 // manhole pairs along the street
+const houses = [150, 520, 1050, 1420];
+const stormY = x => 604 + (x - 40) * 0.012, sanY = x => 540 + (x - 40) * 0.010;
+---
+<section class="xray" id="built-below" aria-labelledby="xr-h">
+  <div class="xr-pin">
+    <div class="wrap xr-head">
+      <p class="mono kick">Built below · {project?.shortName || 'Kingston Road'}, University Endowment Lands</p>
+      <h2 class="h2" id="xr-h">Under the street.</h2>
+      <div class="xr-steps" aria-hidden="true">
+        <p data-t="step" data-a="0,0.3">The old combined sewer carried sanitary flow and stormwater in one pipe.</p>
+        <p data-t="step" data-a="0.3,0.56">We replaced it with two new systems laid side by side: a sanitary main and a storm main.</p>
+        <p data-t="step" data-a="0.56,0.76">Six sanitary and six storm manholes, set in pairs. Catch basins and storm leads.</p>
+        <p data-t="step" data-a="0.76,1.01">Every property reconnected. Water services renewed, a new hydrant, then curb, sidewalk and paving.</p>
+      </div>
+      <p class="sr-only">For the University Endowment Lands, NSC separated the combined sewer on Western Crescent and Kingston Road into new sanitary and storm systems: {manholes} new precast manholes, {basins} new catch basins, {props} properties reconnected, sanitary and storm mains from {mains}.</p>
+    </div>
+    <div class="xr-art" aria-hidden="true">
+      <svg viewBox="0 0 1600 800" preserveAspectRatio="xMidYMid meet" focusable="false">
+        <defs>
+          <linearGradient id="xr-soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2233"/><stop offset="1" stop-color="#090c13"/></linearGradient>
+          <pattern id="xr-dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="4" cy="6" r="1.3" fill="#fff" fill-opacity=".07"/><circle cx="17" cy="19" r="1" fill="#fff" fill-opacity=".05"/></pattern>
+          <linearGradient id="xr-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f6bff" stop-opacity="0"/><stop offset="1" stop-color="#2f6bff" stop-opacity=".16"/></linearGradient>
+        </defs>
+        <rect x="0" y="60" width="1600" height={G - 60} fill="url(#xr-sky)"/>
+        {/* houses and trees along the street */}
+        <g class="xr-line">
+          {houses.map(x => <path d={`M${x - 70} ${G} V${G - 78} L${x} ${G - 132} L${x + 70} ${G - 78} V${G} M${x - 18} ${G} V${G - 44} H${x + 18} V${G} M${x + 34} ${G - 58} h22 v22 h-22 z`}/>)}
+          {[300, 690, 900, 1240].map((x, i) => <path d={`M${x} ${G} V${G - 46} M${x} ${G - 46} m-26 0 a26 ${30 + i % 2 * 8} 0 1 0 52 0 a26 ${30 + i % 2 * 8} 0 1 0 -52 0`}/>)}
+        </g>
+        {/* soil */}
+        <g data-t="fade" data-a="0.02,0.12">
+          <rect x="0" y={G} width="1600" height={800 - G} fill="url(#xr-soil)"/>
+          <rect x="0" y={G} width="1600" height={800 - G} fill="url(#xr-dots)"/>
+        </g>
+        {/* old combined sewer */}
+        <g data-t="fade" data-a="0.08,0.16"><g data-t="dim" data-a="0.3,0.42" data-v="0.72">
+          <line x1="0" y1="470" x2="1600" y2="470" stroke="#b9c0cb" stroke-width="20" stroke-opacity=".5" stroke-dasharray="18 12"/>
+          <text x="96" y="446" class="xr-lbl">OLD COMBINED SEWER · ONE PIPE</text>
+        </g></g>
+        {/* trench */}
+        <path d="M30 276 H1570 L1550 668 H50 Z" fill="#fff" fill-opacity=".035" data-t="fade" data-a="0.16,0.3"/>
+        <path d="M30 276 L50 668 H1550 L1570 276" class="xr-trench" data-t="draw" data-a="0.16,0.32"/>
+        {/* new mains */}
+        <g>
+          <line x1="40" y1={stormY(40)} x2="1560" y2={stormY(1560)} class="xr-pipe-b" stroke-width="34" data-t="draw" data-a="0.32,0.5"/>
+          <line x1="40" y1={stormY(40)} x2="1560" y2={stormY(1560)} stroke="#3fd27a" stroke-width="24" stroke-linecap="round" data-t="draw" data-a="0.32,0.5"/>
+          <line x1="40" y1={stormY(40)} x2="1560" y2={stormY(1560)} class="xr-flow" stroke-width="5" data-t="fade" data-a="0.8,0.88"/>
+          <text x="96" y="660" class="xr-lbl" fill="#3fd27a" data-t="fade" data-a="0.44,0.52">NEW STORM MAIN · 250 TO 450 MM</text>
+          <line x1="40" y1={sanY(40)} x2="1560" y2={sanY(1560)} class="xr-pipe-b" stroke-width="28" data-t="draw" data-a="0.38,0.56"/>
+          <line x1="40" y1={sanY(40)} x2="1560" y2={sanY(1560)} stroke="#ff5d4d" stroke-width="19" stroke-linecap="round" data-t="draw" data-a="0.38,0.56"/>
+          <line x1="40" y1={sanY(40)} x2="1560" y2={sanY(1560)} class="xr-flow" stroke-width="4" data-t="fade" data-a="0.8,0.88"/>
+          <text x="96" y="520" class="xr-lbl" fill="#ff8a7d" data-t="fade" data-a="0.5,0.58">NEW SANITARY MAIN · 250 TO 375 MM</text>
+          <line x1="40" y1="372" x2="1560" y2="372" class="xr-pipe-b" stroke-width="15" data-t="draw" data-a="0.62,0.76"/>
+          <line x1="40" y1="372" x2="1560" y2="372" stroke="#4aa8ff" stroke-width="8" stroke-linecap="round" data-t="draw" data-a="0.62,0.76"/>
+          <text x="96" y="352" class="xr-lbl" fill="#7ec0ff" data-t="fade" data-a="0.7,0.78">WATER SERVICES RENEWED</text>
+        </g>
+        {/* services to every property */}
+        {houses.map((x, i) => <g>
+          <path d={`M${x - 30} ${G} V${sanY(x) - 60} L${x + 30} ${sanY(x)}`} class="xr-svc" stroke="#ff5d4d" data-t="draw" data-a={`${0.76 + i * 0.015},${0.84 + i * 0.015}`}/>
+          <path d={`M${x + 44} ${G} V${stormY(x) - 70} L${x + 110} ${stormY(x)}`} class="xr-svc" stroke="#3fd27a" data-t="draw" data-a={`${0.77 + i * 0.015},${0.85 + i * 0.015}`}/>
+          <path d={`M${x - 52} ${G} V372`} class="xr-svc" stroke="#4aa8ff" stroke-width="4" data-t="draw" data-a={`${0.72 + i * 0.015},${0.8 + i * 0.015}`}/>
+        </g>)}
+        {/* manholes, set in pairs */}
+        {pairs.map((x, i) => <g data-t="rise" data-a={`${0.56 + i * 0.05},${0.66 + i * 0.05}`} data-v="-150">
+          <rect x={x - 30} y={G + 6} width="60" height={stormY(x) - G + 12} rx="5" class="xr-mh"/>
+          <rect x={x + 62} y={G + 6} width="54" height={sanY(x + 89) - G + 10} rx="5" class="xr-mh"/>
+          <ellipse cx={x} cy={G + 4} rx="34" ry="8" class="xr-lid"/><ellipse cx={x + 89} cy={G + 4} rx="31" ry="7" class="xr-lid"/>
+          <line x1={x - 14} y1={G + 40} x2={x - 14} y2={stormY(x) - 18} class="xr-rung"/><line x1={x + 76} y1={G + 40} x2={x + 76} y2={sanY(x) - 16} class="xr-rung"/>
+        </g>)}
+        <text x={pairs[1] + 140} y="455" class="xr-lbl" data-t="fade" data-a="0.66,0.74">PRECAST MANHOLES · SET IN PAIRS</text>
+        {/* catch basins and storm leads */}
+        {[620, 1130].map((x, i) => <g>
+          <path d={`M${x} ${G + 70} L${x + 70} ${stormY(x + 70)}`} class="xr-svc" stroke="#3fd27a" stroke-width="9" data-t="draw" data-a={`${0.68 + i * 0.03},${0.76 + i * 0.03}`}/>
+          <g data-t="rise" data-a={`${0.66 + i * 0.03},${0.72 + i * 0.03}`} data-v="-90"><rect x={x - 22} y={G + 4} width="44" height="76" rx="4" class="xr-mh"/><path d={`M${x - 16} ${G + 3} h32`} stroke="#e9eef7" stroke-width="5" stroke-dasharray="4 4"/></g>
+        </g>)}
+        {/* hydrant */}
+        <g data-t="rise" data-a="0.76,0.82" data-v="-60"><path d={`M975 ${G} V372`} class="xr-svc" stroke="#4aa8ff" stroke-width="6"/><rect x="964" y={G - 42} width="22" height="42" rx="5" fill="#e0433a"/><rect x="958" y={G - 48} width="34" height="10" rx="4" fill="#f25a50"/><rect x="956" y={G - 26} width="38" height="9" rx="4" fill="#bb2f27"/></g>
+        {/* the street: lifts off, then goes back down as new paving */}
+        <g data-t="lift" data-a="0.02,0.14,0.86,0.97" data-v="-64">
+          <rect x="0" y={G - 12} width="1600" height="24" rx="3" fill="#20242c" stroke="#7aa6ff" stroke-opacity=".5" stroke-width="1.5"/>
+          <line x1="0" y1={G} x2="1600" y2={G} stroke="#e8c547" stroke-width="3" stroke-dasharray="46 34"/>
+        </g>
+        <text x="1504" y="760" text-anchor="end" class="xr-note">ILLUSTRATION · NOT TO SCALE</text>
+      </svg>
+    </div>
+    <div class="wrap xr-foot">
+      <dl class="xr-stats">
+        <div><dt>new precast manholes</dt><dd data-t="count" data-a="0.56,0.76" data-v={manholes}>{manholes}</dd></div>
+        <div><dt>new catch basins</dt><dd data-t="count" data-a="0.66,0.8" data-v={basins}>{basins}</dd></div>
+        <div><dt>properties reconnected</dt><dd data-t="count" data-a="0.76,0.92" data-v={props}>{props}</dd></div>
+        <div><dt>sanitary and storm mains</dt><dd class="sm">{mains}</dd></div>
+      </dl>
+      <a class="btn btn-blue xr-cta" href={href} data-t="fade" data-a="0.9,0.98">See Kingston Road <span class="ar">→</span></a>
+    </div>
+    <div class="xr-bar" aria-hidden="true"><i></i></div>
+  </div>
+</section>

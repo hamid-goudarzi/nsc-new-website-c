@@ -176,3 +176,9 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Home title and hero chip now use the exact phrase the old site ranks for: "Neil Smith Construction | Heavy Civil Construction Vancouver" (60 chars), so the ranking carries over cleanly once the old domain redirects.
 - Tools: Semrush connector has no API units; Vercel connector needs team authorization for nsc19; Search Console needs sign-in.
 - SEO checklist run on all 57 built pages (title, description, H1, heading order, image alts, JSON-LD, canonical, Open Graph, Twitter card, vague links, thin pages, duplicates): everything passed except descriptions without a call to action. New metaDesc() in src/lib/util.mjs appends a short one in the search description when it fits in 160 chars ('Request a bid: 604-644-5884.' / 'Request a bid.' / 'See the scope and photos.' / 'Apply today.'); 30 pages gained one, 24 already use the full length. 404 page is noindex on purpose.
+
+## Nov 16, 2026 — motion upgrade, preview A (branch motion, not live)
+- Home: new "Under the street" scroll scene (src/components/Xray.astro, driven by home.js): the road lifts, the old combined sewer shows, the new storm and sanitary mains draw in, paired manholes and catch basins drop in, services and water reach each property, the road closes. Facts and numbers only from the Kingston Road record; labelled "Illustration, not to scale". Static, fully visible drawing for reduced motion.
+- Page transitions on every page (native cross-document View Transitions): new page wipes up from the ground; a project card photo grows into the project page hero.
+- First-visit opening on the home page (once per session, CSS only): NSC mark, a horizon line, then the screen splits open onto the hero.
+- Tested: build check, axe 0 violations on all 57 pages, no sideways scroll or console errors at 1440 and 390 px. Lighthouse not run yet.
