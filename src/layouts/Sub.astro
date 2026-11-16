@@ -1,5 +1,5 @@
 ---
-import { assetVer } from '../lib/util.mjs';
+import { assetVer, metaDesc } from '../lib/util.mjs';
 import { fontCss } from '../lib/fonts.mjs';
 // Layout for every page except the home page.
 import Nav from '../components/Nav.astro';
@@ -19,7 +19,7 @@ const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUr
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#06080c">
 <title>{t}</title>
-{description && <meta name="description" content={description}>}
+{description && <meta name="description" content={metaDesc(description, path)}>}
 {noindex ? <meta name="robots" content="noindex"> : <link rel="canonical" href={canonical}>}
 <meta property="og:title" content={t}>
 {description && <meta property="og:description" content={description}>}

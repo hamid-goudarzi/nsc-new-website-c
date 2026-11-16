@@ -5,7 +5,7 @@ import { fontCss } from '../lib/fonts.mjs';
 import Img from '../components/Img.astro';
 import Region from '../components/Region.astro';
 import { content } from '../lib/content.mjs';
-import { tel, linkify, paras, initials, pad2, imgUrl } from '../lib/util.mjs';
+import { tel, linkify, paras, initials, pad2, imgUrl, metaDesc } from '../lib/util.mjs';
 import svgs from '../components/home-svgs.json';
 import { organization, siteUrl } from '../lib/seo.mjs';
 const c = await content();
@@ -38,7 +38,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <meta property="og:type" content="website">
 <meta property="og:url" content={canonical + '/'}>
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content={s.description}>
+<meta name="description" content={metaDesc(s.description)}>
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style is:inline set:html={fontCss()}></style>

@@ -131,3 +131,16 @@ export function embedUrl(u) {
   if (m) return `https://player.vimeo.com/video/${m[1]}`;
   return /^https:\/\//i.test(s) ? s : 'about:blank';
 }
+
+/** Search-result description with a short call to action added when there is room (max 160 chars). */
+const CTA_RE = /request a bid|call |contact|send |see |view|learn|explore|browse|apply|email/i;
+export function metaDesc(desc, path = '') {
+  const d = String(desc || '').trim();
+  if (!d || CTA_RE.test(d)) return d;
+  const opts = /^projects\/(?!index)/.test(path) ? [' See the scope and photos.', ' See the scope.']
+    : /^careers/.test(path) ? [' Apply today.']
+    : /^projects\/index/.test(path) ? [' Browse the projects.']
+    : [' Request a bid: 604-644-5884.', ' Request a bid.'];
+  const add = opts.find(o => (d + o).length <= 160);
+  return add ? d + add : d;
+}
