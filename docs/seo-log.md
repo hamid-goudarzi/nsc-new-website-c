@@ -192,3 +192,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - The one-line scroll story (blue circle, single line through six chapters) was tried as the home page opening and reverted the same day; the home page is back to the short logo opening + hero film. Hamid's new style reference: wearebulletproof.com.
 
 - Nov 16 2026: Logo (menu and footer) and the Projects page "Home" link now go to the clean home address instead of /index.html.
+
+- Nov 16 2026: Home page: (1) as you scroll, the hero film shrinks into a centred card with four site photos around it; (2) "Under the street" is now an interactive 3D model of the Kingston Road sewers (three.js, loaded only near the section; source scripts/under3d.src.mjs, rebuild with npm run build:3d) instead of the drawn scroll scene. Text and numbers from the Kingston project record.

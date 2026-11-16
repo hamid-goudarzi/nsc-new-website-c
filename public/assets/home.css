@@ -626,3 +626,41 @@ html.seen .intro{display:none}
   .hx-col .c2{left:5%;bottom:9%;width:36vw}.hx-col .c3{right:5%;bottom:6%;width:42vw}
 }
 @media (prefers-reduced-motion:reduce){.hx{height:auto}.hx-pin{position:relative}.hx-col,.hx-pill{display:none}}
+
+/* ---- "Under the street": interactive 3D model of the Kingston Road sewers (src/components/Under3D.astro). No scroll effect. ---- */
+.u3{padding-block:clamp(70px,9vw,130px)}
+.u3-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,40px)}
+.u3-stage{position:relative;height:min(74vh,700px);min-height:460px;overflow:hidden;border-radius:clamp(16px,1.8vw,28px);border:1px solid var(--line-2);cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;
+  background:radial-gradient(70% 60% at 50% 38%,rgba(47,107,255,.2),transparent 70%),linear-gradient(180deg,#0a0f18,#06080c)}
+.u3-stage::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(122,166,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(122,166,255,.06) 1px,transparent 1px);background-size:48px 48px;-webkit-mask:radial-gradient(75% 75% at 50% 45%,#000,transparent);mask:radial-gradient(75% 75% at 50% 45%,#000,transparent)}
+.u3-stage.drag{cursor:grabbing}
+.u3-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1s}
+.u3.ready .u3-stage canvas{opacity:1}
+.u3-fallback{position:absolute;inset:0;display:none}.u3-fallback img{width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+.u3.nogl .u3-fallback{display:block}.u3.nogl canvas,.u3.nogl .u3-labels,.u3.nogl .u3-hint{display:none}
+.u3-labels{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .8s 1.6s}
+.u3.ready .u3-labels{opacity:1}
+.u3-labels span{position:absolute;left:0;top:0;width:0;height:0;will-change:transform;transition:opacity .4s}
+.u3-labels span::after{content:"";position:absolute;left:-.5px;bottom:0;width:1px;height:var(--lh,36px);background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.2))}
+.u3-labels span i{position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.16)}
+.u3-labels span b{position:absolute;left:-10px;bottom:var(--lh,36px);white-space:nowrap;padding:8px 11px;border-radius:9px;font:600 12px/1.2 var(--body);color:#eef2f8;background:rgba(8,11,16,.8);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.u3-labels span.off{opacity:0}
+.u3-info{position:absolute;left:clamp(14px,2vw,28px);top:clamp(14px,2vw,28px);width:min(340px,calc(100% - 28px));pointer-events:none}
+.u3-info div{position:absolute;left:0;top:0;padding:16px 18px;border-radius:16px;background:rgba(8,11,16,.72);border:1px solid var(--line-2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .6s var(--ease)}
+.u3-info div.on{opacity:1;transform:none}
+.u3-info b{display:block;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.03em;color:#fff}
+.u3-info p{margin-top:8px;font-size:14.5px;line-height:1.5;color:#d0d6e2}
+.u3-bar{position:absolute;left:clamp(14px,2vw,28px);right:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,24px);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.u3-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:6px;border-radius:999px;background:rgba(8,11,16,.72);border:1px solid var(--line-2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.u3-tabs button{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:0;background:none;color:#d0d6e2;font:600 13.5px var(--body);cursor:pointer;transition:background .3s,color .3s}
+.u3-tabs button:hover{color:#fff}
+.u3-tabs button.on{background:#fff;color:#06080c}
+.u3-tabs i{width:9px;height:9px;border-radius:50%;background:#8e98ab}
+.u3-tabs .k-all{background:linear-gradient(135deg,#eef2f8 0 33%,#2f6bff 33% 66%,#63d2ff 66%)}
+.u3-tabs .k-sanitary{background:#eef2f8;box-shadow:0 0 0 1px rgba(0,0,0,.35)}.u3-tabs .k-storm{background:#2f6bff}.u3-tabs .k-water{background:#63d2ff}.u3-tabs .k-surface{background:#566070}
+.u3-hint{color:#aab3c1;font-size:11px}
+.u3-figs{display:grid;grid-template-columns:repeat(3,1fr);margin:clamp(20px,2.6vw,34px) 0 0;border-top:1px solid var(--line)}
+.u3-figs div{padding:18px 18px 0 0}.u3-figs div+div{padding-left:18px;border-left:1px solid var(--line)}
+.u3-figs dt{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,1rem + 1.8vw,2.6rem);letter-spacing:-.05em;line-height:1}
+.u3-figs dd{margin:8px 0 0;color:var(--muted);font-size:14px}
+@media (max-width:760px){.u3-stage{height:auto;aspect-ratio:9/15;min-height:0}.u3-info div{padding:12px 14px}.u3-labels .m-hide{display:none}.u3-hint{display:none}.u3-tabs{border-radius:20px}.u3-tabs button{padding:8px 11px;font-size:12.5px}.u3-info{width:calc(100% - 28px)}.u3-info p{font-size:13.5px}}

@@ -207,3 +207,11 @@ function loop(time){const y=scrollY,vh=innerHeight;vel+=((y-ly)-vel)*.18;ly=y;
   requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
 })();
+
+/* "Under the street" 3D model: load it only when the section is near, so it never slows the first view. */
+(()=>{const u=document.getElementById('built-below');if(!u||!u.dataset.src)return;let done=false;
+const go=()=>{if(done)return;done=true;removeEventListener('scroll',near);import(new URL(u.dataset.src,document.baseURI).href).then(m=>m.mount(u)).catch(()=>u.classList.add('nogl'))};
+const near=()=>{const r=u.getBoundingClientRect();if(r.top<innerHeight+700&&r.bottom>-700)go()};
+addEventListener('scroll',near,{passive:true});
+if('IntersectionObserver' in window)new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();go()}},{rootMargin:'700px'}).observe(u);
+near()})();

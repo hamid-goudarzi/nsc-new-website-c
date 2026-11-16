@@ -1,0 +1,46 @@
+---
+// "Under the street" on the home page: an interactive 3D model of the Kingston Road sewer separation (no scroll effect).
+// The model is drawn by public/assets/under3d.js (source: scripts/under3d.src.mjs), loaded only when the section is near.
+// It is a schematic, not to scale. Every sentence and number comes from the Kingston Road project record (scope + facts).
+import { assetVer } from '../lib/util.mjs';
+import Img from './Img.astro';
+const { project, href } = Astro.props;
+const fact = re => (project?.facts || []).find(f => re.test(f.label))?.value;
+const manholes = fact(/manhole/i) || '12', basins = fact(/catch/i) || '7', props = fact(/propert/i) || '15';
+const photo = [project?.heroImage, ...(project?.gallery || []).map(g => g.image || g)].filter(Boolean).find(i => i.local === 'kingston-manholes');
+const tabs = [['all', 'Everything'], ['sanitary', 'Sanitary'], ['storm', 'Storm'], ['water', 'Water'], ['surface', 'Street']];
+const info = {
+  all: ['Sewer separation', project?.lede || 'We separated the combined sewer into new sanitary and storm systems.'],
+  sanitary: ['Sanitary system', 'New sanitary sewer, 250 to 375 mm, with six sanitary manholes and a sanitary connection to every property.'],
+  storm: ['Storm system', 'New storm sewer, 250 to 450 mm, with six storm manholes, catch basins and storm leads.'],
+  water: ['Water', 'Water service renewals, a fire hydrant and two watermain tie-ins.'],
+  surface: ['Street restored', 'Concrete curb, driveways and sidewalk, then road restoration, paving and landscape restoration.'],
+};
+---
+<section class="u3" id="built-below" aria-labelledby="u3-h" data-src={assetVer("under3d.js")}>
+  <div class="wrap">
+    <div class="u3-head">
+      <div><p class="mono kick">Built below · {project?.shortName || 'Kingston Road'}, University Endowment Lands</p>
+      <h2 class="h2" id="u3-h">Under the street.</h2></div>
+      <a class="btn btn-glass" href={href}>See the project <span class="ar">→</span></a>
+    </div>
+    <div class="u3-stage" tabindex="0" role="group" aria-label="3D model of the new sewers under Kingston Road. Drag sideways or use the arrow keys to turn it.">
+      <canvas aria-hidden="true"></canvas>
+      {photo && <div class="u3-fallback"><Img image={photo} sizes="(max-width:900px) 100vw, 1300px" /></div>}
+      <div class="u3-labels" aria-hidden="true">
+        <span data-at="-27,-3.9,1.45" data-l="storm" style="--lh:20px"><i></i><b>Storm sewer · 250 to 450 mm</b></span>
+        <span class="m-hide" data-at="27,-4.5,-1.45" data-l="sanitary" style="--lh:64px"><i></i><b>Sanitary sewer · 250 to 375 mm</b></span>
+        <span data-at="0,0.3,0" data-l="sanitary storm" style="--lh:78px"><i></i><b>Manholes set in pairs</b></span>
+        <span class="m-hide" data-at="-12,0.2,-3.6" data-l="storm" style="--lh:50px"><i></i><b>Catch basin and storm lead</b></span>
+        <span class="m-hide" data-at="9.7,-1.6,6.3" data-l="sanitary storm" style="--lh:22px"><i></i><b>Service connections to every property</b></span>
+        <span data-at="-16,1.5,5" data-l="water" style="--lh:44px"><i></i><b>Fire hydrant</b></span>
+      </div>
+      <div class="u3-info">{Object.entries(info).map(([k, v]) => <div data-for={k} class={k === 'all' ? 'on' : ''}><b>{v[0]}</b><p>{v[1]}</p></div>)}</div>
+      <div class="u3-bar">
+        <div class="u3-tabs" role="group" aria-label="Show one system">{tabs.map(t => <button type="button" data-layer={t[0]} class={t[0] === 'all' ? 'on' : ''} aria-pressed={t[0] === 'all' ? 'true' : 'false'}><i class={`k-${t[0]}`}></i>{t[1]}</button>)}</div>
+        <p class="u3-hint mono">Drag to turn · schematic, not to scale</p>
+      </div>
+    </div>
+    <dl class="u3-figs"><div><dt>{manholes}</dt><dd>new precast manholes</dd></div><div><dt>{basins}</dt><dd>new catch basins</dd></div><div><dt>{props}</dt><dd>properties reconnected</dd></div></dl>
+  </div>
+</section>
