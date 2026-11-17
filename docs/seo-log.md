@@ -203,3 +203,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Still needed off-site (Hamid): redirect the old Wix domain; fix ZoomInfo and the job postings (35+ years, new website, 604-644-5884); request indexing in Search Console; BC Hydro civil contractor list.
 
 - Nov 17 2026: Justin McCormack hidden from the team (Hamid).
+
+- Nov 17 2026: Leah Yauck bio now mentions her B.IT (Hamid).
