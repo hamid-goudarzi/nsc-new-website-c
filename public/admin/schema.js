@@ -231,6 +231,7 @@ export const TYPES = {
       { name: 'linkedin', label: 'LinkedIn link', type: 'string' },
       { name: 'instagram', label: 'Instagram link', type: 'string' },
       { name: 'googleMaps', label: 'Google Maps / Business Profile link', type: 'string' },
+      { name: 'previousSite', label: 'Previous website address (kept so search engines link it to this site)', type: 'string' },
       { name: 'openingHours', label: 'Office hours (e.g. Mo-Fr 08:00-17:00)', type: 'string' },
       { name: 'geo', label: 'Head office map position (latitude,longitude)', type: 'string' },
       { type: 'heading', label: 'Menus and footer' },

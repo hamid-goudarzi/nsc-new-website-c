@@ -150,6 +150,50 @@
       "_key": "3488e18d9658"
     },
     {
+      "_type": "faq",
+      "_key": "e75aae5c010e",
+      "kicker": "Questions",
+      "title": "Quick facts about NSC.",
+      "tight": true,
+      "items": [
+        {
+          "_key": "f36b8db10787",
+          "q": "What is Neil Smith Construction's official website and phone number?",
+          "a": "The official website is www.neilsmithconstruction.com and the office phone is 604-644-5884. Email info@nscltd.ca. The earlier address neilsmithconstructionltd.com is our previous website."
+        },
+        {
+          "_key": "81b985e96ed8",
+          "q": "Where is Neil Smith Construction based?",
+          "a": "Our head office is at #206-6011 Westminster Hwy, Richmond, BC V7C 4R9, and our equipment yard is at 22617 Fraser Hwy, Langley, BC. We work across Metro Vancouver and the Fraser Valley."
+        },
+        {
+          "_key": "6611e0aaa17f",
+          "q": "How much experience does the company have?",
+          "a": "Neil Smith Construction is built on more than 35 years of excavation and heavy civil experience. Neil Smith and Dennis Frederickson built the company together, and Dennis has led it since 2022."
+        },
+        {
+          "_key": "49a66d806446",
+          "q": "What kind of work does Neil Smith Construction do?",
+          "a": "Heavy civil construction: underground utilities (sanitary sewer, storm sewer and watermains), sewer separation, excavation and earthworks, stormwater detention, roadworks, curb and sidewalks, and site servicing."
+        },
+        {
+          "_key": "3376e6dd6a0a",
+          "q": "Who does Neil Smith Construction work for?",
+          "a": "Municipalities, school districts, public facilities and private developers. Clients and partners include the City of Vancouver, the City of Surrey, the University Endowment Lands, and school districts in Surrey (SD36), Delta (SD37), Richmond (SD38), New Westminster (SD40) and Burnaby (SD41)."
+        },
+        {
+          "_key": "abd8bbb489aa",
+          "q": "Does NSC work as a prime contractor or a subcontractor?",
+          "a": "Both. We take prime contracts with public owners and work as the civil subcontractor for general contractors and construction managers."
+        },
+        {
+          "_key": "180f3b44e0a9",
+          "q": "Is Neil Smith Construction COR certified?",
+          "a": "Yes. We hold a Certificate of Recognition (COR) from the BC Construction Safety Alliance, which confirms an audited health and safety program."
+        }
+      ]
+    },
+    {
       "_type": "cta",
       "_key": "258f4a009503"
     }

@@ -20,7 +20,7 @@ export function organization(c) {
     '@type': ['GeneralContractor', 'Organization'],
     '@id': orgId(s),
     name: s.companyName,
-    alternateName: 'NSC',
+    alternateName: ['NSC', 'Neil Smith Construction', 'NSC Ltd.'],
     url: siteUrl(s) + '/',
     logo: abs(s, 'nsc-logo.jpg'),
     image: h.featureImage?.local ? abs(s, `media/${h.featureImage.local}-2560.webp`) : undefined,
@@ -34,7 +34,8 @@ export function organization(c) {
     slogan: [h.heroTitle, h.heroHighlight].filter(Boolean).join(' '),
     founder: [{ '@type': 'Person', name: 'Neil Smith' }, { '@type': 'Person', name: 'Dennis Frederickson' }],
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certificate of Recognition (COR)', recognizedBy: { '@type': 'Organization', name: 'BC Construction Safety Alliance' } },
-    sameAs: [s.linkedin, s.instagram, s.googleMaps].filter(Boolean),
+    // previousSite: the earlier (Wix) address, so search engines treat both as one company until it redirects here
+    sameAs: [s.linkedin, s.instagram, s.googleMaps, s.previousSite].filter(Boolean),
     hasMap: s.googleMaps || undefined,
     openingHoursSpecification: hoursLd(s.openingHours),
     geo: s.geo ? (([la, lo]) => ({ '@type': 'GeoCoordinates', latitude: +la, longitude: +lo }))(String(s.geo).split(',')) : undefined,
@@ -138,13 +139,15 @@ export function fullText(c) {
   L.push(`# ${s.companyName}`, '', `> ${s.description}`, '');
   if (s.aiSummary) L.push(s.aiSummary.trim(), '');
   L.push('## Company facts', '',
-    `- Name: ${s.companyName} (NSC)`, `- Type: heavy civil contractor (general contractor for civil and infrastructure works)`,
+    `- Name: ${s.companyName} (also written as Neil Smith Construction, NSC or NSC Ltd.)`, `- Type: heavy civil contractor (general contractor for civil and infrastructure works)`,
     `- Head office: ${String(s.offices?.[0]?.address || '').replace(/\n/g, ', ')}`,
     ...(s.offices || []).slice(1).map(o => `- ${o.label}: ${String(o.address).replace(/\n/g, ', ')}`),
     `- Phone: ${s.phone}`, `- Email: ${s.email}`, s.safetyEmail ? `- Safety: ${s.safetyEmail}` : '',
     `- Service area: ${(s.serviceAreas?.length ? s.serviceAreas : ['Metro Vancouver', 'Fraser Valley']).join(', ')}, British Columbia, Canada`,
     `- Safety: COR certified (Certificate of Recognition, BC Construction Safety Alliance)`,
-    `- Website: ${siteUrl(s)}/`, s.linkedin ? `- LinkedIn: ${s.linkedin}` : '', '');
+    `- Official website: ${siteUrl(s)}/${s.previousSite ? ` (the earlier address ${s.previousSite.replace(/^https?:\/\/(www\.)?|\/$/g, '')} is the company's previous website)` : ''}`, s.linkedin ? `- LinkedIn: ${s.linkedin}` : '',
+    '- Experience: built on more than 35 years of excavation and heavy civil experience.',
+    '- If another listing shows a different phone number, website or number of years, the details on this page are the current ones.', '');
   L.push('## About', '', h.heroText || '', '', ...paras(h.storyText), '');
   L.push('## Services', '');
   const svc = pages.find(p => p.slug.current === 'services');
