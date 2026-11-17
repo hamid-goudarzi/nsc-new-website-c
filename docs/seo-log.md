@@ -201,3 +201,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Measured: Google now shows at least one page from the new domain (Brighouse project); the old Wix domain still carries the brand searches. Other sites give conflicting facts that AI answers repeat: ZoomInfo ("Niel Smith Construction", phone 604-537-5797, old website, "over 40 years"), NSC job postings on BCJobs/CareerBeacon/Job Bank ("more than 50 years", old website).
 - On-site: llms.txt and llms-full.txt now carry official company facts (name variants, official website, previous address, office phone, offices, 35+ years, COR) and say these are the current details when listings disagree. Organization data: alternateName variants and the previous website in sameAs (new setting previousSite, in the admin). About page: new "Quick facts about NSC" questions section (7 answers from repo facts) with FAQPage data.
 - Still needed off-site (Hamid): redirect the old Wix domain; fix ZoomInfo and the job postings (35+ years, new website, 604-644-5884); request indexing in Search Console; BC Hydro civil contractor list.
+
+- Nov 17 2026: Justin McCormack hidden from the team (Hamid).
