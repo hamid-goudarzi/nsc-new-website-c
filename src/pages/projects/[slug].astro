@@ -6,6 +6,8 @@ import Img from '../../components/Img.astro';
 import Cta from '../../components/Cta.astro';
 import { content } from '../../lib/content.mjs';
 import { paras, imgUrl, tagOf, ver } from '../../lib/util.mjs';
+import { clientsOf } from '../../lib/clients.mjs';
+import { areaName, areaSlug } from '../../lib/areas.mjs';
 import { breadcrumbs, projectLd, projectTitle, projectDescription, projectServices, pagesForProject } from '../../lib/seo.mjs';
 
 export async function getStaticPaths() {
@@ -18,6 +20,9 @@ const { projectsPage: pp, settings, projects, markets } = all;
 const specs = pagesForProject(all, p);
 const svc = projectServices(p);
 const sameCity = projects.filter(x => x !== p && x.city === p.city).slice(0, 8);
+// Who the job was for (owner, prime contractor, construction manager) → their entry on the Clients page; and the city's area page.
+const parties = clientsOf(projects).flatMap(g => g.items).filter(c => c.projects.includes(p));
+const area = areaName(p.city);
 const market = markets.find(m => (m.projects || []).some(x => x._id === p._id));
 const ld = [breadcrumbs(settings, [['Home', ''], ['Projects', 'projects/index.html'], [p.name, `projects/${p.slug.current}.html`]]), projectLd(settings, p)];
 const pre = '../';
@@ -67,10 +72,12 @@ const hv = p.heroVideo?.mp4 ? { mp4: `${pre}media/${p.heroVideo.mp4}${ver(p.hero
   <h2 style="font-size:clamp(1.8rem,1rem + 2.6vw,3.4rem);margin-top:18px">From the field.</h2><div class="gal" id="gal">
   {gal.map(g => <button type="button" class="rv" data-full={imgUrl(g, pre, 2560)} aria-label={`Open image: ${g.alt || ''}`}><Img image={g} pre={pre} sizes="(max-width:700px) 100vw, 33vw" />{tagOf(g) && <span class="g-tag mono">{tagOf(g)}</span>}</button>)}
   </div></div></section>}
-{(svc.length > 0 || specs.length > 0 || sameCity.length > 0 || market) && <section class="sec related" style="padding-top:0"><div class="wrap rel-g">
+{(svc.length > 0 || specs.length > 0 || sameCity.length > 0 || market || parties.length > 0 || area) && <section class="sec related" style="padding-top:0"><div class="wrap rel-g">
   {svc.length > 0 && <div><h2 class="mono rel-h">Services on this project</h2><div class="plinks">{svc.map(x => <a href={`../services.html#${x.anchor}`}>{x.label}<b>↗</b></a>)}</div></div>}
   {specs.length > 0 && <div><h2 class="mono rel-h">Related specialties</h2><div class="plinks">{specs.map(x => <a href={`../${x.slug.current}.html`}>{x.title}<b>↗</b></a>)}</div></div>}
   {sameCity.length > 0 && <div><h2 class="mono rel-h">More projects in {p.city}</h2><div class="plinks">{sameCity.map(x => <a href={`${x.slug.current}.html`}>{x.live && <i></i>}{x.shortName || x.name}<b>↗</b></a>)}</div></div>}
+  {parties.length > 0 && <div><h2 class="mono rel-h">Who we built for</h2><div class="plinks">{parties.map(c => <a href={`../clients.html#${c.slug}`}>{c.name}<b>↗</b></a>)}</div></div>}
+  {area && <div><h2 class="mono rel-h">Area</h2><div class="plinks"><a href={`../areas/${areaSlug(area)}.html`}>Civil work in {area}<b>↗</b></a></div></div>}
   {market && <div><h2 class="mono rel-h">Market</h2><div class="plinks"><a href={`../markets.html#${market.anchor}`}>{market.title}<b>↗</b></a></div></div>}
 </div></section>}
 {next && next !== p && <section>

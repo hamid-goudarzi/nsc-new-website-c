@@ -205,3 +205,14 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Nov 17 2026: Justin McCormack hidden from the team (Hamid).
 
 - Nov 17 2026: Leah Yauck bio now mentions her B.IT (Hamid).
+
+## Nov 19, 2026 — weekly run: internal links to Clients and Areas
+- Project pages (all 23): the related links at the bottom now include "Who we built for" (owner, prime contractor and construction manager from the project record, each linking to its entry on /clients.html) and "Area" (Civil work in <city> → that city's area page). Generated from the project fields, so they stay current when projects change in the admin. Why: ties each project to its client and city in the site's link graph, which search engines and AI assistants use to answer "who has NSC built for in <city>".
+- About (Company facts) and Civil Subcontractor (Overview) now link to Clients and partners (planned last week). Sitemap date bumped to Nov 19.
+- Checks: build check clean (57 pages; every client anchor exists); Agnes, Kingston, About and Civil Subcontractor at 1440/390: no sideways scroll, axe 0 violations.
+- Search check: "excavation contractor Richmond BC underground utilities" returns IWC, directories (BBB, HomeStars, BC Hydro civil contractor list); "Neil Smith Construction heavy civil" returns no NSC result in the top results. Off-site work (old Wix domain redirect, directory listings) is still the biggest gap.
+
+### Next ideas
+- Show the client's other projects as a sentence on each project page ("NSC also built … for SD38").
+- Per-school-district sections with photos on the School Site Works page.
+- Ask Hamid for completion years of Fire Hall No. 12, Florin and UBC.
