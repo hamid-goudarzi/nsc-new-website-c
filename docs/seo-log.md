@@ -222,3 +222,21 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - text-wrap: pretty on paragraphs, list items and captions (home.css, project.css): no single orphan word on the last line of text.
 - Checks: build check; axe 0 violations on 57 pages at 1440 and 390; Lighthouse mobile (local) home 91 and Services 91, accessibility/best practices/SEO 100.
 - Trend notes (Nov 2026): Google AI Overviews and AI Mode lean on the Google Business Profile for local answers (complete every field, photos, reviews); AI answers cite sources that change month to month, so consistent facts across all listings matter more than any single page.
+
+## Nov 24, 2026 — old Wix domain now redirects to the new site
+- neilsmithconstructionltd.com and www.neilsmithconstructionltd.com added to the Vercel project as 308 permanent redirects to www.neilsmithconstruction.com (path kept, then the existing old-URL redirects in vercel.json map to the new page). Domain stays registered at Wix; only DNS changed (A 216.198.79.1, www CNAME to Vercel). The domain had no email records.
+- Tested: home, /about-us, /projects, /contact and /services on both old hosts end on the right new page with 200; https certificate issued.
+- Search Console (neilsmithconstructionltd@gmail.com): old domain verified as a Domain property by a TXT record at Wix; Change of address to www.neilsmithconstruction.com filed, validation passed ("This site is currently moving", started Nov 24, 2026).
+- Keep: the domain registration, the three DNS records and the Vercel redirect for at least 12 months (to Nov 24, 2027). The Wix Premium site plan is no longer needed.
+- Still to do off-site: update links on Google Business Profile, LinkedIn, Facebook, Instagram, job postings and directories to the new address.
+
+## Nov 24, 2026 — after the domain move: Search Console check and wording (by hand)
+- Tested all 40 old Wix page addresses in vercel.json through the old domain: every one ends on the intended new page with 200.
+- Search Console, new site (as of its Nov 15 data): sitemap read Nov 23, 56 pages found; 49 pages indexed, 7 "Discovered - currently not indexed" (civil-subcontractor, clients, municipal-contractor, stormwater-detention, watermain-contractor, projects/brighouse-modular-addition, projects/florin-development). Indexing requested for all 7 by URL inspection. Last 28 days: 22 clicks, 731 impressions, average position 28; top queries are the company name, "civil contractor", "heavy civil contractor".
+- Site wording now that the old address forwards: Organization sameAs no longer lists the old address (it is a redirect to this site, not a separate profile); llms.txt and llms-full.txt say the earlier address "now forwards to this website"; About quick facts answer says the same. Admin label for the Previous website field updated.
+- Checks: build check passed (57 pages).
+
+### Next ideas
+- Re-check Search Console in 2-3 weeks: the 7 pages indexed, and the old domain's queries appearing under the new site.
+- Bing Webmaster Tools: confirm the new site is verified there and look at its index coverage (IndexNow already pings on each production build).
+- Off-site links to the new address: Google Business Profile, LinkedIn, Facebook, Instagram, job postings (BCJobs, CareerBeacon, Job Bank), ZoomInfo, directories.

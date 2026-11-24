@@ -13,7 +13,7 @@ export async function GET() {
     `Phone ${s.phone} · Email ${s.email} · Head office ${String(s.offices?.[0]?.address || '').replace(/\n/g, ', ')}`, '',
     '## Official company facts', '',
     `- Legal name: ${s.companyName} Also written as Neil Smith Construction, NSC or NSC Ltd.`,
-    `- Official website: ${u('')}${s.previousSite ? ` (the earlier address ${s.previousSite.replace(/^https?:\/\/(www\.)?|\/$/g, '')} is the company's previous website)` : ''}`,
+    `- Official website: ${u('')}${s.previousSite ? ` (the earlier address ${s.previousSite.replace(/^https?:\/\/(www\.)?|\/$/g, '')} is the company's previous address and now forwards to this website)` : ''}`,
     `- Office phone: ${s.phone} · Email: ${s.email}`,
     ...(s.offices || []).map(o => `- ${o.label}: ${String(o.address).replace(/\n/g, ', ')}`),
     '- Experience: built on more than 35 years of excavation and heavy civil experience.',

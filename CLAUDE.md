@@ -43,7 +43,7 @@ Owner: Hamid Goudarzi (civil engineer / project coordinator at NSC). He is not a
 `api/` admin backend auth logic and `.admin/users.enc` (unless fixing a bug on purpose), Vercel env vars / secrets (`GITHUB_TOKEN` expires ~Jan 28 2027; `ADMIN_SECRET` must never change), verification files above, contact details, existing redirects (you may add new ones).
 
 ## Pending (as of Nov 5 2026)
-- Old Wix domain neilsmithconstructionltd.com still live and outranking the new site. Plan: add it in Vercel → Domains, point Wix DNS A/CNAME to Vercel (leave MX for email), then Search Console Change of address. All old URLs already have 301s.
+- Old Wix domain neilsmithconstructionltd.com: DONE Nov 24 2026. It stays registered at Wix (DNS at Wix: A 216.198.79.1, www CNAME to Vercel, TXT google-site-verification; do not remove these) and is added in Vercel -> Domains as a 308 redirect to www.neilsmithconstruction.com (apex and www). Search Console (company account): old domain verified as a Domain property and Change of address to www.neilsmithconstruction.com filed Nov 24 2026. Keep the domain registered and the redirect in place until at least Nov 24 2027. Hamid plans to cancel the Wix Premium site plan; the domain registration must be kept separately.
 - Off-site: update LinkedIn/Facebook/Instagram links, directory listings (VRCA, BCCA, BC Hydro civil contractor list, Bing Places, Apple Business Connect), fix the Tsawwassen BIA listing (wrong phone/address).
 - Ask Hamid which projects the photos `nsc-cat-school` and `nsc-fleet` belong to; confirm the free fill soil offer is still current; the CAT school photo shows another trade's formwork crew in the background — crop tighter if he wants NSC crews only.
 

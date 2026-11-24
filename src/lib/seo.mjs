@@ -34,8 +34,8 @@ export function organization(c) {
     slogan: [h.heroTitle, h.heroHighlight].filter(Boolean).join(' '),
     founder: [{ '@type': 'Person', name: 'Neil Smith' }, { '@type': 'Person', name: 'Dennis Frederickson' }],
     hasCredential: { '@type': 'EducationalOccupationalCredential', name: 'Certificate of Recognition (COR)', recognizedBy: { '@type': 'Organization', name: 'BC Construction Safety Alliance' } },
-    // previousSite: the earlier (Wix) address, so search engines treat both as one company until it redirects here
-    sameAs: [s.linkedin, s.instagram, s.googleMaps, s.previousSite].filter(Boolean),
+    // previousSite is not listed here: since Nov 24 2026 that address is a permanent redirect to this site
+    sameAs: [s.linkedin, s.instagram, s.googleMaps].filter(Boolean),
     hasMap: s.googleMaps || undefined,
     openingHoursSpecification: hoursLd(s.openingHours),
     geo: s.geo ? (([la, lo]) => ({ '@type': 'GeoCoordinates', latitude: +la, longitude: +lo }))(String(s.geo).split(',')) : undefined,
@@ -145,7 +145,7 @@ export function fullText(c) {
     `- Phone: ${s.phone}`, `- Email: ${s.email}`, s.safetyEmail ? `- Safety: ${s.safetyEmail}` : '',
     `- Service area: ${(s.serviceAreas?.length ? s.serviceAreas : ['Metro Vancouver', 'Fraser Valley']).join(', ')}, British Columbia, Canada`,
     `- Safety: COR certified (Certificate of Recognition, BC Construction Safety Alliance)`,
-    `- Official website: ${siteUrl(s)}/${s.previousSite ? ` (the earlier address ${s.previousSite.replace(/^https?:\/\/(www\.)?|\/$/g, '')} is the company's previous website)` : ''}`, s.linkedin ? `- LinkedIn: ${s.linkedin}` : '',
+    `- Official website: ${siteUrl(s)}/${s.previousSite ? ` (the earlier address ${s.previousSite.replace(/^https?:\/\/(www\.)?|\/$/g, '')} is the company's previous address and now forwards to this website)` : ''}`, s.linkedin ? `- LinkedIn: ${s.linkedin}` : '',
     '- Experience: built on more than 35 years of excavation and heavy civil experience.',
     '- If another listing shows a different phone number, website or number of years, the details on this page are the current ones.', '');
   L.push('## About', '', h.heroText || '', '', ...paras(h.storyText), '');
