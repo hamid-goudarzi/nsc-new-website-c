@@ -1,0 +1,11 @@
+---
+// Instant page changes: when a visitor holds the pointer over (or starts tapping) a link to another page of this site,
+// Chrome and Edge load that page in the background so it opens instantly. Other browsers ignore this.
+// The site has no analytics, so background loads are never counted as visits. Admin, API, files and mail/phone links are left out.
+const rules = { prerender: [{ where: { and: [
+  { href_matches: '/*' },
+  { not: { href_matches: ['/admin/*', '/api/*', '/*.xml', '/*.txt', '/*.pdf'] } },
+  { not: { selector_matches: '[target=_blank], [download], [rel~=nofollow]' } },
+] }, eagerness: 'moderate' }] };
+---
+<script is:inline type="speculationrules" set:html={JSON.stringify(rules)}></script>

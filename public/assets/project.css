@@ -518,3 +518,6 @@ img{height:auto}
 .fx .phero h1{animation:fx-rise 1s cubic-bezier(.16,1,.3,1) .15s both}
 .fx .phero .ph-sub,.fx .phero .top,.fx .phero .back{animation:fx-rise 1s cubic-bezier(.16,1,.3,1) .32s both}
 @keyframes fx-rise{from{transform:translateY(46px)}to{transform:none}}
+
+/* balanced line endings in running text (no single orphan word on the last line) */
+p,li,dd,figcaption,blockquote{text-wrap:pretty}

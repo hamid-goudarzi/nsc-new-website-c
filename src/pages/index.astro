@@ -3,6 +3,7 @@ import { assetVer } from '../lib/util.mjs';
 import { fontCss } from '../lib/fonts.mjs';
 // Home page. Text, photos, featured projects, people and jobs come from the admin (content/home/home.json and collections).
 import Img from '../components/Img.astro';
+import Speculation from '../components/Speculation.astro';
 import Region from '../components/Region.astro';
 import Under3D from '../components/Under3D.astro';
 import { content } from '../lib/content.mjs';
@@ -56,6 +57,7 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/plain" title="Company summary for AI assistants" href="/llms.txt">
 <script is:inline>try{if(sessionStorage.getItem('nscIntro')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('seen');else sessionStorage.setItem('nscIntro','1')}catch(e){}</script>
+<Speculation />
 </head>
 <body>
 <div class="intro" aria-hidden="true"><i class="it"></i><i class="ib"></i><div class="im"><img src="nsc-logo.jpg" alt="" width="96" height="96"><span></span><b>Built below. Trusted above.</b></div></div>

@@ -216,3 +216,9 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Show the client's other projects as a sentence on each project page ("NSC also built … for SD38").
 - Per-school-district sections with photos on the School Site Works page.
 - Ask Hamid for completion years of Fire Hall No. 12, Florin and UBC.
+
+## Nov 24, 2026 — instant page loads and tidier text
+- Speculation Rules (src/components/Speculation.astro, in the head of every page): when a visitor hovers or starts tapping a link to another page of the site, Chrome and Edge load it in the background so it opens instantly; admin, API, files and new-tab links excluded. No analytics on the site, so background loads are never counted as visits. Verified in Chrome: the next page arrives pre-fetched.
+- text-wrap: pretty on paragraphs, list items and captions (home.css, project.css): no single orphan word on the last line of text.
+- Checks: build check; axe 0 violations on 57 pages at 1440 and 390; Lighthouse mobile (local) home 91 and Services 91, accessibility/best practices/SEO 100.
+- Trend notes (Nov 2026): Google AI Overviews and AI Mode lean on the Google Business Profile for local answers (complete every field, photos, reviews); AI answers cite sources that change month to month, so consistent facts across all listings matter more than any single page.

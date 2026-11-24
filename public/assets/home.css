@@ -664,3 +664,6 @@ html.seen .intro{display:none}
 .u3-figs dt{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,1rem + 1.8vw,2.6rem);letter-spacing:-.05em;line-height:1}
 .u3-figs dd{margin:8px 0 0;color:var(--muted);font-size:14px}
 @media (max-width:760px){.u3-stage{height:auto;aspect-ratio:9/15;min-height:0}.u3-info div{padding:12px 14px}.u3-labels .m-hide{display:none}.u3-hint{display:none}.u3-tabs{border-radius:20px}.u3-tabs button{padding:8px 11px;font-size:12.5px}.u3-info{width:calc(100% - 28px)}.u3-info p{font-size:13.5px}}
+
+/* balanced line endings in running text (no single orphan word on the last line) */
+p,li,dd,figcaption,blockquote{text-wrap:pretty}
