@@ -23,6 +23,10 @@ const sameCity = projects.filter(x => x !== p && x.city === p.city).slice(0, 8);
 // Who the job was for (owner, prime contractor, construction manager) → their entry on the Clients page; and the city's area page.
 const parties = clientsOf(projects).flatMap(g => g.items).filter(c => c.projects.includes(p));
 const area = areaName(p.city);
+// Repeat work: the other projects NSC has done for (or with) the same owner, prime contractor or construction manager.
+const rolesHere = new Map(clientsOf([p]).flatMap(g => g.items).map(i => [i.slug, i.roles]));
+const repeat = parties.map(c => ({ c, owner: !!rolesHere.get(c.slug)?.has('owner'), others: c.projects.filter(x => x !== p) })).filter(r => r.others.length);
+const andList = a => a.length < 2 ? a : a.flatMap((x, i) => i === 0 ? [x] : [i === a.length - 1 ? ' and ' : ', ', x]);
 const market = markets.find(m => (m.projects || []).some(x => x._id === p._id));
 const ld = [breadcrumbs(settings, [['Home', ''], ['Projects', 'projects/index.html'], [p.name, `projects/${p.slug.current}.html`]]), projectLd(settings, p)];
 const pre = '../';
@@ -55,6 +59,7 @@ const hv = p.heroVideo?.mp4 ? { mp4: `${pre}media/${p.heroVideo.mp4}${ver(p.hero
         <p class="mono kick">About the project</p>
         <p class="lede">{p.lede}</p>
         {paras(p.body).map(t => <p>{t}</p>)}
+        {repeat.map(r => <p class="also">Neil Smith Construction has also {r.owner ? 'built for' : 'worked with'} <a href={`../clients.html#${r.c.slug}`}>{r.c.name}</a> on {andList(r.others.map(x => <a href={`${x.slug.current}.html`}>{x.name}</a>))}.</p>)}
       </div>
       {p.scope?.length > 0 && <aside class="scope rv"><h2>Scope of work</h2><ol>{p.scope.map(s => <li>{s}</li>)}</ol></aside>}
     </div>

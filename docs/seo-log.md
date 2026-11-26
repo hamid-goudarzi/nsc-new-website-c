@@ -240,3 +240,14 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Re-check Search Console in 2-3 weeks: the 7 pages indexed, and the old domain's queries appearing under the new site.
 - Bing Webmaster Tools: confirm the new site is verified there and look at its index coverage (IndexNow already pings on each production build).
 - Off-site links to the new address: Google Business Profile, LinkedIn, Facebook, Instagram, job postings (BCJobs, CareerBeacon, Job Bank), ZoomInfo, directories.
+
+## Nov 26, 2026 — weekly run: repeat-client sentences on project pages
+- Project pages: after "About the project", one sentence per owner, prime contractor or construction manager that NSC has other projects with, e.g. "Neil Smith Construction has also built for School District No. 38 (Richmond) on William Cook Elementary School, …" or "… has also worked with Unitech Construction Management on …". Generated from the Client / Prime contractor / Construction manager fields (src/pages/projects/[slug].astro, clientsOf), so it stays current with the admin; no counts. 16 of 23 project pages gained one or two sentences; the rest have a one-off client. Why: shows repeat work in plain, visible text (the strongest trust signal for school districts and GCs), and gives search engines and AI assistants direct links between related projects and the client's entry on /clients.html.
+- Sitemap date bumped to Nov 26.
+- Checks: build check passed (57 pages); Tomsett, Guildford Park and Portland Loos at 1440/390: no sideways scroll, axe 0 violations. Live-site fetch and Search Console not reachable from this run (network blocked); last production deploy was Ready.
+- Search check: "school site works contractor BC" results are dominated by tender listings (CanadaBuys, ConstructConnect: site works/earthworks packages for SD schools); "civil contractor Vancouver sewer separation" returns City of Vancouver pages and contractor project pages (Aplin Martin, Norland). Project pages with plain scope and client names are what ranks here, which supports this week's change.
+
+### Next ideas
+- Per-district photo cards on School Site Works (the district list there is text only).
+- Ask Hamid for completion years of Fire Hall No. 12, Florin and UBC.
+- Re-check Search Console (7 pages requested for indexing Nov 24; old domain's queries moving over).
