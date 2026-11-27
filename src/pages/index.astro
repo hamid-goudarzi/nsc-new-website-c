@@ -43,6 +43,9 @@ const ogImg = h.featureImage ? new URL(imgUrl(h.featureImage), canonical + '/').
 <meta property="og:type" content="website">
 <meta property="og:url" content={canonical + '/'}>
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={s.companyName}>
+<meta name="twitter:description" content={s.description}>
+{ogImg && <meta name="twitter:image" content={ogImg}>}
 <meta name="description" content={metaDesc(s.description)}>
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/unbounded-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>

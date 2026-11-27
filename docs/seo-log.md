@@ -241,6 +241,19 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Bing Webmaster Tools: confirm the new site is verified there and look at its index coverage (IndexNow already pings on each production build).
 - Off-site links to the new address: Google Business Profile, LinkedIn, Facebook, Instagram, job postings (BCJobs, CareerBeacon, Job Bank), ZoomInfo, directories.
 
+## Nov 25, 2026 — AI visibility audit (by hand, Hamid's request)
+- Site checks passed: robots.txt allows 21 search/AI crawlers; every page has its full text in raw HTML (490-1,670 words on the pages checked, one H1, alt text on all content photos); llms.txt/llms-full.txt; GeneralContractor, Service, FAQPage, BreadcrumbList JSON-LD. No site changes needed this round.
+- Assistant test (web search used by AI assistants, Nov 25): site:neilsmithconstruction.com returned no pages; brand searches answered from Job Bank ads ("50+ years", old site) and ZoomInfo ("Niel Smith Construction", Delta, 604-537-5797, old site, "over 40 years"); NSC not named for "heavy civil contractor Metro Vancouver sewer separation..." or "underground utilities contractor Richmond BC" (BBB, Marclay, Volker Stevin, Norland, BC Hydro list instead).
+- Found the likely source of the Delta address and 537 number: the BC Hydro Registered Civil Contractor List entry for NSC (Dennis Frederickson, 604 537 5797, 105-130 English Bluff Rd., Delta, V4M 2M8, link to neilsmithconstructionltd.com). Hamid confirmed (Nov 25) the Delta address and 537 number are out of date: BC Hydro to be asked to update website, phone (604-644-5884) and address (Richmond head office).
+- Bing Webmaster (company Google account): 33 of 56 pages indexed; all 56 submitted by URL Submission today (accepted). AI Performance: 3 Copilot citations (Nov 17). IndexNow: Bing answers 403 UserForbiddedToAccessSite for the site's key although the key file is served correctly; Yandex, Seznam and Yep accept it. Until fixed, submit to Bing by hand after big changes.
+- Audit page for Hamid with ranked fixes and paste-ready text (BC Hydro email, ZoomInfo facts, job-ad About paragraph, review request): https://claude.ai/artifact/HiQNehgoXLf19k2DUjKmts
+
+### Next ideas
+- Recheck Dec 26, 2026: Bing indexed count, site: search, the same five assistant questions.
+- Bing Site Move for the old domain (needs the old domain verified in Bing: DNS record at Wix or import from Search Console).
+- Try a fresh IndexNow key if Bing still refuses the current one.
+- Job descriptions from Hamid for the 4 open roles, so JobPosting markup (Google Jobs) can be added.
+
 ## Nov 26, 2026 — weekly run: repeat-client sentences on project pages
 - Project pages: after "About the project", one sentence per owner, prime contractor or construction manager that NSC has other projects with, e.g. "Neil Smith Construction has also built for School District No. 38 (Richmond) on William Cook Elementary School, …" or "… has also worked with Unitech Construction Management on …". Generated from the Client / Prime contractor / Construction manager fields (src/pages/projects/[slug].astro, clientsOf), so it stays current with the admin; no counts. 16 of 23 project pages gained one or two sentences; the rest have a one-off client. Why: shows repeat work in plain, visible text (the strongest trust signal for school districts and GCs), and gives search engines and AI assistants direct links between related projects and the client's entry on /clients.html.
 - Sitemap date bumped to Nov 26.
@@ -251,3 +264,5 @@ Weekly improvement runs append here: what changed, why, and what to do next. New
 - Per-district photo cards on School Site Works (the district list there is text only).
 - Ask Hamid for completion years of Fire Hall No. 12, Florin and UBC.
 - Re-check Search Console (7 pages requested for indexing Nov 24; old domain's queries moving over).
+
+- Nov 27 2026: quick SEO check of the home page scored 95/100; added twitter:title, twitter:description and twitter:image (same values as Open Graph) to every page head (Sub.astro, index.astro). Logo left as JPG (3 KB; also used as icon and in Organization data).

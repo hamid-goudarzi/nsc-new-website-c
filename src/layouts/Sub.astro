@@ -27,6 +27,9 @@ const og = ogImage ? new URL(ogImage.replace(/^(\.\.\/)+/, ''), (settings.siteUr
 {og && <meta property="og:image" content={og}>}
 <meta property="og:url" content={canonical}>
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content={t}>
+{description && <meta name="twitter:description" content={description}>}
+{og && <meta name="twitter:image" content={og}>}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content={settings.companyName}>
 <meta property="og:locale" content="en_CA">
